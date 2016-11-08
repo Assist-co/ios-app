@@ -12,10 +12,10 @@ Now more than ever, professionals and millenials are outsourcing many of their d
 ### Sprint 1
 
 #### Backend
-- [ ] Client and Assistant API (Create, Update) 
+- [ ] Client (Create, Update, Get) and Assistant (Get) API 
 - [ ] Message API (Fetch, Create)
 - [ ] Task API (Fetch, Update, Create)
-- [ ] Lightweight admin interface for viewing and updating clients, assistants, messages, and tasks
+- [ ] Lightweight admin interface for viewing, updating, and creating clients, assistants, messages, and tasks
 - [ ] Deploy backend
 
 #### App
