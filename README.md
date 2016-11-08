@@ -22,7 +22,7 @@ Now more than ever, professionals and millenials are outsourcing many of their d
 - [ ] Client, Assistant, Message, and Task model stubs
 - [ ] Voice to text functionality
 - [ ] API endpoints for Client, Assistant, Message, Task, and Voice-to-Text
-- [ ] Task manager screen
+- [ ] Task manager screen (Consider Yelp's interface for listing and mapping businesses on their search page)
    - [ ] Displays queued and pending tasks
    - [ ] Allows deletion/acceptance of tasks
 - [ ] Messages screen
