@@ -9,22 +9,39 @@ Now more than ever, professionals and millenials are outsourcing many of their d
 
 ## User Stories
 
-### Backend
+### Sprint 1
+
+#### Backend
 - [ ] Client and Assistant API (Create, Update) 
 - [ ] Message API (Fetch, Create)
 - [ ] Task API (Fetch, Update, Create)
 - [ ] Lightweight admin interface for viewing and updating clients, assistants, messages, and tasks
+- [ ] Deploy backend
 
-### App
-
-- [ ] Onboarding Flow
-- [ ] User authentication (Session, Login, Logout)
-- [ ] Task manager screen
-- [ ] Messages screen
-- [ ] Voice to text functionality (is this frontend or backend?)
-- [ ] Settings screen
-
-## Backend or Frontend TBD
-- [ ] Contacts integration
-- [ ] Email integration
+#### App
+- [ ] Client, Assistant, Message, and Task model stubs
 - [ ] Voice to text functionality
+- [ ] API endpoints for Client, Assistant, Message, Task, and Voice-to-Text
+- [ ] Task manager screen
+   - [ ] Displays queued and pending tasks
+   - [ ] Allows deletion/acceptance of tasks
+- [ ] Messages screen
+   - [ ] Button/functionality to call personal secretary
+   - [ ] Button/functionality to pull up keyboard to type message
+   - [ ] Button/functionality to record voice-to-text messages
+- [ ] Message detail popover
+   - [ ] Can view and edit message
+- [ ] Onboarding Flow
+
+
+### Future Sprints
+
+#### App
+- [ ] Settings screen
+- [ ] User authentication (Session, Login, Logout)
+- [ ] Task map view
+- [ ] Can tag tasks on message detail popover screen
+
+#### Backend or Frontend TBD
+- [ ] Email integration
+- [ ] Contacts integration
