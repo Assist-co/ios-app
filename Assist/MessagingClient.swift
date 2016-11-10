@@ -9,5 +9,5 @@
 import UIKit
 
 class MessagingClient: NSObject {
-
+    static let sharedInstance = MessagingClient()
 }

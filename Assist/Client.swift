@@ -9,6 +9,7 @@
 import UIKit
 
 class Client: NSObject {
+    
     var id: String?
     var firstName: String?
     var lastName: String?
@@ -19,7 +20,7 @@ class Client: NSObject {
     var primaryAssistantID: String?
     var profilePicURL: URL?
     
-    init(dictionary: NSDictionary) {
-        
+    init(clientDict: NSDictionary) {
+        // TODO
     }
 }

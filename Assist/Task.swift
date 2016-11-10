@@ -8,6 +8,30 @@
 
 import UIKit
 
-class Task: NSObject {
 
+enum TaskType {
+    case scheduleMeeting
+    case email
+    case phoneCall
+    case inquiry
+    case purchase
+    case reminder
+}
+
+class Task: NSObject {
+    
+    var id: String?
+    var type: TaskType?
+    var text: String?
+    var createdOn: Date?
+    var deletedOn: Date?
+    var canceledOn: Date?
+    var deadlineOn: Date?
+    var clientID: String?
+    var assistantID: String?
+    
+    init(taskDict: NSDictionary) {
+        super.init()
+        // TODO
+    }
 }

@@ -9,5 +9,6 @@
 import UIKit
 
 class VoiceToTextClient: NSObject {
+    static let sharedInstance = VoiceToTextClient()
 
 }

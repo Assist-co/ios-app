@@ -9,5 +9,13 @@
 import UIKit
 
 class Assistant: NSObject {
-
+    
+    var firstName: String?
+    var lastName: String?
+    var profilePicURL: URL?
+    
+    init(assistantDict: NSDictionary) {
+        super.init()
+        // TODO
+    }
 }
