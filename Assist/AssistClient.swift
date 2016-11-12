@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AFNetworking
 
 // TODO: move these somewhere intelligent
 let devURLString = "http://127.0.0.1:5000/"
