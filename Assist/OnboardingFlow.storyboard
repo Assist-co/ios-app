@@ -228,10 +228,10 @@
             </objects>
             <point key="canvasLocation" x="764" y="128.18590704647679"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="B3I-cB-gOi">
             <objects>
-                <viewController id="pXV-17-DH0" sceneMemberID="viewController">
+                <viewController id="pXV-17-DH0" customClass="SignInViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mpY-4k-a2P"/>
                         <viewControllerLayoutGuide type="bottom" id="8XA-BA-9X1"/>
