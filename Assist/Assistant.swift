@@ -16,6 +16,8 @@ class Assistant: NSObject {
     
     init(assistantDict: NSDictionary) {
         super.init()
-        // TODO
+        self.firstName = assistantDict["first_name"] as? String
+        self.lastName = assistantDict["last_name"] as? String
+        // self.profilePicURL = assistantDict["profile_pic"]
     }
 }

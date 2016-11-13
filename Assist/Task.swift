@@ -18,20 +18,33 @@ enum TaskType {
     case reminder
 }
 
+
 class Task: NSObject {
     
     var id: String?
-    var type: TaskType?
+    var clientID: String?
+    var assistantID: String?
+    var taskType: TaskType?
     var text: String?
     var createdOn: Date?
     var deletedOn: Date?
-    var canceledOn: Date?
-    var deadlineOn: Date?
-    var clientID: String?
-    var assistantID: String?
+    var isArchived: Bool?
+    var completedOn: Date?
+    var updatedOn: Date?
+    // var deadlineOn: Date?
     
     init(taskDict: NSDictionary) {
         super.init()
-        // TODO
+        
+        self.id = taskDict["id"] as? String
+        self.clientID = (taskDict["client"] as? NSDictionary)?["client_id"] as? String
+        self.assistantID = (taskDict["assistant"] as? NSDictionary)?["assistant_id"] as? String
+        self.text = taskDict["text"] as? String
+        // self.taskType = (taskDict["task_type"] as? NSDictionary)?["text"]
+        // self.createdOn = taskDict["created_on"] as? Date
+        // self.updatedOn = taskDict["updated_on"] as? Date
+        // self.completedOn = taskDict["completed_on"] as? Date
+        self.isArchived = taskDict["is_archived"] as? Bool
+        
     }
 }

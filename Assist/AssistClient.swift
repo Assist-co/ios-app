@@ -41,9 +41,10 @@ class AssistClient: NSObject {
             completionHandler: { (response: DataResponse<Any>) in
                 switch response.result {
                 case .success:
-                    print("Validation Successful")
+                    // print("Validation Successful")
                     if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+                        // print("JSON: \(JSON)")
+                        success(Client(clientDict: JSON as! NSDictionary))
                     }
                 case .failure(let error):
                     failure(error)
@@ -63,9 +64,10 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    // print("JSON: \(JSON)")
+                    success(Client(clientDict: JSON as! NSDictionary))
                 }
             case .failure(let error):
                 failure(error)
@@ -86,9 +88,10 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    // print("JSON: \(JSON)")
+                    success(Client(clientDict: JSON as! NSDictionary))
                 }
             case .failure(let error):
                 failure(error)
@@ -107,10 +110,12 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                /*
+                print("deleteClient Validation Successful")
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
-                }
+                }*/
+                success()
             case .failure(let error):
                 failure(error)
             }
@@ -122,7 +127,7 @@ class AssistClient: NSObject {
 
     func getAssistant(
         assistantID: String,
-        success: @escaping (Client) -> (),
+        success: @escaping (Assistant) -> (),
         failure: @escaping (Error) -> ()
     ) {
         Alamofire.request(
@@ -131,9 +136,10 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("getAssistant Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    //print("JSON: \(JSON)")
+                    success(Assistant(assistantDict: JSON as! NSDictionary))
                 }
             case .failure(let error):
                 failure(error)
@@ -155,9 +161,14 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("getTasksForClient Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    // print("JSON: \(JSON)")
+                    var tasks: [Task] = []
+                    for item in JSON as! [Any] {
+                        tasks.append(Task(taskDict: item as! NSDictionary))
+                    }
+                    success(tasks)
                 }
             case .failure(let error):
                 failure(error)
@@ -177,9 +188,10 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("getTask Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    // print("JSON: \(JSON)")
+                    success(Task(taskDict: JSON as! NSDictionary))
                 }
             case .failure(let error):
                 failure(error)
@@ -201,9 +213,10 @@ class AssistClient: NSObject {
             completionHandler: { (response: DataResponse<Any>) in
                 switch response.result {
                 case .success:
-                    print("Validation Successful")
+                    // print("createTask Validation Successful")
                     if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+                        // print("JSON: \(JSON)")
+                        success(Task(taskDict: JSON as! NSDictionary))
                     }
                 case .failure(let error):
                     failure(error)
@@ -226,9 +239,10 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
-                print("Validation Successful")
+                // print("updateTask Validation Successful")
                 if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                    // print("JSON: \(JSON)")
+                    success(Task(taskDict: JSON as! NSDictionary))
                 }
             case .failure(let error):
                 failure(error)
@@ -248,10 +262,12 @@ class AssistClient: NSObject {
         ).validate().responseJSON { (response: DataResponse<Any>) in
             switch response.result {
             case .success:
+                /*
                 print("Validation Successful")
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
-                }
+                }*/
+                success()
             case .failure(let error):
                 failure(error)
             }

@@ -11,16 +11,31 @@ import UIKit
 class Client: NSObject {
     
     var id: String?
+    var phone: String?
     var firstName: String?
     var lastName: String?
     var email: String?
-    var is_active: Bool?
-    var created_on: Date?
+    var isActive: Bool?
+    var createdOn: Date?
+    var updatedOn: Date?
     var gender: String?
     var primaryAssistantID: String?
     var profilePicURL: URL?
+    var dateOfBirth: Date?
+    var profession: String?
     
     init(clientDict: NSDictionary) {
-        // TODO
+        self.id = clientDict["id"] as? String
+        self.phone = clientDict["phone"] as? String
+        self.firstName = clientDict["first_name"] as? String
+        self.lastName = clientDict["last_name"] as? String
+        self.email = clientDict["email"] as? String
+        self.primaryAssistantID = clientDict["primary_assistant_id"] as? String
+        // self.profilePicURL = clientDict["profile_pic"] as? URL
+        self.gender = clientDict["gender"] as? String
+        // self.createdOn = clientDict["created_on"] as? Date
+        // self.updatedOn = clientDict["updated_on"] as? Date
+        self.profession = clientDict["profession"] as? String
+        // self.dateOfBirth = clientDict["date_of_birth"] as? Date
     }
 }
