@@ -11,6 +11,10 @@
 		031300F31DD9126400381716 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F21DD9126400381716 /* TaskListViewController.swift */; };
 		031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F41DD9127800381716 /* TaskMapViewController.swift */; };
 		031300F71DD912A600381716 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F61DD912A600381716 /* TasksViewController.swift */; };
+		031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300F81DD917DE00381716 /* MessageDetail.storyboard */; };
+		031300FB1DD9181200381716 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300FA1DD9181200381716 /* Settings.storyboard */; };
+		031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300FC1DD9194200381716 /* SettingsViewController.swift */; };
+		031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300FE1DD9196100381716 /* MessageDetailViewController.swift */; };
 		0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340513D1DD4295D005F6B82 /* AppDelegate.swift */; };
 		034051431DD4295D005F6B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051411DD4295D005F6B82 /* Main.storyboard */; };
 		034051451DD4295D005F6B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034051441DD4295D005F6B82 /* Assets.xcassets */; };
@@ -54,6 +58,10 @@
 		031300F21DD9126400381716 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		031300F41DD9127800381716 /* TaskMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapViewController.swift; sourceTree = "<group>"; };
 		031300F61DD912A600381716 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		031300F81DD917DE00381716 /* MessageDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageDetail.storyboard; sourceTree = "<group>"; };
+		031300FA1DD9181200381716 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		031300FC1DD9194200381716 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		031300FE1DD9196100381716 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		0340513A1DD4295D005F6B82 /* Assist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0340513D1DD4295D005F6B82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034051421DD4295D005F6B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +130,8 @@
 				034051411DD4295D005F6B82 /* Main.storyboard */,
 				034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */,
 				034051461DD4295D005F6B82 /* LaunchScreen.storyboard */,
+				031300F81DD917DE00381716 /* MessageDetail.storyboard */,
+				031300FA1DD9181200381716 /* Settings.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -199,6 +209,8 @@
 				031300F21DD9126400381716 /* TaskListViewController.swift */,
 				031300F41DD9127800381716 /* TaskMapViewController.swift */,
 				031300F61DD912A600381716 /* TasksViewController.swift */,
+				031300FC1DD9194200381716 /* SettingsViewController.swift */,
+				031300FE1DD9196100381716 /* MessageDetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -370,8 +382,10 @@
 				034051481DD4295D005F6B82 /* LaunchScreen.storyboard in Resources */,
 				031300F01DD9108C00381716 /* TaskManager.storyboard in Resources */,
 				034051451DD4295D005F6B82 /* Assets.xcassets in Resources */,
+				031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */,
 				034051431DD4295D005F6B82 /* Main.storyboard in Resources */,
 				034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */,
+				031300FB1DD9181200381716 /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +535,7 @@
 			files = (
 				034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */,
 				031300F31DD9126400381716 /* TaskListViewController.swift in Sources */,
+				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
@@ -528,6 +543,7 @@
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
+				031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
 				034051771DD43583005F6B82 /* Task.swift in Sources */,
 				031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */,

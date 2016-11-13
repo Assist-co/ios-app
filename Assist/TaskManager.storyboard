@@ -27,7 +27,7 @@
         <!--Tasks-->
         <scene sceneID="Ebw-dh-voU">
             <objects>
-                <viewController id="Byl-nt-BTx" sceneMemberID="viewController">
+                <viewController id="Byl-nt-BTx" customClass="TasksViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R5p-WP-Pr6"/>
                         <viewControllerLayoutGuide type="bottom" id="j2o-54-EVV"/>
