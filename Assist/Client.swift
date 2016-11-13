@@ -10,6 +10,10 @@ import UIKit
 
 class Client: NSObject {
     
+    // TODO: Replace calls to this with real current client id. 
+    // This is only for testing Sendbird messaging.
+    static var current_id:String = "testclient"
+    
     var id: String?
     var phone: String?
     var firstName: String?

@@ -35,6 +35,8 @@
 		034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */; };
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
+		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
+		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D45573201DD92C500000B938 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +213,7 @@
 		034051721DD42E68005F6B82 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D455731E1DD92C350000B938 /* HomeViewController.swift */,
 				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
 				031300F21DD9126400381716 /* TaskListViewController.swift */,
 				031300F41DD9127800381716 /* TaskMapViewController.swift */,
@@ -234,6 +239,7 @@
 		0340517C1DD43670005F6B82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D45573201DD92C500000B938 /* MessageTableViewCell.swift */,
 				0340517A1DD4366A005F6B82 /* TaskTableViewCell.swift */,
 			);
 			name = Views;
@@ -543,7 +549,9 @@
 				031300F31DD9126400381716 /* TaskListViewController.swift in Sources */,
 				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
+				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
+				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,

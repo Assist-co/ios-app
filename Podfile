@@ -7,6 +7,8 @@ target 'Assist' do
 
   # Pods for Assist
   pod 'Alamofire', '~> 4.0'
+  pod 'SendBirdSDK'
+  pod 'MBProgressHUD'
 
   target 'AssistTests' do
     inherit! :search_paths
