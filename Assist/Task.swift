@@ -18,14 +18,15 @@ class Task: NSObject {
     var completedOn: Date?
     var client: Client?
     var assistant: Assistant?
+    var isComplete: Bool? = false
     override var description: String{
         return "Task: \(self.id!)"
     }
-
     
     init(dictionary: NSDictionary) {
         self.id = dictionary["id"] as? Int
         self.text = dictionary["text"] as? String
+        self.isComplete = dictionary["is_complete"] as? Bool
         if let createdOnString = dictionary["created_on"] as? String{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
