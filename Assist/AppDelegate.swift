@@ -16,6 +16,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Call API Routes for testing and validation
+        
+//        AssistClient.sharedInstance.signUpClient(signUpDict: [:]) {
+//            (response: Dictionary<String, AnyObject>?, error: Error?) in
+//            
+//        }
+//        
+//        AssistClient.sharedInstance.loginClient(
+//        email: "jappleseed@apple.com",
+//        password: "testing") { (response: Dictionary<String, AnyObject>?, error: Error?) in
+//            print(response!)
+//        }
+//        
+//        AssistClient.sharedInstance.fetchGenders { (genders: [Gender]?, error: Error?) in
+//            print(genders!)
+//        }
+//        
+//        AssistClient.sharedInstance.fetchProfessions { (professions: [Profession]?, error: Error?) in
+//            print(professions!)
+//        }
+//        
+//        AssistClient.sharedInstance.fetchAssistantTaskTypes { (types: [AssistantTaskType]?, error: Error?) in
+//            print(types!)
+//        }
+//        AssistClient.sharedInstance.fetchClient(clientID: 2) { (client: Client?, error: Error?) in
+//            print(client!)
+//        }
+
         return true
     }
 

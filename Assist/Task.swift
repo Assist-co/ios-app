@@ -30,8 +30,17 @@ class Task: NSObject {
     var clientID: String?
     var assistantID: String?
     
-    init(taskDict: NSDictionary) {
-        super.init()
-        // TODO
+    init(dictionary: NSDictionary) {
+        self.id = dictionary["id"] as? String
     }
+    
+    class func professions(array: [NSDictionary]) -> [Task]{
+        var tasks = [Task]()
+        for dictionary in array {
+            let task = Task(dictionary: dictionary)
+            tasks.append(task)
+        }
+        return tasks
+    }
+
 }

@@ -25,6 +25,10 @@
 		034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */; };
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
+		85384E651DD9135100C56F22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85384E641DD9135100C56F22 /* Constants.swift */; };
+		85DDED6F1DD9269900D22603 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED6E1DD9269900D22603 /* Gender.swift */; };
+		85DDED711DD926AD00D22603 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED701DD926AD00D22603 /* AssistantTaskType.swift */; };
+		85DDED731DD926C700D22603 /* Profession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED721DD926C700D22603 /* Profession.swift */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,7 +77,11 @@
 		43FC3B4ADE01A71965816EC3 /* Pods-AssistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7D5311A8DEE0F7D2BF0B152C /* Pods-AssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssistTests/Pods-AssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		818BF3C821630FA4A0AC7980 /* Pods-AssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		85384E641DD9135100C56F22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
+		85DDED6E1DD9269900D22603 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
+		85DDED701DD926AD00D22603 /* AssistantTaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantTaskType.swift; sourceTree = "<group>"; };
+		85DDED721DD926C700D22603 /* Profession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profession.swift; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +140,7 @@
 		0340513C1DD4295D005F6B82 /* Assist */ = {
 			isa = PBXGroup;
 			children = (
+				85384E641DD9135100C56F22 /* Constants.swift */,
 				0340517D1DD43842005F6B82 /* Extensions */,
 				0340517C1DD43670005F6B82 /* Views */,
 				034051731DD42E81005F6B82 /* Models */,
@@ -189,6 +198,9 @@
 				034051741DD4356B005F6B82 /* Client.swift */,
 				034051761DD43583005F6B82 /* Task.swift */,
 				034051781DD435B8005F6B82 /* Assistant.swift */,
+				85DDED6E1DD9269900D22603 /* Gender.swift */,
+				85DDED701DD926AD00D22603 /* AssistantTaskType.swift */,
+				85DDED721DD926C700D22603 /* Profession.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -498,12 +510,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85DDED6F1DD9269900D22603 /* Gender.swift in Sources */,
 				034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */,
+				85384E651DD9135100C56F22 /* Constants.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
+				85DDED731DD926C700D22603 /* Profession.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
+				85DDED711DD926AD00D22603 /* AssistantTaskType.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
 				034051771DD43583005F6B82 /* Task.swift in Sources */,
