@@ -32,7 +32,7 @@ class MessagingClient: NSObject, SBDChannelDelegate {
     }
     
     func login(onSuccess: @escaping (() -> Void), onFailure: @escaping ((SBDError) -> Void)) {
-        SBDMain.connect(withUserId: Client.current_id, completionHandler: {
+        SBDMain.connect(withUserId: Client.currentID, completionHandler: {
             (user: SBDUser?, error: SBDError?) -> Void in
             if let user = user {
                 self.currentUser = user

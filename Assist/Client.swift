@@ -28,6 +28,9 @@ class Client: NSObject {
     var createdOn: Date!
     var profilePicURL: URL?
     
+    // for testing messaging api
+    static let currentID:String = "testclient"
+    
     init(dictionary: NSDictionary) {
         self.firstName = dictionary["first_name"] as? String
         self.lastName = dictionary["last_name"] as? String
