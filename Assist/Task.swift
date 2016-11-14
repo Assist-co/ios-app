@@ -9,32 +9,45 @@
 import UIKit
 
 
-enum TaskType {
-    case scheduleMeeting
-    case email
-    case phoneCall
-    case inquiry
-    case purchase
-    case reminder
-}
-
 class Task: NSObject {
     
-    var id: String?
-    var type: TaskType?
+    var id: Int?
+    var type: AssistantTaskType?
     var text: String?
     var createdOn: Date?
-    var deletedOn: Date?
-    var canceledOn: Date?
-    var deadlineOn: Date?
-    var clientID: String?
-    var assistantID: String?
+    var completedOn: Date?
+    var client: Client?
+    var assistant: Assistant?
+    override var description: String{
+        return "Task: \(self.id!)"
+    }
+
     
     init(dictionary: NSDictionary) {
-        self.id = dictionary["id"] as? String
+        self.id = dictionary["id"] as? Int
+        self.text = dictionary["text"] as? String
+        if let createdOnString = dictionary["created_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: createdOnString) as Date?
+        }
+        if let completedOnString = dictionary["completed_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: completedOnString) as Date?
+        }
+        if let clientDict = dictionary["client"] as? NSDictionary{
+            self.client = Client(dictionary: clientDict)
+        }
+        if let assistantDict = dictionary["assistant"] as? NSDictionary{
+            self.assistant = Assistant(dictionary: assistantDict)
+        }
+        if let typeDict = dictionary["task_type"] as? NSDictionary{
+            self.type = AssistantTaskType(dictionary: typeDict)
+        }
     }
     
-    class func professions(array: [NSDictionary]) -> [Task]{
+    class func tasks(array: [NSDictionary]) -> [Task]{
         var tasks = [Task]()
         for dictionary in array {
             let task = Task(dictionary: dictionary)

@@ -181,7 +181,7 @@ class AssistClient: NSObject {
         completion: @escaping (Client?, Error?) -> ()
     ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)",
+            "\(baseURLString!)/clients/\(clientID)",
             method: .patch,
             parameters: clientDict
         ).validate().responseJSON { (response) in
@@ -241,13 +241,13 @@ class AssistClient: NSObject {
     
     func updateAssistant(
         assistantID: Int,
-        clientDict: Dictionary<String, AnyObject>,
+        assistantDict: Dictionary<String, AnyObject>,
         completion: @escaping (Assistant?, Error?) -> ()
         ) {
         Alamofire.request(
-            "\(baseURLString)/assistants/\(assistantID)",
+            "\(baseURLString!)/assistants/\(assistantID)",
             method: .patch,
-            parameters: clientDict
+            parameters: assistantDict
             ).validate().responseJSON { (response) in
                 switch response.result {
                 case .success:
@@ -271,7 +271,7 @@ class AssistClient: NSObject {
         completion: @escaping ([Task]?, Error?) -> ()
     ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)/tasks",
+            "\(baseURLString!)/clients/\(clientID)/tasks",
             method: .get
             ).responseJSON { (response) in
                 switch response.result {
@@ -280,103 +280,102 @@ class AssistClient: NSObject {
                         completion(nil, nil)
                         return
                     }
-//                    completion(Task(dictionary: responseDict as NSDictionary), nil)
+                    completion(Task.tasks(array: responseDict["results"] as! Array), nil)
                 case .failure(let error):
                     completion(nil, error)
                 }
         }
     }
-
-    func getTask(
-        taskID: String,
-        clientID: String,
-        success: @escaping (Task) -> (),
-        failure: @escaping (Error) -> ()
-    ) {
+    
+    func fetchTaskForID(
+        clientID: Int,
+        taskID: Int,
+        completion: @escaping (Task?, Error?) -> ()
+        ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)tasks/\(taskID)",
+            "\(baseURLString!)/clients/\(clientID)/tasks\(taskID)",
             method: .get
-        ).validate().responseJSON { (response: DataResponse<Any>) in
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+            ).responseJSON { (response) in
+                switch response.result {
+                case .success:
+                    guard let responseDict = response.result.value as? [String: AnyObject] else{
+                        completion(nil, nil)
+                        return
+                    }
+                    completion(Task(dictionary: responseDict as NSDictionary), nil)
+                case .failure(let error):
+                    completion(nil, error)
                 }
-            case .failure(let error):
-                failure(error)
-            }
         }
     }
-
+    
     func createTask(
         clientID: String,
-        taskDict: Dictionary<String, String>,
-        success: @escaping (Task) -> (),
-        failure: @escaping (Error) -> ()
+        taskDict: Dictionary<String, AnyObject>,
+        completion: @escaping (Task?, Error?) -> ()
     ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)/tasks",
+            "\(baseURLString!)/tasks",
             method: .post,
             parameters: taskDict
         ).validate().responseJSON(
-            completionHandler: { (response: DataResponse<Any>) in
+            completionHandler: { (response) in
                 switch response.result {
                 case .success:
-                    print("Validation Successful")
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
+                    guard let responseDict = response.result.value as? [String: AnyObject] else{
+                        completion(nil, nil)
+                        return
                     }
+                    completion(Task(dictionary: responseDict as NSDictionary), nil)
                 case .failure(let error):
-                    failure(error)
+                    completion(nil, error)
                 }
             }
         )
     }
-
+    
     func updateTask(
-        taskID: String,
-        clientID: String,
-        taskDict: Dictionary<String,String>,
-        success: @escaping (Task) -> (),
-        failure: @escaping (Error) -> ()
-    ) {
+        taskID: Int,
+        taskDict: Dictionary<String, AnyObject>,
+        completion: @escaping (Task?, Error?) -> ()
+        ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)/tasks/\(taskID)",
+            "\(baseURLString!)/tasks/\(taskID)",
             method: .patch,
             parameters: taskDict
-        ).validate().responseJSON { (response: DataResponse<Any>) in
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
-            case .failure(let error):
-                failure(error)
+            ).validate().responseJSON(
+                completionHandler: { (response) in
+                    switch response.result {
+                    case .success:
+                        guard let responseDict = response.result.value as? [String: AnyObject] else{
+                            completion(nil, nil)
+                            return
+                        }
+                        completion(Task(dictionary: responseDict as NSDictionary), nil)
+                    case .failure(let error):
+                        completion(nil, error)
+                    }
             }
-        }
+        )
     }
 
     func deleteTask(
-        clientID: String,
-        taskID: String,
-        success: @escaping () -> (),
-        failure: @escaping (Error) -> ()
-    ) {
+        taskID: Int,
+        completion: @escaping (Bool, Error?) -> ()
+        ) {
         Alamofire.request(
-            "\(baseURLString)/clients/\(clientID)/tasks\(taskID)",
+            "\(baseURLString!)/tasks/\(taskID)",
             method: .delete
-        ).validate().responseJSON { (response: DataResponse<Any>) in
-            switch response.result {
-            case .success:
-                print("Validation Successful")
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
-            case .failure(let error):
-                failure(error)
+            ).validate().responseJSON(
+                completionHandler: { (response) in
+                    switch response.result {
+                    case .success:
+                        completion(true,nil)
+                    case .failure(let error):
+                        completion(false, error)
+                    }
             }
-        }
+        )
     }
+
 }

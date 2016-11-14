@@ -25,6 +25,7 @@ class Client: NSObject {
     var gender: Gender?
     var primaryAssistant: Assistant?
     var dateOfBirth: Date!
+    var createdOn: Date!
     var profilePicURL: URL?
     
     init(dictionary: NSDictionary) {
@@ -36,7 +37,7 @@ class Client: NSObject {
         
         if let dateOfBirthString = dictionary["date_of_birth"] as? String{
             let formatter = DateFormatter()
-            formatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
+            formatter.dateFormat = "yyyy-MM-dd"
             self.dateOfBirth = formatter.date(from: dateOfBirthString) as Date?
         }
         
@@ -49,7 +50,11 @@ class Client: NSObject {
         if let assistantDict = dictionary["primary_assistant"] as? NSDictionary{
             self.primaryAssistant = Assistant(dictionary: assistantDict)
         }
-
+        if let createdOnString = dictionary["created_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: createdOnString) as Date?
+        }
         
     }
 }
