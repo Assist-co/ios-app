@@ -1,5 +1,5 @@
 //
-//  SignInViewController.swift
+//  MeetAssistantViewController.swift
 //  Assist
 //
 //  Created by Bryce Aebi on 11/13/16.
@@ -8,11 +8,9 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+class MeetAssistantViewController: UIViewController {
 
-    @IBAction func onSignIn(_ sender: AnyObject) {
+    @IBAction func buttonPress(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
         present(homeNavigationController, animated: true, completion: nil)

@@ -17,6 +17,8 @@
 		031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300FE1DD9196100381716 /* MessageDetailViewController.swift */; };
 		031301011DD9289400381716 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301001DD9289400381716 /* SignInViewController.swift */; };
 		031301031DD9289F00381716 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301021DD9289F00381716 /* SignUpViewController.swift */; };
+		031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */; };
+		031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301061DD9369000381716 /* MeetAssistantViewController.swift */; };
 		0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340513D1DD4295D005F6B82 /* AppDelegate.swift */; };
 		034051431DD4295D005F6B82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051411DD4295D005F6B82 /* Main.storyboard */; };
 		034051451DD4295D005F6B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034051441DD4295D005F6B82 /* Assets.xcassets */; };
@@ -68,6 +70,8 @@
 		031300FE1DD9196100381716 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		031301001DD9289400381716 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		031301021DD9289F00381716 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMoreDetailsViewController.swift; sourceTree = "<group>"; };
+		031301061DD9369000381716 /* MeetAssistantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetAssistantViewController.swift; sourceTree = "<group>"; };
 		0340513A1DD4295D005F6B82 /* Assist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0340513D1DD4295D005F6B82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		034051421DD4295D005F6B82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				031300FE1DD9196100381716 /* MessageDetailViewController.swift */,
 				031301001DD9289400381716 /* SignInViewController.swift */,
 				031301021DD9289F00381716 /* SignUpViewController.swift */,
+				031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */,
+				031301061DD9369000381716 /* MeetAssistantViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -551,8 +557,10 @@
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
+				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
+				031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
