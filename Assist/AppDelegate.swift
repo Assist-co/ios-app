@@ -16,6 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // *************** Sample usage of API *************** \\
+        
+//        AuthService.signUpClient(
+//        signUpDict: [
+//            "email": "cketant@apple.com" as AnyObject, "password": "testing" as AnyObject, "first_name": "johnny" as AnyObject,
+//            "last_name": "appleseed" as AnyObject, "phone": "+17182330403" as AnyObject, "profession": "engineer" as AnyObject,
+//            "gender": "male" as AnyObject, "date_of_birth": "1991-04-25" as AnyObject]
+//        ) {
+//            (response: Dictionary<String, AnyObject>?, error: Error?) in
+//            print(response!)
+//        }
+//        AuthService.loginClient(
+//        email: "jappleseed@apple.com",
+//        password: "testing") { (response: Dictionary<String, AnyObject>?, error: Error?) in
+//            print(response!)
+//        }
+//        OptionService.fetchGenders { (genders: [Gender]?, error: Error?) in
+//            print(genders!)
+//        }
+//        OptionService.fetchProfessions { (professions: [Profession]?, error: Error?) in
+//            print(professions!)
+//        }
+//        OptionService.fetchAssistantTaskTypes { (types: [AssistantTaskType]?, error: Error?) in
+//            print(types!)
+//        }
+//        ClientService.fetchClient(clientID: 2) { (client: Client?, error: Error?) in
+//            print(client!)
+//        }
+//        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
+//            print(tasks!)
+//        }
         return true
     }
 

@@ -10,36 +10,51 @@ import UIKit
 
 class Client: NSObject {
     
-    // TODO: Replace calls to this with real current client id. 
-    // This is only for testing Sendbird messaging.
-    static var current_id:String = "testclient"
-    
-    var id: String?
-    var phone: String?
-    var firstName: String?
-    var lastName: String?
-    var email: String?
-    var isActive: Bool?
-    var createdOn: Date?
-    var updatedOn: Date?
-    var gender: String?
-    var primaryAssistantID: String?
+    var id: String!
+    var firstName: String!
+    var lastName: String!
+    var password: String!
+    var email: String!
+    var phone: String!
+    override var description: String{
+        return "Client: \(self.firstName!) \(self.lastName!)"
+    }
+
+    var profession: Profession?
+    var isActive: Bool? = true
+    var gender: Gender?
+    var primaryAssistant: Assistant?
+    var dateOfBirth: Date!
+    var createdOn: Date!
     var profilePicURL: URL?
-    var dateOfBirth: Date?
-    var profession: String?
     
-    init(clientDict: NSDictionary) {
-        self.id = clientDict["id"] as? String
-        self.phone = clientDict["phone"] as? String
-        self.firstName = clientDict["first_name"] as? String
-        self.lastName = clientDict["last_name"] as? String
-        self.email = clientDict["email"] as? String
-        self.primaryAssistantID = clientDict["primary_assistant_id"] as? String
-        // self.profilePicURL = clientDict["profile_pic"] as? URL
-        self.gender = clientDict["gender"] as? String
-        // self.createdOn = clientDict["created_on"] as? Date
-        // self.updatedOn = clientDict["updated_on"] as? Date
-        self.profession = clientDict["profession"] as? String
-        // self.dateOfBirth = clientDict["date_of_birth"] as? Date
+    init(dictionary: NSDictionary) {
+        self.firstName = dictionary["first_name"] as? String
+        self.lastName = dictionary["last_name"] as? String
+        self.email = dictionary["email"] as? String
+        self.password = dictionary["password"] as? String
+        self.phone = dictionary["phone"] as? String
+        
+        if let dateOfBirthString = dictionary["date_of_birth"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+            self.dateOfBirth = formatter.date(from: dateOfBirthString) as Date?
+        }
+        
+        if let professionDict = dictionary["profession"] as? NSDictionary{
+            self.profession = Profession(dictionary: professionDict)
+        }
+        if let genderDict = dictionary["gender"] as? NSDictionary{
+            self.gender = Gender(dictionary: genderDict)
+        }
+        if let assistantDict = dictionary["primary_assistant"] as? NSDictionary{
+            self.primaryAssistant = Assistant(dictionary: assistantDict)
+        }
+        if let createdOnString = dictionary["created_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: createdOnString) as Date?
+        }
+        
     }
 }

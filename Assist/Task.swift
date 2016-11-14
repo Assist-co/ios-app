@@ -9,42 +9,52 @@
 import UIKit
 
 
-enum TaskType {
-    case scheduleMeeting
-    case email
-    case phoneCall
-    case inquiry
-    case purchase
-    case reminder
-}
-
-
 class Task: NSObject {
     
-    var id: String?
-    var clientID: String?
-    var assistantID: String?
-    var taskType: TaskType?
+    var id: Int?
+    var type: AssistantTaskType?
     var text: String?
     var createdOn: Date?
-    var deletedOn: Date?
-    var isArchived: Bool?
     var completedOn: Date?
-    var updatedOn: Date?
-    // var deadlineOn: Date?
-    
-    init(taskDict: NSDictionary) {
-        super.init()
-        
-        self.id = taskDict["id"] as? String
-        self.clientID = (taskDict["client"] as? NSDictionary)?["client_id"] as? String
-        self.assistantID = (taskDict["assistant"] as? NSDictionary)?["assistant_id"] as? String
-        self.text = taskDict["text"] as? String
-        // self.taskType = (taskDict["task_type"] as? NSDictionary)?["text"]
-        // self.createdOn = taskDict["created_on"] as? Date
-        // self.updatedOn = taskDict["updated_on"] as? Date
-        // self.completedOn = taskDict["completed_on"] as? Date
-        self.isArchived = taskDict["is_archived"] as? Bool
-        
+    var client: Client?
+    var assistant: Assistant?
+    var isComplete: Bool? = false
+    override var description: String{
+        return "Task: \(self.id!)"
     }
+    
+    init(dictionary: NSDictionary) {
+        self.id = dictionary["id"] as? Int
+        self.text = dictionary["text"] as? String
+        self.isComplete = dictionary["is_complete"] as? Bool
+        if let createdOnString = dictionary["created_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: createdOnString) as Date?
+        }
+        if let completedOnString = dictionary["completed_on"] as? String{
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+            self.createdOn = formatter.date(from: completedOnString) as Date?
+        }
+        if let clientDict = dictionary["client"] as? NSDictionary{
+            self.client = Client(dictionary: clientDict)
+        }
+        if let assistantDict = dictionary["assistant"] as? NSDictionary{
+            self.assistant = Assistant(dictionary: assistantDict)
+        }
+        if let typeDict = dictionary["task_type"] as? NSDictionary{
+            self.type = AssistantTaskType(dictionary: typeDict)
+        }
+    }
+    
+    class func tasks(array: [NSDictionary]) -> [Task]{
+        var tasks = [Task]()
+        for dictionary in array {
+            let task = Task(dictionary: dictionary)
+            tasks.append(task)
+        }
+        return tasks
+    }
+
 }
