@@ -12,20 +12,29 @@ import SendBirdSDK
 class MessageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    
     @IBOutlet weak var timestampLabel: UILabel!
     
-    var message: SBDUserMessage?
+    var message: SBDUserMessage? {
+        didSet {
+            populateMessage()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        populateMessage()
     }
     
     private func populateMessage() {
         authorLabel.text = message?.sender?.nickname
-        messageLabel.text = message?.message
-        timestampLabel.text = String(describing: message?.createdAt)
+        bodyLabel.text = message?.message
+        if let timestamp = message?.createdAt {
+            timestampLabel.isHidden = false
+            timestampLabel.text = String(describing: timestamp)
+        } else {
+            timestampLabel.isHidden = true
+        }
     }
 
 }

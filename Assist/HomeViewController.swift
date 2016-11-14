@@ -53,6 +53,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     private func setupTableView() {
         messagesTableView.dataSource = self
+        messagesTableView.estimatedRowHeight = 80
+        messagesTableView.rowHeight = UITableViewAutomaticDimension
         messagesTableView.separatorInset = UIEdgeInsets.zero
         messagesTableView.tableFooterView = UIView()
     }
@@ -67,6 +69,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         NotificationCenter.default.addObserver(forName: populateEndNotification, object: nil, queue: OperationQueue.main, using: {
             (notification: Notification) -> Void in
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.messagesTableView.reloadData()
         })
     }
     
@@ -87,7 +90,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         MessagingClient.sharedInstance.getMessages(onMessagesReceived: {
             (messages: [SBDUserMessage]) -> Void in
             self.messages = messages
-            self.messagesTableView.reloadData()
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         })
     }

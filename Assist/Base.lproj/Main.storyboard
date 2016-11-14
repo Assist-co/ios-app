@@ -22,8 +22,8 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aOV-Dj-fEW">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="jpO-fT-RW9" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" rowHeight="80" id="jpO-fT-RW9" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpO-fT-RW9" id="0E5-DT-ECM">
                                             <frame key="frameInset" width="375" height="79"/>
@@ -59,8 +59,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="VgY-Kp-7m2" id="0sC-gg-zjz"/>
-                                            <outlet property="messageLabel" destination="rtz-eg-hk6" id="e74-7S-tnp"/>
-                                            <outlet property="timestampLabel" destination="zMz-Jj-uoj" id="sl9-gO-3WL"/>
+                                            <outlet property="bodyLabel" destination="zMz-Jj-uoj" id="cSu-xI-M0X"/>
+                                            <outlet property="timestampLabel" destination="rtz-eg-hk6" id="Kbh-TY-Gj3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
