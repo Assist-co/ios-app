@@ -1,5 +1,5 @@
 //
-//  AuthService.swift
+//  ClientService.swift
 //  Assist
 //
 //  Created by christopher ketant on 11/13/16.
@@ -7,44 +7,43 @@
 //
 
 import UIKit
-import Alamofire
 
-class AuthService: NSObject {
-    
+class ClientService: NSObject {
+
     private static var baseURLString: String! {
         return Constants.devURLString
     }
-
-    // Response is Token Object
-    class func signUpClient(
-        signUpDict: Dictionary<String, AnyObject>,
-        completion: @escaping (Dictionary<String, AnyObject>?, Error?) -> ()) {
-        
+    
+    class func fetchClient(
+        clientID: Int,
+        completion: @escaping (Client?, Error?) -> ()
+        ){
         AssistClient.sharedInstance.session.request(
-            "\(self.baseURLString!)/signup",
-            method: .post,
-            parameters: signUpDict
-            ).validate().responseJSON { (response) in
+            "\(self.baseURLString!)/clients/\(clientID)",
+            method: .get
+            ).responseJSON { (response) in
                 switch response.result {
                 case .success:
-                    completion(response.result.value as? [String : AnyObject], nil)
+                    guard let responseDict = response.result.value as? [String: AnyObject] else{
+                        completion(nil, nil)
+                        return
+                    }
+                    completion(Client(dictionary: responseDict as NSDictionary), nil)
                 case .failure(let error):
                     completion(nil, error)
                 }
         }
     }
     
-    // Response is Token Object
-    class func loginClient(
-        email: String?,
-        password: String?,
-        completion: @escaping (Dictionary<String, AnyObject>?, Error?) -> ()
+    class func updateClient(
+        clientID: Int,
+        clientDict: Dictionary<String, AnyObject>,
+        completion: @escaping (Client?, Error?) -> ()
         ) {
-        
         AssistClient.sharedInstance.session.request(
-            "\(self.baseURLString!)/login",
-            method: .post,
-            parameters: ["email": "\(email!)", "password": "\(password!)"]
+            "\(baseURLString!)/clients/\(clientID)",
+            method: .patch,
+            parameters: clientDict
             ).validate().responseJSON { (response) in
                 switch response.result {
                 case .success:
@@ -52,22 +51,21 @@ class AuthService: NSObject {
                         completion(nil, nil)
                         return
                     }
-                    completion(responseDict, nil)
+                    completion(Client(dictionary: responseDict as NSDictionary), nil)
                 case .failure(let error):
                     completion(nil, error)
                 }
         }
     }
     
-    // Response is success object
-    class func logoutClient(
+    class func deleteClient(
+        clientID: Int,
         completion: @escaping (Bool, Error?) -> ()
-        ) {
-        
+        ){
         AssistClient.sharedInstance.session.request(
-            "\(self.baseURLString!)/logout",
+            "\(self.baseURLString!)/clients/\(clientID)",
             method: .delete
-            ).validate().responseJSON { (response) in
+            ).responseJSON { (response) in
                 switch response.result {
                 case .success:
                     completion(true, nil)
@@ -76,4 +74,5 @@ class AuthService: NSObject {
                 }
         }
     }
+    
 }

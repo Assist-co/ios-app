@@ -26,8 +26,11 @@
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
 		85384E651DD9135100C56F22 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85384E641DD9135100C56F22 /* Constants.swift */; };
+		856EFEB21DD97A8E0097A9E6 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EFEB11DD97A8E0097A9E6 /* ClientService.swift */; };
+		856EFEB41DD97ADE0097A9E6 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EFEB31DD97ADE0097A9E6 /* TaskService.swift */; };
+		856EFEB61DD97C3B0097A9E6 /* OptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EFEB51DD97C3B0097A9E6 /* OptionService.swift */; };
+		856EFEB81DD97CF10097A9E6 /* AssistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856EFEB71DD97CF10097A9E6 /* AssistantService.swift */; };
 		859FBAC91DD96EB300E49AA4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859FBAC81DD96EB300E49AA4 /* AuthService.swift */; };
-		859FBACB1DD9715800E49AA4 /* AssistCoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859FBACA1DD9715800E49AA4 /* AssistCoClient.swift */; };
 		85DDED6F1DD9269900D22603 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED6E1DD9269900D22603 /* Gender.swift */; };
 		85DDED711DD926AD00D22603 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED701DD926AD00D22603 /* AssistantTaskType.swift */; };
 		85DDED731DD926C700D22603 /* Profession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85DDED721DD926C700D22603 /* Profession.swift */; };
@@ -81,8 +84,11 @@
 		818BF3C821630FA4A0AC7980 /* Pods-AssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		85384E641DD9135100C56F22 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
+		856EFEB11DD97A8E0097A9E6 /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientService.swift; path = API/AssistCo/ClientService.swift; sourceTree = "<group>"; };
+		856EFEB31DD97ADE0097A9E6 /* TaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskService.swift; path = API/AssistCo/TaskService.swift; sourceTree = "<group>"; };
+		856EFEB51DD97C3B0097A9E6 /* OptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionService.swift; path = API/AssistCo/OptionService.swift; sourceTree = "<group>"; };
+		856EFEB71DD97CF10097A9E6 /* AssistantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssistantService.swift; path = API/AssistCo/AssistantService.swift; sourceTree = "<group>"; };
 		859FBAC81DD96EB300E49AA4 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = API/AssistCo/AuthService.swift; sourceTree = "<group>"; };
-		859FBACA1DD9715800E49AA4 /* AssistCoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssistCoClient.swift; path = API/AssistCo/AssistCoClient.swift; sourceTree = "<group>"; };
 		85DDED6E1DD9269900D22603 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		85DDED701DD926AD00D22603 /* AssistantTaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantTaskType.swift; sourceTree = "<group>"; };
 		85DDED721DD926C700D22603 /* Profession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profession.swift; sourceTree = "<group>"; };
@@ -253,7 +259,10 @@
 			children = (
 				0340516C1DD429E8005F6B82 /* AssistClient.swift */,
 				859FBAC81DD96EB300E49AA4 /* AuthService.swift */,
-				859FBACA1DD9715800E49AA4 /* AssistCoClient.swift */,
+				856EFEB11DD97A8E0097A9E6 /* ClientService.swift */,
+				856EFEB31DD97ADE0097A9E6 /* TaskService.swift */,
+				856EFEB51DD97C3B0097A9E6 /* OptionService.swift */,
+				856EFEB71DD97CF10097A9E6 /* AssistantService.swift */,
 			);
 			name = AssistCo;
 			sourceTree = "<group>";
@@ -529,16 +538,19 @@
 				85384E651DD9135100C56F22 /* Constants.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
+				856EFEB61DD97C3B0097A9E6 /* OptionService.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
 				85DDED731DD926C700D22603 /* Profession.swift in Sources */,
-				859FBACB1DD9715800E49AA4 /* AssistCoClient.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
 				85DDED711DD926AD00D22603 /* AssistantTaskType.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
+				856EFEB81DD97CF10097A9E6 /* AssistantService.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
+				856EFEB41DD97ADE0097A9E6 /* TaskService.swift in Sources */,
 				859FBAC91DD96EB300E49AA4 /* AuthService.swift in Sources */,
 				034051771DD43583005F6B82 /* Task.swift in Sources */,
+				856EFEB21DD97A8E0097A9E6 /* ClientService.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

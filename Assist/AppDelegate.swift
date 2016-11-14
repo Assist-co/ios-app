@@ -19,30 +19,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Call API Routes for testing and validation
         
-        AssistClient.sharedInstance.signUpClient(signUpDict: [:]) {
+        AuthService.signUpClient(signUpDict: [:]) {
             (response: Dictionary<String, AnyObject>?, error: Error?) in
             
         }
         
-        AssistClient.sharedInstance.loginClient(
+        AuthService.loginClient(
         email: "jappleseed@apple.com",
         password: "testing") { (response: Dictionary<String, AnyObject>?, error: Error?) in
             print(response!)
         }
-        AssistClient.sharedInstance.fetchGenders { (genders: [Gender]?, error: Error?) in
+        OptionService.fetchGenders { (genders: [Gender]?, error: Error?) in
             print(genders!)
         }
-        AssistClient.sharedInstance.fetchProfessions { (professions: [Profession]?, error: Error?) in
+        OptionService.fetchProfessions { (professions: [Profession]?, error: Error?) in
             print(professions!)
         }
         
-        AssistClient.sharedInstance.fetchAssistantTaskTypes { (types: [AssistantTaskType]?, error: Error?) in
+        OptionService.fetchAssistantTaskTypes { (types: [AssistantTaskType]?, error: Error?) in
             print(types!)
         }
-        AssistClient.sharedInstance.fetchClient(clientID: 2) { (client: Client?, error: Error?) in
+        ClientService.fetchClient(clientID: 2) { (client: Client?, error: Error?) in
             print(client!)
         }
-        AssistClient.sharedInstance.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
+        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
             print(tasks!)
         }
 
