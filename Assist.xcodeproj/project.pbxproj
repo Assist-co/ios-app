@@ -35,6 +35,11 @@
 		0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340517E1DD43855005F6B82 /* UIColorExtension.swift */; };
 		034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034051801DD4425B005F6B82 /* TaskTableViewController.swift */; };
 		034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */; };
+		034F54371DDAD9E10080F599 /* AssistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54321DDAD9E10080F599 /* AssistantService.swift */; };
+		034F54381DDAD9E10080F599 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54331DDAD9E10080F599 /* AuthService.swift */; };
+		034F54391DDAD9E10080F599 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54341DDAD9E10080F599 /* ClientService.swift */; };
+		034F543A1DDAD9E10080F599 /* OptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54351DDAD9E10080F599 /* OptionService.swift */; };
+		034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54361DDAD9E10080F599 /* TaskService.swift */; };
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
 		859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */; };
@@ -98,6 +103,11 @@
 		0340517E1DD43855005F6B82 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		034051801DD4425B005F6B82 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingFlow.storyboard; sourceTree = "<group>"; };
+		034F54321DDAD9E10080F599 /* AssistantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssistantService.swift; path = API/AssistCo/AssistantService.swift; sourceTree = "<group>"; };
+		034F54331DDAD9E10080F599 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = API/AssistCo/AuthService.swift; sourceTree = "<group>"; };
+		034F54341DDAD9E10080F599 /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientService.swift; path = API/AssistCo/ClientService.swift; sourceTree = "<group>"; };
+		034F54351DDAD9E10080F599 /* OptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionService.swift; path = API/AssistCo/OptionService.swift; sourceTree = "<group>"; };
+		034F54361DDAD9E10080F599 /* TaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskService.swift; path = API/AssistCo/TaskService.swift; sourceTree = "<group>"; };
 		3555853B735386E5EA08CC89 /* Pods_Assist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B894A11EA184502DFE38C7A /* Pods-AssistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssistTests/Pods-AssistTests.release.xcconfig"; sourceTree = "<group>"; };
 		43FC3B4ADE01A71965816EC3 /* Pods-AssistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +225,11 @@
 		0340516B1DD4298D005F6B82 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				034F54321DDAD9E10080F599 /* AssistantService.swift */,
+				034F54331DDAD9E10080F599 /* AuthService.swift */,
+				034F54341DDAD9E10080F599 /* ClientService.swift */,
+				034F54351DDAD9E10080F599 /* OptionService.swift */,
+				034F54361DDAD9E10080F599 /* TaskService.swift */,
 				0340516C1DD429E8005F6B82 /* AssistClient.swift */,
 				0340516E1DD42A18005F6B82 /* VoiceToTextClient.swift */,
 				034051701DD42A27005F6B82 /* MessagingClient.swift */,
@@ -567,6 +582,8 @@
 				031300F31DD9126400381716 /* TaskListViewController.swift in Sources */,
 				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
+				034F54371DDAD9E10080F599 /* AssistantService.swift in Sources */,
+				034F543A1DDAD9E10080F599 /* OptionService.swift in Sources */,
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
@@ -581,12 +598,15 @@
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
+				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
 				031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
+				034F54381DDAD9E10080F599 /* AuthService.swift in Sources */,
 				031301011DD9289400381716 /* SignInViewController.swift in Sources */,
 				859B55461DDA149C00CBD957 /* Profession.swift in Sources */,
 				034051771DD43583005F6B82 /* Task.swift in Sources */,
 				031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */,
+				034F54391DDAD9E10080F599 /* ClientService.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

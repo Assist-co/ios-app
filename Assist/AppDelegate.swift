@@ -17,24 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "OnboardingFlow", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingFlow")
-        
-        self.window?.rootViewController = initialViewController
+        //if UserDefaults.standard.object(forKey: "userToken") != nil {
+        //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        //    let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+        //    self.window?.rootViewController = initialViewController
+        //} else {
+            let storyboard = UIStoryboard(name: "OnboardingFlow", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "OnboardingFlow")
+            self.window?.rootViewController = initialViewController
+        //}
+
         self.window?.makeKeyAndVisible()
         
         // *************** Sample usage of API *************** \\
         
-//        AuthService.signUpClient(
-//        signUpDict: [
-//            "email": "cketant@apple.com" as AnyObject, "password": "testing" as AnyObject, "first_name": "johnny" as AnyObject,
-//            "last_name": "appleseed" as AnyObject, "phone": "+17182330403" as AnyObject, "profession": "engineer" as AnyObject,
-//            "gender": "male" as AnyObject, "date_of_birth": "1991-04-25" as AnyObject]
-//        ) {
-//            (response: Dictionary<String, AnyObject>?, error: Error?) in
-//            print(response!)
-//        }
+        
+        /*
+        AuthService.signUpClient(
+        signUpDict: [
+            "email": "cketant@apple.com" as AnyObject, "password": "testing" as AnyObject, "first_name": "johnny" as AnyObject,
+            "last_name": "appleseed" as AnyObject, "phone": "+17182330403" as AnyObject, "profession": "engineer" as AnyObject,
+            "gender": "male" as AnyObject, "date_of_birth": "1991-04-25" as AnyObject]
+        ) {
+            (response: Dictionary<String, AnyObject>?, error: Error?) in
+            print(response)
+        }*/
 //        AuthService.loginClient(
 //        email: "jappleseed@apple.com",
 //        password: "testing") { (response: Dictionary<String, AnyObject>?, error: Error?) in
@@ -79,7 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
