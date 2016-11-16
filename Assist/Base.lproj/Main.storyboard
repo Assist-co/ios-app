@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="92" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpO-fT-RW9" id="0E5-DT-ECM">
-                                            <frame key="frameInset" width="375" height="79"/>
+                                            <frame key="frameInset" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgY-Kp-7m2">
@@ -67,40 +67,43 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS5-Hm-9ra">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-aN-rPR">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVm-aN-rPR">
+                                        <color key="backgroundColor" red="0.77353766030000004" green="0.77353766030000004" blue="0.77353766030000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="53" id="qLh-2W-AZl"/>
-                                            <constraint firstAttribute="height" constant="53" id="vXb-qh-RDL"/>
+                                            <constraint firstAttribute="width" constant="60" id="qLh-2W-AZl"/>
+                                            <constraint firstAttribute="height" constant="60" id="vXb-qh-RDL"/>
                                         </constraints>
-                                        <state key="normal" title="Text"/>
                                         <connections>
                                             <action selector="onTextClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ofa-pI-OX6"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-Zq-dMo">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDA-Zq-dMo">
+                                        <color key="backgroundColor" red="0.77353766025641013" green="0.77353766025641013" blue="0.77353766025641013" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="53" id="Hpo-4i-Zn9"/>
-                                            <constraint firstAttribute="width" constant="53" id="RwJ-Qx-JsU"/>
+                                            <constraint firstAttribute="height" constant="60" id="Hpo-4i-Zn9"/>
+                                            <constraint firstAttribute="width" constant="60" id="RwJ-Qx-JsU"/>
                                         </constraints>
-                                        <state key="normal" title="Call"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ1-Ny-h2L">
-                                        <color key="backgroundColor" red="0.54132328340000002" green="0.39187016450000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.3057548913" green="1" blue="0.26092481709999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="3uN-2p-iqV"/>
-                                            <constraint firstAttribute="width" constant="70" id="9Y1-Gr-sx0"/>
+                                            <constraint firstAttribute="height" constant="85" id="3uN-2p-iqV"/>
+                                            <constraint firstAttribute="width" constant="85" id="9Y1-Gr-sx0"/>
                                         </constraints>
-                                        <state key="normal" title="Voice"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="IVm-aN-rPR" secondAttribute="bottom" constant="8" id="5XA-lU-a5X"/>
-                                    <constraint firstAttribute="bottom" secondItem="hJ1-Ny-h2L" secondAttribute="bottom" constant="8" id="EcA-75-g11"/>
-                                    <constraint firstItem="IVm-aN-rPR" firstAttribute="leading" secondItem="bS5-Hm-9ra" secondAttribute="leading" constant="8" id="GfG-1j-AEZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="xDA-Zq-dMo" secondAttribute="bottom" constant="8" id="Iil-Fa-MAL"/>
-                                    <constraint firstAttribute="trailing" secondItem="xDA-Zq-dMo" secondAttribute="trailing" constant="8" id="M4p-bc-7aE"/>
+                                    <constraint firstAttribute="bottom" secondItem="IVm-aN-rPR" secondAttribute="bottom" constant="20" id="5XA-lU-a5X"/>
+                                    <constraint firstAttribute="bottom" secondItem="hJ1-Ny-h2L" secondAttribute="bottom" constant="20" id="EcA-75-g11"/>
+                                    <constraint firstItem="IVm-aN-rPR" firstAttribute="leading" secondItem="bS5-Hm-9ra" secondAttribute="leading" constant="20" id="GfG-1j-AEZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="xDA-Zq-dMo" secondAttribute="bottom" constant="20" id="Iil-Fa-MAL"/>
+                                    <constraint firstAttribute="trailing" secondItem="xDA-Zq-dMo" secondAttribute="trailing" constant="20" id="M4p-bc-7aE"/>
                                     <constraint firstItem="hJ1-Ny-h2L" firstAttribute="centerX" secondItem="bS5-Hm-9ra" secondAttribute="centerX" id="Meo-LK-8xI"/>
                                     <constraint firstAttribute="height" constant="70" id="pth-fk-DLZ"/>
                                 </constraints>
@@ -122,7 +125,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Settings &gt;" id="dj5-qg-bgG"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="callButton" destination="xDA-Zq-dMo" id="qi7-AH-dMQ"/>
+                        <outlet property="callButtonHeight" destination="Hpo-4i-Zn9" id="Jr5-yJ-bOc"/>
                         <outlet property="messagesTableView" destination="aOV-Dj-fEW" id="AC1-CP-xjo"/>
+                        <outlet property="textButton" destination="IVm-aN-rPR" id="nlR-ef-uWu"/>
+                        <outlet property="textButtonHeight" destination="IVm-aN-rPR" id="JJ0-Ev-JwC"/>
+                        <outlet property="voiceButton" destination="hJ1-Ny-h2L" id="XoT-ti-upG"/>
+                        <outlet property="voiceButtonHeight" destination="3uN-2p-iqV" id="GwK-UN-pwO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

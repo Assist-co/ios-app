@@ -18,6 +18,12 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
     
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var voiceButton: UIButton!
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var callButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var voiceButtonHeight: NSLayoutConstraint!
+    @IBOutlet weak var textButtonHeight: UIButton!
     
     /** UIViewController Methods **/
     
@@ -26,6 +32,34 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         setupTableView()
         setupNotifications()
         initMessagingClient()
+        styleButtons()
+    }
+    
+    func styleButtons() {
+        voiceButton.layer.cornerRadius = voiceButtonHeight.constant / 2
+        voiceButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
+        voiceButton.setImage(UIImage(named: "voice_icon"), for: .normal)
+        voiceButton.contentMode = UIViewContentMode.center
+        voiceButton.layer.shadowColor = UIColor.gray.cgColor
+        voiceButton.layer.shadowOpacity = 0.5
+        voiceButton.layer.shadowOffset = CGSize.zero
+        voiceButton.layer.shadowRadius = 5
+        
+        callButton.layer.cornerRadius = callButtonHeight.constant / 2
+        callButton.setImage(UIImage(named: "phone_icon"), for: .normal)
+        callButton.contentMode = UIViewContentMode.center
+        callButton.layer.shadowColor = UIColor.gray.cgColor
+        callButton.layer.shadowOpacity = 0.3
+        callButton.layer.shadowOffset = CGSize.zero
+        callButton.layer.shadowRadius = 5
+        
+        textButton.layer.cornerRadius = callButtonHeight.constant / 2
+        textButton.setImage(UIImage(named: "message_icon"), for: .normal)
+        textButton.contentMode = UIViewContentMode.center
+        textButton.layer.shadowColor = UIColor.gray.cgColor
+        textButton.layer.shadowOpacity = 0.5
+        textButton.layer.shadowOffset = CGSize.zero
+        textButton.layer.shadowRadius = 5
     }
     
     
