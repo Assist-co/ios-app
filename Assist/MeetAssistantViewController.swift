@@ -9,7 +9,9 @@
 import UIKit
 
 class MeetAssistantViewController: UIViewController {
+    @IBOutlet weak var letsGoButton: UIButton!
 
+    @IBOutlet weak var assistantImageView: UIImageView!
     @IBAction func buttonPress(_ sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
@@ -19,7 +21,12 @@ class MeetAssistantViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        assistantImageView.layer.cornerRadius = 20
+        assistantImageView.clipsToBounds = true
+        letsGoButton.layer.cornerRadius = 4
+        letsGoButton.clipsToBounds = true
+        letsGoButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
+
     }
 
     override func didReceiveMemoryWarning() {

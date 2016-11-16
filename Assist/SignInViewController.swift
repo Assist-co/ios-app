@@ -50,8 +50,7 @@ class SignInViewController: UIViewController {
         
         signinButton.layer.cornerRadius = 4
         signinButton.clipsToBounds = true
-
-        // Do any additional setup after loading the view.
+        signinButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
     }
 
     override func didReceiveMemoryWarning() {

@@ -19,8 +19,13 @@ class SignUpViewController: UIViewController {
 
     // Developer cheat to skip login / signup
     @IBAction func didTap(_ sender: AnyObject) {
+        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+        self.present(homeNavigationController, animated: true, completion: nil)
+        */
+        let storyboard = UIStoryboard(name: "OnboardingFlow", bundle: nil)
+        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "MeetAssistantNavigation")
         self.present(homeNavigationController, animated: true, completion: nil)
     }
     
@@ -30,6 +35,8 @@ class SignUpViewController: UIViewController {
         signupButton.layer.cornerRadius = 4
         signupButton.clipsToBounds = true
         //signupButton.backgroundColor = UIColor(hexString: "#B19CD9FF")
+        signupButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
+        
     }
 
     override func didReceiveMemoryWarning() {
