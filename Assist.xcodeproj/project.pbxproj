@@ -241,10 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				D455731E1DD92C350000B938 /* HomeViewController.swift */,
-				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
-				031300F21DD9126400381716 /* TaskListViewController.swift */,
-				031300F41DD9127800381716 /* TaskMapViewController.swift */,
-				031300F61DD912A600381716 /* TasksViewController.swift */,
+				85ED5EAA1DDC199D0073B625 /* Task */,
 				031300FC1DD9194200381716 /* SettingsViewController.swift */,
 				031300FE1DD9196100381716 /* MessageDetailViewController.swift */,
 				031301001DD9289400381716 /* SignInViewController.swift */,
@@ -307,6 +304,17 @@
 				D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85ED5EAA1DDC199D0073B625 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
+				031300F21DD9126400381716 /* TaskListViewController.swift */,
+				031300F41DD9127800381716 /* TaskMapViewController.swift */,
+				031300F61DD912A600381716 /* TasksViewController.swift */,
+			);
+			name = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

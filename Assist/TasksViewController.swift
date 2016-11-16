@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksViewController: UIViewController {
+class TasksViewController: UIViewController, UIScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,14 @@ class TasksViewController: UIViewController {
     }
     
 
+    @IBAction func filterSelected(_ sender: UIButton) {
+        
+    }
+    
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
