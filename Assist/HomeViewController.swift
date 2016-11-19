@@ -33,6 +33,19 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         setupNotifications()
         initMessagingClient()
         styleButtons()
+        addShadowToBar()
+        navigationController?.navigationBar.barTintColor = UIColor.white
+    }
+    
+    func addShadowToBar() {
+        let shadowView = UIView(frame: self.navigationController!.navigationBar.frame)
+        shadowView.backgroundColor = UIColor.white
+        shadowView.layer.masksToBounds = false
+        shadowView.layer.shadowColor = UIColor.lightGray.cgColor
+        shadowView.layer.shadowOpacity = 0.8
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        shadowView.layer.shadowRadius = 2
+        view.addSubview(shadowView)
     }
     
     func styleButtons() {
