@@ -8,14 +8,9 @@
 
 import UIKit
 
-class TaskTableViewCell: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+class TaskTableViewCell: UITableViewCell {
+    @IBOutlet weak var taskTypeLabel: UILabel!
+    @IBOutlet weak var taskTextLabel: UILabel!
+    @IBOutlet weak var completedOnLabel: UILabel!
+    @IBOutlet weak var createdOnLabel: UILabel!
 }

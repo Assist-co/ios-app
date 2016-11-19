@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		031300F01DD9108C00381716 /* TaskManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300EF1DD9108C00381716 /* TaskManager.storyboard */; };
-		031300F31DD9126400381716 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F21DD9126400381716 /* TaskListViewController.swift */; };
+		031300F31DD9126400381716 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F21DD9126400381716 /* TaskListTableViewController.swift */; };
 		031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F41DD9127800381716 /* TaskMapViewController.swift */; };
 		031300F71DD912A600381716 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F61DD912A600381716 /* TasksViewController.swift */; };
 		031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300F81DD917DE00381716 /* MessageDetail.storyboard */; };
@@ -70,7 +70,7 @@
 
 /* Begin PBXFileReference section */
 		031300EF1DD9108C00381716 /* TaskManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskManager.storyboard; sourceTree = "<group>"; };
-		031300F21DD9126400381716 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		031300F21DD9126400381716 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		031300F41DD9127800381716 /* TaskMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapViewController.swift; sourceTree = "<group>"; };
 		031300F61DD912A600381716 /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		031300F81DD917DE00381716 /* MessageDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageDetail.storyboard; sourceTree = "<group>"; };
@@ -241,10 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				D455731E1DD92C350000B938 /* HomeViewController.swift */,
-				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
-				031300F21DD9126400381716 /* TaskListViewController.swift */,
-				031300F41DD9127800381716 /* TaskMapViewController.swift */,
-				031300F61DD912A600381716 /* TasksViewController.swift */,
+				85ED5EAA1DDC199D0073B625 /* Task */,
 				031300FC1DD9194200381716 /* SettingsViewController.swift */,
 				031300FE1DD9196100381716 /* MessageDetailViewController.swift */,
 				031301001DD9289400381716 /* SignInViewController.swift */,
@@ -307,6 +304,17 @@
 				D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85ED5EAA1DDC199D0073B625 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
+				031300F21DD9126400381716 /* TaskListTableViewController.swift */,
+				031300F41DD9127800381716 /* TaskMapViewController.swift */,
+				031300F61DD912A600381716 /* TasksViewController.swift */,
+			);
+			name = Task;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,7 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */,
-				031300F31DD9126400381716 /* TaskListViewController.swift in Sources */,
+				031300F31DD9126400381716 /* TaskListTableViewController.swift in Sources */,
 				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				034F54371DDAD9E10080F599 /* AssistantService.swift in Sources */,

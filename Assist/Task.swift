@@ -8,7 +8,12 @@
 
 import UIKit
 
-
+enum TaskState{
+    case ready
+    case executing
+    case completed
+    case terminated
+}
 class Task: NSObject {
     
     var id: Int?
@@ -19,6 +24,8 @@ class Task: NSObject {
     var client: Client?
     var assistant: Assistant?
     var isComplete: Bool? = false
+    var state: TaskState? = .ready
+    
     override var description: String{
         return "Task: \(self.id!)"
     }
@@ -45,6 +52,20 @@ class Task: NSObject {
         }
         if let typeDict = dictionary["task_type"] as? NSDictionary{
             self.type = AssistantTaskType(dictionary: typeDict)
+        }
+        if let state = dictionary["state"] {
+            switch state as! String {
+            case "ready":
+                self.state = .ready
+            case "executing":
+                self.state = .executing
+            case "completed":
+                self.state = .completed
+            case "terminates":
+                self.state = .terminated
+            default:
+                self.state = .ready
+            }
         }
     }
     
