@@ -35,16 +35,17 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         setupTableView()
         setupNotifications()
         initMessagingClient()
-        styleButtons()
+        styleElements()
         addShadowToBar()
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        
-        messageTextField.autocorrectionType = UITextAutocorrectionType.no
-        messageTextField.borderStyle = UITextBorderStyle.none;
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.hideKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
         self.messageToolbarBottomConstraintInitialValue = 0.0
         enableKeyboardHideOnTap()
     }
@@ -61,11 +62,24 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         return messages?.count ?? 0
     }
 
-    
     /** IBAction Methods **/
     
     @IBAction func onTextClicked(_ sender: UIButton) {
         self.messageTextField.becomeFirstResponder()
+    }
+    
+    @IBAction func onMessageSend(_ sender: AnyObject) {
+        let message = self.messageTextField.text
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
+        let messageDetailVC = vc.childViewControllers[0] as! MessageDetailViewController
+        
+        messageDetailVC.message = message!
+        self.hideKeyboard()
+        
+        self.show(vc, sender: self)
+        self.hideKeyboard()
     }
     
     /** Internal Methods **/
@@ -125,6 +139,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     @objc private func hideKeyboard() {
         self.view.endEditing(true)
+        self.messageToolbar.isHidden = true
+        self.messageTextField.text = ""
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -159,7 +175,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         view.addSubview(shadowView)
     }
     
-    private func styleButtons() {
+    private func styleElements() {
         voiceButton.layer.cornerRadius = voiceButtonHeight.constant / 2
         voiceButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
         voiceButton.setImage(UIImage(named: "voice_icon"), for: .normal)
@@ -184,6 +200,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         textButton.layer.shadowOpacity = 0.5
         textButton.layer.shadowOffset = CGSize.zero
         textButton.layer.shadowRadius = 5
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
+        
+        messageTextField.autocorrectionType = UITextAutocorrectionType.no
+        messageTextField.borderStyle = UITextBorderStyle.none
     }
     
 }

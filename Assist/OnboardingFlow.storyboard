@@ -119,21 +119,10 @@
                                     <action selector="didTap:" destination="8Pk-vI-Thf" eventType="touchUpInside" id="Yq6-Y6-hwb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9S-zm-5ox">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="cj1-BP-jaT"/>
-                                    <constraint firstAttribute="width" constant="62" id="lcN-og-LIY"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="goToMessageDetail:" destination="8Pk-vI-Thf" eventType="touchUpInside" id="lSo-Id-fKX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H9S-zm-5ox" firstAttribute="top" secondItem="GqW-d4-hzN" secondAttribute="top" id="0rU-uU-cF3"/>
                             <constraint firstItem="Igj-sk-f6I" firstAttribute="centerX" secondItem="GqW-d4-hzN" secondAttribute="centerX" id="1Eq-EK-RNd"/>
-                            <constraint firstAttribute="trailing" secondItem="H9S-zm-5ox" secondAttribute="trailing" id="23V-JU-DJF"/>
                             <constraint firstItem="mcc-vK-Pxf" firstAttribute="top" secondItem="Pjc-OP-9Jx" secondAttribute="bottom" id="5sA-Si-cQy"/>
                             <constraint firstItem="Pjc-OP-9Jx" firstAttribute="top" secondItem="GqW-d4-hzN" secondAttribute="top" id="A3f-r2-asO"/>
                             <constraint firstItem="pvf-5m-Pff" firstAttribute="centerX" secondItem="GqW-d4-hzN" secondAttribute="centerX" id="Cyg-EN-evp"/>

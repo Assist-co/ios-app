@@ -19,19 +19,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     // Developer cheat to skip login / signup
     @IBAction func didTap(_ sender: AnyObject) {
-        /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
-        self.present(homeNavigationController, animated: true, completion: nil)
-        */
         let storyboard = UIStoryboard(name: "OnboardingFlow", bundle: nil)
         let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "MeetAssistantNavigation")
-        self.present(homeNavigationController, animated: true, completion: nil)
-    }
-    
-    @IBAction func goToMessageDetail(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "MessageDetail", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation")
         self.present(homeNavigationController, animated: true, completion: nil)
     }
     
@@ -83,7 +72,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Do not add a line break
         return false
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,7 +9,7 @@
         <!--Message-->
         <scene sceneID="plq-Bq-VNM">
             <objects>
-                <viewController id="FFA-EJ-Xic" customClass="MessageDetailViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MessageDetail" id="FFA-EJ-Xic" customClass="MessageDetailViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hZK-jA-zVA"/>
                         <viewControllerLayoutGuide type="bottom" id="P32-G9-2Ac"/>

@@ -80,6 +80,9 @@
                                             <constraint firstAttribute="width" constant="46" id="A8c-JR-nQF"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="onMessageSend:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5dN-Hb-Pvt"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRX-ol-CqF">
                                         <nil key="textColor"/>

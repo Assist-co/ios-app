@@ -27,6 +27,36 @@ class MessageDetailViewController: UIViewController {
     var toolBar: UIToolbar!
     var createTaskBarButton: UIBarButtonItem!
     var sendMessageBarButton: UIBarButtonItem!
+    var message = ""
+    
+    /** UIViewController Methods **/
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        textView.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+
+        self.createTaskBarButton = createTaskButtonBuilder()
+        self.sendMessageBarButton = sendMessageButtonBuilder()
+        
+        styleKeyboardToolbar(barButton: self.sendMessageBarButton)
+        
+        styleElements()
+        
+        textView.text = message
+        textView.becomeFirstResponder()
+    }
+    
+    
+    /** IBAction Methods **/
     
     // Respond to user selecting a tag
     @IBAction func taskTagButtonTap(_ sender: AnyObject) {
@@ -54,13 +84,13 @@ class MessageDetailViewController: UIViewController {
             pressedButton.backgroundColor = UIColor.white
             pressedButton.setTitleColor(UIColor.gray, for:UIControlState.normal)
             pressedButton.layer.borderColor = UIColor.lightGray.cgColor
-            styleKeyboardToolbar(barButton: sendMessageButtonBuilder())
+            styleKeyboardToolbar(barButton: self.sendMessageBarButton)
         } else {
             taskTagSelected = pressedButton
             pressedButton.backgroundColor = UIColor(hexString: "#5cd65c25")
             pressedButton.layer.borderColor = UIColor(hexString: "#29a329FF")?.cgColor
             pressedButton.setTitleColor(UIColor(hexString: "#29a329FF"), for: UIControlState.normal)
-            styleKeyboardToolbar(barButton: createTaskButtonBuilder())
+            styleKeyboardToolbar(barButton: self.createTaskBarButton)
         }
     }
 
@@ -68,19 +98,12 @@ class MessageDetailViewController: UIViewController {
         textView.endEditing(true)
         self.dismiss(animated: true, completion: nil)
     }
+
+    /** Private methods **/
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
+    private func styleElements() {
         toolBar.barStyle = UIBarStyle.default
         
-        styleKeyboardToolbar(barButton: sendMessageButtonBuilder())
-        styleElements()
-        
-        textView.becomeFirstResponder()
-    }
-    
-    func styleElements() {
         self.automaticallyAdjustsScrollViewInsets = false
         textView.layer.cornerRadius = 4
         textView.contentSize = self.textView.bounds.size
@@ -108,39 +131,44 @@ class MessageDetailViewController: UIViewController {
         }
     }
     
-    func sendMessageButtonBuilder() -> UIBarButtonItem {
+    @objc private func sendMessageAction(button: UIButton) {
+        // TODO: Post message to relevant place
+        
+        self.view.endEditing(true)
+        self.dismiss(animated: true)
+    }
+    
+    private func sendMessageButtonBuilder() -> UIBarButtonItem {
         let button =  UIButton(type: .custom)
         button.backgroundColor = UIColor.lightGray
-        //button.addTarget(self, action: Selector("buttonAction"), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 126, height: 31)
         button.layer.cornerRadius = 4
         let label = UILabel(frame: CGRect(x: 3, y: 5, width: 117, height: 20))
-        label.font = UIFont(name: "SanFrancisco", size: 10)
         label.text = "Send Message"
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor =   UIColor.clear
+        button.addTarget(self, action: #selector(sendMessageAction(button:)), for: .touchUpInside)
         button.addSubview(label)
         return UIBarButtonItem(customView: button)
     }
     
-    func createTaskButtonBuilder() -> UIBarButtonItem {
+    private func createTaskButtonBuilder() -> UIBarButtonItem {
         let button =  UIButton(type: .custom)
         button.backgroundColor = UIColor(hexString: "#40bf40FF")
-        //button.addTarget(self, action: Selector("buttonAction"), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 106, height: 31)
         button.layer.cornerRadius = 4
         let label = UILabel(frame: CGRect(x: 3, y: 5, width: 97, height: 20))
-        label.font = UIFont(name: "SanFrancisco", size: 10)
         label.text = "Create Task"
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor =   UIColor.clear
+        button.addTarget(self, action: #selector(sendMessageAction(button:)), for: .touchUpInside)
         button.addSubview(label)
         return UIBarButtonItem(customView: button)
     }
     
-    func styleKeyboardToolbar(barButton: UIBarButtonItem) {
+    private func styleKeyboardToolbar(barButton: UIBarButtonItem) {
         let negativeSpacer = UIBarButtonItem.init(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         negativeSpacer.width = -12;
         
@@ -152,25 +180,5 @@ class MessageDetailViewController: UIViewController {
         toolBar.sizeToFit()
         textView.inputAccessoryView = toolBar
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        textView.setContentOffset(CGPoint.zero, animated: false)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
