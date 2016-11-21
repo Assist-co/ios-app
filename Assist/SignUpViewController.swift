@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var formContainer: UIView!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var errorView: UIView!
 
     // Developer cheat to skip login / signup
     @IBAction func didTap(_ sender: AnyObject) {
@@ -45,12 +46,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
-        
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))        
         view.addGestureRecognizer(tap)
+        
+        errorView.layer.borderWidth = 1
+        errorView.layer.borderColor = UIColor.red.cgColor
+        errorView.layer.cornerRadius = 4
+        errorView.isHidden = true
     }
     
     //Calls this function when the tap is recognized.
@@ -83,7 +85,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             let lastName = lastNameTextField.text
             let email = emailTextField.text
             let phoneNumber = phoneNumberTextField.text
-            return firstName != "" && lastName != "" && email != "" && phoneNumber != ""
+            let shouldSegue = firstName != "" && lastName != "" && email != "" && phoneNumber != ""
+            if !shouldSegue {
+                self.errorView.isHidden = false
+            }
+            
+            return shouldSegue
         }
         return true
     }

@@ -68,6 +68,16 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         self.messageTextField.becomeFirstResponder()
     }
     
+    @IBAction func onPhoneTap(_ sender: AnyObject) {
+        // TODO: replace number with assistant's number
+        let phoneNumber = "1234567890"
+        if let url = URL(string:"tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:]) { (bool: Bool) in
+                print("done call")
+            }
+        }
+    }
+    
     @IBAction func onMessageSend(_ sender: AnyObject) {
         let message = self.messageTextField.text
         

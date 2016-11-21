@@ -125,6 +125,9 @@
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onPhoneTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rnf-4H-hQ9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJ1-Ny-h2L">
                                         <color key="backgroundColor" red="0.3057548913" green="1" blue="0.26092481709999998" alpha="1" colorSpace="calibratedRGB"/>

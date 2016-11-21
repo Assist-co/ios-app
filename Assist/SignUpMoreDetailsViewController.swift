@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SignUpMoreDetailsViewController: UIViewController {
+class SignUpMoreDetailsViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var professionTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordAgainTextField: UITextField!
     @IBOutlet weak var addGoogleContactsButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var errorView: UIView!
     
     var firstName: String!
     var lastName: String!
@@ -26,10 +27,46 @@ class SignUpMoreDetailsViewController: UIViewController {
         signupButton.layer.cornerRadius = 4
         signupButton.clipsToBounds = true
         //signupButton.backgroundColor = UIColor(hexString: "#B19CD9FF")
+        
+        professionTextField.delegate = self
+        professionTextField.tag = 0
+        
+        passwordTextField.delegate = self
+        passwordTextField.tag = 1
+        
+        passwordAgainTextField.delegate = self
+        passwordAgainTextField.tag = 2
+        
+        errorView.layer.borderWidth = 1
+        errorView.layer.borderColor = UIColor.red.cgColor
+        errorView.layer.cornerRadius = 4
+        errorView.isHidden = true
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        // Do not add a line break
+        return false
     }
     
     @IBAction func onSignUpTap(_ sender: AnyObject) {
@@ -38,7 +75,7 @@ class SignUpMoreDetailsViewController: UIViewController {
         let passwordAgain = passwordAgainTextField.text
         
         guard profession != "" && password != "" && passwordAgain != "" && password == passwordAgain else {
-            // TODO: surface appropriate error message to user
+            self.errorView.isHidden = false
             return
         }
         
@@ -59,6 +96,7 @@ class SignUpMoreDetailsViewController: UIViewController {
             (response: Dictionary<String, AnyObject>?, error: Error?) in
             if let error = error {
                 // TODO: raise appropriate error to user
+                self.errorView.isHidden = false
                 print(error.localizedDescription)
             }
             if let response = response {
