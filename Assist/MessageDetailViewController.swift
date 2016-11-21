@@ -131,9 +131,22 @@ class MessageDetailViewController: UIViewController {
         }
     }
     
+    @objc private func createTaskAction(button: UIButton) {
+        // TODO: use correct values for createTask
+        TaskService.createTask(clientID: "1", taskDict: [:]) { (task: Task?, error: Error?) in
+            if let error = error {
+                // TODO: show client appropriate error
+                print(error.localizedDescription)
+            } else {
+                // TODO: Post message to messaging api
+                self.view.endEditing(true)
+                self.dismiss(animated: true)
+            }
+        }
+    }
+
     @objc private func sendMessageAction(button: UIButton) {
-        // TODO: Post message to relevant place
-        
+        // TODO: Post message to messaging api
         self.view.endEditing(true)
         self.dismiss(animated: true)
     }
@@ -163,7 +176,7 @@ class MessageDetailViewController: UIViewController {
         label.textAlignment = .center
         label.textColor = UIColor.white
         label.backgroundColor =   UIColor.clear
-        button.addTarget(self, action: #selector(sendMessageAction(button:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createTaskAction(button:)), for: .touchUpInside)
         button.addSubview(label)
         return UIBarButtonItem(customView: button)
     }
