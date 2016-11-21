@@ -28,6 +28,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
     
+    
     /** UIViewController Methods **/
     
     override func viewDidLoad() {
@@ -50,6 +51,19 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         enableKeyboardHideOnTap()
     }
     
+    func showMessageView(message: String?) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
+        let messageDetailVC = vc.childViewControllers[0] as! MessageDetailViewController
+        
+        messageDetailVC.message = message!
+        self.hideKeyboard()
+        
+        self.show(vc, sender: self)
+        self.hideKeyboard()
+    }
+    
+    
     /** UITableViewDelegate Methods **/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,7 +78,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages?.count ?? 0
     }
-
+    
+    
     /** IBAction Methods **/
     
     @IBAction func onTextClicked(_ sender: UIButton) {
@@ -84,15 +99,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     @IBAction func onMessageSend(_ sender: AnyObject) {
         let message = self.messageTextField.text
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
-        let messageDetailVC = vc.childViewControllers[0] as! MessageDetailViewController
-        
-        messageDetailVC.message = message!
-        self.hideKeyboard()
-        
-        self.show(vc, sender: self)
-        self.hideKeyboard()
+        showMessageView(message: message)
     }
     
     /** Internal Methods **/
@@ -201,6 +208,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         voiceButton.layer.shadowOpacity = 0.5
         voiceButton.layer.shadowOffset = CGSize.zero
         voiceButton.layer.shadowRadius = 5
+        voiceButton.isHidden = !VoiceToTextClient.sharedInstance.isEnabled
         
         callButton.layer.cornerRadius = callButtonHeight.constant / 2
         callButton.setImage(UIImage(named: "phone_icon"), for: .normal)

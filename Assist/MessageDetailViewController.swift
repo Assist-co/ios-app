@@ -146,7 +146,7 @@ class MessageDetailViewController: UIViewController {
     }
 
     @objc private func sendMessageAction(button: UIButton) {
-        // TODO: Post message to messaging api
+        MessagingClient.sharedInstance.postMessage(message: textView.text)
         self.view.endEditing(true)
         self.dismiss(animated: true)
     }

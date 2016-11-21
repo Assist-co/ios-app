@@ -15,9 +15,9 @@ class Message: NSObject {
     var senderId: String?
     var body: String?
     var createdAt: Date?
-    var messageColor: UIColor {
+    var messageColor: UIColor? {
         get {
-            return senderId == Client.currentID ? Message.UIColorFromRGB(rgbValue: 0x2ed159) : Message.UIColorFromRGB(rgbValue: 0xd4d7db)
+            return senderId == Client.currentID ? UIColor(hexString: "#2ed159ff") : UIColor(hexString: "#d4d7dbff")
         }
     }
     
@@ -37,15 +37,6 @@ class Message: NSObject {
         self.senderId = sbdUserMessage.sender?.userId
         self.body = sbdUserMessage.message
         self.createdAt =  Date(timeIntervalSince1970: TimeInterval(sbdUserMessage.createdAt / 1000))
-    }
-    
-    class func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
     }
     
     func readableDate() -> String {

@@ -174,6 +174,11 @@
                                             <constraint firstAttribute="width" constant="85" id="9Y1-Gr-sx0"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="0fj-bN-3ai" kind="popoverPresentation" popoverAnchorView="hJ1-Ny-h2L" id="fBT-JW-QBG">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -225,6 +230,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="293.60000000000002" y="452.92353823088462"/>
+        </scene>
+        <!--Voice To Text View Controller-->
+        <scene sceneID="Cqp-xT-gnx">
+            <objects>
+                <viewController id="0fj-bN-3ai" customClass="VoiceToTextViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ekd-GS-du9"/>
+                        <viewControllerLayoutGuide type="bottom" id="1q8-Wt-gFL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="efj-Nr-VZO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzR-oa-hUa">
+                                <rect key="frame" x="145" y="562" width="85" height="85"/>
+                                <color key="backgroundColor" red="0.85364996693121697" green="0.061765218931219959" blue="0.13965236282125582" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="ZdD-f2-FC0"/>
+                                    <constraint firstAttribute="height" constant="85" id="beG-OK-fy4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onVoiceButtonClick:" destination="0fj-bN-3ai" eventType="touchUpInside" id="bj2-Ze-zaM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is input from the user!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLq-NX-KWc">
+                                <rect key="frame" x="26" y="76.5" width="323" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can I help?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5N-GG-mVH">
+                                <rect key="frame" x="26" y="35" width="323" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="I5N-GG-mVH" secondAttribute="trailing" constant="10" id="8kS-ci-1Ue"/>
+                            <constraint firstItem="cLq-NX-KWc" firstAttribute="leading" secondItem="efj-Nr-VZO" secondAttribute="leadingMargin" constant="10" id="AUe-9v-Avv"/>
+                            <constraint firstItem="1q8-Wt-gFL" firstAttribute="top" secondItem="wzR-oa-hUa" secondAttribute="bottom" constant="20" id="ETV-ix-ORW"/>
+                            <constraint firstItem="I5N-GG-mVH" firstAttribute="leading" secondItem="efj-Nr-VZO" secondAttribute="leadingMargin" constant="10" id="Pih-mU-OMU"/>
+                            <constraint firstItem="I5N-GG-mVH" firstAttribute="top" secondItem="Ekd-GS-du9" secondAttribute="bottom" constant="15" id="T9T-LN-lBQ"/>
+                            <constraint firstItem="cLq-NX-KWc" firstAttribute="top" secondItem="I5N-GG-mVH" secondAttribute="bottom" constant="15" id="YJb-1S-Gaa"/>
+                            <constraint firstItem="wzR-oa-hUa" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cLq-NX-KWc" secondAttribute="bottom" constant="20" id="dYu-cl-WcS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cLq-NX-KWc" secondAttribute="trailing" constant="10" id="frk-0p-Ls8"/>
+                            <constraint firstItem="wzR-oa-hUa" firstAttribute="centerX" secondItem="efj-Nr-VZO" secondAttribute="centerX" id="rvs-LL-EEl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="voiceButton" destination="wzR-oa-hUa" id="fdQ-4f-n8p"/>
+                        <outlet property="voiceTextLabel" destination="cLq-NX-KWc" id="Dt3-Yo-9zI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nng-Yt-fXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="462"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="88b-k2-8Wq">

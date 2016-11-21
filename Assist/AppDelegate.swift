@@ -63,6 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
 //            print(tasks!)
 //        }
+        
+        VoiceToTextClient.sharedInstance.requestPermissions()
         return true
     }
 
