@@ -26,6 +26,9 @@ class Assistant: NSObject {
     var dateOfBirth: Date?
     var profilePicURL: URL?
     
+    // for testing messaging api
+    static let currentID:String = "assistant_id"
+    
     init(dictionary: NSDictionary) {
         self.firstName = dictionary["first_name"] as? String
         self.lastName = dictionary["last_name"] as? String

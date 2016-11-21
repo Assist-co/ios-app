@@ -11,14 +11,26 @@ import SendBirdSDK
 
 class MessageTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
-    
     @IBOutlet weak var timestampLabel: UILabel!
     
-    var message: SBDUserMessage? {
+    override func draw(_ rect: CGRect) {
+        let bubbleSpace = CGRect(x: bodyLabel.frame.minX - 10.0, y: bodyLabel.frame.minY - 10.0, width: bodyLabel.bounds.width + 20.0, height: bodyLabel.bounds.height + 20.0)
+        
+        _ = UIBezierPath(roundedRect: bubbleSpace, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadii: CGSize(width: 20.0, height: 20.0))
+        
+        let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 15.0)
+        let color = message?.messageColor
+        color?.setStroke()
+        color?.setFill()
+        bubblePath.stroke()
+        bubblePath.fill()
+    }
+    
+    var message: Message? {
         didSet {
             populateMessage()
+            self.setNeedsDisplay()
         }
     }
     
@@ -27,14 +39,8 @@ class MessageTableViewCell: UITableViewCell {
     }
     
     private func populateMessage() {
-        authorLabel.text = message?.sender?.nickname
-        bodyLabel.text = message?.message
-        if let timestamp = message?.createdAt {
-            timestampLabel.isHidden = false
-            timestampLabel.text = String(describing: timestamp)
-        } else {
-            timestampLabel.isHidden = true
-        }
+        bodyLabel.text = message?.body
+        timestampLabel.text = message?.readableDate()
     }
 
 }

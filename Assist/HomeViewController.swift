@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var voiceButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var textButtonHeight: UIButton!
     
-    private var messages: [SBDUserMessage]?
+    private var messages: [Message]?
     private var messageToolbarBottomConstraintInitialValue: CGFloat?
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
@@ -53,8 +53,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     /** UITableViewDelegate Methods **/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
-        cell.message = messages?[indexPath.row]
+        
+        let message = messages?[indexPath.row]
+        let identifier = message?.senderId == Client.currentID ? "MessageTableViewCellYou" : "MessageTableViewCell";
+        let cell = messagesTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MessageTableViewCell
+        cell.message = message
         return cell
     }
     
@@ -132,7 +135,11 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         NotificationCenter.default.post(name: populateStartNotification, object: nil)
         MessagingClient.sharedInstance.getMessages(onMessagesReceived: {
             (messages: [SBDUserMessage]) -> Void in
-            self.messages = messages
+            let welcomeMessage = [Message(id: 1, senderId: Assistant.currentID, body: "Welcome, I'm your personal assistant! How can I help you?", createdAt: Date())]
+            self.messages = welcomeMessage + messages.map({
+                (m: SBDUserMessage) -> Message in
+                return Message(sbdUserMessage: m)
+            })
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         })
     }
