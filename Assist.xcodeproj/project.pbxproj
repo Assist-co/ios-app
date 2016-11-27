@@ -46,6 +46,8 @@
 		859B55441DDA149C00CBD957 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55401DDA149C00CBD957 /* Constants.swift */; };
 		859B55451DDA149C00CBD957 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55411DDA149C00CBD957 /* Gender.swift */; };
 		859B55461DDA149C00CBD957 /* Profession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55421DDA149C00CBD957 /* Profession.swift */; };
+		85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */; };
+		85B318B41DEB805C007E0DBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B31DEB805C007E0DBF /* Message.swift */; };
 		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
 		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
@@ -118,6 +120,8 @@
 		859B55401DDA149C00CBD957 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		859B55411DDA149C00CBD957 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		859B55421DDA149C00CBD957 /* Profession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profession.swift; sourceTree = "<group>"; };
+		85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceToTextViewController.swift; sourceTree = "<group>"; };
+		85B318B31DEB805C007E0DBF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 		034051731DD42E81005F6B82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				85B318B31DEB805C007E0DBF /* Message.swift */,
+				85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */,
 				859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */,
 				859B55401DDA149C00CBD957 /* Constants.swift */,
 				859B55411DDA149C00CBD957 /* Gender.swift */,
@@ -599,6 +605,7 @@
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
 				031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
+				85B318B41DEB805C007E0DBF /* Message.swift in Sources */,
 				859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
 				859B55441DDA149C00CBD957 /* Constants.swift in Sources */,
@@ -615,6 +622,7 @@
 				034051771DD43583005F6B82 /* Task.swift in Sources */,
 				031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */,
 				034F54391DDAD9E10080F599 /* ClientService.swift in Sources */,
+				85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
