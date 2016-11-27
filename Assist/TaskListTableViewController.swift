@@ -29,7 +29,9 @@ class TaskListTableViewController: UITableViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
-        cell.createdOnLabel.text = formatter.string(from: task.createdOn!)
+        if let createdOn = task.createdOn {
+            cell.createdOnLabel.text = formatter.string(from: createdOn)
+        }
         return cell
     }
     
