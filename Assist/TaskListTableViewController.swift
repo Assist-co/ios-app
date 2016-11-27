@@ -26,6 +26,10 @@ class TaskListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskTableViewCell
         let task = self.tasks[indexPath.row]
         cell.taskTextLabel.text = task.text
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        cell.createdOnLabel.text = formatter.string(from: task.createdOn!)
         return cell
     }
     
