@@ -32,6 +32,12 @@ class Message: NSObject {
         self.createdAt = createdAt
     }
     
+    init(body: String) {
+        self.senderId = Client.currentID
+        self.body = body
+        self.createdAt = Date()
+    }
+    
     init(sbdUserMessage: SBDUserMessage) {
         self.id = sbdUserMessage.messageId
         self.senderId = sbdUserMessage.sender?.userId
@@ -40,7 +46,7 @@ class Message: NSObject {
     }
     
     func readableDate() -> String {
-        let currentDate = NSDate()
+        let currentDate = Date()
         
         let seconds = Int(currentDate.timeIntervalSince(createdAt!))
         let minutes = seconds / 60

@@ -19,6 +19,12 @@ struct SendbirdConstants {
     
 }
 
+protocol MessageListener {
+    
+    func didReceiveMessage(message: Message?)
+    
+}
+
 class MessagingClient: NSObject, SBDChannelDelegate {
     
     static let sharedInstance = MessagingClient()
@@ -26,9 +32,14 @@ class MessagingClient: NSObject, SBDChannelDelegate {
     private var currentUser: SBDUser?
     private var currentChannel: SBDGroupChannel?
     private var previousMessageQuery: SBDPreviousMessageListQuery?
+    private var listener: MessageListener?
     
     func initWithAppId() {
         SBDMain.initWithApplicationId(SendbirdConstants.APP_ID)
+    }
+    
+    func registerListener(listener: MessageListener) {
+        self.listener = listener
     }
     
     func login(onSuccess: @escaping (() -> Void), onFailure: @escaping ((SBDError) -> Void)) {
@@ -37,8 +48,6 @@ class MessagingClient: NSObject, SBDChannelDelegate {
             if let user = user {
                 self.currentUser = user
                 self.initChannelWithAssistant(assistantId: SendbirdConstants.DEFAULT_ASSISTANT_ID, onSuccess: onSuccess)
-                
-                SBDMain.add(self, identifier: SendbirdConstants.CHANNEL_ID)
             } else if let error = error {
                 onFailure(error)
             }
@@ -51,6 +60,7 @@ class MessagingClient: NSObject, SBDChannelDelegate {
                 (channel: SBDGroupChannel?, error: SBDError?) -> Void in
                 if let channel = channel {
                     self.currentChannel = channel
+                    SBDMain.add(self, identifier: SendbirdConstants.CHANNEL_ID)
                     onSuccess()
                 }
             })
@@ -78,7 +88,9 @@ class MessagingClient: NSObject, SBDChannelDelegate {
     }
     
     func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
-        
+        if let message = message as? SBDUserMessage {
+            listener?.didReceiveMessage(message: Message(sbdUserMessage: message))
+        }
     }
     
     

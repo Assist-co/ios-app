@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, MessageListener {
     
     @IBOutlet weak var messageToolbarConstraint: NSLayoutConstraint!
     @IBOutlet weak var messagesTableView: UITableView!
@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     private var messageToolbarBottomConstraintInitialValue: CGFloat?
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
+    private var shouldRefresh: Bool = false
     
     
     /** UIViewController Methods **/
@@ -49,16 +50,22 @@ class HomeViewController: UIViewController, UITableViewDataSource {
 
         self.messageToolbarBottomConstraintInitialValue = 0.0
         enableKeyboardHideOnTap()
+        
+        if shouldRefresh {
+            shouldRefresh = false
+            NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
+        }
     }
     
     func showMessageView(message: String?) {
         let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
         let messageDetailVC = vc.childViewControllers[0] as! MessageDetailViewController
-        
+        messageDetailVC.delegate = self
         messageDetailVC.message = message!
         self.hideKeyboard()
         
+        self.shouldRefresh = true
         self.show(vc, sender: self)
         self.hideKeyboard()
     }
@@ -110,6 +117,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         messagesTableView.rowHeight = UITableViewAutomaticDimension
         messagesTableView.separatorInset = UIEdgeInsets.zero
         messagesTableView.tableFooterView = UIView()
+        MessagingClient.sharedInstance.registerListener(listener: self)
     }
     
     private func setupNotifications() {
@@ -123,6 +131,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             (notification: Notification) -> Void in
             MBProgressHUD.hide(for: self.view, animated: true)
             self.messagesTableView.reloadData()
+            
+            
+            let lastRow = (self.messages?.count ?? 0) - 1
+            if lastRow > 0 {
+                let lastIndexPath = IndexPath(row: lastRow, section: 0)
+                self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+            }
         })
     }
     
@@ -146,9 +161,17 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             self.messages = welcomeMessage + messages.map({
                 (m: SBDUserMessage) -> Message in
                 return Message(sbdUserMessage: m)
-            })
+            }).reversed()
+            
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         })
+    }
+    
+    func didReceiveMessage(message: Message?) {
+        if let message = message {
+            self.messages?.append(message)
+            NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
+        }
     }
     
     // Add a gesture on the view controller to close keyboard when tapped
