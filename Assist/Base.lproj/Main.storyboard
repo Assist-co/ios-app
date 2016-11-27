@@ -28,7 +28,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aOV-Dj-fEW">
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageTableViewCell" rowHeight="80" id="jpO-fT-RW9" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="375" height="80"/>
@@ -184,10 +185,10 @@
                             <constraint firstAttribute="trailing" secondItem="bS5-Hm-9ra" secondAttribute="trailing" id="2oG-yz-OTa"/>
                             <constraint firstItem="xgR-tK-7cp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5d5-5B-DNG"/>
                             <constraint firstAttribute="trailing" secondItem="xgR-tK-7cp" secondAttribute="trailing" id="EFR-ui-1HC"/>
+                            <constraint firstItem="bS5-Hm-9ra" firstAttribute="top" secondItem="aOV-Dj-fEW" secondAttribute="bottom" constant="40" id="HlJ-fX-thM"/>
                             <constraint firstAttribute="bottom" secondItem="xgR-tK-7cp" secondAttribute="bottom" id="Oiq-z6-Hgn"/>
                             <constraint firstItem="aOV-Dj-fEW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YRr-Y5-p2j"/>
                             <constraint firstAttribute="bottom" secondItem="bS5-Hm-9ra" secondAttribute="bottom" id="ZTJ-RB-fRF"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aOV-Dj-fEW" secondAttribute="bottom" id="dQ0-KF-0RA"/>
                             <constraint firstItem="bS5-Hm-9ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ik8-Do-Kwh"/>
                             <constraint firstAttribute="trailing" secondItem="aOV-Dj-fEW" secondAttribute="trailing" id="puz-FC-gsP"/>
                             <constraint firstItem="aOV-Dj-fEW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="x10-Kr-dhg"/>

@@ -28,6 +28,7 @@ class MessageDetailViewController: UIViewController {
     var createTaskBarButton: UIBarButtonItem!
     var sendMessageBarButton: UIBarButtonItem!
     var message = ""
+    var delegate: MessageListener?
     
     /** UIViewController Methods **/
     
@@ -147,6 +148,7 @@ class MessageDetailViewController: UIViewController {
 
     @objc private func sendMessageAction(button: UIButton) {
         MessagingClient.sharedInstance.postMessage(message: textView.text)
+        delegate?.didReceiveMessage(message: Message(body: textView.text))
         self.view.endEditing(true)
         self.dismiss(animated: true)
     }
