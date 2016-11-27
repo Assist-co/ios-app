@@ -31,6 +31,7 @@ class TaskService: NSObject {
                         completion(nil, nil)
                         return
                     }
+                    
                     completion(Task.tasks(array: responseDict["results"] as! Array), nil)
                 case .failure(let error):
                     completion(nil, error)
