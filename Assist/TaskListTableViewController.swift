@@ -26,10 +26,6 @@ class TaskListTableViewController: UITableViewController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     //MARK:- TableView Datasource
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
