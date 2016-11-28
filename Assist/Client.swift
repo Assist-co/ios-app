@@ -9,8 +9,14 @@
 import UIKit
 
 class Client: NSObject {
-    
-    var id: String!
+    #if DEBUG
+    static var currentUser: Client? = Client(dictionary: ["id": 2, "first_name":"Johnny", "last_name": "Appleseed", "email": "jappleseed@apple.com", "phone":"13477925956", "date_of_birth": "1991-04-25", "profession": "engineer", "gender": "male"] )
+    static var currentUserID: Int? = 2
+    #else
+    static var currentUser: Client?
+    static var currentUserID: Int?
+    #endif
+    var id: Int!
     var firstName: String!
     var lastName: String!
     var password: String!
@@ -32,6 +38,7 @@ class Client: NSObject {
     static let currentID:String = "testclient"
     
     init(dictionary: NSDictionary) {
+        self.id = dictionary["id"] as? Int
         self.firstName = dictionary["first_name"] as? String
         self.lastName = dictionary["last_name"] as? String
         self.email = dictionary["email"] as? String

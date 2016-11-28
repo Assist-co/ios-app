@@ -33,7 +33,6 @@
 		034051791DD435B8005F6B82 /* Assistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034051781DD435B8005F6B82 /* Assistant.swift */; };
 		0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340517A1DD4366A005F6B82 /* TaskTableViewCell.swift */; };
 		0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340517E1DD43855005F6B82 /* UIColorExtension.swift */; };
-		034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034051801DD4425B005F6B82 /* TaskTableViewController.swift */; };
 		034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */; };
 		034F54371DDAD9E10080F599 /* AssistantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54321DDAD9E10080F599 /* AssistantService.swift */; };
 		034F54381DDAD9E10080F599 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54331DDAD9E10080F599 /* AuthService.swift */; };
@@ -48,6 +47,8 @@
 		859B55461DDA149C00CBD957 /* Profession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55421DDA149C00CBD957 /* Profession.swift */; };
 		85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */; };
 		85B318B41DEB805C007E0DBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B31DEB805C007E0DBF /* Message.swift */; };
+		85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B51DEBA843007E0DBF /* TaskDetailViewController.swift */; };
+		85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */; };
 		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
 		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
@@ -103,7 +104,6 @@
 		034051781DD435B8005F6B82 /* Assistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
 		0340517A1DD4366A005F6B82 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		0340517E1DD43855005F6B82 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		034051801DD4425B005F6B82 /* TaskTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		034051821DD4432A005F6B82 /* OnboardingFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OnboardingFlow.storyboard; sourceTree = "<group>"; };
 		034F54321DDAD9E10080F599 /* AssistantService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssistantService.swift; path = API/AssistCo/AssistantService.swift; sourceTree = "<group>"; };
 		034F54331DDAD9E10080F599 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = API/AssistCo/AuthService.swift; sourceTree = "<group>"; };
@@ -122,6 +122,8 @@
 		859B55421DDA149C00CBD957 /* Profession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profession.swift; sourceTree = "<group>"; };
 		85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceToTextViewController.swift; sourceTree = "<group>"; };
 		85B318B31DEB805C007E0DBF /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		85B318B51DEBA843007E0DBF /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
+		85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewCell.swift; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				D45573201DD92C500000B938 /* MessageTableViewCell.swift */,
 				0340517A1DD4366A005F6B82 /* TaskTableViewCell.swift */,
+				85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,10 +318,10 @@
 		85ED5EAA1DDC199D0073B625 /* Task */ = {
 			isa = PBXGroup;
 			children = (
-				034051801DD4425B005F6B82 /* TaskTableViewController.swift */,
 				031300F21DD9126400381716 /* TaskListTableViewController.swift */,
 				031300F41DD9127800381716 /* TaskMapViewController.swift */,
 				031300F61DD912A600381716 /* TasksViewController.swift */,
+				85B318B51DEBA843007E0DBF /* TaskDetailViewController.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -592,7 +595,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034051811DD4425B005F6B82 /* TaskTableViewController.swift in Sources */,
 				031300F31DD9126400381716 /* TaskListTableViewController.swift in Sources */,
 				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
@@ -602,6 +604,7 @@
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
+				85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */,
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
 				031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
@@ -623,6 +626,7 @@
 				031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */,
 				034F54391DDAD9E10080F599 /* ClientService.swift in Sources */,
 				85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */,
+				85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

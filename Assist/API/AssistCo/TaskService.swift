@@ -18,11 +18,10 @@ class TaskService: NSObject {
     /********** TASK API **********/
     
     class func fetchTasksForClient(
-        clientID: Int,
         completion: @escaping ([Task]?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
-            "\(self.baseURLString!)/clients/\(clientID)/tasks",
+            "\(baseURLString!)/clients/\(Client.currentUserID!)/tasks",
             method: .get
             ).responseJSON { (response) in
                 switch response.result {
@@ -40,12 +39,11 @@ class TaskService: NSObject {
     }
     
     class func fetchTaskForID(
-        clientID: Int,
         taskID: Int,
         completion: @escaping (Task?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
-            "\(baseURLString!)/clients/\(clientID)/tasks\(taskID)",
+            "\(baseURLString!)/clients/\(Client.currentUserID!)/tasks/\(taskID)",
             method: .get
             ).responseJSON { (response) in
                 switch response.result {
@@ -62,7 +60,6 @@ class TaskService: NSObject {
     }
     
     class func createTask(
-        clientID: String,
         taskDict: Dictionary<String, AnyObject>,
         completion: @escaping (Task?, Error?) -> ()
         ) {
@@ -92,7 +89,7 @@ class TaskService: NSObject {
         completion: @escaping (Task?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
-            "\(baseURLString!)/tasks/\(taskID)",
+            "\(baseURLString!)/clients/\(Client.currentUserID!)/tasks/\(taskID)",
             method: .patch,
             parameters: taskDict
             ).validate().responseJSON(
@@ -116,7 +113,7 @@ class TaskService: NSObject {
         completion: @escaping (Bool, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
-            "\(baseURLString!)/tasks/\(taskID)",
+            "\(baseURLString!)/clients/\(Client.currentUserID!)/tasks/\(taskID)",
             method: .delete
             ).validate().responseJSON(
                 completionHandler: { (response) in

@@ -14,7 +14,12 @@ enum TaskListType{
     case completed
 }
 
-class TasksViewController: UIViewController, UIScrollViewDelegate {
+struct TasksData {
+    var queuedTasks: [Task]?
+    var completedTasks:[Task]?
+}
+
+class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewControllerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     private var queuedTaskViewController: TaskListTableViewController!
     private var completedTaskViewController: TaskListTableViewController!
@@ -30,6 +35,7 @@ class TasksViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    private var tasksData: TasksData = TasksData()
     
     //MARK:- View Lifecycle
     
@@ -59,46 +65,51 @@ class TasksViewController: UIViewController, UIScrollViewDelegate {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
-    //MARK:- ScrollViewDelegate
+    //MARK:- TaskListViewControllerDelegate
     
-    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // account for padding
-        if scrollView.contentOffset.x >= (scrollView.contentSize.width/2 - 200) {
-            self.currentTaskListType = .completed
-            if scrollView.contentOffset.x > scrollView.contentSize.width/2{ return }
-            UIView.animate(withDuration: 0.23, animations: {
-                self.scrollView.contentOffset = CGPoint(x: self.completedTaskViewController.view.frame.origin.x, y: scrollView.contentOffset.y)
-            })
-        }else{
-            self.currentTaskListType = .queued
-            if scrollView.contentOffset.x < 0 { return }
-            UIView.animate(withDuration: 0.23, animations: {
-                self.scrollView.contentOffset = CGPoint(x: self.queuedTaskViewController.view.frame.origin.x, y: scrollView.contentOffset.y)
-            })
+    internal func refreshTasksLists(completion: @escaping (Bool, Error?) -> ()
+        ) {
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
+            if error == nil{
+                let (queued, completed) = self.filterTasks(tasks: tasks!)
+                self.tasksData.queuedTasks = queued
+                self.tasksData.completedTasks = completed
+                self.reloadTaskLists()
+                completion(true, nil)
+            }else{
+                completion(false, error)
+            }
         }
     }
     
     //MARK:- Utils
     
+    fileprivate func reloadTaskLists(){
+        self.queuedTaskViewController.tasks = self.tasksData.queuedTasks
+        self.queuedTaskViewController.tableView.reloadData()
+        self.queuedTaskViewController.tableView.layoutIfNeeded()
+        self.completedTaskViewController.tasks = self.tasksData.completedTasks
+        self.completedTaskViewController.tableView.reloadData()
+        self.completedTaskViewController.tableView.layoutIfNeeded()
+    }
+    
     fileprivate func loadData(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if error == nil{
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
-                self.queuedTaskViewController.tasks = queued
-                self.queuedTaskViewController.tableView.reloadData()
-                self.completedTaskViewController.tasks = completed
-                self.completedTaskViewController.tableView.reloadData()
+                self.tasksData.queuedTasks = queued
+                self.tasksData.completedTasks = completed
+                self.reloadTaskLists()
             }else{
                 #if DEBUG
-                    // Only for server not running in development
+                    // Only if server not running in development
                     let queued = [Task(dictionary: [:]),Task(dictionary: [:]),Task(dictionary: [:])]
                     let completed = [Task(dictionary: [:]),Task(dictionary: [:]),Task(dictionary: [:])]
-                    self.queuedTaskViewController.tasks = queued
-                    self.queuedTaskViewController.tableView.reloadData()
-                    self.completedTaskViewController.tasks = completed
-                    self.completedTaskViewController.tableView.reloadData()
+                    self.tasksData.queuedTasks = queued
+                    self.tasksData.completedTasks = completed
+                    self.reloadTaskLists()
                 #endif
             }
         }
@@ -126,10 +137,12 @@ class TasksViewController: UIViewController, UIScrollViewDelegate {
         let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
         self.queuedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
         self.completedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
+        self.queuedTaskViewController.taskListDelegate = self
+        self.completedTaskViewController.taskListDelegate = self
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width
         let height = bounds.size.height;
-        self.scrollView!.contentSize = CGSize(width: 2*width, height: height);
+        self.scrollView!.contentSize = CGSize(width: 2*width, height: 0);
         let viewControllers = [self.queuedTaskViewController, self.completedTaskViewController]
         var idx = 0
         for viewController in viewControllers {
