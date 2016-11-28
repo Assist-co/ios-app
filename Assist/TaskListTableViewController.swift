@@ -15,6 +15,7 @@ protocol TaskListViewControllerDelegate: class {
 class TaskListTableViewController: UITableViewController {
     internal var tasks: [Task]! = []
     internal var isShowing: Bool?
+    private var selectedTask: Task?
     weak var taskListDelegate: TaskListViewControllerDelegate?
     
     //MARK:- View Life Cycle
@@ -43,6 +44,13 @@ class TaskListTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK:- TableView Delegate
+    
+    override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedTask = self.tasks[indexPath.row]
+        self.performSegue(withIdentifier: "taskListToDetailSegue", sender: self)
+    }
+    
     //MARK:- Refresh Action
     
     internal func refreshTasks(){
@@ -63,5 +71,14 @@ class TaskListTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 80
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(TaskListTableViewController.refreshTasks), for: UIControlEvents.valueChanged)
+    }
+    
+    //MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "taskListToDetailSegue" {
+            let vc = segue.destination as! TaskDetailViewController
+            vc.task = self.selectedTask!
+        }
     }
 }
