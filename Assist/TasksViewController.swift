@@ -49,15 +49,37 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
-            UIView.animate(withDuration: 0.23, animations: {
-                self.scrollView.contentOffset = CGPoint(x: self.queuedTaskViewController.view.frame.origin.x, y: self.scrollView.contentOffset.y)
-            })
-            self.currentTaskListType = .queued
+            if self.currentTaskListType != .queued {
+                UIView.transition(with: self.view, duration: 0.23, options: .transitionFlipFromRight, animations: {
+                    // remove completed task list
+                    self.completedTaskViewController.removeFromParentViewController()
+                    self.completedTaskViewController.tableView.removeFromSuperview()
+                    self.didMove(toParentViewController: self.completedTaskViewController)
+                    // add queued task list
+                    self.addChildViewController(self.queuedTaskViewController)
+                    self.view.insertSubview(self.queuedTaskViewController.tableView, at: 0)
+                    self.didMove(toParentViewController: self.queuedTaskViewController)
+                }, completion: { (sucess: Bool) in
+                    
+                })
+                self.currentTaskListType = .queued
+            }
         }else{
-            UIView.animate(withDuration: 0.23, animations: {
-                self.scrollView.contentOffset = CGPoint(x: self.completedTaskViewController.view.frame.origin.x, y: self.scrollView.contentOffset.y)
-            })
-            self.currentTaskListType = .completed
+            if self.currentTaskListType != .completed {
+                UIView.transition(with: self.view, duration: 0.23, options: .transitionFlipFromLeft, animations: {
+                    // remove queued task list
+                    self.queuedTaskViewController.removeFromParentViewController()
+                    self.queuedTaskViewController.tableView.removeFromSuperview()
+                    self.didMove(toParentViewController: self.queuedTaskViewController)
+                    // add completed task list
+                    self.addChildViewController(self.completedTaskViewController)
+                    self.view.insertSubview(self.completedTaskViewController.tableView, at: 0)
+                    self.didMove(toParentViewController: self.completedTaskViewController)
+                }, completion: { (success: Bool) in
+                    
+                })
+                self.currentTaskListType = .completed
+            }
         }
     }
     
@@ -141,18 +163,23 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         self.completedTaskViewController.taskListDelegate = self
         let bounds = UIScreen.main.bounds
         let width = bounds.size.width
-        let height = bounds.size.height;
-        self.scrollView!.contentSize = CGSize(width: 2*width, height: 0);
-        let viewControllers = [self.queuedTaskViewController, self.completedTaskViewController]
-        var idx = 0
-        for viewController in viewControllers {
-            addChildViewController(viewController!);
-            let originX = CGFloat(idx) * width;
-            viewController!.tableView.frame = CGRect(x: originX, y: 0, width: width, height: height);
-            scrollView!.addSubview(viewController!.view)
-            viewController!.didMove(toParentViewController: self)
-            idx += 1
-        }
-
+        let height = bounds.size.height
+        self.queuedTaskViewController.tableView.frame = CGRect(x: 0, y: 50, width: width, height: height - 50)
+        self.completedTaskViewController.tableView.frame = CGRect(x: 0, y: 50, width: width, height: height - 50)
+        self.addChildViewController(self.queuedTaskViewController)
+        self.view .insertSubview(self.queuedTaskViewController.tableView, at: 0)
+        self.didMove(toParentViewController: self.queuedTaskViewController)
+        
+//        self.scrollView!.contentSize = CGSize(width: 2*width, height: 0)
+//        let viewControllers = [self.queuedTaskViewController, self.completedTaskViewController]
+//        var idx = 0
+//        for viewController in viewControllers {
+//            self.addChildViewController(viewController!);
+//            let originX = CGFloat(idx) * width;
+//            viewController!.tableView.frame = CGRect(x: originX, y: 0, width: width, height: height);
+//            scrollView!.addSubview(viewController!.view)
+//            viewController!.didMove(toParentViewController: self)
+//            idx += 1
+//        }
     }
 }

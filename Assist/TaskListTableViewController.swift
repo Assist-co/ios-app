@@ -26,6 +26,10 @@ class TaskListTableViewController: UITableViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     //MARK:- TableView Datasource
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,8 +57,8 @@ class TaskListTableViewController: UITableViewController {
     //MARK:- TableView Delegate
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         self.selectedTask = self.tasks[indexPath.row]
-        self.performSegue(withIdentifier: "taskListToDetailSegue", sender: self)
     }
     
     //MARK:- Action
