@@ -70,7 +70,7 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     
     internal func refreshTasksLists(completion: @escaping (Bool, Error?) -> ()
         ) {
-        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
             if error == nil{
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
                 self.tasksData.queuedTasks = queued
@@ -96,7 +96,7 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     
     fileprivate func loadData(){
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        TaskService.fetchTasksForClient(clientID: 2) { (tasks: [Task]?, error: Error?) in
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if error == nil{
                 let (queued, completed) = self.filterTasks(tasks: tasks!)

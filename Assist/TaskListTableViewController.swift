@@ -41,6 +41,10 @@ class TaskListTableViewController: UITableViewController {
         if let createdOn = task.createdOn {
             cell.createdOnLabel.text = formatter.string(from: createdOn)
         }
+        let longPressGesture = UILongPressGestureRecognizer()
+        longPressGesture.addTarget(self, action: #selector(TaskListTableViewController.taskLongPressGesture(_:)))
+        cell.addGestureRecognizer(longPressGesture)
+        cell.tag = indexPath.row
         return cell
     }
     
@@ -51,7 +55,40 @@ class TaskListTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "taskListToDetailSegue", sender: self)
     }
     
-    //MARK:- Refresh Action
+    //MARK:- Action
+    
+    @objc fileprivate func taskLongPressGesture(_ sender: UILongPressGestureRecognizer) {
+        let cell = sender.view as! TaskTableViewCell
+        let task: Task?  = self.tasks[cell.tag]
+        let actionController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let deleteTaskAction = UIAlertAction(title: "Delete Task", style: .destructive) { (action: UIAlertAction) in
+            DispatchQueue.main.async { self.refreshControl?.beginRefreshing() }
+            self.refreshControl?.beginRefreshing()
+            TaskService.deleteTask(taskID: task!.id!, completion: { (sucess: Bool, error: Error?) in
+                DispatchQueue.main.async {
+                    if error == nil{
+                        self.taskListDelegate?.refreshTasksLists(completion: { (sucess: Bool, error: Error?) in
+                            self.refreshControl?.endRefreshing()
+                        })
+                    }else{
+                    
+                    }
+                    
+                }
+            })
+        }
+        let muteTaskAction = UIAlertAction(title: "Mute Task", style: .default) { (action: UIAlertAction) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        actionController.addAction(deleteTaskAction)
+        actionController.addAction(muteTaskAction)
+        actionController.addAction(cancelAction)
+        self.present(actionController, animated: true) {
+            
+        }
+    }
+    
     
     internal func refreshTasks(){
         self.taskListDelegate?.refreshTasksLists(completion: { (sucess: Bool, error: Error?) in
@@ -63,6 +100,7 @@ class TaskListTableViewController: UITableViewController {
             self.refreshControl?.endRefreshing()
         })
     }
+    
     
     //MARK:- Utils
     

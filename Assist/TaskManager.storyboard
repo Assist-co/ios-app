@@ -146,6 +146,7 @@
                                         <constraint firstItem="dtn-ub-avL" firstAttribute="leading" secondItem="3QI-b0-hS1" secondAttribute="leading" constant="8" id="QST-3O-uSJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="createdOnLabel" destination="dtn-ub-avL" id="cTq-jd-qtG"/>
                                     <outlet property="taskTextLabel" destination="lb6-OF-dyk" id="yWp-7G-0Zj"/>

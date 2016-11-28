@@ -134,7 +134,7 @@ class MessageDetailViewController: UIViewController {
     
     @objc private func createTaskAction(button: UIButton) {
         // TODO: use correct values for createTask
-        TaskService.createTask(clientID: "1", taskDict: [:]) { (task: Task?, error: Error?) in
+        TaskService.createTask(taskDict: [:]) { (task: Task?, error: Error?) in
             if let error = error {
                 // TODO: show client appropriate error
                 print(error.localizedDescription)
