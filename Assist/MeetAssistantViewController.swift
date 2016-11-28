@@ -25,7 +25,10 @@ class MeetAssistantViewController: UIViewController {
         assistantImageView.clipsToBounds = true
         letsGoButton.layer.cornerRadius = 4
         letsGoButton.clipsToBounds = true
-        letsGoButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
+        letsGoButton.backgroundColor = UIColor(hexString: "#256e93ff")
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#111111ff")
 
     }
 

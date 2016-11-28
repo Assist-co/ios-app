@@ -26,7 +26,7 @@ class SignUpMoreDetailsViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         signupButton.layer.cornerRadius = 4
         signupButton.clipsToBounds = true
-        //signupButton.backgroundColor = UIColor(hexString: "#B19CD9FF")
+        signupButton.backgroundColor = UIColor(hexString: "#256e93ff")
         
         professionTextField.delegate = self
         professionTextField.tag = 0

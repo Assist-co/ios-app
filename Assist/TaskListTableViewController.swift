@@ -16,6 +16,7 @@ class TaskListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        
     }
     
     override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,6 +24,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskTableViewCell
         let task = self.tasks[indexPath.row]
         cell.taskTextLabel.text = task.text

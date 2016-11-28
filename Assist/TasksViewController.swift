@@ -27,7 +27,6 @@ class TasksViewController: UIViewController, UIScrollViewDelegate {
             default:
                 self.queuedTaskViewController.isShowing = true
                 self.completedTaskViewController.isShowing = false
-
             }
         }
     }

@@ -165,7 +165,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="pH0-QH-YSf" firstAttribute="leading" secondItem="4UY-Kh-ukN" secondAttribute="trailing" constant="8" id="7oZ-Uv-G6P"/>
                                             <constraint firstItem="u1m-7a-UNa" firstAttribute="top" secondItem="Ff2-Pz-0Eg" secondAttribute="top" constant="16" id="HxN-K2-LeZ"/>
@@ -199,7 +199,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="o5f-kj-pBK" firstAttribute="top" secondItem="hbo-FW-4ha" secondAttribute="top" constant="88" id="1Ri-ZA-dZw"/>
                                     <constraint firstItem="fxG-Uw-OlO" firstAttribute="top" secondItem="hbo-FW-4ha" secondAttribute="top" constant="16" id="7Up-C8-RfB"/>
@@ -230,7 +230,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Message" id="wXd-Ue-FK0">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="q9V-U3-fJK">
-                            <color key="tintColor" red="0.38950320510000003" green="0.38950320510000003" blue="0.38950320510000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="onCancel:" destination="FFA-EJ-Xic" id="dgf-tN-RSu"/>
                             </connections>

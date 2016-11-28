@@ -42,7 +42,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signupButton.layer.cornerRadius = 4
         signupButton.clipsToBounds = true
         //signupButton.backgroundColor = UIColor(hexString: "#B19CD9FF")
-        signupButton.backgroundColor = UIColor(hexString: "#40bf40FF")
+        signupButton.backgroundColor = UIColor(hexString: "#256e93ff")
         
         
         //Looks for single or multiple taps.

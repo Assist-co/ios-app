@@ -125,6 +125,9 @@ class MessageDetailViewController: UIViewController {
         profilePicShadow.layer.shadowRadius = 2
         profilePicShadow.layer.cornerRadius = profilePicHeight.constant / 2
         
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#111111ff")
+        
         for button in [schedulingButton, emailButton, reminderButton, phoneButton, inquiryButton, otherButton] {
             button?.layer.borderWidth = 1
             button?.layer.borderColor = UIColor.lightGray.cgColor

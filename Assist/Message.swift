@@ -17,7 +17,7 @@ class Message: NSObject {
     var createdAt: Date?
     var messageColor: UIColor? {
         get {
-            return senderId == Client.currentID ? UIColor(hexString: "#2ed159ff") : UIColor(hexString: "#d4d7dbff")
+            return senderId == Client.currentID ? UIColor(hexString: "#256e93ff") : UIColor(hexString: "#ddddddff")
         }
     }
     

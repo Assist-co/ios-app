@@ -83,9 +83,9 @@
                                     <constraint firstItem="5rp-Xx-VYR" firstAttribute="top" secondItem="0aJ-qH-coE" secondAttribute="bottom" constant="8" id="3qw-mD-pub"/>
                                     <constraint firstItem="E4o-mI-YNv" firstAttribute="top" secondItem="5rp-Xx-VYR" secondAttribute="bottom" constant="8" id="BcJ-b3-jUA"/>
                                     <constraint firstItem="0aJ-qH-coE" firstAttribute="top" secondItem="pvf-5m-Pff" secondAttribute="top" id="LEv-1Y-kV6"/>
-                                    <constraint firstItem="Kbi-TP-odL" firstAttribute="leading" secondItem="pvf-5m-Pff" secondAttribute="leading" constant="16" id="LkH-Rq-XnD"/>
+                                    <constraint firstItem="Kbi-TP-odL" firstAttribute="leading" secondItem="pvf-5m-Pff" secondAttribute="leading" constant="12" id="LkH-Rq-XnD"/>
                                     <constraint firstItem="cfw-dn-kov" firstAttribute="leading" secondItem="pvf-5m-Pff" secondAttribute="leading" constant="12" id="RvV-aL-72e"/>
-                                    <constraint firstAttribute="trailing" secondItem="Kbi-TP-odL" secondAttribute="trailing" constant="16" id="Ssb-so-mjc"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kbi-TP-odL" secondAttribute="trailing" constant="12" id="Ssb-so-mjc"/>
                                     <constraint firstAttribute="trailing" secondItem="0aJ-qH-coE" secondAttribute="trailing" constant="12" id="V1m-1B-XyM"/>
                                     <constraint firstAttribute="width" constant="300" id="WSm-q2-7at"/>
                                     <constraint firstItem="5rp-Xx-VYR" firstAttribute="leading" secondItem="pvf-5m-Pff" secondAttribute="leading" constant="12" id="XeD-hm-DWO"/>
@@ -353,7 +353,7 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meet David" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15c-RN-Lek">
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00K-OR-dpB">
@@ -363,7 +363,7 @@
                                         </constraints>
                                         <string key="text">David is your personal assistant. He can schedule meetings, make calls, help you with purchases, send you reminders. You name it, he can do it! </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_temp" translatesAutoresizingMaskIntoConstraints="NO" id="Yav-2F-kpI">
@@ -374,21 +374,21 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="iET-b2-zmb" firstAttribute="top" secondItem="00K-OR-dpB" secondAttribute="bottom" constant="24" id="2ka-ZQ-o7G"/>
-                                    <constraint firstAttribute="height" constant="420" id="HXW-sL-1id"/>
+                                    <constraint firstItem="iET-b2-zmb" firstAttribute="top" secondItem="00K-OR-dpB" secondAttribute="bottom" constant="16" id="2ka-ZQ-o7G"/>
+                                    <constraint firstAttribute="height" constant="440" id="HXW-sL-1id"/>
                                     <constraint firstItem="iET-b2-zmb" firstAttribute="centerX" secondItem="Qg7-gR-8Qz" secondAttribute="centerX" id="POE-OJ-EIY"/>
-                                    <constraint firstItem="Yav-2F-kpI" firstAttribute="top" secondItem="15c-RN-Lek" secondAttribute="bottom" constant="36" id="UEv-qR-cKa"/>
+                                    <constraint firstItem="Yav-2F-kpI" firstAttribute="top" secondItem="15c-RN-Lek" secondAttribute="bottom" constant="24" id="UEv-qR-cKa"/>
+                                    <constraint firstItem="15c-RN-Lek" firstAttribute="top" secondItem="Qg7-gR-8Qz" secondAttribute="top" id="ahj-2Q-vO0"/>
                                     <constraint firstItem="00K-OR-dpB" firstAttribute="centerX" secondItem="Qg7-gR-8Qz" secondAttribute="centerX" id="g47-qp-Zv0"/>
                                     <constraint firstItem="Yav-2F-kpI" firstAttribute="centerX" secondItem="Qg7-gR-8Qz" secondAttribute="centerX" id="hq5-ut-mQi"/>
-                                    <constraint firstItem="15c-RN-Lek" firstAttribute="top" secondItem="Qg7-gR-8Qz" secondAttribute="top" id="lmK-yZ-qd9"/>
-                                    <constraint firstItem="00K-OR-dpB" firstAttribute="top" secondItem="Yav-2F-kpI" secondAttribute="bottom" constant="24" id="wdz-re-T8e"/>
+                                    <constraint firstItem="00K-OR-dpB" firstAttribute="top" secondItem="Yav-2F-kpI" secondAttribute="bottom" constant="16" id="wdz-re-T8e"/>
                                     <constraint firstItem="15c-RN-Lek" firstAttribute="centerX" secondItem="Qg7-gR-8Qz" secondAttribute="centerX" id="xFD-Wj-jIg"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qg7-gR-8Qz" firstAttribute="centerY" secondItem="0zO-SR-b2y" secondAttribute="centerY" id="Oab-Bn-Pa0"/>
                             <constraint firstItem="Qg7-gR-8Qz" firstAttribute="centerX" secondItem="0zO-SR-b2y" secondAttribute="centerX" id="Si6-cl-3oi"/>

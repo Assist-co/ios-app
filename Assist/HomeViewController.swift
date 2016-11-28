@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDataSource, MessageListener {
+class HomeViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, MessageListener {
     
     @IBOutlet weak var messageToolbarConstraint: NSLayoutConstraint!
     @IBOutlet weak var messagesTableView: UITableView!
@@ -39,6 +39,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
         initMessagingClient()
         styleElements()
         addShadowToBar()
+        
+        messageTextField.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +81,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
         let identifier = message?.senderId == Client.currentID ? "MessageTableViewCellYou" : "MessageTableViewCell";
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MessageTableViewCell
         cell.message = message
+        
+        // TODO: move styling code to saner place
+        if indexPath.row == 0 {
+            cell.topMargin.constant = 24
+        } else {
+            let lastMessage = messages?[indexPath.row - 1]
+            let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (lastMessage?.createdAt?.timeIntervalSince1970)!) < 60)
+            if lastMessage?.senderId != message?.senderId || !isMultiMessage {
+                cell.topMargin.constant = 8
+            } else {
+                cell.topMargin.constant = 4
+
+            }
+        }
+        
+        // TODO: move styling code to saner place
+        if indexPath.row < (messages?.count)! - 1 {
+            let nextMessage = messages?[indexPath.row + 1]
+            let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (nextMessage?.createdAt?.timeIntervalSince1970)!) < 60)
+            if nextMessage?.senderId != message?.senderId || !isMultiMessage {
+                cell.dateLabelHeight.constant = 16
+                cell.dateLabelTopMargin.constant = 12
+            } else {
+                cell.dateLabelHeight.constant = 0
+                cell.dateLabelTopMargin.constant = 0
+            }
+        } else {
+            cell.dateLabelHeight.constant = 16
+            cell.dateLabelTopMargin.constant = 12
+        }
+
         return cell
     }
     
@@ -86,6 +119,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
         return messages?.count ?? 0
     }
     
+    /** TextFieldDelegate Methods **/
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        let message = self.messageTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        showMessageView(message: message)
+        return true
+    }
     
     /** IBAction Methods **/
     
@@ -102,12 +143,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
             }
         }
     }
-    
-    @IBAction func onMessageSend(_ sender: AnyObject) {
-        let message = self.messageTextField.text
-        
-        showMessageView(message: message)
-    }
+
     
     /** Internal Methods **/
     
@@ -224,7 +260,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
     
     private func styleElements() {
         voiceButton.layer.cornerRadius = voiceButtonHeight.constant / 2
-        voiceButton.backgroundColor = UIColor(hexString: "#5cd65cFF")
+        voiceButton.backgroundColor = UIColor(hexString: "#256e93ff")
         voiceButton.setImage(UIImage(named: "voice_icon"), for: .normal)
         voiceButton.contentMode = UIViewContentMode.center
         voiceButton.layer.shadowColor = UIColor.gray.cgColor
@@ -249,10 +285,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, MessageListen
         textButton.layer.shadowOffset = CGSize.zero
         textButton.layer.shadowRadius = 5
         
-        navigationController?.navigationBar.barTintColor = UIColor.white
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#111111ff")
         
         messageTextField.autocorrectionType = UITextAutocorrectionType.no
         messageTextField.borderStyle = UITextBorderStyle.none
+        
+        UIApplication.shared.statusBarStyle = .lightContent
     }
     
 }

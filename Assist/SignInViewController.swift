@@ -53,7 +53,7 @@ class SignInViewController: UIViewController {
         
         signinButton.layer.cornerRadius = 4
         signinButton.clipsToBounds = true
-        signinButton.backgroundColor = UIColor(hexString: "#40bf40FF")
+        signinButton.backgroundColor = UIColor(hexString: "#256e93ff")
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.dismissKeyboard))

@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+
+        
         //if UserDefaults.standard.object(forKey: "userToken") != nil {
         //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
         //    let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")

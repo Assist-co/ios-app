@@ -40,8 +40,6 @@
 		034F54391DDAD9E10080F599 /* ClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54341DDAD9E10080F599 /* ClientService.swift */; };
 		034F543A1DDAD9E10080F599 /* OptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54351DDAD9E10080F599 /* OptionService.swift */; };
 		034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034F54361DDAD9E10080F599 /* TaskService.swift */; };
-		0371CF5F1DE2E16C00965C8F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371CF5D1DE2E16C00965C8F /* Message.swift */; };
-		0371CF601DE2E16C00965C8F /* VoiceToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0371CF5E1DE2E16C00965C8F /* VoiceToTextViewController.swift */; };
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
 		859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */; };
@@ -112,8 +110,6 @@
 		034F54341DDAD9E10080F599 /* ClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ClientService.swift; path = API/AssistCo/ClientService.swift; sourceTree = "<group>"; };
 		034F54351DDAD9E10080F599 /* OptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionService.swift; path = API/AssistCo/OptionService.swift; sourceTree = "<group>"; };
 		034F54361DDAD9E10080F599 /* TaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskService.swift; path = API/AssistCo/TaskService.swift; sourceTree = "<group>"; };
-		0371CF5D1DE2E16C00965C8F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		0371CF5E1DE2E16C00965C8F /* VoiceToTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceToTextViewController.swift; sourceTree = "<group>"; };
 		3555853B735386E5EA08CC89 /* Pods_Assist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Assist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B894A11EA184502DFE38C7A /* Pods-AssistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssistTests/Pods-AssistTests.release.xcconfig"; sourceTree = "<group>"; };
 		43FC3B4ADE01A71965816EC3 /* Pods-AssistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,8 +195,6 @@
 		0340513C1DD4295D005F6B82 /* Assist */ = {
 			isa = PBXGroup;
 			children = (
-				0371CF5D1DE2E16C00965C8F /* Message.swift */,
-				0371CF5E1DE2E16C00965C8F /* VoiceToTextViewController.swift */,
 				0340517D1DD43842005F6B82 /* Extensions */,
 				0340517C1DD43670005F6B82 /* Views */,
 				034051731DD42E81005F6B82 /* Models */,
@@ -619,10 +613,8 @@
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
-				0371CF5F1DE2E16C00965C8F /* Message.swift in Sources */,
 				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
 				031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */,
-				0371CF601DE2E16C00965C8F /* VoiceToTextViewController.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
 				034F54381DDAD9E10080F599 /* AuthService.swift in Sources */,
 				031301011DD9289400381716 /* SignInViewController.swift in Sources */,

@@ -32,6 +32,8 @@
 	<string>Your microphone will be used to record your speech when you want to create tasks quickly.</string>
 	<key>NSSpeechRecognitionUsageDescription</key>
 	<string>Speech recognition is used for hands free task creation.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
