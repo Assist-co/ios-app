@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Byl-nt-BTx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Byl-nt-BTx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,8 +41,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-DC-s4g">
+                                <rect key="frame" x="0.0" y="63" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-0h-CnR">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Queued"/>
                                         <connections>
@@ -47,6 +52,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jm-Od-2OM">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
                                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Completed"/>
                                         <connections>
@@ -67,23 +73,20 @@
                                     <constraint firstItem="5Jm-Od-2OM" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="top" id="tjD-2J-hZl"/>
                                 </constraints>
                             </view>
-                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAv-FK-Elm">
-                                <rect key="frame" x="0.0" y="113" width="375" height="554"/>
-                                <connections>
-                                    <outlet property="delegate" destination="Byl-nt-BTx" id="uwZ-Zv-r45"/>
-                                </connections>
-                            </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jOq-oY-vHO">
+                                <rect key="frame" x="153" y="323" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nAv-FK-Elm" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" id="3kB-7q-waz"/>
-                            <constraint firstItem="nAv-FK-Elm" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="Vl6-PI-rAl"/>
                             <constraint firstItem="FJb-DC-s4g" firstAttribute="top" secondItem="8k1-yp-ncX" secondAttribute="top" constant="63" id="Z27-az-EQz"/>
                             <constraint firstItem="FJb-DC-s4g" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="abU-0J-km5"/>
-                            <constraint firstItem="j2o-54-EVV" firstAttribute="top" secondItem="nAv-FK-Elm" secondAttribute="bottom" id="jT5-3G-rof"/>
-                            <constraint firstItem="nAv-FK-Elm" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" id="rTy-VS-xPj"/>
+                            <constraint firstItem="jOq-oY-vHO" firstAttribute="centerY" secondItem="8k1-yp-ncX" secondAttribute="centerY" id="mbM-hn-6as"/>
+                            <constraint firstItem="jOq-oY-vHO" firstAttribute="centerX" secondItem="8k1-yp-ncX" secondAttribute="centerX" id="qh6-9Z-beA"/>
                             <constraint firstAttribute="trailing" secondItem="FJb-DC-s4g" secondAttribute="trailing" id="vvU-cH-bpw"/>
-                            <constraint firstAttribute="trailing" secondItem="nAv-FK-Elm" secondAttribute="trailing" id="yyh-n2-Gjy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="Y5S-aF-sML">
@@ -95,7 +98,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="scrollView" destination="nAv-FK-Elm" id="ilI-ne-MnA"/>
+                        <outlet property="emptyStateLabel" destination="jOq-oY-vHO" id="lSk-hz-qBd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TvW-Fp-Yl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -115,7 +118,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zMJ-ZD-4QD" id="3QI-b0-hS1">
-                                    <frame key="frameInset" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Something" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-OF-dyk">
@@ -125,7 +128,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtn-ub-avL">
-                                            <rect key="frame" x="8" y="56" width="49.5" height="17"/>
+                                            <rect key="frame" x="8" y="56" width="50" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
