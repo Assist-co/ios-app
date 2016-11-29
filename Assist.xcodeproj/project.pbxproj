@@ -249,6 +249,7 @@
 		034051721DD42E68005F6B82 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */,
 				D455731E1DD92C350000B938 /* HomeViewController.swift */,
 				85ED5EAA1DDC199D0073B625 /* Task */,
 				031300FC1DD9194200381716 /* SettingsViewController.swift */,
@@ -265,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				85B318B31DEB805C007E0DBF /* Message.swift */,
-				85B318B11DEB7FEA007E0DBF /* VoiceToTextViewController.swift */,
 				859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */,
 				859B55401DDA149C00CBD957 /* Constants.swift */,
 				859B55411DDA149C00CBD957 /* Gender.swift */,

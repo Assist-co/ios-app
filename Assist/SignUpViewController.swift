@@ -60,7 +60,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {

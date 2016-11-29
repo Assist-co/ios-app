@@ -34,6 +34,7 @@ class MessageDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+
         textView.setContentOffset(CGPoint.zero, animated: false)
     }
     
@@ -41,8 +42,16 @@ class MessageDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Remove extraneous newline
+        textView.deleteBackward()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 50))
 
         self.createTaskBarButton = createTaskButtonBuilder()
@@ -150,8 +159,8 @@ class MessageDetailViewController: UIViewController {
     }
 
     @objc private func sendMessageAction(button: UIButton) {
-        MessagingClient.sharedInstance.postMessage(message: textView.text)
-        delegate?.didReceiveMessage(message: Message(body: textView.text))
+        MessagingClient.sharedInstance.postMessage(message: textView.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))
+        delegate?.didReceiveMessage(message: Message(body: textView.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)))
         self.view.endEditing(true)
         self.dismiss(animated: true)
     }

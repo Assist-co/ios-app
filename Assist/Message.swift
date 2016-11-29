@@ -51,23 +51,17 @@ class Message: NSObject {
         let seconds = Int(currentDate.timeIntervalSince(createdAt!))
         let minutes = seconds / 60
         let hours = minutes / 60
-        let days = hours / 24
-        let weeks = days / 7
-        let months = weeks / 4
-        let years = months / 12
         
-        if years > 0 {
-            return "\(years)y"
-        } else if weeks > 0 {
-            return "\(weeks)w"
-        } else if days > 0 {
-            return "\(days)d"
+        if hours > 24 {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            return dateFormatter.string(from: createdAt!)
         } else if hours > 0 {
-            return "\(hours)h"
+            return "\(hours)h ago"
         } else if minutes > 0 {
-            return "\(minutes)m"
+            return "\(minutes)m ago"
         } else {
-            return "\(seconds)s"
-        }
+            return "\(seconds)s ago"
+        }        
     }
 }

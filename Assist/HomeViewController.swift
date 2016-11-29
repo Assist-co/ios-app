@@ -10,8 +10,9 @@ import UIKit
 import SendBirdSDK
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, MessageListener {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MessageListener {
     
+    @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
     @IBOutlet weak var messageToolbarConstraint: NSLayoutConstraint!
     @IBOutlet weak var messagesTableView: UITableView!
     @IBOutlet weak var messageTextField: UITextField!
@@ -185,7 +186,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITextFieldDe
             self.populateTableView()
         }, onFailure: {
             _ in
-        
         })
     }
     
@@ -234,6 +234,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITextFieldDe
         self.messageToolbar.isHidden = false
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = keyboardFrame.size.height
+            self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
             self.view.layoutIfNeeded()
         }
     }
@@ -241,8 +242,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITextFieldDe
     @objc private func keyboardWillHide(notification: NSNotification) {
         let duration = notification.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
         
+        self.messageToolbar.isHidden = true
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = self.messageToolbarBottomConstraintInitialValue!
+            self.tableViewTopMargin.constant = 0
             self.view.layoutIfNeeded()
         }
     }
