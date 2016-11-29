@@ -9,9 +9,9 @@
 import Contacts
 
 class ContactsService: NSObject {
-    public let contactStore = CNContactStore()
-    public var isAccessGranted: Bool?
-    public let shared = ContactsService()
+    let contactStore = CNContactStore()
+    var isAccessGranted: Bool?
+    static let sharedInstance = ContactsService()
     
     override init() {
         super.init()
@@ -24,7 +24,7 @@ class ContactsService: NSObject {
     
     func searchContactsWith(string: String, completion: @escaping ([CNContact]) -> Void){
         let predicate = CNContact.predicateForContacts(matchingName: string)
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey] as [Any]
+        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey, CNContactPhoneNumbersKey] as [Any]
         var contacts = [CNContact]()
         do {
             contacts = try self.contactStore.unifiedContacts(matching: predicate, keysToFetch: keys as! [CNKeyDescriptor])
