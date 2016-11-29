@@ -25,7 +25,7 @@ class MessageTableViewCell: UITableViewCell {
         
         _ = UIBezierPath(roundedRect: bubbleSpace, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadii: CGSize(width: 20.0, height: 20.0))
         
-        let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 8.0)
+        let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 6.0)
         let color = message?.messageColor
         color?.setStroke()
         color?.setFill()

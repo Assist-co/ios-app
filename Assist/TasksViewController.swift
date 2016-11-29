@@ -21,6 +21,9 @@ struct TasksData {
 
 class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewControllerDelegate {
     @IBOutlet weak var emptyStateLabel: UILabel!
+    @IBOutlet weak var taskListContainer: UIView!
+    @IBOutlet weak var queuedButton: UIButton!
+    @IBOutlet weak var completedButton: UIButton!
     
     private var queuedTaskViewController: TaskListTableViewController!
     private var completedTaskViewController: TaskListTableViewController!
@@ -51,22 +54,22 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
             if self.currentTaskListType != .queued {
-                UIView.transition(with: self.view, duration: 0.35, options: .transitionFlipFromRight, animations: {
+                UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromRight, animations: {
                     // remove completed task list
                     self.completedTaskViewController.removeFromParentViewController()
                     self.completedTaskViewController.tableView.removeFromSuperview()
                     self.didMove(toParentViewController: self.completedTaskViewController)
                     // add queued task list
                     self.addChildViewController(self.queuedTaskViewController)
-                    self.view.insertSubview(self.queuedTaskViewController.tableView, at: 0)
+                    self.taskListContainer.insertSubview(self.queuedTaskViewController.tableView, at: 0)
                     self.didMove(toParentViewController: self.queuedTaskViewController)
                     // check for empty state
                     if self.queuedTaskViewController.tasks.isEmpty {
                         self.queuedTaskViewController.tableView.isHidden = true
-                        self.emptyStateLabel.isHidden = false
+                        //self.emptyStateLabel.isHidden = false
                     }else{
                         self.queuedTaskViewController.tableView.isHidden = false
-                        self.emptyStateLabel.isHidden = true
+                        //self.emptyStateLabel.isHidden = true
                     }
                 }, completion: { (sucess: Bool) in
 
@@ -75,22 +78,22 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
             }
         }else{
             if self.currentTaskListType != .completed {
-                UIView.transition(with: self.view, duration: 0.35, options: .transitionFlipFromLeft, animations: {
+                UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     // remove queued task list
                     self.queuedTaskViewController.removeFromParentViewController()
                     self.queuedTaskViewController.tableView.removeFromSuperview()
                     self.didMove(toParentViewController: self.queuedTaskViewController)
                     // add completed task list
                     self.addChildViewController(self.completedTaskViewController)
-                    self.view.insertSubview(self.completedTaskViewController.tableView, at: 0)
+                    self.taskListContainer.insertSubview(self.completedTaskViewController.tableView, at: 0)
                     self.didMove(toParentViewController: self.completedTaskViewController)
                     // check for empty state
                     if self.completedTaskViewController.tasks.isEmpty {
                         self.completedTaskViewController.tableView.isHidden = true
-                        self.emptyStateLabel.isHidden = false
+                        //self.emptyStateLabel.isHidden = false
                     }else{
                         self.completedTaskViewController.tableView.isHidden = false
-                        self.emptyStateLabel.isHidden = true
+                        //self.emptyStateLabel.isHidden = true
                     }
                 }, completion: { (success: Bool) in
 
@@ -176,15 +179,17 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
         self.queuedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
         self.completedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
+        
         self.queuedTaskViewController.taskListDelegate = self
         self.completedTaskViewController.taskListDelegate = self
-        let bounds = UIScreen.main.bounds
+
+        let bounds = self.taskListContainer.bounds
         let width = bounds.size.width
         let height = bounds.size.height
-        self.queuedTaskViewController.tableView.frame = CGRect(x: 0, y: 50, width: width, height: height - 50)
-        self.completedTaskViewController.tableView.frame = CGRect(x: 0, y: 50, width: width, height: height - 50)
+        self.queuedTaskViewController.tableView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        self.completedTaskViewController.tableView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         self.addChildViewController(self.queuedTaskViewController)
-        self.view .insertSubview(self.queuedTaskViewController.tableView, at: 0)
+        self.taskListContainer.insertSubview(self.queuedTaskViewController.tableView, at: 0)
         self.didMove(toParentViewController: self.queuedTaskViewController)
     }
 }

@@ -28,7 +28,8 @@ class MeetAssistantViewController: UIViewController {
         letsGoButton.backgroundColor = UIColor(hexString: "#256e93ff")
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#111111ff")
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        navigationController!.navigationBar.isTranslucent = false
 
     }
 

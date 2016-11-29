@@ -374,7 +374,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="iET-b2-zmb" firstAttribute="top" secondItem="00K-OR-dpB" secondAttribute="bottom" constant="16" id="2ka-ZQ-o7G"/>
                                     <constraint firstAttribute="height" constant="440" id="HXW-sL-1id"/>
@@ -388,7 +388,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qg7-gR-8Qz" firstAttribute="centerY" secondItem="0zO-SR-b2y" secondAttribute="centerY" id="Oab-Bn-Pa0"/>
                             <constraint firstItem="Qg7-gR-8Qz" firstAttribute="centerX" secondItem="0zO-SR-b2y" secondAttribute="centerX" id="Si6-cl-3oi"/>

@@ -39,7 +39,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupNotifications()
         initMessagingClient()
         styleElements()
-        addShadowToBar()
+        //addShadowToBar()
         
         messageTextField.delegate = self
     }
@@ -250,6 +250,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    /*
     private func addShadowToBar() {
         let shadowView = UIView(frame: self.navigationController!.navigationBar.frame)
         shadowView.backgroundColor = UIColor.white
@@ -259,7 +260,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         shadowView.layer.shadowRadius = 2
         view.addSubview(shadowView)
-    }
+    }*/
     
     private func styleElements() {
         voiceButton.layer.cornerRadius = voiceButtonHeight.constant / 2
@@ -289,7 +290,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         textButton.layer.shadowRadius = 5
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#111111ff")
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        //navigationController.navigationBar.
+        navigationController!.navigationBar.isTranslucent = false
         
         messageTextField.autocorrectionType = UITextAutocorrectionType.no
         messageTextField.borderStyle = UITextBorderStyle.none

@@ -30,7 +30,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hun-9k-whm">
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aOV-Dj-fEW">
-                                        <color key="backgroundColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MessageTableViewCell" rowHeight="175" id="jpO-fT-RW9" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="92" width="375" height="175"/>
@@ -64,7 +64,7 @@
                                                         <constraint firstItem="rtz-eg-hk6" firstAttribute="top" secondItem="zMz-Jj-uoj" secondAttribute="bottom" constant="12" id="Y8X-uC-xfY"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="bodyLabel" destination="zMz-Jj-uoj" id="cSu-xI-M0X"/>
                                                     <outlet property="dateLabelHeight" destination="ndx-54-lxO" id="6r4-vC-XNe"/>
@@ -105,7 +105,7 @@
                                                         <constraint firstAttribute="trailingMargin" secondItem="DH1-SX-xjT" secondAttribute="trailing" constant="24" id="tls-RI-Mrz"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="bodyLabel" destination="DH1-SX-xjT" id="0qh-pL-gJq"/>
                                                     <outlet property="dateLabelHeight" destination="ZKR-BX-z2X" id="U0Y-k8-hPW"/>
@@ -117,7 +117,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="aOV-Dj-fEW" firstAttribute="top" secondItem="Hun-9k-whm" secondAttribute="top" id="J9d-M5-UXg"/>
                                     <constraint firstItem="aOV-Dj-fEW" firstAttribute="height" secondItem="Hun-9k-whm" secondAttribute="height" id="VSG-vG-laC"/>
@@ -183,7 +183,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.074509803921568626" green="0.078431372549019607" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="hJ1-Ny-h2L" firstAttribute="centerY" secondItem="bS5-Hm-9ra" secondAttribute="centerY" id="1YL-4s-hW3"/>
                                     <constraint firstItem="IVm-aN-rPR" firstAttribute="centerY" secondItem="bS5-Hm-9ra" secondAttribute="centerY" id="CXy-eV-6q6"/>
@@ -195,17 +195,17 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bS5-Hm-9ra" secondAttribute="trailing" id="2oG-yz-OTa"/>
                             <constraint firstItem="xgR-tK-7cp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5d5-5B-DNG"/>
+                            <constraint firstItem="Hun-9k-whm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5mk-jq-ueK"/>
                             <constraint firstAttribute="trailing" secondItem="xgR-tK-7cp" secondAttribute="trailing" id="EFR-ui-1HC"/>
                             <constraint firstAttribute="bottom" secondItem="xgR-tK-7cp" secondAttribute="bottom" id="Oiq-z6-Hgn"/>
                             <constraint firstItem="Hun-9k-whm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ukr-12-FQZ"/>
                             <constraint firstAttribute="bottom" secondItem="bS5-Hm-9ra" secondAttribute="bottom" id="ZTJ-RB-fRF"/>
                             <constraint firstItem="bS5-Hm-9ra" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ik8-Do-Kwh"/>
                             <constraint firstAttribute="trailing" secondItem="Hun-9k-whm" secondAttribute="trailing" id="lVs-qB-gk9"/>
-                            <constraint firstItem="Hun-9k-whm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ruI-RH-6ZI"/>
                             <constraint firstItem="bS5-Hm-9ra" firstAttribute="top" secondItem="Hun-9k-whm" secondAttribute="bottom" id="tyg-1z-dcA"/>
                         </constraints>
                     </view>
@@ -298,6 +298,7 @@
         <scene sceneID="88b-k2-8Wq">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="UGR-rZ-Gla" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RgU-MX-xhS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
