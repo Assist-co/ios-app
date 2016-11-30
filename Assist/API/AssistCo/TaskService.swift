@@ -60,7 +60,7 @@ class TaskService: NSObject {
     }
     
     class func createTask(
-        taskDict: Dictionary<String, AnyObject>,
+        taskDict: Dictionary<String, Any>,
         completion: @escaping (Task?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
@@ -85,7 +85,7 @@ class TaskService: NSObject {
     
     class func updateTask(
         taskID: Int,
-        taskDict: Dictionary<String, AnyObject>,
+        taskDict: Dictionary<String, Any>,
         completion: @escaping (Task?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(

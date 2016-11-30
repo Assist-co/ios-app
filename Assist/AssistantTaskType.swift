@@ -14,7 +14,7 @@ class AssistantTaskType: NSObject {
     var sort: Int!
     var permalink: String!
     override var description: String{
-        return "Task: \(display!)"
+        return "Task Type: \(display!)"
     }
     
     init(dictionary: NSDictionary) {

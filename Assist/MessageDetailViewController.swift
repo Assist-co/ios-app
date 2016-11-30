@@ -15,15 +15,15 @@ class MessageDetailViewController: UIViewController {
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var profilePicHeight: NSLayoutConstraint!
     
-    @IBOutlet weak var schedulingButton: UIButton!
-    @IBOutlet weak var emailButton: UIButton!
-    @IBOutlet weak var reminderButton: UIButton!
-    @IBOutlet weak var phoneButton: UIButton!
-    @IBOutlet weak var inquiryButton: UIButton!
-    @IBOutlet weak var otherButton: UIButton!
+    @IBOutlet weak var schedulingButton: TaskTypeButton!
+    @IBOutlet weak var emailButton: TaskTypeButton!
+    @IBOutlet weak var reminderButton: TaskTypeButton!
+    @IBOutlet weak var phoneButton: TaskTypeButton!
+    @IBOutlet weak var inquiryButton: TaskTypeButton!
+    @IBOutlet weak var otherButton: TaskTypeButton!
     @IBOutlet weak var profilePicShadow: UIView!
     
-    var taskTagSelected: UIButton?
+    var taskTagSelected: TaskTypeButton?
     var toolBar: UIToolbar!
     var createTaskBarButton: UIBarButtonItem!
     var sendMessageBarButton: UIBarButtonItem!
@@ -69,7 +69,7 @@ class MessageDetailViewController: UIViewController {
     /** IBAction Methods **/
     
     // Respond to user selecting a tag
-    @IBAction func taskTagButtonTap(_ sender: AnyObject) {
+    @IBAction func taskTagButtonTap(_ sender: TaskTypeButton) {
         let buttons = [
             schedulingButton,
             emailButton,
@@ -79,7 +79,7 @@ class MessageDetailViewController: UIViewController {
             otherButton
         ]
         for button in buttons {
-            if button != sender as? UIButton {
+            if button != sender {
                 button?.backgroundColor = UIColor.white
                 button?.titleLabel?.textColor = UIColor.gray
                 UIView.animate(withDuration: 0.2, animations: { () -> Void in
@@ -88,7 +88,7 @@ class MessageDetailViewController: UIViewController {
             }
         }
         
-        let pressedButton = sender as! UIButton
+        let pressedButton = sender
         if taskTagSelected == pressedButton {
             taskTagSelected = nil
             pressedButton.backgroundColor = UIColor.white
@@ -146,8 +146,10 @@ class MessageDetailViewController: UIViewController {
     }
     
     @objc private func createTaskAction(button: UIButton) {
-        // TODO: use correct values for createTask
-        TaskService.createTask(taskDict: [:]) { (task: Task?, error: Error?) in
+        let taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
+                                            "text": self.textView.text as Any,
+                                            "task_type": self.taskTagSelected!.taskTypePermalink! as Any]
+        TaskService.createTask(taskDict: taskDictionary) { (task: Task?, error: Error?) in
             if let error = error {
                 // TODO: show client appropriate error
                 print(error.localizedDescription)
