@@ -37,7 +37,7 @@ class ClientService: NSObject {
     
     class func updateClient(
         clientID: Int,
-        clientDict: Dictionary<String, AnyObject>,
+        clientDict: Dictionary<String, Any>,
         completion: @escaping (Client?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
