@@ -24,7 +24,7 @@ class TaskDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskDetailCell", for: indexPath) as! TaskDetailTableViewCell
         cell.taskTextLabel.text = self.task?.text

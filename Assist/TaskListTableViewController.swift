@@ -14,9 +14,12 @@ protocol TaskListViewControllerDelegate: class {
 
 class TaskListTableViewController: UITableViewController {
     internal var tasks: [Task]! = []
+    var tasksByDay: [(Date, [Task])]?
     internal var isShowing: Bool?
     private var selectedTask: Task?
     weak var taskListDelegate: TaskListViewControllerDelegate?
+
+    @IBOutlet var taskTable: UITableView!
     
     //MARK:- View Life Cycle
     
@@ -24,25 +27,67 @@ class TaskListTableViewController: UITableViewController {
         super.viewDidLoad()
         self.setup()
         
+        self.taskTable.layoutMargins = UIEdgeInsets.zero
+        self.taskTable.separatorInset = UIEdgeInsets.zero
     }
     
     //MARK:- TableView Datasource
     
-    override public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tasks.count
+     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let tasksByDay = tasksByDay {
+            
+            let date = tasksByDay[section].0
+            let calendar = Calendar.current
+            if calendar.isDateInToday(date) {
+                return "Today"
+            } else if calendar.isDateInYesterday(date) {
+                return "Yesterday"
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.long
+                return dateFormatter.string(from: tasksByDay[section].0)
+            }
+        } else {
+            return ""
+        }
+    }
+    
+    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32.0
+    }
+    
+    public override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textAlignment = .center
+        }
+    }
+    
+    public override func numberOfSections(in tableView: UITableView) -> Int {
+        if let tasksByDay = tasksByDay {
+            return tasksByDay.count
+        } else {
+            return 0
+        }
+    }
+    
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let tasksByDay = tasksByDay {
+            return tasksByDay[section].1.count
+        } else {
+            return 0
+        }
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "taskListCell", for: indexPath) as! TaskTableViewCell
-        let task = self.tasks[indexPath.row]
-        cell.taskTextLabel.text = task.text
+
+        cell.layoutMargins = UIEdgeInsets.zero
+        let task = self.tasksByDay?[indexPath.section].1[indexPath.row]
+        cell.taskTextLabel.text = task?.text
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .medium
-        if let createdOn = task.createdOn {
-            cell.createdOnLabel.text = formatter.string(from: createdOn)
-        }
         let longPressGesture = UILongPressGestureRecognizer()
         longPressGesture.addTarget(self, action: #selector(TaskListTableViewController.taskLongPressGesture(_:)))
         cell.addGestureRecognizer(longPressGesture)
@@ -56,7 +101,7 @@ class TaskListTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         self.selectedTask = self.tasks[indexPath.row]
     }
-    
+   
     //MARK:- Action
     
     @objc fileprivate func taskLongPressGesture(_ sender: UILongPressGestureRecognizer) {
@@ -94,6 +139,7 @@ class TaskListTableViewController: UITableViewController {
     
     internal func refreshTasks(){
         self.taskListDelegate?.refreshTasksLists(completion: { (sucess: Bool, error: Error?) in
+            
             if error == nil{
             
             }else{

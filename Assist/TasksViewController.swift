@@ -17,6 +17,8 @@ enum TaskListType{
 struct TasksData {
     var queuedTasks: [Task]?
     var completedTasks:[Task]?
+    var queuedTasksByDate: [(Date, [Task])]?
+    var completedTasksByDate: [(Date, [Task])]?
 }
 
 class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewControllerDelegate {
@@ -54,7 +56,13 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
             if self.currentTaskListType != .queued {
+                self.completedButton.backgroundColor = UIColor(hexString: "#EFEFF4ff")
+                self.queuedButton.backgroundColor = UIColor(hexString: "#256E93ff")
+                self.completedButton.setTitleColor(UIColor.darkGray, for: .normal)
+                self.queuedButton.setTitleColor(UIColor.white, for: .normal)
+                
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromRight, animations: {
+
                     // remove completed task list
                     self.completedTaskViewController.removeFromParentViewController()
                     self.completedTaskViewController.tableView.removeFromSuperview()
@@ -65,9 +73,11 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                     self.didMove(toParentViewController: self.queuedTaskViewController)
                     // check for empty state
                     if self.queuedTaskViewController.tasks.isEmpty {
+                        print("queued is empty")
                         self.queuedTaskViewController.tableView.isHidden = true
                         //self.emptyStateLabel.isHidden = false
                     }else{
+                        print("queued is full")
                         self.queuedTaskViewController.tableView.isHidden = false
                         //self.emptyStateLabel.isHidden = true
                     }
@@ -77,6 +87,11 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                 self.currentTaskListType = .queued
             }
         }else{
+            self.completedButton.backgroundColor = UIColor(hexString: "#256E93ff")
+            self.queuedButton.backgroundColor = UIColor(hexString: "#EFEFF4ff")
+            self.queuedButton.setTitleColor(UIColor.darkGray, for: .normal)
+            self.completedButton.setTitleColor(UIColor.white, for: .normal)
+
             if self.currentTaskListType != .completed {
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromLeft, animations: {
                     // remove queued task list
@@ -114,8 +129,15 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
             if error == nil{
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
+                
+                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued)
+                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed)
+                
                 self.tasksData.queuedTasks = queued
                 self.tasksData.completedTasks = completed
+                self.tasksData.queuedTasksByDate = queuedTasksByDate
+                self.tasksData.completedTasksByDate = completedTasksByDate
+                
                 self.reloadTaskLists()
                 completion(true, nil)
             }else{
@@ -128,21 +150,53 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     
     fileprivate func reloadTaskLists(){
         self.queuedTaskViewController.tasks = self.tasksData.queuedTasks
+        self.queuedTaskViewController.tasksByDay = self.tasksData.queuedTasksByDate
         self.queuedTaskViewController.tableView.reloadData()
         self.queuedTaskViewController.tableView.layoutIfNeeded()
         self.completedTaskViewController.tasks = self.tasksData.completedTasks
+        self.completedTaskViewController.tasksByDay = self.tasksData.completedTasksByDate
         self.completedTaskViewController.tableView.reloadData()
         self.completedTaskViewController.tableView.layoutIfNeeded()
     }
     
+    private func groupTasksByDate(inputTasks: [Task]) -> [(Date,[Task])] {
+        var tasksByDate: [(Date, [Task])] = []
+        if inputTasks.count > 0 {
+            var currDate: Date = inputTasks[0].createdOn!
+            var tasks: [Task] = []
+            for task in inputTasks {
+                if Calendar.current.isDate(task.createdOn!, inSameDayAs: currDate) {
+                    tasks.append(task)
+                } else {
+                    let tasksCopy = tasks
+                    tasks = [task]
+                    tasksByDate.append((currDate, tasksCopy))
+                    currDate = task.createdOn!
+                }
+            }
+            if tasks != [] {
+                tasksByDate.append((currDate, tasks))
+            }
+        }
+        return tasksByDate
+    }
+    
     fileprivate func loadData(){
+        
         MBProgressHUD.showAdded(to: self.view, animated: true)
         TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
             MBProgressHUD.hide(for: self.view, animated: true)
-            if error == nil{
+            if error == nil {
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
+
+                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued)
+                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed)
+                
                 self.tasksData.queuedTasks = queued
                 self.tasksData.completedTasks = completed
+                self.tasksData.queuedTasksByDate = queuedTasksByDate
+                self.tasksData.completedTasksByDate = completedTasksByDate
+                
                 self.reloadTaskLists()
             }else{
                 #if DEBUG

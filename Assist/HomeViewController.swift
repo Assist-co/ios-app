@@ -274,7 +274,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         voiceButton.isHidden = !VoiceToTextClient.sharedInstance.isEnabled
         
         callButton.layer.cornerRadius = callButtonHeight.constant / 2
-        callButton.setImage(UIImage(named: "phone_icon"), for: .normal)
+        callButton.setImage(UIImage(named: "phone"), for: .normal)
         callButton.contentMode = UIViewContentMode.center
         callButton.layer.shadowColor = UIColor.gray.cgColor
         callButton.layer.shadowOpacity = 0.3

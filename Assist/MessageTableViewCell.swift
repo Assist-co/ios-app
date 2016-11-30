@@ -42,8 +42,6 @@ class MessageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-
     }
     
     private func populateMessage() {
