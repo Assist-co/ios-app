@@ -53,7 +53,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32.0
+        return 16.0
     }
     
     public override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -76,6 +76,12 @@ class TaskListTableViewController: UITableViewController {
         } else {
             return 0
         }
+    }
+    
+    public override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        // remove bottom extra 20px space.
+        return CGFloat.leastNormalMagnitude
     }
     
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

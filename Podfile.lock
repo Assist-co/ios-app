@@ -1,12 +1,21 @@
 PODS:
   - Alamofire (4.0.1)
+  - JTAppleCalendar (6.0.3)
+  - MBProgressHUD (1.0.0)
+  - SendBirdSDK (3.0.14)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - JTAppleCalendar (~> 6.0)
+  - MBProgressHUD
+  - SendBirdSDK
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  JTAppleCalendar: 69683a07831c24a080e0fc0f76c9852627ef4d6a
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  SendBirdSDK: 921c2afb4ea13066a5147d198475d124d57973f9
 
-PODFILE CHECKSUM: ccfd35ee1e44783e49afac44be84d558ab29c1a8
+PODFILE CHECKSUM: c8ba71f04f9031f776ea27ddc5a6f0f763af133c
 
 COCOAPODS: 1.0.1

@@ -7,14 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TaskManager-->
-        <scene sceneID="RZe-OZ-uhg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="TaskManager" id="IGU-8Q-9VS" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T6U-LG-EWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-411" y="-40"/>
-        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -213,11 +205,14 @@
                         <barButtonItem key="leftBarButtonItem" image="clipboard" id="QHl-Hj-mN2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="IGU-8Q-9VS" kind="show" id="w20-Wj-ksj"/>
+                                <action selector="onTaskButtonTap:" destination="BYZ-38-t0r" id="Bgg-0d-c89"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="calendar" id="dj5-qg-bgG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onCalendarButtonTap:" destination="BYZ-38-t0r" id="xyu-sb-Jg7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -272,7 +267,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="I5N-GG-mVH" secondAttribute="trailing" constant="10" id="8kS-ci-1Ue"/>
                             <constraint firstItem="cLq-NX-KWc" firstAttribute="leading" secondItem="efj-Nr-VZO" secondAttribute="leadingMargin" constant="10" id="AUe-9v-Avv"/>
@@ -292,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nng-Yt-fXu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="462"/>
+            <point key="canvasLocation" x="1078" y="453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="88b-k2-8Wq">

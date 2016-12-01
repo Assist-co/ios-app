@@ -9,6 +9,7 @@ target 'Assist' do
   pod 'Alamofire', '~> 4.0'
   pod 'SendBirdSDK'
   pod 'MBProgressHUD'
+  pod 'JTAppleCalendar', '~> 6.0'
 
   target 'AssistTests' do
     inherit! :search_paths

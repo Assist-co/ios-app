@@ -82,15 +82,18 @@
                             <constraint firstItem="FJb-DC-s4g" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="abU-0J-km5"/>
                             <constraint firstAttribute="trailing" secondItem="TB5-p9-Bns" secondAttribute="trailing" id="b01-P0-jqC"/>
                             <constraint firstAttribute="trailing" secondItem="FJb-DC-s4g" secondAttribute="trailing" id="vvU-cH-bpw"/>
-                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" id="wyE-CJ-FaU"/>
+                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" constant="-50" id="wyE-CJ-FaU"/>
                             <constraint firstItem="j2o-54-EVV" firstAttribute="top" secondItem="TB5-p9-Bns" secondAttribute="bottom" id="yyV-M9-9gA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="Y5S-aF-sML">
+                        <barButtonItem key="leftBarButtonItem" title="+" id="f3h-HJ-cB3">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="home" id="edi-7I-eQI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="popViewController:" destination="Byl-nt-BTx" id="z6k-D5-xFY"/>
+                                <action selector="onHomeButtonTap:" destination="Byl-nt-BTx" id="gXy-kD-fVN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -246,12 +249,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iPp-de-Cpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="1135.6821589205399"/>
+            <point key="canvasLocation" x="44" y="1148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xvI-0X-Tzf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="maY-Qz-Rhl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TaskManagerNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="maY-Qz-Rhl" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9jt-rh-dmX">

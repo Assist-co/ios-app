@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MessageListener {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MessageListener, UIScrollViewDelegate {
     
     @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
     @IBOutlet weak var messageToolbarConstraint: NSLayoutConstraint!
@@ -39,9 +39,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         setupNotifications()
         initMessagingClient()
         styleElements()
-        //addShadowToBar()
         
         messageTextField.delegate = self
+        messagesTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +73,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.hideKeyboard()
     }
     
+    /** UIScrollViewDelegate Methods **/
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview!)
+        if translation.y > 0 {
+            self.hideKeyboard()
+        }
+    }
     
     /** UITableViewDelegate Methods **/
     
@@ -123,9 +130,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     /** TextFieldDelegate Methods **/
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        //textField.resignFirstResponder()
         let message = self.messageTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        showMessageView(message: message)
+        //showMessageView(message: message)
+        
+        MessagingClient.sharedInstance.postMessage(message: message!)
+        self.didReceiveMessage(message: Message(body: message!))
+        textField.text = ""
         return true
     }
     
@@ -145,6 +156,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
+    @IBAction func onTaskButtonTap(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
+        let taskManagementNavigationController = storyboard.instantiateViewController(withIdentifier: "TaskManagerNavigationController")
+        self.present(taskManagementNavigationController, animated: false, completion: nil)
+    }
+    
+    @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Calendar", bundle: nil)
+        let calendarNavigationController = storyboard.instantiateViewController(withIdentifier: "CalendarNavigationController")
+        self.present(calendarNavigationController, animated: false, completion: nil)
+    }
     
     /** Internal Methods **/
     
@@ -234,7 +256,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.messageToolbar.isHidden = false
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = keyboardFrame.size.height
-            self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+            if (self.messages?.count)! > 3 {
+                self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+            }
             self.view.layoutIfNeeded()
         }
     }
@@ -245,22 +269,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.messageToolbar.isHidden = true
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = self.messageToolbarBottomConstraintInitialValue!
-            self.tableViewTopMargin.constant = 0
+            if (self.messages?.count)! > 3 {
+                self.tableViewTopMargin.constant = 0
+            }
             self.view.layoutIfNeeded()
         }
     }
-    
-    /*
-    private func addShadowToBar() {
-        let shadowView = UIView(frame: self.navigationController!.navigationBar.frame)
-        shadowView.backgroundColor = UIColor.white
-        shadowView.layer.masksToBounds = false
-        shadowView.layer.shadowColor = UIColor.lightGray.cgColor
-        shadowView.layer.shadowOpacity = 0.8
-        shadowView.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        shadowView.layer.shadowRadius = 2
-        view.addSubview(shadowView)
-    }*/
     
     private func styleElements() {
         voiceButton.layer.cornerRadius = voiceButtonHeight.constant / 2
@@ -291,7 +305,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
-        //navigationController.navigationBar.
         navigationController!.navigationBar.isTranslucent = false
         
         messageTextField.autocorrectionType = UITextAutocorrectionType.no

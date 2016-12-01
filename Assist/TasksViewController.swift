@@ -49,9 +49,18 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         super.viewDidLoad()
         self.setup()
         self.loadData()
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
     }
     
     //MARK:- Action
+    
+    @IBAction func onHomeButtonTap(_ sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+        self.present(homeNavigationController, animated: false, completion: nil)
+    }
     
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
