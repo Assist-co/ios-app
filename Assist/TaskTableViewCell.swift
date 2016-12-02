@@ -14,6 +14,7 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var completedOnLabel: UILabel!
     @IBOutlet weak var createdOnLabel: UILabel!
     @IBOutlet weak var taskIcon: UIImageView!
+    @IBOutlet weak var taskDescriptionLabel: UILabel!
     
     
     override func awakeFromNib() {

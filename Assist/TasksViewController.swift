@@ -52,6 +52,7 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        navigationController!.navigationBar.isTranslucent = false
     }
     
     //MARK:- Action
@@ -71,10 +72,10 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
             if self.currentTaskListType != .queued {
-                self.completedButton.backgroundColor = UIColor(hexString: "#ffffffff")
+                self.completedButton.backgroundColor = UIColor(hexString: "#3F4550ff")
                 self.queuedButton.backgroundColor = UIColor(hexString: "#256E93ff")
-                self.completedButton.setTitleColor(UIColor.darkGray, for: .normal)
-                self.queuedButton.setTitleColor(UIColor.white, for: .normal)
+                //self.completedButton.setTitleColor(UIColor.darkGray, for: .normal)
+                //self.queuedButton.setTitleColor(UIColor.white, for: .normal)
                 self.emptyStateLabel.isHidden = true
 
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromRight, animations: {
@@ -90,10 +91,8 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                 }, completion: { (sucess: Bool) in
                     // check for empty state
                     if self.queuedTaskViewController.tasks.isEmpty {
-                        //self.queuedTaskViewController.tableView.isHidden = true
                         self.emptyStateLabel.isHidden = false
                     }else{
-                        //self.queuedTaskViewController.tableView.isHidden = false
                         self.emptyStateLabel.isHidden = true
                     }
                 })
@@ -101,9 +100,9 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
             }
         }else{
             self.completedButton.backgroundColor = UIColor(hexString: "#256E93ff")
-            self.queuedButton.backgroundColor = UIColor(hexString: "#ffffffff")
-            self.queuedButton.setTitleColor(UIColor.darkGray, for: .normal)
-            self.completedButton.setTitleColor(UIColor.white, for: .normal)
+            self.queuedButton.backgroundColor = UIColor(hexString: "#3F4550ff")
+            //self.queuedButton.setTitleColor(UIColor.darkGray, for: .normal)
+            //self.completedButton.setTitleColor(UIColor.white, for: .normal)
             self.emptyStateLabel.isHidden = true
 
             if self.currentTaskListType != .completed {
@@ -143,8 +142,8 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
             if error == nil{
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
                 
-                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued)
-                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed)
+                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued.reversed())
+                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed.reversed())
                 
                 self.tasksData.queuedTasks = queued
                 self.tasksData.completedTasks = completed
@@ -202,8 +201,8 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
             if error == nil {
                 let (queued, completed) = self.filterTasks(tasks: tasks!)
 
-                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued)
-                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed)
+                let queuedTasksByDate = self.groupTasksByDate(inputTasks: queued.reversed())
+                let completedTasksByDate = self.groupTasksByDate(inputTasks: completed.reversed())
                 
                 self.tasksData.queuedTasks = queued
                 self.tasksData.completedTasks = completed

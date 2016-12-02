@@ -22,6 +22,8 @@ class CalendarViewController: UIViewController {
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        navigationController!.navigationBar.isTranslucent = false
+
     }
 
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {

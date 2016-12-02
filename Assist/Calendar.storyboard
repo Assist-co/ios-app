@@ -20,13 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-LA-V3d" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mga-LA-V3d" secondAttribute="height" multiplier="1:1" id="tAM-vg-DT7"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="top" secondItem="0HR-k1-GOL" secondAttribute="bottom" id="HnT-fi-sX4"/>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="KLs-Qu-Mxz"/>

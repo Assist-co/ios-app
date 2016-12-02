@@ -29,6 +29,7 @@ class TaskListTableViewController: UITableViewController {
         
         self.taskTable.layoutMargins = UIEdgeInsets.zero
         self.taskTable.separatorInset = UIEdgeInsets.zero
+        self.taskTable.separatorColor = UIColor(hexString: "#444444ff")
     }
     
     //MARK:- TableView Datasource
@@ -90,10 +91,33 @@ class TaskListTableViewController: UITableViewController {
 
         cell.layoutMargins = UIEdgeInsets.zero
         let task = self.tasksByDay?[indexPath.section].1[indexPath.row]
-        cell.taskTextLabel.text = task?.text
+        cell.taskTextLabel.text = task?.type?.display
+        let cellType = task?.type?.display
+        if cellType == "Reminder" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "clock")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#FFCA28ff")
+        } else if cellType == "Call" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "phone_small")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#ED5E5Eff")
+        } else if cellType == "Schedule" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "calendar_small")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#66BB6Aff")
+        } else if cellType == "Other" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "other")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#AC7339ff")
+        } else if cellType == "Inquiry" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "magnifying_glass")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#7E57C2ff")
+        } else if cellType == "Email" {
+            cell.taskIcon.image = #imageLiteral(resourceName: "mail")
+            cell.taskIcon.backgroundColor = UIColor(hexString: "#42A5F5ff")
+        }
+        
+        cell.taskDescriptionLabel.text = task?.text
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        cell.createdOnLabel.text = formatter.string(from: (task?.createdOn)!)
         let longPressGesture = UILongPressGestureRecognizer()
         longPressGesture.addTarget(self, action: #selector(TaskListTableViewController.taskLongPressGesture(_:)))
         cell.addGestureRecognizer(longPressGesture)

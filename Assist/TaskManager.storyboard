@@ -42,7 +42,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-47-WwV">
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-DC-s4g">
@@ -57,9 +57,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jm-Od-2OM">
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.14509803921568626" green="0.15686274509803921" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Completed">
-                                            <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="filterSelected:" destination="Byl-nt-BTx" eventType="touchUpInside" id="IcO-fI-NYx"/>
@@ -80,7 +80,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tXU-47-WwV" firstAttribute="centerY" secondItem="8k1-yp-ncX" secondAttribute="centerY" id="8e4-ft-fzp"/>
                             <constraint firstItem="TB5-p9-Bns" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="Lqb-MN-2O7"/>
@@ -89,7 +89,7 @@
                             <constraint firstAttribute="trailing" secondItem="TB5-p9-Bns" secondAttribute="trailing" id="b01-P0-jqC"/>
                             <constraint firstItem="tXU-47-WwV" firstAttribute="centerX" secondItem="8k1-yp-ncX" secondAttribute="centerX" id="cqV-ZU-g6G"/>
                             <constraint firstAttribute="trailing" secondItem="FJb-DC-s4g" secondAttribute="trailing" id="vvU-cH-bpw"/>
-                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" constant="-60" id="wyE-CJ-FaU"/>
+                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" id="wyE-CJ-FaU"/>
                             <constraint firstItem="j2o-54-EVV" firstAttribute="top" secondItem="TB5-p9-Bns" secondAttribute="bottom" id="yyV-M9-9gA"/>
                         </constraints>
                     </view>
@@ -125,7 +125,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="156" sectionHeaderHeight="8" sectionFooterHeight="8" id="PZH-6X-wEF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11144764094277157" green="0.11880491350727912" blue="0.13378342099678819" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="taskListCell" rowHeight="156" id="zMJ-ZD-4QD" customClass="TaskTableViewCell" customModule="Assist" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="56" width="375" height="156"/>
@@ -136,12 +136,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Call" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb6-OF-dyk">
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                            <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Could you scedule a meeting with Alice and Rob tomorrow at noon?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byc-Mj-abR">
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone_small" translatesAutoresizingMaskIntoConstraints="NO" id="Pgr-bp-aLG">
@@ -153,25 +148,39 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with Alice and 2 others" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kf5-EH-Ne5">
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov 10 2016" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mg9-wu-YSe">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Could you scedule a meeting with Alice and Rob tomorrow at noon?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byc-Mj-abR">
+                                            <frame key="frameInset" minX="124" minY="68" width="488.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="Byc-Mj-abR" secondAttribute="bottom" constant="4" id="8bG-zX-U1D"/>
-                                        <constraint firstItem="Pgr-bp-aLG" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="12" id="A3F-YD-4rx"/>
-                                        <constraint firstItem="kf5-EH-Ne5" firstAttribute="leading" secondItem="Pgr-bp-aLG" secondAttribute="trailing" constant="8" id="EPR-ZZ-M91"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pgr-bp-aLG" secondAttribute="bottom" constant="16" id="3qU-lo-vOc"/>
+                                        <constraint firstItem="Pgr-bp-aLG" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="16" id="A3F-YD-4rx"/>
+                                        <constraint firstAttribute="trailing" secondItem="Mg9-wu-YSe" secondAttribute="trailing" constant="12" id="AHu-SJ-ROY"/>
+                                        <constraint firstItem="Mg9-wu-YSe" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="14" id="FEs-xM-Ob9"/>
                                         <constraint firstItem="Pgr-bp-aLG" firstAttribute="leading" secondItem="3QI-b0-hS1" secondAttribute="leading" constant="12" id="JCq-1s-fb3"/>
-                                        <constraint firstItem="lb6-OF-dyk" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="topMargin" constant="4" id="SAM-RH-DPM"/>
-                                        <constraint firstItem="kf5-EH-Ne5" firstAttribute="top" secondItem="lb6-OF-dyk" secondAttribute="bottom" id="Ugj-dm-y92"/>
+                                        <constraint firstItem="kf5-EH-Ne5" firstAttribute="leading" secondItem="Pgr-bp-aLG" secondAttribute="trailing" constant="8" id="Rz5-1A-EKI"/>
+                                        <constraint firstItem="lb6-OF-dyk" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="topMargin" constant="8" id="SAM-RH-DPM"/>
+                                        <constraint firstItem="kf5-EH-Ne5" firstAttribute="top" secondItem="lb6-OF-dyk" secondAttribute="bottom" id="au2-gG-gJE"/>
                                         <constraint firstItem="lb6-OF-dyk" firstAttribute="leading" secondItem="Pgr-bp-aLG" secondAttribute="trailing" constant="8" id="gUm-MM-4zb"/>
-                                        <constraint firstItem="Byc-Mj-abR" firstAttribute="leading" secondItem="3QI-b0-hS1" secondAttribute="leading" constant="12" id="maW-t0-hFm"/>
-                                        <constraint firstAttribute="trailing" secondItem="Byc-Mj-abR" secondAttribute="trailing" constant="12" id="ukT-cR-Bf2"/>
-                                        <constraint firstItem="Byc-Mj-abR" firstAttribute="top" secondItem="kf5-EH-Ne5" secondAttribute="bottom" constant="12" id="x4A-zq-CJ7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
+                                    <outlet property="createdOnLabel" destination="Mg9-wu-YSe" id="VR9-Po-nzE"/>
+                                    <outlet property="taskDescriptionLabel" destination="Byc-Mj-abR" id="xoe-YX-6yf"/>
                                     <outlet property="taskIcon" destination="Pgr-bp-aLG" id="aFU-xn-tUV"/>
                                     <outlet property="taskTextLabel" destination="lb6-OF-dyk" id="yWp-7G-0Zj"/>
                                 </connections>
