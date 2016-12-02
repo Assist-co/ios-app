@@ -62,14 +62,21 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         self.present(homeNavigationController, animated: false, completion: nil)
     }
     
+    @IBAction func addTask(_ sender: AnyObject) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
+        self.show(vc, sender: self)
+    }
+    
     @IBAction func filterSelected(_ sender: UIButton) {
         if sender.tag == 100 {
             if self.currentTaskListType != .queued {
-                self.completedButton.backgroundColor = UIColor(hexString: "#EFEFF4ff")
+                self.completedButton.backgroundColor = UIColor(hexString: "#ffffffff")
                 self.queuedButton.backgroundColor = UIColor(hexString: "#256E93ff")
                 self.completedButton.setTitleColor(UIColor.darkGray, for: .normal)
                 self.queuedButton.setTitleColor(UIColor.white, for: .normal)
-                
+                self.emptyStateLabel.isHidden = true
+
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromRight, animations: {
 
                     // remove completed task list
@@ -80,26 +87,24 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                     self.addChildViewController(self.queuedTaskViewController)
                     self.taskListContainer.insertSubview(self.queuedTaskViewController.tableView, at: 0)
                     self.didMove(toParentViewController: self.queuedTaskViewController)
+                }, completion: { (sucess: Bool) in
                     // check for empty state
                     if self.queuedTaskViewController.tasks.isEmpty {
-                        print("queued is empty")
-                        self.queuedTaskViewController.tableView.isHidden = true
-                        //self.emptyStateLabel.isHidden = false
+                        //self.queuedTaskViewController.tableView.isHidden = true
+                        self.emptyStateLabel.isHidden = false
                     }else{
-                        print("queued is full")
-                        self.queuedTaskViewController.tableView.isHidden = false
-                        //self.emptyStateLabel.isHidden = true
+                        //self.queuedTaskViewController.tableView.isHidden = false
+                        self.emptyStateLabel.isHidden = true
                     }
-                }, completion: { (sucess: Bool) in
-
                 })
                 self.currentTaskListType = .queued
             }
         }else{
             self.completedButton.backgroundColor = UIColor(hexString: "#256E93ff")
-            self.queuedButton.backgroundColor = UIColor(hexString: "#EFEFF4ff")
+            self.queuedButton.backgroundColor = UIColor(hexString: "#ffffffff")
             self.queuedButton.setTitleColor(UIColor.darkGray, for: .normal)
             self.completedButton.setTitleColor(UIColor.white, for: .normal)
+            self.emptyStateLabel.isHidden = true
 
             if self.currentTaskListType != .completed {
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromLeft, animations: {
@@ -111,16 +116,15 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                     self.addChildViewController(self.completedTaskViewController)
                     self.taskListContainer.insertSubview(self.completedTaskViewController.tableView, at: 0)
                     self.didMove(toParentViewController: self.completedTaskViewController)
+                }, completion: { (success: Bool) in
                     // check for empty state
                     if self.completedTaskViewController.tasks.isEmpty {
-                        self.completedTaskViewController.tableView.isHidden = true
-                        //self.emptyStateLabel.isHidden = false
+                        //self.completedTaskViewController.tableView.isHidden = true
+                        self.emptyStateLabel.isHidden = false
                     }else{
-                        self.completedTaskViewController.tableView.isHidden = false
-                        //self.emptyStateLabel.isHidden = true
+                        //self.completedTaskViewController.tableView.isHidden = false
+                        self.emptyStateLabel.isHidden = true
                     }
-                }, completion: { (success: Bool) in
-
                 })
                 self.currentTaskListType = .completed
             }
@@ -205,7 +209,9 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
                 self.tasksData.completedTasks = completed
                 self.tasksData.queuedTasksByDate = queuedTasksByDate
                 self.tasksData.completedTasksByDate = completedTasksByDate
-                
+                if queued.count == 0 {
+                    self.emptyStateLabel.isHidden = false
+                }
                 self.reloadTaskLists()
             }else{
                 #if DEBUG
@@ -242,6 +248,8 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
         let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
         self.queuedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
         self.completedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
+        
+        self.emptyStateLabel.isHidden = true
         
         self.queuedTaskViewController.taskListDelegate = self
         self.completedTaskViewController.taskListDelegate = self

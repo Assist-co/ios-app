@@ -40,7 +40,7 @@
                                 <action selector="onHomeButtonTap:" destination="BWo-XI-hQy" id="YpQ-Ru-SoR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="c6Z-HR-9rb">
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="c6Z-HR-9rb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
@@ -73,5 +73,6 @@
     </scenes>
     <resources>
         <image name="home" width="20" height="20"/>
+        <image name="plus" width="27" height="27"/>
     </resources>
 </document>

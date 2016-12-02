@@ -40,6 +40,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TB5-p9-Bns">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-47-WwV">
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FJb-DC-s4g">
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-0h-CnR">
@@ -52,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jm-Od-2OM">
-                                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Completed">
                                             <color key="titleColor" red="0.27058823529999998" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -77,18 +82,23 @@
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="tXU-47-WwV" firstAttribute="centerY" secondItem="8k1-yp-ncX" secondAttribute="centerY" id="8e4-ft-fzp"/>
                             <constraint firstItem="TB5-p9-Bns" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="Lqb-MN-2O7"/>
                             <constraint firstItem="FJb-DC-s4g" firstAttribute="top" secondItem="R5p-WP-Pr6" secondAttribute="bottom" id="MV8-WY-Khz"/>
                             <constraint firstItem="FJb-DC-s4g" firstAttribute="leading" secondItem="8k1-yp-ncX" secondAttribute="leading" id="abU-0J-km5"/>
                             <constraint firstAttribute="trailing" secondItem="TB5-p9-Bns" secondAttribute="trailing" id="b01-P0-jqC"/>
+                            <constraint firstItem="tXU-47-WwV" firstAttribute="centerX" secondItem="8k1-yp-ncX" secondAttribute="centerX" id="cqV-ZU-g6G"/>
                             <constraint firstAttribute="trailing" secondItem="FJb-DC-s4g" secondAttribute="trailing" id="vvU-cH-bpw"/>
-                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" constant="-50" id="wyE-CJ-FaU"/>
+                            <constraint firstItem="TB5-p9-Bns" firstAttribute="top" secondItem="FJb-DC-s4g" secondAttribute="bottom" constant="-60" id="wyE-CJ-FaU"/>
                             <constraint firstItem="j2o-54-EVV" firstAttribute="top" secondItem="TB5-p9-Bns" secondAttribute="bottom" id="yyV-M9-9gA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="Y5S-aF-sML">
-                        <barButtonItem key="leftBarButtonItem" title="+" id="f3h-HJ-cB3">
+                        <barButtonItem key="leftBarButtonItem" image="plus" id="f3h-HJ-cB3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addTask:" destination="Byl-nt-BTx" id="Phe-a7-1k4"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="home" id="edi-7I-eQI">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,6 +109,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="completedButton" destination="5Jm-Od-2OM" id="xFz-ta-B9u"/>
+                        <outlet property="emptyStateLabel" destination="tXU-47-WwV" id="nH3-PM-lRt"/>
                         <outlet property="queuedButton" destination="XqX-0h-CnR" id="tej-7E-av6"/>
                         <outlet property="taskListContainer" destination="TB5-p9-Bns" id="Pkd-g5-4ag"/>
                     </connections>
@@ -274,5 +285,6 @@
     <resources>
         <image name="home" width="20" height="20"/>
         <image name="phone_small" width="20" height="20"/>
+        <image name="plus" width="27" height="27"/>
     </resources>
 </document>

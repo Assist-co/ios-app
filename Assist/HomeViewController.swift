@@ -132,7 +132,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //textField.resignFirstResponder()
         let message = self.messageTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        //showMessageView(message: message)
         
         MessagingClient.sharedInstance.postMessage(message: message!)
         self.didReceiveMessage(message: Message(body: message!))

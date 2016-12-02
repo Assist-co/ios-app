@@ -53,7 +53,7 @@ class TaskListTableViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 16.0
+        return 30.0
     }
     
     public override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
