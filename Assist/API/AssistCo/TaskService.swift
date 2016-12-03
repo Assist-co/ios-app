@@ -126,4 +126,29 @@ class TaskService: NSObject {
             }
         )
     }
+    
+    class func addContactsToTask(
+        taskID: Int,
+        contactDicts: Array<Dictionary<String, Any>>,
+        completion: @escaping (Task?, Error?) -> ()
+        ) {
+        AssistClient.sharedInstance.session.request(
+            "\(baseURLString!)/tasks/\(taskID)/contacts",
+            method: .post,
+            parameters: ["contacts": contactDicts]
+            ).validate().responseJSON(
+                completionHandler: { (response) in
+                    switch response.result {
+                    case .success:
+                        guard let responseDict = response.result.value as? [String: AnyObject] else{
+                            completion(nil, nil)
+                            return
+                        }
+                        completion(Task(dictionary: responseDict as NSDictionary), nil)
+                    case .failure(let error):
+                        completion(nil, error)
+                    }
+            }
+        )
+    }
 }

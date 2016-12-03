@@ -23,6 +23,7 @@ class Task: NSObject {
     var completedOn: Date?
     var client: Client?
     var assistant: Assistant?
+    var contacts: [Contact]?
     var isComplete: Bool? = false
     var state: TaskState? = .ready
     
@@ -66,6 +67,9 @@ class Task: NSObject {
             default:
                 self.state = .ready
             }
+        }
+        if let contactsArr = dictionary["contacts"] as? Array<NSDictionary>{
+            self.contacts = Contact.contacts(array: contactsArr)
         }
     }
     

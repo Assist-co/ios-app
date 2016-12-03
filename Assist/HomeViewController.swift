@@ -132,7 +132,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //textField.resignFirstResponder()
         let message = self.messageTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        //showMessageView(message: message)
+        showMessageView(message: message)
         
         MessagingClient.sharedInstance.postMessage(message: message!)
         self.didReceiveMessage(message: Message(body: message!))
@@ -256,10 +256,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.messageToolbar.isHidden = false
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = keyboardFrame.size.height
-            if (self.messages?.count)! > 3 {
-                self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+            if let messages = self.messages{
+                if messages.count > 3 {
+                    self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+                }
+                self.view.layoutIfNeeded()
             }
-            self.view.layoutIfNeeded()
         }
     }
     
