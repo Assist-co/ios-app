@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqz-h9-Ses" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-874" y="374"/>
+            <point key="canvasLocation" x="-914" y="443"/>
         </scene>
         <!--Tasks-->
         <scene sceneID="Ebw-dh-voU">
@@ -194,82 +194,20 @@
                     <connections>
                         <outlet property="tableView" destination="PZH-6X-wEF" id="Sh6-Fc-7mP"/>
                         <outlet property="taskTable" destination="PZH-6X-wEF" id="esh-eN-uUe"/>
+                        <segue destination="L40-DW-3a5" kind="presentation" identifier="segueToTaskDetail" id="vVa-oA-hUD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GH-lS-sTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-914.39999999999998" y="1104.1979010494754"/>
+            <point key="canvasLocation" x="-914.39999999999998" y="1145.577211394303"/>
         </scene>
-        <!--Task Detail View Controller-->
-        <scene sceneID="P0Q-zw-VaM">
+        <!--TaskDetailNavigationController-->
+        <scene sceneID="PYn-rG-Qg8">
             <objects>
-                <viewController id="Mr3-TD-Ikj" customClass="TaskDetailViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9h1-Ab-1rr"/>
-                        <viewControllerLayoutGuide type="bottom" id="ftO-Hv-tww"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ar8-49-6Dn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="uVU-LN-AMW">
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskDetailCell" rowHeight="180" id="PUi-Ca-2oY" customClass="TaskDetailTableViewCell" customModule="Assist" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="180"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PUi-Ca-2oY" id="aP9-ov-NaU">
-                                            <frame key="frameInset" width="375" height="180"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4q-cN-Wvr">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-a3-sFv">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="h4q-cN-Wvr" firstAttribute="leading" secondItem="aP9-ov-NaU" secondAttribute="leadingMargin" id="8w7-N5-pHc"/>
-                                                <constraint firstItem="h4q-cN-Wvr" firstAttribute="top" secondItem="aP9-ov-NaU" secondAttribute="topMargin" id="FAn-N2-qJj"/>
-                                                <constraint firstItem="LLP-a3-sFv" firstAttribute="top" secondItem="h4q-cN-Wvr" secondAttribute="bottom" constant="131" id="Owl-Qa-Rh2"/>
-                                                <constraint firstItem="h4q-cN-Wvr" firstAttribute="trailing" secondItem="aP9-ov-NaU" secondAttribute="trailingMargin" id="Q22-ab-dzc"/>
-                                                <constraint firstItem="LLP-a3-sFv" firstAttribute="bottom" secondItem="aP9-ov-NaU" secondAttribute="bottomMargin" id="TS8-3J-DU6"/>
-                                                <constraint firstItem="LLP-a3-sFv" firstAttribute="leading" secondItem="aP9-ov-NaU" secondAttribute="leadingMargin" id="Uvo-hV-Nqa"/>
-                                                <constraint firstItem="LLP-a3-sFv" firstAttribute="trailing" secondItem="aP9-ov-NaU" secondAttribute="trailingMargin" id="iug-cO-vaR"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="createdOnLabel" destination="LLP-a3-sFv" id="Ndx-ds-AfE"/>
-                                            <outlet property="taskTextLabel" destination="h4q-cN-Wvr" id="9IB-yE-ThG"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Mr3-TD-Ikj" id="Qb1-Lg-G6C"/>
-                                    <outlet property="delegate" destination="Mr3-TD-Ikj" id="F7S-Ix-vxy"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uVU-LN-AMW" secondAttribute="trailing" id="CL6-UV-8Sl"/>
-                            <constraint firstItem="uVU-LN-AMW" firstAttribute="top" secondItem="ar8-49-6Dn" secondAttribute="top" id="CWC-EL-DXB"/>
-                            <constraint firstItem="uVU-LN-AMW" firstAttribute="leading" secondItem="ar8-49-6Dn" secondAttribute="leading" id="dGp-dF-B8H"/>
-                            <constraint firstItem="ftO-Hv-tww" firstAttribute="top" secondItem="uVU-LN-AMW" secondAttribute="bottom" id="mHH-wn-Pbj"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="tableView" destination="uVU-LN-AMW" id="urN-lc-icw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iPp-de-Cpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="TaskDetail" referencedIdentifier="TaskDetailNavigationController" id="L40-DW-3a5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsI-bM-Ndi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44" y="1148"/>
+            <point key="canvasLocation" x="-241" y="1145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xvI-0X-Tzf">

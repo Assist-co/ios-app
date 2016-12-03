@@ -29,6 +29,7 @@ class MessageDetailViewController: UIViewController {
     var sendMessageBarButton: UIBarButtonItem!
     var message = ""
     var delegate: MessageListener?
+    var taskListController: TaskListTableViewController?
     
     /** UIViewController Methods **/
     
@@ -156,7 +157,9 @@ class MessageDetailViewController: UIViewController {
             } else {
                 // TODO: Post message to messaging api
                 self.view.endEditing(true)
-                self.dismiss(animated: true)
+                self.dismiss(animated: true, completion: { 
+                    self.taskListController?.refreshTasks()
+                })
             }
         }
     }

@@ -128,8 +128,8 @@ class TaskListTableViewController: UITableViewController {
     //MARK:- TableView Delegate
     
     override public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        self.selectedTask = self.tasks[indexPath.row]
+        self.selectedTask = self.tasksByDay?[indexPath.section].1[indexPath.row]
+        performSegue(withIdentifier: "segueToTaskDetail", sender: nil)
     }
    
     //MARK:- Action
@@ -150,7 +150,6 @@ class TaskListTableViewController: UITableViewController {
                     }else{
                     
                     }
-                    
                 }
             })
         }
@@ -192,9 +191,11 @@ class TaskListTableViewController: UITableViewController {
     //MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "taskListToDetailSegue" {
-            let vc = segue.destination as! TaskDetailViewController
-            vc.task = self.selectedTask!
+        if segue.identifier == "segueToTaskDetail" {
+            let vc = segue.destination as! UINavigationController
+            let taskDetailViewController = vc.topViewController as! TaskDetailViewController
+            taskDetailViewController.task = self.selectedTask!
+            taskDetailViewController.delegate = self
         }
     }
 }
