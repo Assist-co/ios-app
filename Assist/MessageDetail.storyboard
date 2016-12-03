@@ -332,16 +332,57 @@
                             <constraint firstItem="vAI-nC-7qU" firstAttribute="centerX" secondItem="KTM-aB-FmF" secondAttribute="centerX" id="oCY-Mi-8KV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oKK-km-a00"/>
+                    <navigationItem key="navigationItem" id="oKK-km-a00">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="XeE-Af-nLp"/>
+                        <barButtonItem key="rightBarButtonItem" title="Post" style="done" id="Xgv-Dt-g3C"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="vAI-nC-7qU" id="wqh-gQ-i5J"/>
                         <outlet property="textView" destination="f7o-jE-bv8" id="0cx-Q9-mWl"/>
+                        <segue destination="9Db-tT-HLD" kind="presentation" identifier="addTaskMetadataSegue" id="WUC-r4-kZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRm-Fg-ldp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.10000000000000001" id="65o-I8-Mjk"/>
             </objects>
             <point key="canvasLocation" x="1200.8" y="1159.9700149925038"/>
+        </scene>
+        <!--Add Task Metadata View Controller-->
+        <scene sceneID="kVG-kd-ucr">
+            <objects>
+                <viewController id="snG-OJ-KCd" customClass="AddTaskMetadataViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BRd-zW-QWS"/>
+                        <viewControllerLayoutGuide type="bottom" id="cR3-Ks-kQY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jD7-ie-9Jp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y8W-cc-8vV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C3l-z1-mb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2151.1999999999998" y="2014.5427286356824"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e9v-2e-vgB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Db-tT-HLD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wyr-kI-2T5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="snG-OJ-KCd" kind="relationship" relationship="rootViewController" id="szY-NW-Cn5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5Q-cZ-ANt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="2014.5427286356824"/>
         </scene>
     </scenes>
     <resources>

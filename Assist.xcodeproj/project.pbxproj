@@ -48,8 +48,9 @@
 		852D20A61DEE8C0E009AFA98 /* TaskTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D20A51DEE8C0E009AFA98 /* TaskTypeButton.swift */; };
 		853C9E2E1DF2784500AC0CEB /* CreateTaskToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */; };
 		853C9E301DF278A600AC0CEB /* CreateTaskToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E2F1DF278A600AC0CEB /* CreateTaskToolBarView.swift */; };
-		853C9E321DF27A7700AC0CEB /* TagListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E311DF27A7700AC0CEB /* TagListView.swift */; };
-		853C9E341DF27AA100AC0CEB /* TagListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E331DF27AA100AC0CEB /* TagListView.xib */; };
+		853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */; };
+		853C9E341DF27AA100AC0CEB /* TagsTrayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */; };
+		853C9E361DF2C27000AC0CEB /* AddTaskMetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E351DF2C27000AC0CEB /* AddTaskMetadataViewController.swift */; };
 		854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B30B71DEBFF680059DC61 /* ContactsService.swift */; };
 		8597AC301DF0AFA600C98D6B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC2F1DF0AFA600C98D6B /* Contact.swift */; };
 		8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */; };
@@ -134,8 +135,9 @@
 		852D20A51DEE8C0E009AFA98 /* TaskTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTypeButton.swift; sourceTree = "<group>"; };
 		853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskToolBarView.xib; sourceTree = "<group>"; };
 		853C9E2F1DF278A600AC0CEB /* CreateTaskToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskToolBarView.swift; sourceTree = "<group>"; };
-		853C9E311DF27A7700AC0CEB /* TagListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListView.swift; sourceTree = "<group>"; };
-		853C9E331DF27AA100AC0CEB /* TagListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagListView.xib; sourceTree = "<group>"; };
+		853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTrayView.swift; sourceTree = "<group>"; };
+		853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsTrayView.xib; sourceTree = "<group>"; };
+		853C9E351DF2C27000AC0CEB /* AddTaskMetadataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskMetadataViewController.swift; sourceTree = "<group>"; };
 		854B30B71DEBFF680059DC61 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsService.swift; path = API/AssistCo/ContactsService.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		8597AC2F1DF0AFA600C98D6B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				031301061DD9369000381716 /* MeetAssistantViewController.swift */,
 				0307B6AF1DEFF28C00D8A3FF /* CalendarViewController.swift */,
 				8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */,
+				853C9E351DF2C27000AC0CEB /* AddTaskMetadataViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -314,8 +317,8 @@
 				0307B6AB1DEFE8AC00D8A3FF /* CalendarCellView.xib */,
 				0307B6AD1DEFE93100D8A3FF /* CalendarCellView.swift */,
 				853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */,
-				853C9E311DF27A7700AC0CEB /* TagListView.swift */,
-				853C9E331DF27AA100AC0CEB /* TagListView.xib */,
+				853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */,
+				853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -482,7 +485,7 @@
 				031300F01DD9108C00381716 /* TaskManager.storyboard in Resources */,
 				034051451DD4295D005F6B82 /* Assets.xcassets in Resources */,
 				031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */,
-				853C9E341DF27AA100AC0CEB /* TagListView.xib in Resources */,
+				853C9E341DF27AA100AC0CEB /* TagsTrayView.xib in Resources */,
 				03FDD5691DEFD31E0025121A /* Calendar.storyboard in Resources */,
 				034051431DD4295D005F6B82 /* Main.storyboard in Resources */,
 				0307B6AC1DEFE8AC00D8A3FF /* CalendarCellView.xib in Resources */,
@@ -660,7 +663,7 @@
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */,
-				853C9E321DF27A7700AC0CEB /* TagListView.swift in Sources */,
+				853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */,
@@ -691,6 +694,7 @@
 				85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */,
 				85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
+				853C9E361DF2C27000AC0CEB /* AddTaskMetadataViewController.swift in Sources */,
 				852D20A61DEE8C0E009AFA98 /* TaskTypeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

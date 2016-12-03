@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagsTrayView" customModule="Assist" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TagsTrayView" customModule="Assist" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="exl-Aa-nDi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gte-U9-Bnp">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MdA-DM-GLE">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="VPG-9T-rZA"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Schedule" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymI-Xy-HBM">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrG-eP-68Y" customClass="ScheduleTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="MdA-DM-GLE" firstAttribute="leading" secondItem="gte-U9-Bnp" secondAttribute="leading" constant="8" id="0Y1-AI-id6"/>
+                                <constraint firstItem="ymI-Xy-HBM" firstAttribute="leading" secondItem="MdA-DM-GLE" secondAttribute="trailing" constant="8" id="5Oi-e6-Hrb"/>
+                                <constraint firstItem="ymI-Xy-HBM" firstAttribute="leading" secondItem="MdA-DM-GLE" secondAttribute="trailing" constant="8" id="6O6-OR-rmr"/>
+                                <constraint firstAttribute="trailing" secondItem="hrG-eP-68Y" secondAttribute="trailing" id="A9K-RA-X0g"/>
+                                <constraint firstItem="hrG-eP-68Y" firstAttribute="leading" secondItem="gte-U9-Bnp" secondAttribute="leading" id="IVC-Dl-T9l"/>
+                                <constraint firstAttribute="bottom" secondItem="MdA-DM-GLE" secondAttribute="bottom" constant="10" id="LRu-iy-KwE"/>
+                                <constraint firstItem="MdA-DM-GLE" firstAttribute="top" secondItem="gte-U9-Bnp" secondAttribute="top" constant="10" id="SJ5-GJ-iuY"/>
+                                <constraint firstItem="hrG-eP-68Y" firstAttribute="top" secondItem="gte-U9-Bnp" secondAttribute="top" id="ScN-f5-D7s"/>
+                                <constraint firstAttribute="bottom" secondItem="ymI-Xy-HBM" secondAttribute="bottom" constant="15" id="TbO-gk-75u"/>
+                                <constraint firstAttribute="trailing" secondItem="ymI-Xy-HBM" secondAttribute="trailing" constant="8" id="U10-oD-jfV"/>
+                                <constraint firstItem="ymI-Xy-HBM" firstAttribute="top" secondItem="gte-U9-Bnp" secondAttribute="top" constant="14" id="du7-iS-UHf"/>
+                                <constraint firstAttribute="bottom" secondItem="hrG-eP-68Y" secondAttribute="bottom" id="kCH-37-WpR"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySu-xj-sl5">
+                            <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIe-zU-uFX">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrB-2q-6WJ">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ig8-Mc-wKd" customClass="EmailTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oI-lm-5dm">
+                            <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gzz-9V-eZF">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqP-f5-O2U">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSm-AK-qVz" customClass="ReminderTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rn-T2-xCr">
+                            <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLo-BN-EVU">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXd-ZH-Oof">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIA-t2-IIr" customClass="CallTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMA-xJ-6ZO">
+                            <rect key="frame" x="0.0" y="200" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r3Q-Zw-9Bl">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inquiry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DhQ-BD-Tr8">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0X7-lt-pjF" customClass="InquiryTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8k-9r-qoX">
+                            <rect key="frame" x="0.0" y="250" width="375" height="50"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQJ-bw-l2Y">
+                                    <rect key="frame" x="8" y="10" width="30" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Other" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I72-zP-fux">
+                                    <rect key="frame" x="46" y="14" width="321" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Gw-6O-Nzw" customClass="OtherTaskTypeButton" customModule="Assist" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="AMA-xJ-6ZO" firstAttribute="top" secondItem="exl-Aa-nDi" secondAttribute="top" constant="200" id="3Cx-7p-34i"/>
+                        <constraint firstItem="2oI-lm-5dm" firstAttribute="top" secondItem="exl-Aa-nDi" secondAttribute="top" constant="100" id="sO9-xy-3A8"/>
+                        <constraint firstItem="z8k-9r-qoX" firstAttribute="top" secondItem="exl-Aa-nDi" secondAttribute="top" constant="250" id="xVg-GV-Y6O"/>
+                        <constraint firstItem="1Rn-T2-xCr" firstAttribute="top" secondItem="exl-Aa-nDi" secondAttribute="top" constant="150" id="ze5-kf-ezB"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="exl-Aa-nDi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2bT-SN-UHr"/>
+                <constraint firstAttribute="trailing" secondItem="exl-Aa-nDi" secondAttribute="trailing" id="GiT-dE-UbR"/>
+                <constraint firstItem="exl-Aa-nDi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Gy9-W1-UkF"/>
+                <constraint firstAttribute="bottom" secondItem="exl-Aa-nDi" secondAttribute="bottom" id="cVI-kg-NoV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="callTaskButton" destination="fIA-t2-IIr" id="c86-U0-wuE"/>
+                <outlet property="emailTaskButton" destination="Ig8-Mc-wKd" id="W99-0F-EJI"/>
+                <outlet property="inquiryTaskButton" destination="0X7-lt-pjF" id="1Qo-QO-Zit"/>
+                <outlet property="otherTaskButton" destination="5Gw-6O-Nzw" id="Ad2-gu-gFe"/>
+                <outlet property="reminderTaskButton" destination="dSm-AK-qVz" id="ryl-EB-0lf"/>
+                <outlet property="scheduleTaskButton" destination="hrG-eP-68Y" id="PtF-Eb-MaK"/>
+            </connections>
+            <point key="canvasLocation" x="122.5" y="73"/>
+        </view>
+    </objects>
+</document>
