@@ -12,6 +12,13 @@
             <rect key="frame" x="0.0" y="0.0" width="225" height="226"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5um-d2-gr0">
+                    <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="fop-gt-bkC"/>
+                        <constraint firstAttribute="width" constant="32" id="uu5-Ke-9ir"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72N-Li-ibv">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -21,13 +28,21 @@
             <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="72N-Li-ibv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7kZ-IH-cgB"/>
+                <constraint firstItem="5um-d2-gr0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8M8-Ua-nZF"/>
+                <constraint firstItem="5um-d2-gr0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jym-mm-gsP"/>
                 <constraint firstItem="72N-Li-ibv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bwJ-6f-s0L"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="72N-Li-ibv" id="xdo-tu-wEL"/>
+                <outlet property="selectedDate" destination="5um-d2-gr0" id="wdj-Sr-JdP"/>
             </connections>
             <point key="canvasLocation" x="-189.5" y="-148"/>
         </view>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bZC-NU-cnA">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+        </tableView>
     </objects>
 </document>

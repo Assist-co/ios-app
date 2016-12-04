@@ -10,7 +10,7 @@ import UIKit
 import JTAppleCalendar
 
 class CalendarCellView: JTAppleDayCellView {
-
+    @IBOutlet weak var selectedDate: UIView!
     @IBOutlet weak var dayLabel: UILabel!
     /*
     // Only override draw() if you perform custom drawing.

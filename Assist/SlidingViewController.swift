@@ -11,7 +11,6 @@ import UIKit
 class SlidingViewController: UIViewController {
     
     var mainViewController: UIViewController! {
-        
         didSet {
             view.layoutIfNeeded()
             mainViewController.view.frame = mainContent.frame
@@ -19,29 +18,24 @@ class SlidingViewController: UIViewController {
             mainViewController.view.layoutIfNeeded()
             mainContent.addSubview(mainViewController.view)
         }
-        
     }
     
     var leftViewController: UIViewController! {
-        
         didSet {
             view.layoutIfNeeded()
             leftViewController.view.setNeedsLayout()
             leftViewController.view.layoutIfNeeded()
             leftContent.addSubview(leftViewController.view)
         }
-        
     }
     
     var rightViewController: UIViewController! {
-        
         didSet {
             view.layoutIfNeeded()
             rightViewController.view.setNeedsLayout()
             rightViewController.view.layoutIfNeeded()
             rightContent.addSubview(rightViewController.view)
         }
-        
     }
     
     @IBOutlet weak var mainContent: UIView!
@@ -51,33 +45,44 @@ class SlidingViewController: UIViewController {
     private var originalLeftMargin: CGFloat!
     private var originalMainMargin: CGFloat!
     private var originalRightMargin: CGFloat!
+    
+    enum CurrentPosition {
+        case left
+        case middle
+        case right
+    }
+    
+    private var currentPosition = CurrentPosition.middle
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     func showLeftContent() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.rightContent.frame.origin.x = 2 * self.rightContent.bounds.width
             self.mainContent.frame.origin.x = self.rightContent.bounds.width
             self.leftContent.frame.origin.x = 0
         })
+        currentPosition = .left
     }
     
     func showRightContent() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.rightContent.frame.origin.x = 0
             self.mainContent.frame.origin.x = -self.leftContent.bounds.width
             self.leftContent.frame.origin.x = -2 * self.leftContent.bounds.width
         })
+        currentPosition = .right
     }
     
     func showMainContent() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.rightContent.frame.origin.x = self.rightContent.bounds.width
             self.mainContent.frame.origin.x = 0
             self.leftContent.frame.origin.x = -self.leftContent.bounds.width
         })
+        currentPosition = .middle
     }
 
     @IBAction func onViewPan(_ panGestureRecognizer: UIPanGestureRecognizer) {
@@ -110,7 +115,31 @@ class SlidingViewController: UIViewController {
                 } else {
                     slideLeft()
                 }
+            } else {
+                switch self.currentPosition {
+                case .left:
+                    if abs(translation.x) > view.frame.width/2 {
+                        showMainContent()
+                    } else {
+                        showLeftContent()
+                    }
+                case .middle:
+                    if abs(translation.x) > view.frame.width/2 && translation.x < 0 {
+                        showRightContent()
+                    } else if abs(translation.x) > view.frame.width/2 && translation.x > 0 {
+                        showLeftContent()
+                    } else {
+                        showMainContent()
+                    }
+                case .right:
+                    if abs(translation.x) > view.frame.width/2 {
+                        showMainContent()
+                    } else {
+                        showRightContent()
+                    }
+                }
             }
+
         } else if panGestureRecognizer.state == UIGestureRecognizerState.cancelled {
             
         }
