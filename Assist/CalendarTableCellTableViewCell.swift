@@ -10,9 +10,14 @@ import UIKit
 
 class CalendarTableCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var startAtLabel: UIView!
+    @IBOutlet weak var endAtLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var calendarEventBubbleView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        calendarEventBubbleView.layer.cornerRadius = 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
