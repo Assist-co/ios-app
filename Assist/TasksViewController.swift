@@ -21,7 +21,7 @@ struct TasksData {
     var completedTasksByDate: [(Date, [Task])]?
 }
 
-class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewControllerDelegate {
+class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskListViewControllerDelegate {
     @IBOutlet weak var emptyStateLabel: UILabel!
     @IBOutlet weak var taskListContainer: UIView!
     @IBOutlet weak var queuedButton: UIButton!
@@ -58,9 +58,7 @@ class TasksViewController: UIViewController, UIScrollViewDelegate, TaskListViewC
     //MARK:- Action
     
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
-        self.present(homeNavigationController, animated: false, completion: nil)
+        slidingViewController.showMainContent()
     }
     
     @IBAction func addTask(_ sender: AnyObject) {
