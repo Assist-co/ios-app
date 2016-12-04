@@ -144,7 +144,7 @@ class TaskListTableViewController: UITableViewController {
         let deleteTaskAction = UIAlertAction(title: "Delete Task", style: .destructive) { (action: UIAlertAction) in
             DispatchQueue.main.async { self.refreshControl?.beginRefreshing() }
             self.refreshControl?.beginRefreshing()
-            TaskService.deleteTask(taskID: task!.id!, completion: { (sucess: Bool, error: Error?) in
+            TaskService.deleteTask(task: task!, completion: { (sucess: Bool, error: Error?) in
                 DispatchQueue.main.async {
                     if error == nil{
                         self.taskListDelegate?.refreshTasksLists(completion: { (sucess: Bool, error: Error?) in
