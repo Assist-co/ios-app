@@ -13,9 +13,30 @@ class MeetAssistantViewController: UIViewController {
 
     @IBOutlet weak var assistantImageView: UIImageView!
     @IBAction func buttonPress(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
-        present(homeNavigationController, animated: true, completion: nil)
+        let slidingViewController = UIStoryboard(name: "Sliding", bundle: nil).instantiateViewController(withIdentifier: "SlidingViewController")
+        
+        
+        if let svc = slidingViewController as? SlidingViewController {
+            let homeNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController")
+            if let homeController = homeNavigationController.childViewControllers.first as? SlidableViewController {
+                homeController.slidingViewController = svc
+            }
+            
+            let taskManagementNavigationController = UIStoryboard(name: "TaskManager", bundle: nil).instantiateViewController(withIdentifier: "TaskManagerNavigationController")
+            if let taskController = taskManagementNavigationController.childViewControllers.first as? SlidableViewController {
+                taskController.slidingViewController = svc
+            }
+            let calendarNavigationController = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarNavigationController")
+            if let calendarController = calendarNavigationController.childViewControllers.first as? SlidableViewController {
+                calendarController.slidingViewController = svc
+            }
+
+            svc.mainViewController = homeNavigationController
+            svc.leftViewController = taskManagementNavigationController
+            svc.rightViewController = calendarNavigationController
+        }
+        
+        present(slidingViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

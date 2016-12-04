@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: SlidableViewController {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
@@ -28,9 +28,7 @@ class CalendarViewController: UIViewController {
     }
 
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
-        self.present(homeNavigationController, animated: false, completion: nil)
+        slidingViewController.showMainContent()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
