@@ -56,8 +56,10 @@
 		85B318B41DEB805C007E0DBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B31DEB805C007E0DBF /* Message.swift */; };
 		85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B51DEBA843007E0DBF /* TaskDetailViewController.swift */; };
 		85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */; };
+		D44E02A41DF3828A00ABF5EB /* SlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */; };
 		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
 		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
+		D4F79B611DF3A7E600C6AA8B /* SlidableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -140,8 +142,10 @@
 		85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewCell.swift; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingViewController.swift; sourceTree = "<group>"; };
 		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D45573201DD92C500000B938 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableViewController.swift; sourceTree = "<group>"; };
 		F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -273,6 +277,8 @@
 				031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */,
 				031301061DD9369000381716 /* MeetAssistantViewController.swift */,
 				0307B6AF1DEFF28C00D8A3FF /* CalendarViewController.swift */,
+				D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */,
+				D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -628,6 +634,7 @@
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
+				D44E02A41DF3828A00ABF5EB /* SlidingViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */,
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
@@ -637,6 +644,7 @@
 				859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
 				859B55441DDA149C00CBD957 /* Constants.swift in Sources */,
+				D4F79B611DF3A7E600C6AA8B /* SlidableViewController.swift in Sources */,
 				859B55451DDA149C00CBD957 /* Gender.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,

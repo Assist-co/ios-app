@@ -10,7 +10,7 @@ import UIKit
 import SendBirdSDK
 import MBProgressHUD
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MessageListener, UIScrollViewDelegate {
+class HomeViewController: SlidableViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MessageListener, UIScrollViewDelegate {
     
     @IBOutlet weak var tableViewTopMargin: NSLayoutConstraint!
     @IBOutlet weak var messageToolbarConstraint: NSLayoutConstraint!
@@ -244,15 +244,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func onTaskButtonTap(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
-        let taskManagementNavigationController = storyboard.instantiateViewController(withIdentifier: "TaskManagerNavigationController")
-        self.present(taskManagementNavigationController, animated: false, completion: nil)
+        slidingViewController.showLeftContent()
     }
     
     @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Calendar", bundle: nil)
-        let calendarNavigationController = storyboard.instantiateViewController(withIdentifier: "CalendarNavigationController")
-        self.present(calendarNavigationController, animated: false, completion: nil)
+        slidingViewController.showRightContent()
     }
     
     /** Internal Methods **/
