@@ -7,78 +7,118 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0664F6E0AC8E3FBC1555BF2CCF3ADF90 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1489AEF16BD6B2FE2A3CE9BD7716D253 /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0968524ED4DE8DF7834055C5B6089D72 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 993EB8E1C376B25EF56CC392C366BB22 /* MBProgressHUD-dummy.m */; };
-		0AA25A35C81005F86D3C9D1890B4B7C7 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A3D55C9CB855CB1812D33C8AE3728E /* GlobalFunctionsAndExtensions.swift */; };
-		0EF65D92A2798BD0C0D34750F3174BA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3042CA037067765F18CB980743BDF0B5 /* Timeline.swift */; };
-		1215629D558162CE728B27386DA02D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CED53ADA18F9104BEB7B4B2B5832256 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1E62B9AE2E8A0A98CF0AC422C07CAB9E /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78093F9CD505FC8820F7EE51B8DB6A6 /* CalendarEnums.swift */; };
-		28A794912ED1E06B05D96DF5ED0AED19 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02545058A74E1CC9068480EB2738DAAF /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		057280A6CAADDF1C4B23B6A179AE8D66 /* Pods-Assist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F4A5A40FEE37D70FD2B08E2861D84A /* Pods-Assist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0664F6E0AC8E3FBC1555BF2CCF3ADF90 /* JTAppleCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CE9CF9D2D8CD2B0E52FDE052A1312FF /* JTAppleCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0968524ED4DE8DF7834055C5B6089D72 /* MBProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 61D55CAA6F3C3CEE40EE14F498174980 /* MBProgressHUD-dummy.m */; };
+		0AA25A35C81005F86D3C9D1890B4B7C7 /* GlobalFunctionsAndExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F565DA2DE7AF9DD68FDD69B583B1A3CB /* GlobalFunctionsAndExtensions.swift */; };
+		0B2754F68391846B39A4BD045FEB1F51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		0EF65D92A2798BD0C0D34750F3174BA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		10EB23E9ECC4B33E16933BB1EA560B6A /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = E815BF566848646D9E26DB5A521C9510 /* Timeline.swift */; };
+		1215629D558162CE728B27386DA02D1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		14D14E2B0D18B4E2FD2F5BC51F50AFA1 /* FrameAccessor-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FCA2CF8B5FBE5A9BF28AD51F4B4C434 /* FrameAccessor-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B9EDEDC964E6B08F78920B4F4B9DB84 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4381BBCE27EBEC52ECB47DCD9930B814 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C89D5D70D5A1FC57F7BB3A71FD676E0 /* FrameAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 257F1218C7328F9109B990D398FED09A /* FrameAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E62B9AE2E8A0A98CF0AC422C07CAB9E /* CalendarEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C7D93AFB34B6FC2550EAD6A6BDB3A /* CalendarEnums.swift */; };
+		28A794912ED1E06B05D96DF5ED0AED19 /* MBProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CCCBEF8C348C554DBC400CF29E0DFDE /* MBProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		320DF431D9ABBED7AE8A4858B5090C29 /* Pods-AssistUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EF4486B5A0099240A41A1E2CC56060F /* Pods-AssistUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA5A5B948B45DDF59E8CF3B041D612B /* TaskDelegate.swift */; };
-		3A2986A0A9A252C91C37BE5CE6200CBC /* JTAppleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA212540AE03CA28608FE2177C996A44 /* JTAppleViews.swift */; };
-		3DF18B6007900EBB7D9D4D76E52AF98F /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF300644558FBC59DFF51623D5E6C23 /* JTAppleCalendarView.swift */; };
-		4C667EBD050307D2F1E1DCFB0E7A72A1 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2AF91803865F82431E2C39A3E824B1 /* CalendarStructs.swift */; };
-		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB9A395DF67F1218316C48DB6D4D964 /* Request.swift */; };
-		590343D8D9F3CA3B8537728A600C6FDB /* JTAppleDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF16539421F818420BA29780848969EE /* JTAppleDayCell.swift */; };
-		6049EBEBE829F1B7F36942A7184D1183 /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CCA3A1792596EFC791D9F75852BC64 /* JTAppleCalendarLayoutProtocol.swift */; };
-		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE2C421B2D3F640B8021EDA413D0821 /* DispatchQueue+Alamofire.swift */; };
-		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1605F868189ACE8B684D8D90B42A1A17 /* ServerTrustPolicy.swift */; };
-		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFC475A37E2AAFB88A07517AD85D534 /* SessionDelegate.swift */; };
-		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D3E9CF613E3FF9FF0278BB22B6EB5 /* Result.swift */; };
-		887F55026689E555A1DD5777FB07A154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		897C38C8E3C31950E2E93A4D6937CCC4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F299BEE7D3D37D46D9181410E5CF6E /* MBProgressHUD.m */; };
-		98DF470CA8F6DD132AFAC1398FCD579C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B476C7C3BDD4218E3B0B852CE57093 /* CoreGraphics.framework */; };
-		9A04FA6F9EBC6C8B0169DA2D08F365AF /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA17F63C6A1EC7068372A315913F456 /* JTAppleCollectionReusableView.swift */; };
-		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4043428F47CA6CB5648A3D93D5AA3128 /* AFError.swift */; };
-		A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985067B4EF98C55169FA518E2BB8A4D0 /* NetworkReachabilityManager.swift */; };
-		A5BF8DBDD8660DBCFE712657F3D82BDA /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E7D1B2C8C75D810A46D852CED10CE9 /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D928E4844643A7BD5C40783240F0D2 /* Alamofire-dummy.m */; };
+		3626B94094672CB1C9DEA32B9F9502E1 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272C1AFCFD260F68A4F376C23F9BA012 /* TaskDelegate.swift */; };
+		37CF3873E7D4B520CAC457B054A0ED01 /* ViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D201C2E2A85CE09D376F0599633693 /* ViewFrameAccessor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3A2986A0A9A252C91C37BE5CE6200CBC /* JTAppleViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27530319B9724802896C8AE5A99FFD60 /* JTAppleViews.swift */; };
+		3A391D3D14A2845BCD33B3DF9B980A94 /* ScrollViewFrameAccessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E213CEF22589CAF88BD215A0957EE77 /* ScrollViewFrameAccessor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3DF18B6007900EBB7D9D4D76E52AF98F /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCC369C36881E67D028BE6A5C9A7D4A /* JTAppleCalendarView.swift */; };
+		3EC1F8C5DF0CB5FB1D796F08EEAC9E0E /* VENToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CBDA52C4A9D3E72263FDD497F623598 /* VENToken.m */; };
+		4120E57182F738F6B0A70843086029E0 /* VENToken.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5E21B0A35355BF4C18F0ADB7B5D9C8 /* VENToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C37AE2CB013AA961886B578EE13439B /* ScrollViewFrameAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 04D11F2E5F82904AF05BBA1D09383AB1 /* ScrollViewFrameAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C667EBD050307D2F1E1DCFB0E7A72A1 /* CalendarStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91874F6B2873DA234E5DAE79DD21FB6C /* CalendarStructs.swift */; };
+		52CBF62F74FEB7C92C54D225372404C1 /* VENBackspaceTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FA8D788D84D9E826B117D468AD849C /* VENBackspaceTextField.m */; };
+		5387216E723A3C68E851CA15573CDD71 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F402524CB530AD2E177D18C62256A85E /* Request.swift */; };
+		577E25DB7BD4EB6524831CE13BE953DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		590343D8D9F3CA3B8537728A600C6FDB /* JTAppleDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7C3B9B8B775A66F668B354E8FFFCDD /* JTAppleDayCell.swift */; };
+		6049EBEBE829F1B7F36942A7184D1183 /* JTAppleCalendarLayoutProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870CA71E104FB2034C6FBA1F9846B1EC /* JTAppleCalendarLayoutProtocol.swift */; };
+		61200D01A1855D7920CEF835C8BE00B0 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F801B57855E4142CFF67728ECDDE38 /* DispatchQueue+Alamofire.swift */; };
+		62A5E6720717636890983FE71998A5F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		62F65AD8DC4F0F9610F4B8B4738EC094 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B617B6D735A26DB8B5CF8ED8D21ACE17 /* ServerTrustPolicy.swift */; };
+		63CFAEF5A93B83F44C16EC8504B30AD6 /* VENTokenField.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CE4D29F58A8B02EA897C15488F871D8 /* VENTokenField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66812981D876FA78E236369DB1A08D09 /* Pods-Assist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41C8A01C301C5B9D9911A740EE3D43 /* Pods-Assist-dummy.m */; };
+		68251CEBB25BA862D66FEB269A01A785 /* VENTokenField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B778A922ED264C8EC5F95513C54297 /* VENTokenField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7590B1A0FA06058423DD9D49E7CDD204 /* ViewFrameAccessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 48174524F4F4B94425BA2687E5D0B368 /* ViewFrameAccessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B5FE28C7EA4122B0598738E54DBEBD8 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2F837386C238D05C2BA4CD640D4150 /* SessionDelegate.swift */; };
+		7D8CC01E8C9EFFF9F4D65406CDE0AB66 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975E152C220D25C4741231E1C19FE4EA /* Result.swift */; };
+		816457645FC8FACFA0AEB3904A727BF6 /* VENToken.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FB25F105C73D702136F0C5C75C23EF1 /* VENToken.xib */; };
+		887F55026689E555A1DD5777FB07A154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		897C38C8E3C31950E2E93A4D6937CCC4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D1412DE2AE930EA76146287B63CED2D3 /* MBProgressHUD.m */; };
+		98DF470CA8F6DD132AFAC1398FCD579C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF57DD700EFB2D68E0A16DABD77CFF6D /* CoreGraphics.framework */; };
+		9A04FA6F9EBC6C8B0169DA2D08F365AF /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C158DB76DD09E3C51C2ADE7AB1CD2522 /* JTAppleCollectionReusableView.swift */; };
+		9A69115CE108A8D62ACF79482E4C59BA /* VENTokenField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 504577A6CA4D27DCAF5D7A9D58DEAABC /* VENTokenField-dummy.m */; };
+		9ED2BB2981896E0A39EFA365503F58CE /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690BDD19440229CCB7AB09C974AECB8C /* AFError.swift */; };
+		A04BFC558D69E7DBB68023C80A9CFE4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49118F049F257DF2D453E4C9A40C790C /* NetworkReachabilityManager.swift */; };
+		A5BF8DBDD8660DBCFE712657F3D82BDA /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = A4B7BDD6A9348901473F9CBF8E0EE8CB /* MBProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 296E765CF8335A8EDFEA18F9700F3300 /* Alamofire-dummy.m */; };
 		AAC273573B165374E1833F4C6763C9B0 /* Pods-AssistUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0997E415A93EA91064B9A5D895CD9EBE /* Pods-AssistUITests-dummy.m */; };
-		AC944EBE6F4A4FA1AE4F3B8F087A6D3F /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227D05ECCAEF7AE0D3E9C9CE60E4F28 /* JTAppleCalendarDelegateProtocol.swift */; };
+		AC944EBE6F4A4FA1AE4F3B8F087A6D3F /* JTAppleCalendarDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EADA5EB75EBBDA96F2FF7A3C1A4189D /* JTAppleCalendarDelegateProtocol.swift */; };
 		AE1D6AD0C4666DF22C1350F2A6923E5B /* Pods-AssistTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B030F763CF5A3BE378AF739640ECB12D /* Pods-AssistTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA6C43BC1E2064DB3901BE3D9443D9 /* SessionManager.swift */; };
+		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5843E3E09E4018BC4B341D0B832EAA0D /* SessionManager.swift */; };
 		B0361B0894108718F396AB4381475FBC /* Pods-AssistTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A4A3DA6AA43DAFDF0AE8D4F80570EA /* Pods-AssistTests-dummy.m */; };
-		B059C7FAB05089E6E2E775FECF3ED439 /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71252576CBBEB4B9D92363103AD131E /* JTAppleCalendarLayout.swift */; };
-		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3793A2E9058BA62E509B74AABC27A743 /* MultipartFormData.swift */; };
-		B965C27470712E31BBBE1FAF1EC710C6 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DA056210ADD20258434070C12E3E9B0 /* JTAppleCalendar-dummy.m */; };
-		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE96272D268B14B6886D46E90DD2BD8 /* Validation.swift */; };
-		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B06D2A6266FC04B1A94991BEAB35696 /* ParameterEncoding.swift */; };
-		C2F18E918FC190718D13E9DA0A4A3A30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEC3D1CBB85A9DAAD56BE0FA229E5B0 /* Response.swift */; };
-		D4691FFE7B4559D8694FA495D8137D55 /* JTAppleReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78825940325594DD2955CF30127F4BCB /* JTAppleReusableViewProtocol.swift */; };
-		DA03E89BDEFB8DABDD165B6DB0D92E53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */; };
-		DA3FBCF3B21EB18151C3BC2645107E0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E054739AD8EE5381E7FBABB3ACA80805 /* QuartzCore.framework */; };
-		DB736BB112B3D4FD8B09DB203016735A /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227B7865D9556A1D82E8E02B57C06DD7 /* JTCalendarProtocols.swift */; };
-		DB94187A5E87BF1E263B7E18A2ED2F7A /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB514526B71A37149859966BFF87D762 /* UIScrollViewDelegates.swift */; };
-		DBDD82BBC31928051208155FD58DAD64 /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F764A15F5E8CA37491173B53B53A7EDA /* UserInteractionFunctions.swift */; };
-		DFC928B007261BB895164D4D1D663CE7 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426FCCD6CC9854A34B40E52C36F9E1FF /* UICollectionViewDelegates.swift */; };
-		E20D2D47269995629E9E057B8D047CA2 /* Pods-Assist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F4A5A40FEE37D70FD2B08E2861D84A /* Pods-Assist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C58A9A4C6CD19F1ACD1AA96BC9515EE /* Notifications.swift */; };
-		F44DEEEE47CB10E84F758E7934FA5F5B /* Pods-Assist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C41C8A01C301C5B9D9911A740EE3D43 /* Pods-Assist-dummy.m */; };
-		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AB760A1F12EE740B917393D4DF0744 /* ResponseSerialization.swift */; };
-		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A107C61409D49E0466E88F4A6BD6D254 /* Alamofire.swift */; };
+		B059C7FAB05089E6E2E775FECF3ED439 /* JTAppleCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3449CD470B9D2F3B58A1E7D3ED6E3A87 /* JTAppleCalendarLayout.swift */; };
+		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F995EC8DCA871C9BEB3AF3B40431E7 /* MultipartFormData.swift */; };
+		B965C27470712E31BBBE1FAF1EC710C6 /* JTAppleCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F81ADF0DEA407EADEC034C66D553F68 /* JTAppleCalendar-dummy.m */; };
+		BBEFE2F9CEB73DC7BD97FFA66A0D9D4F /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DEB78342E931A77134F79B68CFC873 /* Validation.swift */; };
+		BE5C67A07E289FE1F9BE27335B159997 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC34743781EEEEA17477F142E384A8 /* ParameterEncoding.swift */; };
+		C2F18E918FC190718D13E9DA0A4A3A30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */; };
+		CB6D60925223897FFA2662667DF83E8A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC927AEEFEBE5FC196303F07F8C84E50 /* Response.swift */; };
+		D4691FFE7B4559D8694FA495D8137D55 /* JTAppleReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BC9F0D60A6D520B70FDCC5247F276 /* JTAppleReusableViewProtocol.swift */; };
+		DA3FBCF3B21EB18151C3BC2645107E0D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E0570819721A4DC59C3AD3BE551D6EF /* QuartzCore.framework */; };
+		DB736BB112B3D4FD8B09DB203016735A /* JTCalendarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB063C2EDD5F8846523C927C6704985 /* JTCalendarProtocols.swift */; };
+		DB94187A5E87BF1E263B7E18A2ED2F7A /* UIScrollViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D341B7A7A51FCD2D693E77B586562B6 /* UIScrollViewDelegates.swift */; };
+		DBDD82BBC31928051208155FD58DAD64 /* UserInteractionFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A9F46F7D26873A6EF913E71AC2FA56 /* UserInteractionFunctions.swift */; };
+		DDE5109A06DDDE873435D166B76290A6 /* FrameAccessor-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 841530C4D772C5F44EF9F86765A6EAD6 /* FrameAccessor-dummy.m */; };
+		DFC928B007261BB895164D4D1D663CE7 /* UICollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E045C05C1D91C091751DE3ACA4980E /* UICollectionViewDelegates.swift */; };
+		E984D773F9D2873A385A000D0A0357E1 /* VENBackspaceTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 54BDBA667FD7AA14971CE228820152FF /* VENBackspaceTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECEB52A1ED5F9574FC03F4064D3A92C0 /* FrameAccessor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B353EF366FBF1303D36996B703B6362 /* FrameAccessor.framework */; };
+		EFD264FC408EBF3BA2528E70B08DDD94 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0274251576B2B5E934EF0C84CD0C82B8 /* Notifications.swift */; };
+		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CA3A4E492F30D271ED7BF4FACCB3D7 /* ResponseSerialization.swift */; };
+		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A93C53A8EF18C3B72B6D6789328197 /* Alamofire.swift */; };
+		F982C78F986F2D86C87B0ECF56F48466 /* VENTokenField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BDCF345B415925454808135FA6175A3 /* VENTokenField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		598442F6457CDBF87DA0375678B2E581 /* PBXContainerItemProxy */ = {
+		008E5FBC53A194FB9DE29FBE02C6F38F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D876FFE334B42C9B57DD617B73D05BC9;
+			remoteInfo = VENTokenField;
+		};
+		52F7BBC811B048F0184B0DFEF8809369 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF1258B878BFA89993BC8FEA5ACA97E4;
+			remoteInfo = FrameAccessor;
+		};
+		54ED032F251C529CCCAF03EB19BE0DB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 88E9EC28B8B46C3631E6B242B50F4442;
 			remoteInfo = Alamofire;
 		};
-		59FCAAF5A11EB5ACF35C4B9618E9A023 /* PBXContainerItemProxy */ = {
+		87E7B7E9AD19C3E9883989C88A8B022A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BF1258B878BFA89993BC8FEA5ACA97E4;
+			remoteInfo = FrameAccessor;
+		};
+		9819B4DFE356398FEAFE9829DB13F38C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9B22756F1BC69AB282A6C7FFC7EB05C3;
 			remoteInfo = JTAppleCalendar;
 		};
-		5E45518F3FDB1F16A28DCDF7C7A4FE85 /* PBXContainerItemProxy */ = {
+		A3FEEA3F53E424EC38A5FED06AE2D042 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -88,107 +128,151 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02545058A74E1CC9068480EB2738DAAF /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		0274251576B2B5E934EF0C84CD0C82B8 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
+		04D11F2E5F82904AF05BBA1D09383AB1 /* ScrollViewFrameAccessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ScrollViewFrameAccessor.h; path = FrameAccessor/ScrollViewFrameAccessor.h; sourceTree = "<group>"; };
 		0604326C862D4754D478E038DDE5D8CD /* Pods-AssistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AssistTests.release.xcconfig"; sourceTree = "<group>"; };
 		097176F198B6F57B870E42C996313186 /* Pods-AssistTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AssistTests.modulemap"; sourceTree = "<group>"; };
-		0978A471FA373192CE9EDC8CCCE6D502 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		0997E415A93EA91064B9A5D895CD9EBE /* Pods-AssistUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AssistUITests-dummy.m"; sourceTree = "<group>"; };
-		0DD1C6500482D68DDC7EBEE866CDD777 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E213CEF22589CAF88BD215A0957EE77 /* ScrollViewFrameAccessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ScrollViewFrameAccessor.m; path = FrameAccessor/ScrollViewFrameAccessor.m; sourceTree = "<group>"; };
 		0EF4486B5A0099240A41A1E2CC56060F /* Pods-AssistUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AssistUITests-umbrella.h"; sourceTree = "<group>"; };
-		1489AEF16BD6B2FE2A3CE9BD7716D253 /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
-		1605F868189ACE8B684D8D90B42A1A17 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		10320F86554537701E98C3CDA2767453 /* VENTokenField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = VENTokenField.xcconfig; sourceTree = "<group>"; };
+		13F801B57855E4142CFF67728ECDDE38 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		14D201C2E2A85CE09D376F0599633693 /* ViewFrameAccessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ViewFrameAccessor.m; path = FrameAccessor/ViewFrameAccessor.m; sourceTree = "<group>"; };
+		1697264AF34E70FA0D4BB2B48298291E /* VENTokenField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = VENTokenField.modulemap; sourceTree = "<group>"; };
 		17ED81F55D3AE7B56B55CD28AB8B25BB /* Pods-AssistUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AssistUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1AD11444C228FE7E3300E7FE8E0B8B88 /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AssistTests.framework; path = "Pods-AssistTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD558FB81BB521D8D9141BE13EDAD56 /* VENTokenField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VENTokenField-prefix.pch"; sourceTree = "<group>"; };
 		1BC05CFAF90EEAFD75D16909306AEAC6 /* Pods-AssistUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AssistUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1DEC3D1CBB85A9DAAD56BE0FA229E5B0 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		219D910F62926BC53C70C43D73D973C5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		227B7865D9556A1D82E8E02B57C06DD7 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Sources/JTCalendarProtocols.swift; sourceTree = "<group>"; };
+		1CBDA52C4A9D3E72263FDD497F623598 /* VENToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENToken.m; path = VENTokenField/VENToken.m; sourceTree = "<group>"; };
+		1EADA5EB75EBBDA96F2FF7A3C1A4189D /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Sources/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
 		23641DD4C111559E1D367BA5A99AC981 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		257F1218C7328F9109B990D398FED09A /* FrameAccessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FrameAccessor.h; path = FrameAccessor/FrameAccessor.h; sourceTree = "<group>"; };
+		272C1AFCFD260F68A4F376C23F9BA012 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
+		27530319B9724802896C8AE5A99FFD60 /* JTAppleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleViews.swift; path = Sources/JTAppleViews.swift; sourceTree = "<group>"; };
 		288118175865CA672BE5DA499929DC66 /* Pods-AssistTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AssistTests-frameworks.sh"; sourceTree = "<group>"; };
-		28CCA3A1792596EFC791D9F75852BC64 /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Sources/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
+		2911A97054020C01A837F23846BAAA3D /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AssistTests.framework; path = "Pods-AssistTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296E765CF8335A8EDFEA18F9700F3300 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		297533E42228C045A099F9B354ED8DF8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29A4A3DA6AA43DAFDF0AE8D4F80570EA /* Pods-AssistTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AssistTests-dummy.m"; sourceTree = "<group>"; };
 		2B131035932389530AA1D043B503437E /* Pods-AssistUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AssistUITests-frameworks.sh"; sourceTree = "<group>"; };
-		2BC3438658C07781ECDE72A67169C88F /* Pods_Assist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Assist.framework; path = "Pods-Assist.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C58A9A4C6CD19F1ACD1AA96BC9515EE /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
-		2DBA6C43BC1E2064DB3901BE3D9443D9 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		2DE96272D268B14B6886D46E90DD2BD8 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		3042CA037067765F18CB980743BDF0B5 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		31B1EBB2457B05E47CCF4BFCC70F1661 /* Pods-Assist-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Assist-frameworks.sh"; sourceTree = "<group>"; };
-		3793A2E9058BA62E509B74AABC27A743 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		3CA17F63C6A1EC7068372A315913F456 /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Sources/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
-		4043428F47CA6CB5648A3D93D5AA3128 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		426FCCD6CC9854A34B40E52C36F9E1FF /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Sources/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
-		439C27072A8DBA64E6C059FDC490823F /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JTAppleCalendar.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		46F299BEE7D3D37D46D9181410E5CF6E /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		4BE2C421B2D3F640B8021EDA413D0821 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
+		3329764BEE83F1AC188B34D26B37F221 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		3449CD470B9D2F3B58A1E7D3ED6E3A87 /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Sources/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
+		3A7BC9F0D60A6D520B70FDCC5247F276 /* JTAppleReusableViewProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleReusableViewProtocol.swift; path = Sources/JTAppleReusableViewProtocol.swift; sourceTree = "<group>"; };
+		4381BBCE27EBEC52ECB47DCD9930B814 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
+		48174524F4F4B94425BA2687E5D0B368 /* ViewFrameAccessor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ViewFrameAccessor.h; path = FrameAccessor/ViewFrameAccessor.h; sourceTree = "<group>"; };
+		49118F049F257DF2D453E4C9A40C790C /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		4C41C8A01C301C5B9D9911A740EE3D43 /* Pods-Assist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Assist-dummy.m"; sourceTree = "<group>"; };
-		4CA5A5B948B45DDF59E8CF3B041D612B /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
-		4DA056210ADD20258434070C12E3E9B0 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
-		4F2AF91803865F82431E2C39A3E824B1 /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/CalendarStructs.swift; sourceTree = "<group>"; };
+		4CAF3F6E80C3D8BC0392C91F18A13317 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE4D29F58A8B02EA897C15488F871D8 /* VENTokenField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENTokenField.h; path = VENTokenField/VENTokenField.h; sourceTree = "<group>"; };
+		4D341B7A7A51FCD2D693E77B586562B6 /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Sources/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
+		4E0570819721A4DC59C3AD3BE551D6EF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		4FB2517A26D99D9DB4644B41F56E76BB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FB25F105C73D702136F0C5C75C23EF1 /* VENToken.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = VENToken.xib; path = VENTokenField/VENToken.xib; sourceTree = "<group>"; };
+		504577A6CA4D27DCAF5D7A9D58DEAABC /* VENTokenField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "VENTokenField-dummy.m"; sourceTree = "<group>"; };
 		539E4F35FD06A5E480E32C44977799BF /* Pods-AssistTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AssistTests-resources.sh"; sourceTree = "<group>"; };
-		598D3E9CF613E3FF9FF0278BB22B6EB5 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		54BDBA667FD7AA14971CE228820152FF /* VENBackspaceTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENBackspaceTextField.h; path = VENTokenField/VENBackspaceTextField.h; sourceTree = "<group>"; };
+		5558AF77A38ED915173E165324CDB99D /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
+		5834700837EA1E7303B03B72FF8FF808 /* FrameAccessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FrameAccessor.framework; path = FrameAccessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5843E3E09E4018BC4B341D0B832EAA0D /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
+		59F995EC8DCA871C9BEB3AF3B40431E7 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		5DA40C69A17D3A7A659FBB6637619F50 /* Pods-AssistTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AssistTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		5EB81F87E52579AAA747CC6FEB3FA731 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60D928E4844643A7BD5C40783240F0D2 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
+		61D55CAA6F3C3CEE40EE14F498174980 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		6254F28354E5F8775B8ECD308DA6896D /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AssistUITests.framework; path = "Pods-AssistUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6545D97950EE82659C2D4E7529C90B73 /* FrameAccessor-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FrameAccessor-prefix.pch"; sourceTree = "<group>"; };
 		658AF4B0520E7803B3F839CBEC2B9C91 /* Pods-AssistUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-AssistUITests.modulemap"; sourceTree = "<group>"; };
-		68093C888A77F5A097811BCF05D21189 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B06D2A6266FC04B1A94991BEAB35696 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		6CED53ADA18F9104BEB7B4B2B5832256 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		7195B64CBE1FB3035DEBEECCBB4A29DD /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
+		65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66CED52CBD022DE580A609C919269665 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68CA3A4E492F30D271ED7BF4FACCB3D7 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		690BDD19440229CCB7AB09C974AECB8C /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		6CC2B8BA3D1F51438E57B8E4B956078F /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
+		6CCCBEF8C348C554DBC400CF29E0DFDE /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		6CE9CF9D2D8CD2B0E52FDE052A1312FF /* JTAppleCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-umbrella.h"; sourceTree = "<group>"; };
+		6F81ADF0DEA407EADEC034C66D553F68 /* JTAppleCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JTAppleCalendar-dummy.m"; sourceTree = "<group>"; };
+		6FCA2CF8B5FBE5A9BF28AD51F4B4C434 /* FrameAccessor-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FrameAccessor-umbrella.h"; sourceTree = "<group>"; };
+		6FD746575D1A426D70388FA0BB90DBCB /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FEC34743781EEEEA17477F142E384A8 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
+		71DEB78342E931A77134F79B68CFC873 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
+		74A8716AC3A1F032095CCAC17EE0A425 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		77FECA8B70A5259FC1B0D9ACB70EB18F /* Pods-Assist-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Assist-acknowledgements.plist"; sourceTree = "<group>"; };
-		78825940325594DD2955CF30127F4BCB /* JTAppleReusableViewProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleReusableViewProtocol.swift; path = Sources/JTAppleReusableViewProtocol.swift; sourceTree = "<group>"; };
+		78322598497F0C6FE89A08D0A7E783C2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78CA68FE4F69BC67F2BA10F4F564A568 /* JTAppleCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.xcconfig; sourceTree = "<group>"; };
 		79BD8CB73AF0C2E8100246DF235272D8 /* Pods-Assist-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Assist-resources.sh"; sourceTree = "<group>"; };
-		7B4AC8C41E292A223E8E2F74049A6CC3 /* JTAppleCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JTAppleCalendar.xcconfig; sourceTree = "<group>"; };
-		82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8FFC475A37E2AAFB88A07517AD85D534 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		7B2F837386C238D05C2BA4CD640D4150 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		841530C4D772C5F44EF9F86765A6EAD6 /* FrameAccessor-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FrameAccessor-dummy.m"; sourceTree = "<group>"; };
+		870CA71E104FB2034C6FBA1F9846B1EC /* JTAppleCalendarLayoutProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayoutProtocol.swift; path = Sources/JTAppleCalendarLayoutProtocol.swift; sourceTree = "<group>"; };
+		89A9F46F7D26873A6EF913E71AC2FA56 /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Sources/UserInteractionFunctions.swift; sourceTree = "<group>"; };
+		8BAF6503550842CCBDC29527A2F3A25B /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
+		8DB063C2EDD5F8846523C927C6704985 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = Sources/JTCalendarProtocols.swift; sourceTree = "<group>"; };
+		91874F6B2873DA234E5DAE79DD21FB6C /* CalendarStructs.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarStructs.swift; path = Sources/CalendarStructs.swift; sourceTree = "<group>"; };
+		91B778A922ED264C8EC5F95513C54297 /* VENTokenField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "VENTokenField-umbrella.h"; sourceTree = "<group>"; };
 		91F4A5A40FEE37D70FD2B08E2861D84A /* Pods-Assist-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Assist-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93D2D6D9D3D893CCB14412D6756A164D /* MBProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.xcconfig; sourceTree = "<group>"; };
-		941B29C86D2DD959E7942019D88B52BF /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
+		94FA8D788D84D9E826B117D468AD849C /* VENBackspaceTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENBackspaceTextField.m; path = VENTokenField/VENBackspaceTextField.m; sourceTree = "<group>"; };
+		96D1E5FCCED20B71740C8FF726B801A0 /* JTAppleCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JTAppleCalendar.framework; path = JTAppleCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96E1830A99F4B0BC4CA282B3F5EBE7A7 /* Pods-Assist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Assist.modulemap"; sourceTree = "<group>"; };
-		985067B4EF98C55169FA518E2BB8A4D0 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		993EB8E1C376B25EF56CC392C366BB22 /* MBProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD-dummy.m"; sourceTree = "<group>"; };
-		9CE52F616CD17085386A3BAA00BCA90B /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		A049DF0D05277457A922F865EA914460 /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendBirdSDK.framework; sourceTree = "<group>"; };
-		A107C61409D49E0466E88F4A6BD6D254 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		975E152C220D25C4741231E1C19FE4EA /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
+		9B353EF366FBF1303D36996B703B6362 /* FrameAccessor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FrameAccessor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BDCF345B415925454808135FA6175A3 /* VENTokenField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VENTokenField.m; path = VENTokenField/VENTokenField.m; sourceTree = "<group>"; };
+		9F8049DF071222F2B42112D3A986A9FD /* FrameAccessor.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FrameAccessor.xcconfig; sourceTree = "<group>"; };
+		A4B7BDD6A9348901473F9CBF8E0EE8CB /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		A53C7D93AFB34B6FC2550EAD6A6BDB3A /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/CalendarEnums.swift; sourceTree = "<group>"; };
+		A6A76BF2B2F89BB2EFD506AEA17263E1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE78B9CEC34098AC6D03439ADB84EB8F /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
-		AF16539421F818420BA29780848969EE /* JTAppleDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleDayCell.swift; path = Sources/JTAppleDayCell.swift; sourceTree = "<group>"; };
 		B030F763CF5A3BE378AF739640ECB12D /* Pods-AssistTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AssistTests-umbrella.h"; sourceTree = "<group>"; };
 		B2121E0735937103A849B6902872CAD0 /* Pods-Assist-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Assist-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B227D05ECCAEF7AE0D3E9C9CE60E4F28 /* JTAppleCalendarDelegateProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarDelegateProtocol.swift; path = Sources/JTAppleCalendarDelegateProtocol.swift; sourceTree = "<group>"; };
-		B621F49626BBD6F3F2E107A98FD2732D /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
-		B78093F9CD505FC8820F7EE51B8DB6A6 /* CalendarEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarEnums.swift; path = Sources/CalendarEnums.swift; sourceTree = "<group>"; };
+		B24C798FC099AA67F51D449AF0753A68 /* Pods_Assist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Assist.framework; path = "Pods-Assist.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B617B6D735A26DB8B5CF8ED8D21ACE17 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		B6D1DF5319E4FAC19CE990DC570ED9F9 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
 		B7E18F821FFDAD2AE5FB270A84CBC1E1 /* Pods-AssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BA212540AE03CA28608FE2177C996A44 /* JTAppleViews.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleViews.swift; path = Sources/JTAppleViews.swift; sourceTree = "<group>"; };
+		B93284752CDFDD48F6C10D050CFB3966 /* FrameAccessor.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FrameAccessor.modulemap; sourceTree = "<group>"; };
 		BDDAD4A0362F8EF7A4A017E9B6A23A72 /* Pods-AssistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AssistUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BFB213C4CD12A3C81EDF5586FEDF6022 /* Pods-AssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AssistTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C4E7D1B2C8C75D810A46D852CED10CE9 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		D2AB760A1F12EE740B917393D4DF0744 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
+		C158DB76DD09E3C51C2ADE7AB1CD2522 /* JTAppleCollectionReusableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCollectionReusableView.swift; path = Sources/JTAppleCollectionReusableView.swift; sourceTree = "<group>"; };
+		CCCC369C36881E67D028BE6A5C9A7D4A /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Sources/JTAppleCalendarView.swift; sourceTree = "<group>"; };
+		CF7C3B9B8B775A66F668B354E8FFFCDD /* JTAppleDayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleDayCell.swift; path = Sources/JTAppleDayCell.swift; sourceTree = "<group>"; };
+		D1412DE2AE930EA76146287B63CED2D3 /* MBProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		D2FBDF975E882C763167418713EFDCBA /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
-		D7B246D350D4148287D12435A44FEF5D /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D98CD2F8601EF0DF263F7D9277865ECC /* Pods-AssistTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AssistTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DB514526B71A37149859966BFF87D762 /* UIScrollViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIScrollViewDelegates.swift; path = Sources/UIScrollViewDelegates.swift; sourceTree = "<group>"; };
-		DC40221E14249B23FDA25428ACEE01DE /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		DCB9A395DF67F1218316C48DB6D4D964 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		DCF300644558FBC59DFF51623D5E6C23 /* JTAppleCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarView.swift; path = Sources/JTAppleCalendarView.swift; sourceTree = "<group>"; };
-		DFE31D7C53F116C5B8ED0EC5824498BC /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AssistUITests.framework; path = "Pods-AssistUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E054739AD8EE5381E7FBABB3ACA80805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		E4A3D55C9CB855CB1812D33C8AE3728E /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
-		E5B476C7C3BDD4218E3B0B852CE57093 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		E71252576CBBEB4B9D92363103AD131E /* JTAppleCalendarLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JTAppleCalendarLayout.swift; path = Sources/JTAppleCalendarLayout.swift; sourceTree = "<group>"; };
-		E7F3728FA656953D8C74D56AB00AD34D /* JTAppleCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = JTAppleCalendar.modulemap; sourceTree = "<group>"; };
-		F764A15F5E8CA37491173B53B53A7EDA /* UserInteractionFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UserInteractionFunctions.swift; path = Sources/UserInteractionFunctions.swift; sourceTree = "<group>"; };
+		D9E045C05C1D91C091751DE3ACA4980E /* UICollectionViewDelegates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UICollectionViewDelegates.swift; path = Sources/UICollectionViewDelegates.swift; sourceTree = "<group>"; };
+		DC927AEEFEBE5FC196303F07F8C84E50 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		DF57DD700EFB2D68E0A16DABD77CFF6D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		E2967DCF3C7BC655C4562A02946867D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E591F03560B9A8730A9D6317D46A0D60 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		E815BF566848646D9E26DB5A521C9510 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
+		E92B1A96389F40699A9F6BC033832F51 /* VENTokenField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = VENTokenField.framework; path = VENTokenField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F402524CB530AD2E177D18C62256A85E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
+		F4A93C53A8EF18C3B72B6D6789328197 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
+		F565DA2DE7AF9DD68FDD69B583B1A3CB /* GlobalFunctionsAndExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GlobalFunctionsAndExtensions.swift; path = Sources/GlobalFunctionsAndExtensions.swift; sourceTree = "<group>"; };
+		FA3FDF235A38E18523D869B85522AAF0 /* JTAppleCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JTAppleCalendar-prefix.pch"; sourceTree = "<group>"; };
 		FA4BAB6730D682889FE2AEB82340FC19 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDF60C51E636136D6A2AE62C07C924C /* Pods-AssistUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AssistUITests-resources.sh"; sourceTree = "<group>"; };
+		FC48A4099B241E7DCCB1511B1F88D904 /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendBirdSDK.framework; sourceTree = "<group>"; };
+		FE5E21B0A35355BF4C18F0ADB7B5D9C8 /* VENToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VENToken.h; path = VENTokenField/VENToken.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		01A960BB88BD768214B9583E0E88D783 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62A5E6720717636890983FE71998A5F6 /* Foundation.framework in Frameworks */,
+				ECEB52A1ED5F9574FC03F4064D3A92C0 /* FrameAccessor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14D593FBA645D24A4B25F6DE771850A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				887F55026689E555A1DD5777FB07A154 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BBF336AECF14317F2AD6FA16AC68AFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				577E25DB7BD4EB6524831CE13BE953DB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,11 +284,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46EA09F33B520091F0D07B7E4EFD43F7 /* Frameworks */ = {
+		7DD9C872A899AD8A4D9868C4EFB87FE0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA03E89BDEFB8DABDD165B6DB0D92E53 /* Foundation.framework in Frameworks */,
+				0B2754F68391846B39A4BD045FEB1F51 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,25 +321,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0928485571CD9DC2A41D0CD729475A4E /* Products */ = {
+		11CB94452C526D69C7F297587668C933 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				68093C888A77F5A097811BCF05D21189 /* Alamofire.framework */,
-				439C27072A8DBA64E6C059FDC490823F /* JTAppleCalendar.framework */,
-				D7B246D350D4148287D12435A44FEF5D /* MBProgressHUD.framework */,
-				2BC3438658C07781ECDE72A67169C88F /* Pods_Assist.framework */,
-				1AD11444C228FE7E3300E7FE8E0B8B88 /* Pods_AssistTests.framework */,
-				DFE31D7C53F116C5B8ED0EC5824498BC /* Pods_AssistUITests.framework */,
+				74A8716AC3A1F032095CCAC17EE0A425 /* Alamofire.modulemap */,
+				B6D1DF5319E4FAC19CE990DC570ED9F9 /* Alamofire.xcconfig */,
+				296E765CF8335A8EDFEA18F9700F3300 /* Alamofire-dummy.m */,
+				5558AF77A38ED915173E165324CDB99D /* Alamofire-prefix.pch */,
+				4381BBCE27EBEC52ECB47DCD9930B814 /* Alamofire-umbrella.h */,
+				66CED52CBD022DE580A609C919269665 /* Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/Alamofire";
 			sourceTree = "<group>";
 		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+		285978E203B57AC518301BA19777B851 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E029D9AAED7679617632303F2A4C409B /* iOS */,
+				4FB25F105C73D702136F0C5C75C23EF1 /* VENToken.xib */,
 			);
-			name = Frameworks;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3CCE26B0E71F82C6751B4946EF2E87D3 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				690BDD19440229CCB7AB09C974AECB8C /* AFError.swift */,
+				F4A93C53A8EF18C3B72B6D6789328197 /* Alamofire.swift */,
+				13F801B57855E4142CFF67728ECDDE38 /* DispatchQueue+Alamofire.swift */,
+				59F995EC8DCA871C9BEB3AF3B40431E7 /* MultipartFormData.swift */,
+				49118F049F257DF2D453E4C9A40C790C /* NetworkReachabilityManager.swift */,
+				0274251576B2B5E934EF0C84CD0C82B8 /* Notifications.swift */,
+				6FEC34743781EEEEA17477F142E384A8 /* ParameterEncoding.swift */,
+				F402524CB530AD2E177D18C62256A85E /* Request.swift */,
+				DC927AEEFEBE5FC196303F07F8C84E50 /* Response.swift */,
+				68CA3A4E492F30D271ED7BF4FACCB3D7 /* ResponseSerialization.swift */,
+				975E152C220D25C4741231E1C19FE4EA /* Result.swift */,
+				B617B6D735A26DB8B5CF8ED8D21ACE17 /* ServerTrustPolicy.swift */,
+				7B2F837386C238D05C2BA4CD640D4150 /* SessionDelegate.swift */,
+				5843E3E09E4018BC4B341D0B832EAA0D /* SessionManager.swift */,
+				272C1AFCFD260F68A4F376C23F9BA012 /* TaskDelegate.swift */,
+				E815BF566848646D9E26DB5A521C9510 /* Timeline.swift */,
+				71DEB78342E931A77134F79B68CFC873 /* Validation.swift */,
+				11CB94452C526D69C7F297587668C933 /* Support Files */,
+			);
+			name = Alamofire;
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		446FE89A9278CE75643BF11584A39885 /* Pods-AssistUITests */ = {
@@ -276,76 +387,36 @@
 			path = "Target Support Files/Pods-AssistUITests";
 			sourceTree = "<group>";
 		};
-		478DBD883E880C614567F57A2523B02B /* JTAppleCalendar */ = {
+		4E206ED3C3BAA36F862B91CC2637F69C /* JTAppleCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				B78093F9CD505FC8820F7EE51B8DB6A6 /* CalendarEnums.swift */,
-				4F2AF91803865F82431E2C39A3E824B1 /* CalendarStructs.swift */,
-				E4A3D55C9CB855CB1812D33C8AE3728E /* GlobalFunctionsAndExtensions.swift */,
-				B227D05ECCAEF7AE0D3E9C9CE60E4F28 /* JTAppleCalendarDelegateProtocol.swift */,
-				E71252576CBBEB4B9D92363103AD131E /* JTAppleCalendarLayout.swift */,
-				28CCA3A1792596EFC791D9F75852BC64 /* JTAppleCalendarLayoutProtocol.swift */,
-				DCF300644558FBC59DFF51623D5E6C23 /* JTAppleCalendarView.swift */,
-				3CA17F63C6A1EC7068372A315913F456 /* JTAppleCollectionReusableView.swift */,
-				AF16539421F818420BA29780848969EE /* JTAppleDayCell.swift */,
-				78825940325594DD2955CF30127F4BCB /* JTAppleReusableViewProtocol.swift */,
-				BA212540AE03CA28608FE2177C996A44 /* JTAppleViews.swift */,
-				227B7865D9556A1D82E8E02B57C06DD7 /* JTCalendarProtocols.swift */,
-				426FCCD6CC9854A34B40E52C36F9E1FF /* UICollectionViewDelegates.swift */,
-				DB514526B71A37149859966BFF87D762 /* UIScrollViewDelegates.swift */,
-				F764A15F5E8CA37491173B53B53A7EDA /* UserInteractionFunctions.swift */,
-				A8B91BE89BBC74099A8C7D094231E69C /* Support Files */,
+				A53C7D93AFB34B6FC2550EAD6A6BDB3A /* CalendarEnums.swift */,
+				91874F6B2873DA234E5DAE79DD21FB6C /* CalendarStructs.swift */,
+				F565DA2DE7AF9DD68FDD69B583B1A3CB /* GlobalFunctionsAndExtensions.swift */,
+				1EADA5EB75EBBDA96F2FF7A3C1A4189D /* JTAppleCalendarDelegateProtocol.swift */,
+				3449CD470B9D2F3B58A1E7D3ED6E3A87 /* JTAppleCalendarLayout.swift */,
+				870CA71E104FB2034C6FBA1F9846B1EC /* JTAppleCalendarLayoutProtocol.swift */,
+				CCCC369C36881E67D028BE6A5C9A7D4A /* JTAppleCalendarView.swift */,
+				C158DB76DD09E3C51C2ADE7AB1CD2522 /* JTAppleCollectionReusableView.swift */,
+				CF7C3B9B8B775A66F668B354E8FFFCDD /* JTAppleDayCell.swift */,
+				3A7BC9F0D60A6D520B70FDCC5247F276 /* JTAppleReusableViewProtocol.swift */,
+				27530319B9724802896C8AE5A99FFD60 /* JTAppleViews.swift */,
+				8DB063C2EDD5F8846523C927C6704985 /* JTCalendarProtocols.swift */,
+				D9E045C05C1D91C091751DE3ACA4980E /* UICollectionViewDelegates.swift */,
+				4D341B7A7A51FCD2D693E77B586562B6 /* UIScrollViewDelegates.swift */,
+				89A9F46F7D26873A6EF913E71AC2FA56 /* UserInteractionFunctions.swift */,
+				7CC77D6C66922985B91FC098783856BD /* Support Files */,
 			);
 			name = JTAppleCalendar;
 			path = JTAppleCalendar;
 			sourceTree = "<group>";
 		};
-		4905B5904F34B491F7D9DA4FA9DF7F34 /* Support Files */ = {
+		51C5D4D840DACABCA84CD2827417C36D /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				219D910F62926BC53C70C43D73D973C5 /* Info.plist */,
-				941B29C86D2DD959E7942019D88B52BF /* MBProgressHUD.modulemap */,
-				93D2D6D9D3D893CCB14412D6756A164D /* MBProgressHUD.xcconfig */,
-				993EB8E1C376B25EF56CC392C366BB22 /* MBProgressHUD-dummy.m */,
-				0978A471FA373192CE9EDC8CCCE6D502 /* MBProgressHUD-prefix.pch */,
-				02545058A74E1CC9068480EB2738DAAF /* MBProgressHUD-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MBProgressHUD";
-			sourceTree = "<group>";
-		};
-		494B97E5744B2B512CEB4893D4B4CB44 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				4043428F47CA6CB5648A3D93D5AA3128 /* AFError.swift */,
-				A107C61409D49E0466E88F4A6BD6D254 /* Alamofire.swift */,
-				4BE2C421B2D3F640B8021EDA413D0821 /* DispatchQueue+Alamofire.swift */,
-				3793A2E9058BA62E509B74AABC27A743 /* MultipartFormData.swift */,
-				985067B4EF98C55169FA518E2BB8A4D0 /* NetworkReachabilityManager.swift */,
-				2C58A9A4C6CD19F1ACD1AA96BC9515EE /* Notifications.swift */,
-				6B06D2A6266FC04B1A94991BEAB35696 /* ParameterEncoding.swift */,
-				DCB9A395DF67F1218316C48DB6D4D964 /* Request.swift */,
-				1DEC3D1CBB85A9DAAD56BE0FA229E5B0 /* Response.swift */,
-				D2AB760A1F12EE740B917393D4DF0744 /* ResponseSerialization.swift */,
-				598D3E9CF613E3FF9FF0278BB22B6EB5 /* Result.swift */,
-				1605F868189ACE8B684D8D90B42A1A17 /* ServerTrustPolicy.swift */,
-				8FFC475A37E2AAFB88A07517AD85D534 /* SessionDelegate.swift */,
-				2DBA6C43BC1E2064DB3901BE3D9443D9 /* SessionManager.swift */,
-				4CA5A5B948B45DDF59E8CF3B041D612B /* TaskDelegate.swift */,
-				3042CA037067765F18CB980743BDF0B5 /* Timeline.swift */,
-				2DE96272D268B14B6886D46E90DD2BD8 /* Validation.swift */,
-				DF82A93D78EE8049467795BE10575C87 /* Support Files */,
-			);
-			name = Alamofire;
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		4B547829917B7A87B44BB4E26461D1E7 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				C4E7D1B2C8C75D810A46D852CED10CE9 /* MBProgressHUD.h */,
-				46F299BEE7D3D37D46D9181410E5CF6E /* MBProgressHUD.m */,
-				4905B5904F34B491F7D9DA4FA9DF7F34 /* Support Files */,
+				A4B7BDD6A9348901473F9CBF8E0EE8CB /* MBProgressHUD.h */,
+				D1412DE2AE930EA76146287B63CED2D3 /* MBProgressHUD.m */,
+				AC5F58B287259CDC35B62059CB198E2F /* Support Files */,
 			);
 			name = MBProgressHUD;
 			path = MBProgressHUD;
@@ -369,43 +440,87 @@
 			path = "Target Support Files/Pods-Assist";
 			sourceTree = "<group>";
 		};
+		6A5C76E30C9517CA34F3F8AE91DF1670 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6A76BF2B2F89BB2EFD506AEA17263E1 /* Info.plist */,
+				1697264AF34E70FA0D4BB2B48298291E /* VENTokenField.modulemap */,
+				10320F86554537701E98C3CDA2767453 /* VENTokenField.xcconfig */,
+				504577A6CA4D27DCAF5D7A9D58DEAABC /* VENTokenField-dummy.m */,
+				1AD558FB81BB521D8D9141BE13EDAD56 /* VENTokenField-prefix.pch */,
+				91B778A922ED264C8EC5F95513C54297 /* VENTokenField-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/VENTokenField";
+			sourceTree = "<group>";
+		};
+		7CC77D6C66922985B91FC098783856BD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				78322598497F0C6FE89A08D0A7E783C2 /* Info.plist */,
+				6CC2B8BA3D1F51438E57B8E4B956078F /* JTAppleCalendar.modulemap */,
+				78CA68FE4F69BC67F2BA10F4F564A568 /* JTAppleCalendar.xcconfig */,
+				6F81ADF0DEA407EADEC034C66D553F68 /* JTAppleCalendar-dummy.m */,
+				FA3FDF235A38E18523D869B85522AAF0 /* JTAppleCalendar-prefix.pch */,
+				6CE9CF9D2D8CD2B0E52FDE052A1312FF /* JTAppleCalendar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/JTAppleCalendar";
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				913168B69D074EC1D807FE2C63819737 /* Pods */,
-				0928485571CD9DC2A41D0CD729475A4E /* Products */,
+				D12FAC5BD25E0E52B82FB7CD287CAA8C /* Frameworks */,
+				848BA36BEC48C5DF9FE5FB10B9ED1973 /* Pods */,
+				A46F0FD14D1A61FC58C514242AFF2D58 /* Products */,
 				A5616A1C427A01786C344A52BCAD9B37 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		913168B69D074EC1D807FE2C63819737 /* Pods */ = {
+		848BA36BEC48C5DF9FE5FB10B9ED1973 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				494B97E5744B2B512CEB4893D4B4CB44 /* Alamofire */,
-				478DBD883E880C614567F57A2523B02B /* JTAppleCalendar */,
-				4B547829917B7A87B44BB4E26461D1E7 /* MBProgressHUD */,
-				A0505769DD05C3F212A3D6C4390EB422 /* SendBirdSDK */,
+				3CCE26B0E71F82C6751B4946EF2E87D3 /* Alamofire */,
+				D19E55A9BD9DA732EC0A2840717A2616 /* FrameAccessor */,
+				4E206ED3C3BAA36F862B91CC2637F69C /* JTAppleCalendar */,
+				51C5D4D840DACABCA84CD2827417C36D /* MBProgressHUD */,
+				C73CEC5B6C629F6073A64ADD807CAABF /* SendBirdSDK */,
+				A3F554EADDF81270E0366B6115339BF3 /* VENTokenField */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		986891374A52B5F13DCC5964A37F2A4E /* Frameworks */ = {
+		A3F554EADDF81270E0366B6115339BF3 /* VENTokenField */ = {
 			isa = PBXGroup;
 			children = (
-				A049DF0D05277457A922F865EA914460 /* SendBirdSDK.framework */,
+				54BDBA667FD7AA14971CE228820152FF /* VENBackspaceTextField.h */,
+				94FA8D788D84D9E826B117D468AD849C /* VENBackspaceTextField.m */,
+				FE5E21B0A35355BF4C18F0ADB7B5D9C8 /* VENToken.h */,
+				1CBDA52C4A9D3E72263FDD497F623598 /* VENToken.m */,
+				4CE4D29F58A8B02EA897C15488F871D8 /* VENTokenField.h */,
+				9BDCF345B415925454808135FA6175A3 /* VENTokenField.m */,
+				285978E203B57AC518301BA19777B851 /* Resources */,
+				6A5C76E30C9517CA34F3F8AE91DF1670 /* Support Files */,
 			);
-			name = Frameworks;
+			name = VENTokenField;
+			path = VENTokenField;
 			sourceTree = "<group>";
 		};
-		A0505769DD05C3F212A3D6C4390EB422 /* SendBirdSDK */ = {
+		A46F0FD14D1A61FC58C514242AFF2D58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				986891374A52B5F13DCC5964A37F2A4E /* Frameworks */,
+				6FD746575D1A426D70388FA0BB90DBCB /* Alamofire.framework */,
+				5834700837EA1E7303B03B72FF8FF808 /* FrameAccessor.framework */,
+				96D1E5FCCED20B71740C8FF726B801A0 /* JTAppleCalendar.framework */,
+				4CAF3F6E80C3D8BC0392C91F18A13317 /* MBProgressHUD.framework */,
+				B24C798FC099AA67F51D449AF0753A68 /* Pods_Assist.framework */,
+				2911A97054020C01A837F23846BAAA3D /* Pods_AssistTests.framework */,
+				6254F28354E5F8775B8ECD308DA6896D /* Pods_AssistUITests.framework */,
+				E92B1A96389F40699A9F6BC033832F51 /* VENTokenField.framework */,
 			);
-			name = SendBirdSDK;
-			path = SendBirdSDK;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		A5616A1C427A01786C344A52BCAD9B37 /* Targets Support Files */ = {
@@ -418,18 +533,27 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		A8B91BE89BBC74099A8C7D094231E69C /* Support Files */ = {
+		AC5F58B287259CDC35B62059CB198E2F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				5EB81F87E52579AAA747CC6FEB3FA731 /* Info.plist */,
-				E7F3728FA656953D8C74D56AB00AD34D /* JTAppleCalendar.modulemap */,
-				7B4AC8C41E292A223E8E2F74049A6CC3 /* JTAppleCalendar.xcconfig */,
-				4DA056210ADD20258434070C12E3E9B0 /* JTAppleCalendar-dummy.m */,
-				B621F49626BBD6F3F2E107A98FD2732D /* JTAppleCalendar-prefix.pch */,
-				1489AEF16BD6B2FE2A3CE9BD7716D253 /* JTAppleCalendar-umbrella.h */,
+				297533E42228C045A099F9B354ED8DF8 /* Info.plist */,
+				3329764BEE83F1AC188B34D26B37F221 /* MBProgressHUD.modulemap */,
+				8BAF6503550842CCBDC29527A2F3A25B /* MBProgressHUD.xcconfig */,
+				61D55CAA6F3C3CEE40EE14F498174980 /* MBProgressHUD-dummy.m */,
+				E591F03560B9A8730A9D6317D46A0D60 /* MBProgressHUD-prefix.pch */,
+				6CCCBEF8C348C554DBC400CF29E0DFDE /* MBProgressHUD-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/JTAppleCalendar";
+			path = "../Target Support Files/MBProgressHUD";
+			sourceTree = "<group>";
+		};
+		C73CEC5B6C629F6073A64ADD807CAABF /* SendBirdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DD159D3A21898374653FA92D008992DC /* Frameworks */,
+			);
+			name = SendBirdSDK;
+			path = SendBirdSDK;
 			sourceTree = "<group>";
 		};
 		CE66F2018A49628A7EB71904811B7ECD /* Pods-AssistTests */ = {
@@ -450,26 +574,57 @@
 			path = "Target Support Files/Pods-AssistTests";
 			sourceTree = "<group>";
 		};
-		DF82A93D78EE8049467795BE10575C87 /* Support Files */ = {
+		D12FAC5BD25E0E52B82FB7CD287CAA8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9CE52F616CD17085386A3BAA00BCA90B /* Alamofire.modulemap */,
-				7195B64CBE1FB3035DEBEECCBB4A29DD /* Alamofire.xcconfig */,
-				60D928E4844643A7BD5C40783240F0D2 /* Alamofire-dummy.m */,
-				DC40221E14249B23FDA25428ACEE01DE /* Alamofire-prefix.pch */,
-				6CED53ADA18F9104BEB7B4B2B5832256 /* Alamofire-umbrella.h */,
-				0DD1C6500482D68DDC7EBEE866CDD777 /* Info.plist */,
+				9B353EF366FBF1303D36996B703B6362 /* FrameAccessor.framework */,
+				F4C3094A4C3920A553DDB3D3742F0270 /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E029D9AAED7679617632303F2A4C409B /* iOS */ = {
+		D19E55A9BD9DA732EC0A2840717A2616 /* FrameAccessor */ = {
 			isa = PBXGroup;
 			children = (
-				E5B476C7C3BDD4218E3B0B852CE57093 /* CoreGraphics.framework */,
-				82D40E632FA2A47E7DBA77D3D46FDFE8 /* Foundation.framework */,
-				E054739AD8EE5381E7FBABB3ACA80805 /* QuartzCore.framework */,
+				257F1218C7328F9109B990D398FED09A /* FrameAccessor.h */,
+				04D11F2E5F82904AF05BBA1D09383AB1 /* ScrollViewFrameAccessor.h */,
+				0E213CEF22589CAF88BD215A0957EE77 /* ScrollViewFrameAccessor.m */,
+				48174524F4F4B94425BA2687E5D0B368 /* ViewFrameAccessor.h */,
+				14D201C2E2A85CE09D376F0599633693 /* ViewFrameAccessor.m */,
+				E119F817A98A981BC40F761DDE5E5304 /* Support Files */,
+			);
+			name = FrameAccessor;
+			path = FrameAccessor;
+			sourceTree = "<group>";
+		};
+		DD159D3A21898374653FA92D008992DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC48A4099B241E7DCCB1511B1F88D904 /* SendBirdSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E119F817A98A981BC40F761DDE5E5304 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B93284752CDFDD48F6C10D050CFB3966 /* FrameAccessor.modulemap */,
+				9F8049DF071222F2B42112D3A986A9FD /* FrameAccessor.xcconfig */,
+				841530C4D772C5F44EF9F86765A6EAD6 /* FrameAccessor-dummy.m */,
+				6545D97950EE82659C2D4E7529C90B73 /* FrameAccessor-prefix.pch */,
+				6FCA2CF8B5FBE5A9BF28AD51F4B4C434 /* FrameAccessor-umbrella.h */,
+				E2967DCF3C7BC655C4562A02946867D8 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FrameAccessor";
+			sourceTree = "<group>";
+		};
+		F4C3094A4C3920A553DDB3D3742F0270 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DF57DD700EFB2D68E0A16DABD77CFF6D /* CoreGraphics.framework */,
+				65D60A36023022E38EF57A7F5E4BFAA9 /* Foundation.framework */,
+				4E0570819721A4DC59C3AD3BE551D6EF /* QuartzCore.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -477,12 +632,31 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		06291AB188CC1CFCCB88E6CD38882163 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				057280A6CAADDF1C4B23B6A179AE8D66 /* Pods-Assist-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		197B7877D5D346F405BDD059EF96DBDC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				28A794912ED1E06B05D96DF5ED0AED19 /* MBProgressHUD-umbrella.h in Headers */,
 				A5BF8DBDD8660DBCFE712657F3D82BDA /* MBProgressHUD.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20F8B74605D5246EDDF9EB41DA849353 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E984D773F9D2873A385A000D0A0357E1 /* VENBackspaceTextField.h in Headers */,
+				4120E57182F738F6B0A70843086029E0 /* VENToken.h in Headers */,
+				68251CEBB25BA862D66FEB269A01A785 /* VENTokenField-umbrella.h in Headers */,
+				63CFAEF5A93B83F44C16EC8504B30AD6 /* VENTokenField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,11 +676,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCDDFA38E1D55F13809D39B7C8FFEC87 /* Headers */ = {
+		C92D4F41C600DB930348B67E4E33609E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20D2D47269995629E9E057B8D047CA2 /* Pods-Assist-umbrella.h in Headers */,
+				14D14E2B0D18B4E2FD2F5BC51F50AFA1 /* FrameAccessor-umbrella.h in Headers */,
+				1C89D5D70D5A1FC57F7BB3A71FD676E0 /* FrameAccessor.h in Headers */,
+				4C37AE2CB013AA961886B578EE13439B /* ScrollViewFrameAccessor.h in Headers */,
+				7590B1A0FA06058423DD9D49E7CDD204 /* ViewFrameAccessor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +720,7 @@
 			);
 			name = "Pods-AssistTests";
 			productName = "Pods-AssistTests";
-			productReference = 1AD11444C228FE7E3300E7FE8E0B8B88 /* Pods_AssistTests.framework */;
+			productReference = 2911A97054020C01A837F23846BAAA3D /* Pods_AssistTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */ = {
@@ -560,7 +737,7 @@
 			);
 			name = MBProgressHUD;
 			productName = MBProgressHUD;
-			productReference = D7B246D350D4148287D12435A44FEF5D /* MBProgressHUD.framework */;
+			productReference = 4CAF3F6E80C3D8BC0392C91F18A13317 /* MBProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */ = {
@@ -577,7 +754,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 68093C888A77F5A097811BCF05D21189 /* Alamofire.framework */;
+			productReference = 6FD746575D1A426D70388FA0BB90DBCB /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9B22756F1BC69AB282A6C7FFC7EB05C3 /* JTAppleCalendar */ = {
@@ -594,7 +771,29 @@
 			);
 			name = JTAppleCalendar;
 			productName = JTAppleCalendar;
-			productReference = 439C27072A8DBA64E6C059FDC490823F /* JTAppleCalendar.framework */;
+			productReference = 96D1E5FCCED20B71740C8FF726B801A0 /* JTAppleCalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF7DF7074062DD93BB24650BE65E355B /* Pods-Assist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E1404DE9EC6F6EF15E666227932886D /* Build configuration list for PBXNativeTarget "Pods-Assist" */;
+			buildPhases = (
+				962DB4037215DB5CE7E8E88F65918317 /* Sources */,
+				7DD9C872A899AD8A4D9868C4EFB87FE0 /* Frameworks */,
+				06291AB188CC1CFCCB88E6CD38882163 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3310B42094717162533416C9EBAA3D46 /* PBXTargetDependency */,
+				90034912923F7CB61E5B854F9278DA18 /* PBXTargetDependency */,
+				D9B03F2CE069CC40A53BB77A019AF3B4 /* PBXTargetDependency */,
+				B2160DE845C4F1B27A4B61E6381F55AE /* PBXTargetDependency */,
+				AECCA8AC41B6BEA2662083A35A2B3973 /* PBXTargetDependency */,
+			);
+			name = "Pods-Assist";
+			productName = "Pods-Assist";
+			productReference = B24C798FC099AA67F51D449AF0753A68 /* Pods_Assist.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B541CF50650EF293E06C52CFDE106DEF /* Pods-AssistUITests */ = {
@@ -611,27 +810,43 @@
 			);
 			name = "Pods-AssistUITests";
 			productName = "Pods-AssistUITests";
-			productReference = DFE31D7C53F116C5B8ED0EC5824498BC /* Pods_AssistUITests.framework */;
+			productReference = 6254F28354E5F8775B8ECD308DA6896D /* Pods_AssistUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B65310688659140D7E5476105B41FB4C /* Pods-Assist */ = {
+		BF1258B878BFA89993BC8FEA5ACA97E4 /* FrameAccessor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B3919E7FF30B41026F3493FD9D4E01EA /* Build configuration list for PBXNativeTarget "Pods-Assist" */;
+			buildConfigurationList = 2085A6CDDA52452144D5A81369CC4417 /* Build configuration list for PBXNativeTarget "FrameAccessor" */;
 			buildPhases = (
-				19BBEB1C52DB354B8065923494C69F7C /* Sources */,
-				46EA09F33B520091F0D07B7E4EFD43F7 /* Frameworks */,
-				CCDDFA38E1D55F13809D39B7C8FFEC87 /* Headers */,
+				E7F5CE66208257FFE07AC949EEE56F8B /* Sources */,
+				1BBF336AECF14317F2AD6FA16AC68AFC /* Frameworks */,
+				C92D4F41C600DB930348B67E4E33609E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FF78A0725D3DF144331DCCEB950535B6 /* PBXTargetDependency */,
-				46C04763B1C716FFBACEC678654B3679 /* PBXTargetDependency */,
-				5BD62A2CFCAE591C3853B09AB689AC83 /* PBXTargetDependency */,
 			);
-			name = "Pods-Assist";
-			productName = "Pods-Assist";
-			productReference = 2BC3438658C07781ECDE72A67169C88F /* Pods_Assist.framework */;
+			name = FrameAccessor;
+			productName = FrameAccessor;
+			productReference = 5834700837EA1E7303B03B72FF8FF808 /* FrameAccessor.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D876FFE334B42C9B57DD617B73D05BC9 /* VENTokenField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52EF2DDA7D16889AC255B57FF8615CAF /* Build configuration list for PBXNativeTarget "VENTokenField" */;
+			buildPhases = (
+				9134AC28467FFBFD0D336645CA16AA8A /* Sources */,
+				01A960BB88BD768214B9583E0E88D783 /* Frameworks */,
+				20F8B74605D5246EDDF9EB41DA849353 /* Headers */,
+				2D79325949550A7523BB3F096149EA16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D47CC2782E2819F3F8BF2EC9C1BE42E1 /* PBXTargetDependency */,
+			);
+			name = VENTokenField;
+			productName = VENTokenField;
+			productReference = E92B1A96389F40699A9F6BC033832F51 /* VENTokenField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -651,29 +866,34 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0928485571CD9DC2A41D0CD729475A4E /* Products */;
+			productRefGroup = A46F0FD14D1A61FC58C514242AFF2D58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */,
+				BF1258B878BFA89993BC8FEA5ACA97E4 /* FrameAccessor */,
 				9B22756F1BC69AB282A6C7FFC7EB05C3 /* JTAppleCalendar */,
 				41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */,
-				B65310688659140D7E5476105B41FB4C /* Pods-Assist */,
+				AF7DF7074062DD93BB24650BE65E355B /* Pods-Assist */,
 				10524445129CE4A27CA51401EE4F0D81 /* Pods-AssistTests */,
 				B541CF50650EF293E06C52CFDE106DEF /* Pods-AssistUITests */,
+				D876FFE334B42C9B57DD617B73D05BC9 /* VENTokenField */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		19BBEB1C52DB354B8065923494C69F7C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
+/* Begin PBXResourcesBuildPhase section */
+		2D79325949550A7523BB3F096149EA16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F44DEEEE47CB10E84F758E7934FA5F5B /* Pods-Assist-dummy.m in Sources */,
+				816457645FC8FACFA0AEB3904A727BF6 /* VENToken.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
 		32B9974868188C4803318E36329C87FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,6 +958,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9134AC28467FFBFD0D336645CA16AA8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52CBF62F74FEB7C92C54D225372404C1 /* VENBackspaceTextField.m in Sources */,
+				3EC1F8C5DF0CB5FB1D796F08EEAC9E0E /* VENToken.m in Sources */,
+				9A69115CE108A8D62ACF79482E4C59BA /* VENTokenField-dummy.m in Sources */,
+				F982C78F986F2D86C87B0ECF56F48466 /* VENTokenField.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		962DB4037215DB5CE7E8E88F65918317 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66812981D876FA78E236369DB1A08D09 /* Pods-Assist-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7F5CE66208257FFE07AC949EEE56F8B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDE5109A06DDDE873435D166B76290A6 /* FrameAccessor-dummy.m in Sources */,
+				3A391D3D14A2845BCD33B3DF9B980A94 /* ScrollViewFrameAccessor.m in Sources */,
+				37CF3873E7D4B520CAC457B054A0ED01 /* ViewFrameAccessor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE8E0446C3B3B52779E8DE373E495A61 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -750,28 +999,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		46C04763B1C716FFBACEC678654B3679 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = JTAppleCalendar;
-			target = 9B22756F1BC69AB282A6C7FFC7EB05C3 /* JTAppleCalendar */;
-			targetProxy = 59FCAAF5A11EB5ACF35C4B9618E9A023 /* PBXContainerItemProxy */;
-		};
-		5BD62A2CFCAE591C3853B09AB689AC83 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MBProgressHUD;
-			target = 41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */;
-			targetProxy = 5E45518F3FDB1F16A28DCDF7C7A4FE85 /* PBXContainerItemProxy */;
-		};
-		FF78A0725D3DF144331DCCEB950535B6 /* PBXTargetDependency */ = {
+		3310B42094717162533416C9EBAA3D46 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = 88E9EC28B8B46C3631E6B242B50F4442 /* Alamofire */;
-			targetProxy = 598442F6457CDBF87DA0375678B2E581 /* PBXContainerItemProxy */;
+			targetProxy = 54ED032F251C529CCCAF03EB19BE0DB2 /* PBXContainerItemProxy */;
+		};
+		90034912923F7CB61E5B854F9278DA18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FrameAccessor;
+			target = BF1258B878BFA89993BC8FEA5ACA97E4 /* FrameAccessor */;
+			targetProxy = 87E7B7E9AD19C3E9883989C88A8B022A /* PBXContainerItemProxy */;
+		};
+		AECCA8AC41B6BEA2662083A35A2B3973 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = VENTokenField;
+			target = D876FFE334B42C9B57DD617B73D05BC9 /* VENTokenField */;
+			targetProxy = 008E5FBC53A194FB9DE29FBE02C6F38F /* PBXContainerItemProxy */;
+		};
+		B2160DE845C4F1B27A4B61E6381F55AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBProgressHUD;
+			target = 41FA54D12162DAD51D02FC58A2CD5034 /* MBProgressHUD */;
+			targetProxy = A3FEEA3F53E424EC38A5FED06AE2D042 /* PBXContainerItemProxy */;
+		};
+		D47CC2782E2819F3F8BF2EC9C1BE42E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FrameAccessor;
+			target = BF1258B878BFA89993BC8FEA5ACA97E4 /* FrameAccessor */;
+			targetProxy = 52F7BBC811B048F0184B0DFEF8809369 /* PBXContainerItemProxy */;
+		};
+		D9B03F2CE069CC40A53BB77A019AF3B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JTAppleCalendar;
+			target = 9B22756F1BC69AB282A6C7FFC7EB05C3 /* JTAppleCalendar */;
+			targetProxy = 9819B4DFE356398FEAFE9829DB13F38C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01DDBAC11811E664A07DAB4182E64D3F /* Debug */ = {
+		031C3199888D453B5A904C293FF67E00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D2FBDF975E882C763167418713EFDCBA /* Pods-Assist.debug.xcconfig */;
 			buildSettings = {
@@ -808,33 +1075,29 @@
 			};
 			name = Debug;
 		};
-		0575E1B0E94288A6DFA5F19AEB1315E0 /* Release */ = {
+		05AD1895C08417331CE98C91CE7B1257 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE78B9CEC34098AC6D03439ADB84EB8F /* Pods-Assist.release.xcconfig */;
+			baseConfigurationReference = 9F8049DF071222F2B42112D3A986A9FD /* FrameAccessor.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Assist/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FrameAccessor/FrameAccessor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FrameAccessor/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Assist/Pods-Assist.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Assist;
+				MODULEMAP_FILE = "Target Support Files/FrameAccessor/FrameAccessor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FrameAccessor;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -842,11 +1105,11 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		0A29B6F510198AF64EFD762EF6FA97A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7195B64CBE1FB3035DEBEECCBB4A29DD /* Alamofire.xcconfig */;
+			baseConfigurationReference = B6D1DF5319E4FAC19CE990DC570ED9F9 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -920,9 +1183,41 @@
 			};
 			name = Debug;
 		};
+		129FCD13D3680E60415AF01D8913319E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10320F86554537701E98C3CDA2767453 /* VENTokenField.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VENTokenField/VENTokenField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VENTokenField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VENTokenField/VENTokenField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = VENTokenField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		5A7D61BFAF476FFEAAC1C3C5B50DD91C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D2D6D9D3D893CCB14412D6756A164D /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 8BAF6503550842CCBDC29527A2F3A25B /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -990,7 +1285,7 @@
 		};
 		87B8BDC0D790CC809730FDD2C73A7FF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B4AC8C41E292A223E8E2F74049A6CC3 /* JTAppleCalendar.xcconfig */;
+			baseConfigurationReference = 78CA68FE4F69BC67F2BA10F4F564A568 /* JTAppleCalendar.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1059,7 +1354,7 @@
 		};
 		A263BDF36CF6D50B459BC72F7A5B0362 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B4AC8C41E292A223E8E2F74049A6CC3 /* JTAppleCalendar.xcconfig */;
+			baseConfigurationReference = 78CA68FE4F69BC67F2BA10F4F564A568 /* JTAppleCalendar.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1089,9 +1384,45 @@
 			};
 			name = Release;
 		};
+		C68B3556C6F04B06578E0C7FB1B694AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE78B9CEC34098AC6D03439ADB84EB8F /* Pods-Assist.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Assist/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Assist/Pods-Assist.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Assist;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		D75065D84EBB32D4AF0CA10C29B62DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93D2D6D9D3D893CCB14412D6756A164D /* MBProgressHUD.xcconfig */;
+			baseConfigurationReference = 8BAF6503550842CCBDC29527A2F3A25B /* MBProgressHUD.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1199,7 +1530,7 @@
 		};
 		F383079BFBF927813EA3613CFB679FDE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7195B64CBE1FB3035DEBEECCBB4A29DD /* Alamofire.xcconfig */;
+			baseConfigurationReference = B6D1DF5319E4FAC19CE990DC570ED9F9 /* Alamofire.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1229,6 +1560,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		F71588D91A33995A294543AF46E415F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10320F86554537701E98C3CDA2767453 /* VENTokenField.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/VENTokenField/VENTokenField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/VENTokenField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/VENTokenField/VENTokenField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = VENTokenField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		FC25EFFFCB33353A608EF26B962F7480 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1266,6 +1629,38 @@
 			};
 			name = Debug;
 		};
+		FC5F82B6707257A16BDD22095E318A48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F8049DF071222F2B42112D3A986A9FD /* FrameAccessor.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FrameAccessor/FrameAccessor-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FrameAccessor/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FrameAccessor/FrameAccessor.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FrameAccessor;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1274,6 +1669,15 @@
 			buildConfigurations = (
 				66743E13A4022CC69613B657EBB12B40 /* Debug */,
 				87BCA97DE309479484A71CA9F230F0AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2085A6CDDA52452144D5A81369CC4417 /* Build configuration list for PBXNativeTarget "FrameAccessor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05AD1895C08417331CE98C91CE7B1257 /* Debug */,
+				FC5F82B6707257A16BDD22095E318A48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1305,20 +1709,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		52EF2DDA7D16889AC255B57FF8615CAF /* Build configuration list for PBXNativeTarget "VENTokenField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				129FCD13D3680E60415AF01D8913319E /* Debug */,
+				F71588D91A33995A294543AF46E415F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E1404DE9EC6F6EF15E666227932886D /* Build configuration list for PBXNativeTarget "Pods-Assist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				031C3199888D453B5A904C293FF67E00 /* Debug */,
+				C68B3556C6F04B06578E0C7FB1B694AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ABB8AC3C22C771CBB197D9198C050776 /* Build configuration list for PBXNativeTarget "Pods-AssistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FC25EFFFCB33353A608EF26B962F7480 /* Debug */,
 				EEF52C73113DF89D6678F030DB8FBEA2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B3919E7FF30B41026F3493FD9D4E01EA /* Build configuration list for PBXNativeTarget "Pods-Assist" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01DDBAC11811E664A07DAB4182E64D3F /* Debug */,
-				0575E1B0E94288A6DFA5F19AEB1315E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

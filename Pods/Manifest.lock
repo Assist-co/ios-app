@@ -1,21 +1,27 @@
 PODS:
   - Alamofire (4.2.0)
+  - FrameAccessor (1.3.2)
   - JTAppleCalendar (6.0.4)
   - MBProgressHUD (1.0.0)
   - SendBirdSDK (3.0.20)
+  - VENTokenField (2.5.2):
+    - FrameAccessor (~> 1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - JTAppleCalendar (~> 6.0)
   - MBProgressHUD
   - SendBirdSDK
+  - VENTokenField (~> 2.0)
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  FrameAccessor: 0f7ba6ce37be9a5d0302a27c731dca70af8d438b
   JTAppleCalendar: 191a6d337a2f1d5357cef06954d4b13759eb8d83
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   SendBirdSDK: 55fa641a0ec2218052aa4f030e16c5bb367cd990
+  VENTokenField: 5a19b838fb97f040e3d4c93f584b4adeaf3fc1ee
 
-PODFILE CHECKSUM: c8ba71f04f9031f776ea27ddc5a6f0f763af133c
+PODFILE CHECKSUM: 850646fe426af4366414583fe462217e746c8f5e
 
 COCOAPODS: 1.1.1

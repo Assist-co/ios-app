@@ -13,11 +13,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     @IBOutlet weak var textView: UITextView!
     private var createTaskToolBarView: CreateTaskToolBarView!
     private var tagsTrayView: TagsTrayView!
-    private var isFirstAppearance: Bool = false
+    private var isFirstAppearance: Bool = true
     private let placeholderText = "Enter task here!"
     private var isTagsTrayShowing: Bool = false
     private var tagsTrayViewOriginCenter: CGPoint!
     private var selectedTaskTypeButton: TaskTypeButton?
+    private var trayFrictionVal = 0
+    private let trayFrictionConstant = 4
     override var canBecomeFirstResponder: Bool{
         get{
             return true
@@ -123,41 +125,45 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     func taskTagButtonPressend(taskButton: TaskTypeButton){
         taskButton.backgroundColor = UIColor.clear
         self.selectedTaskTypeButton = taskButton
-        if taskButton is ScheduleTaskTypeButton {
-            
-        }else if taskButton is EmailTaskTypeButton {
-        
-        }else if taskButton is ReminderTaskTypeButton {
-            
-        }else if taskButton is CallTaskTypeButton {
-            
-        }else if taskButton is InquiryTaskTypeButton {
-            
-        }else if taskButton is OtherTaskTypeButton {
-            
-        }
+        self.performSegue(withIdentifier: "addTaskMetadataSegue", sender: self)
     }
     
     func taskTagButtonHighlighted(taskButton: TaskTypeButton){
         taskButton.backgroundColor = UIColor.lightGray
     }
     
+    @IBAction func dismissCreateTask(barButton: UIBarButtonItem){
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
+    @IBAction func postTask(barButton: UIBarButtonItem){
+    
+    }
+    
     //MARK:- UIGestureRecognizer 
     
     func tagListPanGesture(recognizer: UIPanGestureRecognizer){
+        let translation = recognizer.translation(in: self.view)
         if recognizer.state == .began {
             self.tagsTrayViewOriginCenter = self.tagsTrayView.center
         }else if recognizer.state == .changed {
-            let translation = recognizer.translation(in: self.view)
-            self.tagsTrayView.center = CGPoint(x: self.tagsTrayViewOriginCenter.x,
-                                              y: self.tagsTrayViewOriginCenter.y + translation.y)
+            if self.trayFrictionVal == self.trayFrictionConstant {
+                UIView.animate(withDuration: 0.5, animations: {
+                    self.tagsTrayView.center = CGPoint(x: self.tagsTrayViewOriginCenter.x,
+                                                       y: self.tagsTrayViewOriginCenter.y + translation.y)
+                }, completion: { (isComplete: Bool) in
+                })
+                self.trayFrictionVal = 0
+            }else{
+                self.trayFrictionVal += 1
+            }
         }else if recognizer.state == .ended {
             UIView.animate(withDuration: 0.1, animations: {
                 self.tagsTrayView.center = self.tagsTrayViewOriginCenter
             }, completion: { (isComplete: Bool) in
-                
             })
-
         }
     }
     
@@ -165,6 +171,12 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     
     fileprivate func showTagsTrayView(){
         self.textView.resignFirstResponder()
+        // Hide toolbar
+        UIView.animate(withDuration: 0.3, animations: {
+            self.createTaskToolBarView.alpha = 0
+        }) { (success: Bool) in
+            self.createTaskToolBarView.isHidden = success
+        }
         let panGesture = UIPanGestureRecognizer()
         panGesture.addTarget(self, action: #selector(tagListPanGesture(recognizer:)))
         self.tagsTrayView.addGestureRecognizer(panGesture)
@@ -174,9 +186,8 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                                          height: self.tagsTrayView.frame.size.height)
         self.view.addSubview(self.tagsTrayView)
         self.view.bringSubview(toFront: self.tagsTrayView)
-        self.createTaskToolBarView.isHidden = true
-        UIView.animate(withDuration: 0.3, animations: {
-            
+        // Show tray
+        UIView.animate(withDuration: 0, animations: {
             let y = (self.view.frame.size.height - self.tagsTrayView.frame.size.height)
             self.tagsTrayView.frame = CGRect(x: 0,
                                              y: y,
@@ -268,8 +279,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addTaskMetadataSegue" {
+            
+        }
     }
 
 }
