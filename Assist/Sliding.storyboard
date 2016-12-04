@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sliding View Controller-->
+        <scene sceneID="ZmX-Ak-g9R">
+            <objects>
+                <viewController storyboardIdentifier="SlidingViewController" id="7yZ-2B-51r" customClass="SlidingViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8wb-23-4qB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ewp-0z-vds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zT6-l9-K3f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ip-aw-fZV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gfN-Cu-dqf">
+                                <rect key="frame" x="-375" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.67450980390000004" green="0.0" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0h7-7k-XvN">
+                                <rect key="frame" x="375" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.59607843140000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="0h7-7k-XvN" firstAttribute="top" secondItem="4ip-aw-fZV" secondAttribute="top" id="6jd-Rf-KFh"/>
+                            <constraint firstItem="4ip-aw-fZV" firstAttribute="leading" secondItem="gfN-Cu-dqf" secondAttribute="trailing" id="I95-6Y-v1Z"/>
+                            <constraint firstItem="gfN-Cu-dqf" firstAttribute="height" secondItem="4ip-aw-fZV" secondAttribute="height" id="J2x-Wt-6c1"/>
+                            <constraint firstItem="0h7-7k-XvN" firstAttribute="leading" secondItem="4ip-aw-fZV" secondAttribute="trailing" id="UMI-LU-ZNb"/>
+                            <constraint firstItem="gfN-Cu-dqf" firstAttribute="width" secondItem="4ip-aw-fZV" secondAttribute="width" id="amy-QY-iee"/>
+                            <constraint firstItem="gfN-Cu-dqf" firstAttribute="top" secondItem="4ip-aw-fZV" secondAttribute="top" id="cvy-pC-Ptn"/>
+                            <constraint firstItem="0h7-7k-XvN" firstAttribute="width" secondItem="4ip-aw-fZV" secondAttribute="width" id="h39-eE-QZ4"/>
+                            <constraint firstItem="0h7-7k-XvN" firstAttribute="height" secondItem="4ip-aw-fZV" secondAttribute="height" id="hvh-Mg-wqg"/>
+                            <constraint firstItem="4ip-aw-fZV" firstAttribute="top" secondItem="zT6-l9-K3f" secondAttribute="top" id="llR-eJ-6Ie"/>
+                            <constraint firstItem="Ewp-0z-vds" firstAttribute="top" secondItem="4ip-aw-fZV" secondAttribute="bottom" id="qiP-R3-tbe"/>
+                            <constraint firstItem="4ip-aw-fZV" firstAttribute="leading" secondItem="zT6-l9-K3f" secondAttribute="leading" id="zr2-Kt-k2C"/>
+                            <constraint firstAttribute="trailing" secondItem="4ip-aw-fZV" secondAttribute="trailing" id="zsV-r8-ZaW"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BmK-24-wnI" appends="YES" id="uY2-mw-6NS"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="leftContent" destination="gfN-Cu-dqf" id="jJb-PX-71j"/>
+                        <outlet property="mainContent" destination="4ip-aw-fZV" id="k9b-7r-SB8"/>
+                        <outlet property="rightContent" destination="0h7-7k-XvN" id="kjj-jt-yv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3Y-nQ-Z9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BmK-24-wnI">
+                    <connections>
+                        <action selector="onViewPan:" destination="7yZ-2B-51r" id="H26-2w-X50"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-946.39999999999998" y="457.42128935532236"/>
+        </scene>
+    </scenes>
+</document>
