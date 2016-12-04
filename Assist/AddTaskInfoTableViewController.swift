@@ -100,6 +100,11 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     }
     
     func addContacts(contacts: [CNContact]) {
+        if contacts.count > 0{
+            self.contactsPlaceholderLabel.isHidden = true
+        }else{
+            self.contactsPlaceholderLabel.isHidden = false
+        }
         self.taskInfo.contacts = contacts
         self.contactsTokenField.reloadData()
     }
@@ -110,8 +115,6 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
         self.contactsTokenField.delegate = self
         self.contactsTokenField.dataSource = self
-        self.contactsTokenField.toLabelText = "To:"
-        self.contactsTokenField.toLabelTextColor = UIColor.lightGray
         self.contactsTokenField.reloadData()
     }
     

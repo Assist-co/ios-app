@@ -15,6 +15,7 @@ protocol TaskDataDelegate: class {
 class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, TaskDataDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var postBarButton: UIBarButtonItem!
     private var createTaskToolBarView: CreateTaskToolBarView!
     private var tagsTrayView: TagsTrayView!
     private var isFirstAppearance: Bool = true
@@ -81,12 +82,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
             textView.textColor = UIColor.lightGray
             
             textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-            
+            self.postBarButton.isEnabled = false
             return false
         }
         else if textView.textColor == UIColor.lightGray && !text.isEmpty {
             textView.text = nil
             textView.textColor = UIColor.black
+            self.postBarButton.isEnabled = true
         }
         
         return true
@@ -151,10 +153,8 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     @IBAction func postTask(barButton: UIBarButtonItem){
-        let taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
-                                            "text": self.textView.text as Any,
-                                            "task_type": self.selectedTaskTypeButton!.taskTypePermalink! as Any]
-        TaskService.createTask(taskDict: taskDictionary) { (task: Task?, error: Error?) in
+        TaskService.createTask(taskDict: self.buildTaskPostObject()
+        ) { (task: Task?, error: Error?) in
             if let error = error {
                 // TODO: show client appropriate error
                 print(error.localizedDescription)
@@ -192,10 +192,25 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     
     //MARK:- Utils
     
+    fileprivate func buildTaskPostObject() -> [String:Any]{
+        var taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
+                                            "text": self.textView.text as Any]
+                                           
+        if let taskTypeButton = self.selectedTaskTypeButton {
+            taskDictionary["task_type"] = taskTypeButton.taskTypePermalink! as Any
+        }
+        if let taskInfo = self.taskInfo {
+            if let loc = taskInfo.location{
+                taskDictionary["location"] = "(\(loc.placemark.coordinate.latitude),\(loc.placemark.coordinate.longitude))" as Any
+            }
+        }
+        return taskDictionary
+    }
+    
     fileprivate func showTagsTrayView(){
         self.textView.resignFirstResponder()
         // Hide toolbar
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 2.0, animations: {
             self.createTaskToolBarView.alpha = 0
         }) { (success: Bool) in
             self.createTaskToolBarView.isHidden = success
@@ -245,6 +260,11 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.textView.text = self.placeholderText
         self.textView.textColor = UIColor.lightGray
         self.textView.frame.size.height = 0
+        if self.textView.text.characters.count == 0 {
+            self.postBarButton.isEnabled = false
+        }else{
+            self.postBarButton.isEnabled = true
+        }
         self.taskTypeButtonsBuilder()
         self.textView.becomeFirstResponder()
     }

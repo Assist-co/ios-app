@@ -282,7 +282,7 @@
             </objects>
             <point key="canvasLocation" x="294" y="1160"/>
         </scene>
-        <!--Create Task View Controller-->
+        <!--Task-->
         <scene sceneID="fbj-eF-Yi8">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="tHU-Eh-Rl2" customClass="CreateTaskViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
@@ -333,19 +333,20 @@
                             <constraint firstItem="vAI-nC-7qU" firstAttribute="centerX" secondItem="KTM-aB-FmF" secondAttribute="centerX" id="oCY-Mi-8KV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oKK-km-a00">
+                    <navigationItem key="navigationItem" title="Task" id="oKK-km-a00">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="XeE-Af-nLp">
                             <connections>
                                 <action selector="dismissCreateTaskWithBarButton:" destination="tHU-Eh-Rl2" id="hVh-JU-pJV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Post" style="done" id="Xgv-Dt-g3C">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Post" style="done" id="Xgv-Dt-g3C">
                             <connections>
                                 <action selector="postTaskWithBarButton:" destination="tHU-Eh-Rl2" id="F02-FZ-3JT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="postBarButton" destination="Xgv-Dt-g3C" id="lqV-ba-d2v"/>
                         <outlet property="scrollView" destination="vAI-nC-7qU" id="wqh-gQ-i5J"/>
                         <outlet property="textView" destination="f7o-jE-bv8" id="0cx-Q9-mWl"/>
                         <segue destination="9Db-tT-HLD" kind="presentation" identifier="addTaskMetadataSegue" id="WUC-r4-kZc"/>
@@ -389,7 +390,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nGH-vC-wrd" id="7SD-zO-L1y">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contacts" translatesAutoresizingMaskIntoConstraints="NO" id="aZd-MY-gSl">
@@ -409,7 +410,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMF-89-8KX">
-                                                    <rect key="frame" x="59" y="8" width="308" height="21"/>
+                                                    <rect key="frame" x="59" y="11" width="308" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -417,7 +418,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="DMF-89-8KX" firstAttribute="leading" secondItem="aZd-MY-gSl" secondAttribute="trailing" constant="21" id="3RL-UN-EZL"/>
-                                                <constraint firstItem="DMF-89-8KX" firstAttribute="top" secondItem="7SD-zO-L1y" secondAttribute="topMargin" id="4s2-My-L4g"/>
+                                                <constraint firstItem="DMF-89-8KX" firstAttribute="top" secondItem="7SD-zO-L1y" secondAttribute="topMargin" constant="3" id="4s2-My-L4g"/>
                                                 <constraint firstAttribute="bottom" secondItem="EkN-Kk-7mD" secondAttribute="bottom" constant="0.5" id="6hc-yg-j5H"/>
                                                 <constraint firstItem="EkN-Kk-7mD" firstAttribute="top" secondItem="7SD-zO-L1y" secondAttribute="top" id="Abc-wA-n8N"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="aZd-MY-gSl" secondAttribute="bottom" constant="50" id="F52-S5-9ap"/>
@@ -441,7 +442,7 @@
                                         <rect key="frame" x="0.0" y="143" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lfn-L6-L0W" id="mbZ-ub-WlZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="6e2-15-3wp">
@@ -457,7 +458,7 @@
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2C-4m-1W9">
-                                                    <rect key="frame" x="61" y="11" width="306" height="20"/>
+                                                    <rect key="frame" x="61" y="11" width="306" height="19"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -544,7 +545,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-Z3-8t8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <outlet property="delegate" destination="A5Y-G2-jcK" id="9e5-Wr-6fO"/>
