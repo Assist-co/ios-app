@@ -22,9 +22,12 @@ struct TaskInfo {
 }
 
 class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, VENTokenFieldDelegate, VENTokenFieldDataSource {
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var locationTextView: UITextView!
     @IBOutlet weak var contactsTokenField: VENTokenField!
+    @IBOutlet weak var locationPlaceholderLabel: UILabel!
+    @IBOutlet weak var contactsPlaceholderLabel: UILabel!
     private var taskInfo = TaskInfo()
+    var taskDataDelegate: TaskDataDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +37,12 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     //MARK:- Action
     
     @IBAction func dismiss(barButton: UIBarButtonItem){
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func save(barButton: UIBarButtonItem){
-    
+        self.taskDataDelegate?.setTaskInfo(taskInfo: self.taskInfo)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addMetadata(button: UIButton) {
@@ -67,6 +69,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     //MARK:- TaskInfoDelegate
     
     func addLocation(mapItem: MKMapItem) {
+        self.locationPlaceholderLabel.isHidden = true
         self.taskInfo.location = mapItem
         let placemark = mapItem.placemark
         var address = ""
@@ -82,16 +85,17 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
             address += placemark.locality!
         }
         if address.characters.count > 0 {
-            let text = "\(mapItem.placemark.name!) \(address)"
+            let text = "\(mapItem.placemark.name!) \n" +
+                                        "\(address)"
             let attrText = NSMutableAttributedString(string: text, attributes: [:])
             let locInt = (mapItem.placemark.name?.characters.count)!
             let lengthInt = address.characters.count
             attrText.addAttribute(NSForegroundColorAttributeName,
                                   value: UIColor.darkGray,
                                   range: NSRange(location: locInt, length:lengthInt))
-            self.locationTextField.attributedText = attrText
+            self.locationTextView.attributedText = attrText
         }else{
-            self.locationTextField.text = placemark.name!
+            self.locationTextView.text = placemark.name!
         }
     }
     
@@ -107,6 +111,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
         self.contactsTokenField.delegate = self
         self.contactsTokenField.dataSource = self
         self.contactsTokenField.toLabelText = "To:"
+        self.contactsTokenField.toLabelTextColor = UIColor.lightGray
         self.contactsTokenField.reloadData()
     }
     

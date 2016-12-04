@@ -8,7 +8,11 @@
 
 import UIKit
 
-class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate {
+protocol TaskDataDelegate: class {
+    func setTaskInfo(taskInfo: TaskInfo)
+}
+
+class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, TaskDataDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     private var createTaskToolBarView: CreateTaskToolBarView!
@@ -21,6 +25,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     private var trayFrictionVal = 0
     private let trayFrictionConstant = 4
     private var taskTagButtons: [TaskTypeButton] = []
+    private var taskInfo: TaskInfo?
     override var canBecomeFirstResponder: Bool{
         get{
             return true
@@ -110,6 +115,12 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
 
     }
     
+    //MARK:- TaskDataDelegate
+    
+    func setTaskInfo(taskInfo: TaskInfo) {
+        self.taskInfo = taskInfo
+    }
+    
     //MARK:- Action
     
     func toolBarPressed(button: UIButton){
@@ -136,13 +147,22 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     @IBAction func dismissCreateTask(barButton: UIBarButtonItem){
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func postTask(barButton: UIBarButtonItem){
-    
+        let taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
+                                            "text": self.textView.text as Any,
+                                            "task_type": self.selectedTaskTypeButton!.taskTypePermalink! as Any]
+        TaskService.createTask(taskDict: taskDictionary) { (task: Task?, error: Error?) in
+            if let error = error {
+                // TODO: show client appropriate error
+                print(error.localizedDescription)
+            } else {
+                // TODO: Post message to messaging api
+                self.dismiss(animated: true)
+            }
+        }
     }
     
     //MARK:- UIGestureRecognizer 
@@ -261,7 +281,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addTaskMetadataSegue" {
-            
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as! AddTaskInfoTableViewController
+            vc.taskDataDelegate = self
         }
     }
 
