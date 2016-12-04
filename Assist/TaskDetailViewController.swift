@@ -40,6 +40,12 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
     
     //MARK:- IB Outlet Methods
     
+    @IBAction func onBackTap(_ sender: AnyObject) {
+        self.dismiss(animated: true) { 
+            
+        }
+    }
+    
     @IBAction func onCancelTaskTap(_ sender: AnyObject) {
         let refreshAlert = UIAlertController(title: "Are you sure you want to delete this task?", message: "This cannot be undone", preferredStyle: UIAlertControllerStyle.alert)
         

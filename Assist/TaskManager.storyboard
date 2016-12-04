@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-914" y="443"/>
         </scene>
-        <!--Tasks-->
+        <!--Assigned Tasks-->
         <scene sceneID="Ebw-dh-voU">
             <objects>
                 <viewController id="Byl-nt-BTx" customClass="TasksViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,7 @@
                             <constraint firstItem="j2o-54-EVV" firstAttribute="top" secondItem="TB5-p9-Bns" secondAttribute="bottom" id="yyV-M9-9gA"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tasks" id="Y5S-aF-sML">
+                    <navigationItem key="navigationItem" title="Assigned Tasks" id="Y5S-aF-sML">
                         <barButtonItem key="leftBarButtonItem" image="plus" id="f3h-HJ-cB3">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -163,6 +163,11 @@
                                             <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilA-Lc-zhm">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -170,9 +175,11 @@
                                         <constraint firstItem="Pgr-bp-aLG" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="16" id="A3F-YD-4rx"/>
                                         <constraint firstAttribute="trailing" secondItem="Mg9-wu-YSe" secondAttribute="trailing" constant="12" id="AHu-SJ-ROY"/>
                                         <constraint firstItem="Mg9-wu-YSe" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="14" id="FEs-xM-Ob9"/>
+                                        <constraint firstItem="Mg9-wu-YSe" firstAttribute="leading" secondItem="ilA-Lc-zhm" secondAttribute="trailing" constant="4" id="Hkc-TE-i2Z"/>
                                         <constraint firstItem="Pgr-bp-aLG" firstAttribute="leading" secondItem="3QI-b0-hS1" secondAttribute="leading" constant="12" id="JCq-1s-fb3"/>
                                         <constraint firstItem="kf5-EH-Ne5" firstAttribute="leading" secondItem="Pgr-bp-aLG" secondAttribute="trailing" constant="8" id="Rz5-1A-EKI"/>
                                         <constraint firstItem="lb6-OF-dyk" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="topMargin" constant="8" id="SAM-RH-DPM"/>
+                                        <constraint firstItem="ilA-Lc-zhm" firstAttribute="top" secondItem="3QI-b0-hS1" secondAttribute="top" constant="14" id="T5G-3Z-Q0g"/>
                                         <constraint firstItem="kf5-EH-Ne5" firstAttribute="top" secondItem="lb6-OF-dyk" secondAttribute="bottom" id="au2-gG-gJE"/>
                                         <constraint firstItem="lb6-OF-dyk" firstAttribute="leading" secondItem="Pgr-bp-aLG" secondAttribute="trailing" constant="8" id="gUm-MM-4zb"/>
                                     </constraints>

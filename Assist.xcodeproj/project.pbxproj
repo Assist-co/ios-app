@@ -10,9 +10,9 @@
 		0307B6AC1DEFE8AC00D8A3FF /* CalendarCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0307B6AB1DEFE8AC00D8A3FF /* CalendarCellView.xib */; };
 		0307B6AE1DEFE93100D8A3FF /* CalendarCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307B6AD1DEFE93100D8A3FF /* CalendarCellView.swift */; };
 		0307B6B01DEFF28C00D8A3FF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307B6AF1DEFF28C00D8A3FF /* CalendarViewController.swift */; };
-		0307B6B21DF369C500D8A3FF /* TaskDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0307B6B11DF369C500D8A3FF /* TaskDetail.storyboard */; };
 		0307B6B41DF3AAED00D8A3FF /* CalendarHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0307B6B31DF3AAED00D8A3FF /* CalendarHeaderView.xib */; };
 		0307B6B61DF3ABC300D8A3FF /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307B6B51DF3ABC300D8A3FF /* CalendarHeaderView.swift */; };
+		0307B6B81DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307B6B71DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift */; };
 		031300F01DD9108C00381716 /* TaskManager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300EF1DD9108C00381716 /* TaskManager.storyboard */; };
 		031300F31DD9126400381716 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F21DD9126400381716 /* TaskListTableViewController.swift */; };
 		031300F51DD9127800381716 /* TaskMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300F41DD9127800381716 /* TaskMapViewController.swift */; };
@@ -88,9 +88,9 @@
 		0307B6AB1DEFE8AC00D8A3FF /* CalendarCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCellView.xib; sourceTree = "<group>"; };
 		0307B6AD1DEFE93100D8A3FF /* CalendarCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCellView.swift; sourceTree = "<group>"; };
 		0307B6AF1DEFF28C00D8A3FF /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		0307B6B11DF369C500D8A3FF /* TaskDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskDetail.storyboard; sourceTree = "<group>"; };
 		0307B6B31DF3AAED00D8A3FF /* CalendarHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarHeaderView.xib; sourceTree = "<group>"; };
 		0307B6B51DF3ABC300D8A3FF /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		0307B6B71DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		031300EF1DD9108C00381716 /* TaskManager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskManager.storyboard; sourceTree = "<group>"; };
 		031300F21DD9126400381716 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		031300F41DD9127800381716 /* TaskMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMapViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +318,7 @@
 				0307B6AD1DEFE93100D8A3FF /* CalendarCellView.swift */,
 				0307B6B31DF3AAED00D8A3FF /* CalendarHeaderView.xib */,
 				0307B6B51DF3ABC300D8A3FF /* CalendarHeaderView.swift */,
+				0307B6B71DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -661,6 +662,7 @@
 				859B55451DDA149C00CBD957 /* Gender.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
+				0307B6B81DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
 				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
 				0307B6B01DEFF28C00D8A3FF /* CalendarViewController.swift in Sources */,

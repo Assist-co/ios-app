@@ -65,6 +65,7 @@ class SlidingViewController: UIViewController {
             self.leftContent.frame.origin.x = 0
         })
         currentPosition = .left
+        self.view.endEditing(true)
     }
     
     func showRightContent(duration: Float) {
@@ -74,6 +75,7 @@ class SlidingViewController: UIViewController {
             self.leftContent.frame.origin.x = -2 * self.leftContent.bounds.width
         })
         currentPosition = .right
+        self.view.endEditing(true)
     }
     
     func showMainContent(duration: Float) {

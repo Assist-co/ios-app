@@ -12,29 +12,59 @@
             <rect key="frame" x="0.0" y="0.0" width="225" height="226"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5um-d2-gr0">
-                    <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXI-OM-G2O">
+                    <color key="backgroundColor" red="0.17254901959999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="32" id="fop-gt-bkC"/>
-                        <constraint firstAttribute="width" constant="32" id="uu5-Ke-9ir"/>
+                        <constraint firstAttribute="height" constant="1" id="oaH-hH-sLT"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72N-Li-ibv">
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4D-GL-Etd">
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s1-oL-NTl" customClass="CalendarCellView" customModule="Assist" customModuleProvider="target">
+                            <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="6" id="Wbd-1H-bHa"/>
+                                <constraint firstAttribute="width" constant="6" id="XTP-Hb-oFw"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5um-d2-gr0">
+                            <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="32" id="fop-gt-bkC"/>
+                                <constraint firstAttribute="width" constant="32" id="uu5-Ke-9ir"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72N-Li-ibv">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.17254901959999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="72N-Li-ibv" firstAttribute="centerX" secondItem="O4D-GL-Etd" secondAttribute="centerX" id="HAb-zQ-Q2A"/>
+                        <constraint firstAttribute="width" constant="40" id="LrR-Wj-ZJg"/>
+                        <constraint firstAttribute="height" constant="44" id="Sa4-Kk-AS2"/>
+                        <constraint firstItem="5um-d2-gr0" firstAttribute="centerX" secondItem="O4D-GL-Etd" secondAttribute="centerX" id="XZo-lJ-gwD"/>
+                        <constraint firstItem="6s1-oL-NTl" firstAttribute="centerX" secondItem="O4D-GL-Etd" secondAttribute="centerX" id="hs8-CH-xtb"/>
+                        <constraint firstItem="72N-Li-ibv" firstAttribute="top" secondItem="O4D-GL-Etd" secondAttribute="top" constant="5" id="kcO-J8-mEZ"/>
+                        <constraint firstItem="5um-d2-gr0" firstAttribute="top" secondItem="O4D-GL-Etd" secondAttribute="top" id="uNr-oJ-nhw"/>
+                        <constraint firstItem="6s1-oL-NTl" firstAttribute="top" secondItem="5um-d2-gr0" secondAttribute="bottom" constant="2" id="ziV-yU-IQu"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="72N-Li-ibv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7kZ-IH-cgB"/>
-                <constraint firstItem="5um-d2-gr0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="8M8-Ua-nZF"/>
-                <constraint firstItem="5um-d2-gr0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jym-mm-gsP"/>
-                <constraint firstItem="72N-Li-ibv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bwJ-6f-s0L"/>
+                <constraint firstItem="O4D-GL-Etd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="0NY-CH-SZ2"/>
+                <constraint firstAttribute="bottom" secondItem="sXI-OM-G2O" secondAttribute="bottom" id="7Af-I8-bwK"/>
+                <constraint firstAttribute="trailing" secondItem="sXI-OM-G2O" secondAttribute="trailing" id="7gD-sj-LkJ"/>
+                <constraint firstItem="sXI-OM-G2O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EVL-l3-q2P"/>
+                <constraint firstItem="O4D-GL-Etd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bE4-sk-np4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="72N-Li-ibv" id="xdo-tu-wEL"/>
+                <outlet property="hasEventMarker" destination="6s1-oL-NTl" id="1Tx-BY-odT"/>
                 <outlet property="selectedDate" destination="5um-d2-gr0" id="wdj-Sr-JdP"/>
             </connections>
             <point key="canvasLocation" x="-189.5" y="-148"/>

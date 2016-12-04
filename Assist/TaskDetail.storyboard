@@ -13,7 +13,7 @@
                 <viewControllerPlaceholder storyboardName="TaskManager" referencedIdentifier="TaskManagerNavigationController" id="Tfs-nG-lwk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tA-LX-4Ld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="-4"/>
+            <point key="canvasLocation" x="1330" y="-78"/>
         </scene>
         <!--Task-->
         <scene sceneID="6xe-8T-Mch">
@@ -50,13 +50,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-zz-bPK">
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.18634161129331722" green="0.19864304731113699" blue="0.22368726715063436" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Vjz-Zs-ymb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Cancel Task">
-                                    <color key="titleColor" red="0.92549019610000005" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onCancelTaskTap:" destination="tfW-kc-2Dn" eventType="touchUpInside" id="hAg-Ab-JCX"/>
@@ -91,11 +91,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task" id="hZN-V9-XnI">
-                        <barButtonItem key="rightBarButtonItem" image="clipboard" id="jKR-Cr-zw9">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="3os-0N-giK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="Tfs-nG-lwk" kind="show" animates="NO" id="OZv-89-aDT"/>
+                                <action selector="onBackTap:" destination="tfW-kc-2Dn" id="zbg-ol-nTT"/>
                             </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="jKR-Cr-zw9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -129,7 +132,4 @@
             <point key="canvasLocation" x="-364" y="-4.0479760119940034"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="clipboard" width="25" height="25"/>
-    </resources>
 </document>

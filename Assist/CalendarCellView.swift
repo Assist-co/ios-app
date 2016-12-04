@@ -12,6 +12,7 @@ import JTAppleCalendar
 class CalendarCellView: JTAppleDayCellView {
     @IBOutlet weak var selectedDate: UIView!
     @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var hasEventMarker: CalendarCellView!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

@@ -225,10 +225,12 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func onTaskButtonTap(_ sender: AnyObject) {
+        self.view.endEditing(true)
         slidingViewController.showLeftContent(duration: 0.25)
     }
     
     @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
+        self.view.endEditing(true)
         slidingViewController.showRightContent(duration: 0.25)
     }
     

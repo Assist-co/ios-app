@@ -92,23 +92,23 @@ class TaskListTableViewController: UITableViewController {
         cell.layoutMargins = UIEdgeInsets.zero
         let task = self.tasksByDay?[indexPath.section].1[indexPath.row]
         cell.taskTextLabel.text = task?.type?.display
-        let cellType = task?.type?.display
-        if cellType == "Reminder" {
+        let cellType = task?.type?.permalink
+        if cellType == "reminder" {
             cell.taskIcon.image = #imageLiteral(resourceName: "clock")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#FFCA28ff")
-        } else if cellType == "Call" {
+        } else if cellType == "call" {
             cell.taskIcon.image = #imageLiteral(resourceName: "phone_small")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#ED5E5Eff")
-        } else if cellType == "Schedule" {
+        } else if cellType == "schedule" {
             cell.taskIcon.image = #imageLiteral(resourceName: "calendar_small")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#66BB6Aff")
-        } else if cellType == "Other" {
+        } else if cellType == "other" {
             cell.taskIcon.image = #imageLiteral(resourceName: "other")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#AC7339ff")
-        } else if cellType == "Inquiry" {
+        } else if cellType == "inquiry" {
             cell.taskIcon.image = #imageLiteral(resourceName: "magnifying_glass")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#7E57C2ff")
-        } else if cellType == "Email" {
+        } else if cellType == "email" {
             cell.taskIcon.image = #imageLiteral(resourceName: "mail")
             cell.taskIcon.backgroundColor = UIColor(hexString: "#42A5F5ff")
         }

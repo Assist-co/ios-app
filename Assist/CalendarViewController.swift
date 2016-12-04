@@ -35,15 +35,6 @@ class CalendarViewController: SlidableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
@@ -51,7 +42,10 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = Date() // You can use date generated from a formatter
+        let comp: DateComponents = Calendar.current.dateComponents([.year, .month, .hour], from: Calendar.current.startOfDay(for: Date()))
+        let monthStart = Calendar.current.date(from: comp)!
+        
+        let startDate = monthStart // You can use date generated from a formatter
         let endDate = Date()                                // You can also use dates created from this function
         let parameters = ConfigurationParameters(
             startDate: startDate,
@@ -74,19 +68,21 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.dateBelongsTo == .thisMonth {
             myCustomCell.dayLabel.textColor = UIColor(hexString: "#efeff4ff")
         } else {
-            myCustomCell.dayLabel.textColor = UIColor.gray
+            myCustomCell.dayLabel.textColor = UIColor(hexString: "#888888ff")
         }
         
-        /*let diff = Calendar.current.components([.Day], fromDate: date, toDate: Date(), options: [])
-        if diff.day == 0 {
+        if Calendar.current.isDate(date, inSameDayAs: Date()) {
             myCustomCell.selectedDate.isHidden = false
-        }*/
+            myCustomCell.selectedDate.layer.cornerRadius =  16
+        }
+        
+        myCustomCell.hasEventMarker.layer.cornerRadius = 3
+
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         let myCustomCell = cell as! CalendarCellView
         
-        // Let's make the view have rounded corners. Set corner radius to 25
         myCustomCell.selectedDate.layer.cornerRadius =  16
         
         if cellState.isSelected {

@@ -22,33 +22,67 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mga-LA-V3d" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Mga-LA-V3d" secondAttribute="height" multiplier="1:1" id="tAM-vg-DT7"/>
+                                    <constraint firstAttribute="width" secondItem="Mga-LA-V3d" secondAttribute="height" multiplier="1:1.05" id="tAM-vg-DT7"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3B-aR-t0d">
-                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bIB-OR-Sik">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIB-OR-Sik" id="sX5-27-uzi">
-                                            <frame key="frameInset" width="375" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFR-Dh-34K">
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="102" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3B-aR-t0d">
+                                        <color key="backgroundColor" red="0.14509803921568626" green="0.15686274509803921" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="separatorColor" red="0.17254901959999999" green="0.1843137255" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="bIB-OR-Sik" customClass="CalendarTableCellTableViewCell" customModule="Assist" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIB-OR-Sik" id="sX5-27-uzi">
+                                                    <frame key="frameInset" width="375" height="101.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbX-fB-Lvu">
+                                                            <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="bbX-fB-Lvu" firstAttribute="top" secondItem="sX5-27-uzi" secondAttribute="top" constant="8" id="K8R-mv-8Fk"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bbX-fB-Lvu" secondAttribute="bottom" constant="8" id="WqR-ou-ZDt"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bbX-fB-Lvu" secondAttribute="trailing" constant="8" id="asn-jl-93e"/>
+                                                        <constraint firstItem="bbX-fB-Lvu" firstAttribute="leading" secondItem="sX5-27-uzi" secondAttribute="leading" constant="8" id="oZ9-IH-Ga9"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PP2-3U-uXn">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="e3B-aR-t0d" secondAttribute="trailing" id="1MB-J1-TBz"/>
+                                    <constraint firstItem="e3B-aR-t0d" firstAttribute="top" secondItem="JFR-Dh-34K" secondAttribute="top" constant="-1" id="FEt-gG-trl"/>
+                                    <constraint firstItem="PP2-3U-uXn" firstAttribute="centerX" secondItem="JFR-Dh-34K" secondAttribute="centerX" id="Ne4-Kt-RmV"/>
+                                    <constraint firstItem="e3B-aR-t0d" firstAttribute="leading" secondItem="JFR-Dh-34K" secondAttribute="leading" id="X8c-dd-Lt9"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3B-aR-t0d" secondAttribute="bottom" id="hCL-vd-8jr"/>
+                                    <constraint firstAttribute="trailing" secondItem="e3B-aR-t0d" secondAttribute="trailing" id="hr0-zZ-S7e"/>
+                                    <constraint firstAttribute="bottom" secondItem="e3B-aR-t0d" secondAttribute="bottom" id="jsk-9w-rhX"/>
+                                    <constraint firstItem="e3B-aR-t0d" firstAttribute="leading" secondItem="JFR-Dh-34K" secondAttribute="leading" id="wo5-VC-6qi"/>
+                                    <constraint firstItem="PP2-3U-uXn" firstAttribute="centerY" secondItem="JFR-Dh-34K" secondAttribute="centerY" id="xqe-kA-KrI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="e3B-aR-t0d" secondAttribute="trailing" id="3De-bR-Xwj"/>
-                            <constraint firstItem="SV1-aD-ose" firstAttribute="top" secondItem="e3B-aR-t0d" secondAttribute="bottom" id="3Gp-Jl-vug"/>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="top" secondItem="0HR-k1-GOL" secondAttribute="bottom" id="HnT-fi-sX4"/>
-                            <constraint firstItem="e3B-aR-t0d" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="JYV-ji-ums"/>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="KLs-Qu-Mxz"/>
+                            <constraint firstAttribute="trailing" secondItem="JFR-Dh-34K" secondAttribute="trailing" id="Wh4-Bn-ZsO"/>
+                            <constraint firstItem="JFR-Dh-34K" firstAttribute="top" secondItem="Mga-LA-V3d" secondAttribute="bottom" id="d4M-B9-HUT"/>
+                            <constraint firstItem="SV1-aD-ose" firstAttribute="top" secondItem="JFR-Dh-34K" secondAttribute="bottom" id="duq-Ih-nNF"/>
                             <constraint firstAttribute="trailing" secondItem="Mga-LA-V3d" secondAttribute="trailing" id="iLJ-zH-lRE"/>
-                            <constraint firstItem="e3B-aR-t0d" firstAttribute="top" secondItem="Mga-LA-V3d" secondAttribute="bottom" id="lXI-a5-lh2"/>
+                            <constraint firstItem="JFR-Dh-34K" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="naI-3J-ulF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="1ck-1j-gJG">
