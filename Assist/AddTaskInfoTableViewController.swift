@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import Contacts
+import VENTokenField
 
 protocol TaskInfoDelegate: class {
     func addContacts(contacts: [CNContact])
@@ -17,23 +18,17 @@ protocol TaskInfoDelegate: class {
 
 struct TaskInfo {
     var location: MKMapItem?
-    var contacts: [CNContact]?
+    var contacts: [CNContact] = []
 }
 
-class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate {
+class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, VENTokenFieldDelegate, VENTokenFieldDataSource {
     @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var contactsTextView: UITextView!
+    @IBOutlet weak var contactsTokenField: VENTokenField!
     private var taskInfo = TaskInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.setup()
     }
     
     //MARK:- Action
@@ -56,6 +51,17 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate {
             // add location
             self.performSegue(withIdentifier: "addLocationSegue", sender: self)
         }
+    }
+    
+    //MARK:- VENTokenFieldDatasource
+    
+    func numberOfTokens(in tokenField: VENTokenField) -> UInt {
+        return UInt(self.taskInfo.contacts.count)
+    }
+    
+    func tokenField(_ tokenField: VENTokenField, titleForTokenAt index: UInt) -> String {
+        let contact = self.taskInfo.contacts[Int(index)]
+        return "\(contact.givenName) \(contact.familyName)"
     }
     
     //MARK:- TaskInfoDelegate
@@ -91,11 +97,21 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate {
     
     func addContacts(contacts: [CNContact]) {
         self.taskInfo.contacts = contacts
+        self.contactsTokenField.reloadData()
+    }
+    
+    //MARK:- Utils
+    
+    fileprivate func setup(){
+        self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
+        self.contactsTokenField.delegate = self
+        self.contactsTokenField.dataSource = self
+        self.contactsTokenField.toLabelText = "To:"
+        self.contactsTokenField.reloadData()
     }
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addLocationSegue" {
             let vc = segue.destination as! AddTaskLocationViewController
@@ -103,6 +119,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate {
         }else if segue.identifier == "addContactsSegue" {
             let vc = segue.destination as! AddTaskContactsViewController
             vc.taskInfoDelegate = self
+            vc.selectedContacts = self.taskInfo.contacts
         }
     }
     

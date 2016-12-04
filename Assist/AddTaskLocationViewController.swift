@@ -32,6 +32,12 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
         UIApplication.shared.isStatusBarHidden = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.searchBar.becomeFirstResponder()
+    }
+
+    
     //MARK:- UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,7 +85,6 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     fileprivate func setup(){
         self.searchBar.placeholder = "Search Location"
         LocationService.sharedInstance.requestUserLocation()
-        self.searchBar.becomeFirstResponder()
         LocationService.sharedInstance.locationsNearMe(completion: { (mapItems: [MKMapItem]) in
             self.filteredItems = mapItems
             self.tableView.reloadData()
