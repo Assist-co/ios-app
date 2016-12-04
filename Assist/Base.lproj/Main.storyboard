@@ -10,67 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sliding View Controller-->
-        <scene sceneID="7KH-zJ-FE1">
-            <objects>
-                <viewController storyboardIdentifier="SlidingViewController" id="v2E-2d-X0s" customClass="SlidingViewController" customModule="Assist" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7f8-Yq-Nef"/>
-                        <viewControllerLayoutGuide type="bottom" id="02z-Ww-l8L"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0KN-jd-39L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFl-NO-ssH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Rn-JT-lDN">
-                                <rect key="frame" x="-375" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.67450980390000004" green="0.0" blue="0.062745098040000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yYU-nO-4Mx">
-                                <rect key="frame" x="375" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.25882352939999997" green="0.59607843140000005" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="ZFl-NO-ssH" firstAttribute="leading" secondItem="4Rn-JT-lDN" secondAttribute="trailing" id="8g2-lK-f20"/>
-                            <constraint firstItem="yYU-nO-4Mx" firstAttribute="height" secondItem="ZFl-NO-ssH" secondAttribute="height" id="9ci-6z-ga7"/>
-                            <constraint firstItem="yYU-nO-4Mx" firstAttribute="width" secondItem="ZFl-NO-ssH" secondAttribute="width" id="V6Q-71-3wb"/>
-                            <constraint firstAttribute="trailing" secondItem="ZFl-NO-ssH" secondAttribute="trailing" id="ZzK-h0-42u"/>
-                            <constraint firstItem="yYU-nO-4Mx" firstAttribute="top" secondItem="ZFl-NO-ssH" secondAttribute="top" id="cvP-mT-HBa"/>
-                            <constraint firstItem="4Rn-JT-lDN" firstAttribute="top" secondItem="ZFl-NO-ssH" secondAttribute="top" id="hpj-ZC-haF"/>
-                            <constraint firstItem="4Rn-JT-lDN" firstAttribute="width" secondItem="ZFl-NO-ssH" secondAttribute="width" id="hsM-jK-AWE"/>
-                            <constraint firstItem="ZFl-NO-ssH" firstAttribute="leading" secondItem="0KN-jd-39L" secondAttribute="leading" id="klM-Cj-nEQ"/>
-                            <constraint firstItem="02z-Ww-l8L" firstAttribute="top" secondItem="ZFl-NO-ssH" secondAttribute="bottom" id="nBG-8a-qI4"/>
-                            <constraint firstItem="4Rn-JT-lDN" firstAttribute="height" secondItem="ZFl-NO-ssH" secondAttribute="height" id="o2p-RF-7n6"/>
-                            <constraint firstItem="ZFl-NO-ssH" firstAttribute="top" secondItem="0KN-jd-39L" secondAttribute="top" id="rWd-cc-MKU"/>
-                            <constraint firstItem="yYU-nO-4Mx" firstAttribute="leading" secondItem="ZFl-NO-ssH" secondAttribute="trailing" id="zoG-Oj-VLc"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="ldn-q0-mOF" appends="YES" id="jws-K2-XNM"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="leftContent" destination="4Rn-JT-lDN" id="NrD-Ee-uyZ"/>
-                        <outlet property="mainContent" destination="ZFl-NO-ssH" id="dD8-Pb-R3A"/>
-                        <outlet property="rightContent" destination="yYU-nO-4Mx" id="a7A-xc-vVz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tcy-wl-p8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="ldn-q0-mOF">
-                    <connections>
-                        <action selector="onViewPan:" destination="v2E-2d-X0s" id="YxJ-lg-Omh"/>
-                    </connections>
-                </panGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-946.39999999999998" y="457.42128935532236"/>
-        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>

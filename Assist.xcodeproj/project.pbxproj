@@ -59,6 +59,7 @@
 		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
 		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
 		D4F79B611DF3A7E600C6AA8B /* SlidableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */; };
+		D4F79B631DF3ACC600C6AA8B /* Sliding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4F79B621DF3ACC600C6AA8B /* Sliding.storyboard */; };
 		DB5F0634F86038D00A688462 /* Pods_AssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D45573201DD92C500000B938 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidableViewController.swift; sourceTree = "<group>"; };
+		D4F79B621DF3ACC600C6AA8B /* Sliding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Sliding.storyboard; sourceTree = "<group>"; };
 		F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 				031300F81DD917DE00381716 /* MessageDetail.storyboard */,
 				031300FA1DD9181200381716 /* Settings.storyboard */,
 				03FDD5681DEFD31E0025121A /* Calendar.storyboard */,
+				D4F79B621DF3ACC600C6AA8B /* Sliding.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				034051451DD4295D005F6B82 /* Assets.xcassets in Resources */,
 				031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */,
 				03FDD5691DEFD31E0025121A /* Calendar.storyboard in Resources */,
+				D4F79B631DF3ACC600C6AA8B /* Sliding.storyboard in Resources */,
 				034051431DD4295D005F6B82 /* Main.storyboard in Resources */,
 				0307B6AC1DEFE8AC00D8A3FF /* CalendarCellView.xib in Resources */,
 				034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */,
