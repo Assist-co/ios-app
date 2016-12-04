@@ -84,25 +84,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /** UITableViewDelegate Methods **/
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if let messagesByDay = messagesByDay {
-            
-            let date = messagesByDay[section].0
-            let calendar = Calendar.current
-            if calendar.isDateInToday(date) {
-                return "Today"
-            } else if calendar.isDateInYesterday(date) {
-                return "Yesterday"
-            } else {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = DateFormatter.Style.long
-                return dateFormatter.string(from: messagesByDay[section].0)
-            }
-        } else {
-            return ""
-        }
-    }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30.0
     }
@@ -137,7 +118,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: label.font.fontName, size: 12)
+        label.font = UIFont(name: label.font.fontName, size: 14)
         label.text = headerText.uppercased()
         label.textColor = UIColor(hexString: "#888888ff")
         label.textAlignment = .center

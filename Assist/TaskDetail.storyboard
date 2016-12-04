@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -61,14 +62,23 @@
                                     <action selector="onCancelTaskTap:" destination="tfW-kc-2Dn" eventType="touchUpInside" id="hAg-Ab-JCX"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ni7-DA-LkB">
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ni7-DA-LkB" secondAttribute="height" multiplier="1:1" id="XdU-uc-XX8"/>
+                                </constraints>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ni7-DA-LkB" secondAttribute="trailing" constant="16" id="A3y-HX-zZW"/>
                             <constraint firstItem="fvh-Vv-O7d" firstAttribute="top" secondItem="R75-Td-pBT" secondAttribute="bottom" constant="18" id="CoG-L6-VZH"/>
                             <constraint firstItem="wLW-yS-xIl" firstAttribute="top" secondItem="R75-Td-pBT" secondAttribute="bottom" constant="16" id="DSM-Su-dVO"/>
                             <constraint firstItem="aJW-lW-r8M" firstAttribute="top" secondItem="3f3-dB-Jde" secondAttribute="bottom" constant="16" id="GGu-C7-lTl"/>
                             <constraint firstAttribute="trailing" secondItem="fvh-Vv-O7d" secondAttribute="trailing" constant="16" id="QDq-Vo-Vxm"/>
                             <constraint firstItem="aJW-lW-r8M" firstAttribute="leading" secondItem="CVU-Dd-Dil" secondAttribute="leading" constant="16" id="QFj-5v-zfz"/>
+                            <constraint firstItem="Ni7-DA-LkB" firstAttribute="top" secondItem="aJW-lW-r8M" secondAttribute="bottom" constant="16" id="RFz-xt-BjP"/>
+                            <constraint firstItem="Ni7-DA-LkB" firstAttribute="leading" secondItem="CVU-Dd-Dil" secondAttribute="leading" constant="16" id="Vup-Ko-0a4"/>
                             <constraint firstItem="aJW-lW-r8M" firstAttribute="top" secondItem="3f3-dB-Jde" secondAttribute="bottom" constant="16" id="ZwV-uf-6uY"/>
                             <constraint firstItem="wLW-yS-xIl" firstAttribute="leading" secondItem="3f3-dB-Jde" secondAttribute="trailing" constant="8" id="kEQ-hp-xxb"/>
                             <constraint firstItem="3f3-dB-Jde" firstAttribute="top" secondItem="R75-Td-pBT" secondAttribute="bottom" constant="16" id="lZW-Dt-GnM"/>
@@ -90,6 +100,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createdOnLabel" destination="fvh-Vv-O7d" id="gwj-9A-BJf"/>
+                        <outlet property="mapView" destination="Ni7-DA-LkB" id="J0R-hI-bQS"/>
                         <outlet property="taskDescription" destination="aJW-lW-r8M" id="565-3k-WVk"/>
                         <outlet property="taskIcon" destination="3f3-dB-Jde" id="0e6-TK-DsN"/>
                         <outlet property="taskType" destination="wLW-yS-xIl" id="zck-RM-OjJ"/>

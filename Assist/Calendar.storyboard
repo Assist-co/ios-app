@@ -25,12 +25,30 @@
                                     <constraint firstAttribute="width" secondItem="Mga-LA-V3d" secondAttribute="height" multiplier="1:1" id="tAM-vg-DT7"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e3B-aR-t0d">
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bIB-OR-Sik">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIB-OR-Sik" id="sX5-27-uzi">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901960784313" green="0.18431372549019609" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="e3B-aR-t0d" secondAttribute="trailing" id="3De-bR-Xwj"/>
+                            <constraint firstItem="SV1-aD-ose" firstAttribute="top" secondItem="e3B-aR-t0d" secondAttribute="bottom" id="3Gp-Jl-vug"/>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="top" secondItem="0HR-k1-GOL" secondAttribute="bottom" id="HnT-fi-sX4"/>
+                            <constraint firstItem="e3B-aR-t0d" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="JYV-ji-ums"/>
                             <constraint firstItem="Mga-LA-V3d" firstAttribute="leading" secondItem="nkP-rV-0CQ" secondAttribute="leading" id="KLs-Qu-Mxz"/>
                             <constraint firstAttribute="trailing" secondItem="Mga-LA-V3d" secondAttribute="trailing" id="iLJ-zH-lRE"/>
+                            <constraint firstItem="e3B-aR-t0d" firstAttribute="top" secondItem="Mga-LA-V3d" secondAttribute="bottom" id="lXI-a5-lh2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Calendar" id="1ck-1j-gJG">

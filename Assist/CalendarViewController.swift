@@ -19,6 +19,7 @@ class CalendarViewController: UIViewController {
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        calendarView.registerHeaderView(xibFileNames: ["CalendarHeaderView"])
         
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
@@ -77,5 +78,15 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         } else {
             myCustomCell.dayLabel.textColor = UIColor.gray
         }
+    }
+    
+    // This sets the height of your header
+    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
+        return CGSize(width: 200, height: 50)
+    }
+    // This setups the display of your header
+    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
+        //let headerCell = (header as? CalendarHeaderView)
+        //headerCell?.title.text = "Hello Header"
     }
 }

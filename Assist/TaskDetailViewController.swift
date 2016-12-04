@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
-class TaskDetailViewController: UIViewController {
+class TaskDetailViewController: UIViewController, MKMapViewDelegate {
     public var task: Task?
 
+    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var taskIcon: UIImageView!
     @IBOutlet weak var createdOnLabel: UILabel!
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var taskType: UILabel!
+
     var delegate: TaskListTableViewController?
     
     //MARK:- View LifeCycle
@@ -23,6 +26,16 @@ class TaskDetailViewController: UIViewController {
         super.viewDidLoad()
         self.styleView()
         self.populateOutlets()
+        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+        let region =
+            MKCoordinateRegionMakeWithDistance(
+            initialLocation.coordinate, 2000, 2000)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude)
+        mapView.addAnnotation(annotation)
+        mapView.setRegion(region, animated: true)
+        mapView.layer.cornerRadius = 4
+        mapView.clipsToBounds = true
     }
     
     //MARK:- IB Outlet Methods
