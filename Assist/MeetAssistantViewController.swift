@@ -13,12 +13,11 @@ class MeetAssistantViewController: UIViewController {
 
     @IBOutlet weak var assistantImageView: UIImageView!
     @IBAction func buttonPress(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let slidingViewController = storyboard.instantiateViewController(withIdentifier: "SlidingViewController")
+        let slidingViewController = UIStoryboard(name: "Sliding", bundle: nil).instantiateViewController(withIdentifier: "SlidingViewController")
         
         
         if let svc = slidingViewController as? SlidingViewController {
-            let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
+            let homeNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeNavigationController")
             if let homeController = homeNavigationController.childViewControllers.first as? SlidableViewController {
                 homeController.slidingViewController = svc
             }
