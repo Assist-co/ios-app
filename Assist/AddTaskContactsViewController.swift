@@ -14,10 +14,21 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var contactsTokenField: VENTokenField!
     @IBOutlet weak var tableView: UITableView!
     private var filteredContacts: [CNContact] = []
+    weak var taskInfoDelegate: TaskInfoDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.isStatusBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.shared.isStatusBarHidden = false
     }
     
     //MARK:- UITableViewDelegate
@@ -56,11 +67,15 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     func tokenField(_ tokenField: VENTokenField, titleForTokenAt index: UInt) -> String {
         return "Contact"
     }
-
     
     //MARK:- Actions
     
     @IBAction func dismiss(button: UIButton){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveContacts(button: UIButton){
+    
         self.dismiss(animated: true, completion: nil)
     }
     

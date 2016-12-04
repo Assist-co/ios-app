@@ -20,6 +20,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     private var selectedTaskTypeButton: TaskTypeButton?
     private var trayFrictionVal = 0
     private let trayFrictionConstant = 4
+    private var taskTagButtons: [TaskTypeButton] = []
     override var canBecomeFirstResponder: Bool{
         get{
             return true
@@ -123,13 +124,15 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     func taskTagButtonPressend(taskButton: TaskTypeButton){
-        taskButton.backgroundColor = UIColor.clear
         self.selectedTaskTypeButton = taskButton
+        for button in self.taskTagButtons{
+            if button != taskButton {
+                taskButton.backgroundColor = UIColor.clear
+            }else{
+                taskButton.backgroundColor = UIColor.red
+            }
+        }
         self.performSegue(withIdentifier: "addTaskMetadataSegue", sender: self)
-    }
-    
-    func taskTagButtonHighlighted(taskButton: TaskTypeButton){
-        taskButton.backgroundColor = UIColor.lightGray
     }
     
     @IBAction func dismissCreateTask(barButton: UIBarButtonItem){
@@ -237,42 +240,20 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     fileprivate func taskTypeButtonsBuilder(){
-        self.tagsTrayView.scheduleTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.scheduleTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
-        self.tagsTrayView.emailTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.emailTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
-        self.tagsTrayView.reminderTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.reminderTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
-        self.tagsTrayView.inquiryTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.inquiryTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
-        self.tagsTrayView.otherTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.otherTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
-        self.tagsTrayView.callTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonPressend(taskButton:)),
-                                                       for: .touchUpInside)
-        self.tagsTrayView.callTaskButton.addTarget(self,
-                                                       action: #selector(taskTagButtonHighlighted(taskButton:)),
-                                                       for: .touchDown)
+        let stackView = self.tagsTrayView.subviews.first
+        for view in (stackView?.subviews)!{
+            for subView in view.subviews {
+                if subView is TaskTypeButton {
+                    self.taskTagButtons.append(subView as! TaskTypeButton)
+                }
+            }
+        }
+        for button in self.taskTagButtons{
+            button.addTarget(self,
+                             action: #selector(taskTagButtonPressend(taskButton:)),
+                             for: .touchUpInside)
+        }
+
     }
     
     // MARK: - Navigation

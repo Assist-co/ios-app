@@ -51,9 +51,13 @@
 		853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */; };
 		853C9E341DF27AA100AC0CEB /* TagsTrayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */; };
 		853C9E361DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E351DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift */; };
+		85414BC21DF3A50F00390A1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC11DF3A50F00390A1F /* MapKit.framework */; };
+		85414BC41DF3A51700390A1F /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC31DF3A51700390A1F /* Contacts.framework */; };
+		85414BC61DF3AB5E00390A1F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC51DF3AB5E00390A1F /* CoreLocation.framework */; };
 		854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B30B71DEBFF680059DC61 /* ContactsService.swift */; };
 		857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */; };
 		857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */; };
+		857754FB1DF39E1A00EBAC7C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754FA1DF39E1A00EBAC7C /* LocationService.swift */; };
 		8597AC301DF0AFA600C98D6B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC2F1DF0AFA600C98D6B /* Contact.swift */; };
 		8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */; };
 		859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */; };
@@ -140,10 +144,14 @@
 		853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTrayView.swift; sourceTree = "<group>"; };
 		853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsTrayView.xib; sourceTree = "<group>"; };
 		853C9E351DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskInfoTableViewController.swift; sourceTree = "<group>"; };
+		85414BC11DF3A50F00390A1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		85414BC31DF3A51700390A1F /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		85414BC51DF3AB5E00390A1F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		854B30B71DEBFF680059DC61 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsService.swift; path = API/AssistCo/ContactsService.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskLocationViewController.swift; sourceTree = "<group>"; };
 		857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskContactsViewController.swift; sourceTree = "<group>"; };
+		857754FA1DF39E1A00EBAC7C /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		8597AC2F1DF0AFA600C98D6B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantTaskType.swift; sourceTree = "<group>"; };
@@ -166,6 +174,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85414BC61DF3AB5E00390A1F /* CoreLocation.framework in Frameworks */,
+				85414BC41DF3A51700390A1F /* Contacts.framework in Frameworks */,
+				85414BC21DF3A50F00390A1F /* MapKit.framework in Frameworks */,
 				5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +282,7 @@
 				0340516E1DD42A18005F6B82 /* VoiceToTextClient.swift */,
 				034051701DD42A27005F6B82 /* MessagingClient.swift */,
 				854B30B71DEBFF680059DC61 /* ContactsService.swift */,
+				857754FA1DF39E1A00EBAC7C /* LocationService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -350,6 +362,9 @@
 		71371A0B9BEED2AFEB1EEECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85414BC51DF3AB5E00390A1F /* CoreLocation.framework */,
+				85414BC31DF3A51700390A1F /* Contacts.framework */,
+				85414BC11DF3A50F00390A1F /* MapKit.framework */,
 				3555853B735386E5EA08CC89 /* Pods_Assist.framework */,
 				F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */,
 				D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */,
@@ -675,6 +690,7 @@
 				854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */,
 				034F543A1DDAD9E10080F599 /* OptionService.swift in Sources */,
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
+				857754FB1DF39E1A00EBAC7C /* LocationService.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
 				857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */,
 				8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */,

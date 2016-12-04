@@ -9,10 +9,10 @@
 import UIKit
 
 class TagsTrayView: UIView {
-    @IBOutlet weak var scheduleTaskButton: UIButton!
-    @IBOutlet weak var emailTaskButton: UIButton!
-    @IBOutlet weak var reminderTaskButton: UIButton!
-    @IBOutlet weak var callTaskButton: UIButton!
-    @IBOutlet weak var inquiryTaskButton: UIButton!
-    @IBOutlet weak var otherTaskButton: UIButton!
+    @IBOutlet weak var scheduleTaskButton: TaskTypeButton!
+    @IBOutlet weak var emailTaskButton: TaskTypeButton!
+    @IBOutlet weak var reminderTaskButton: TaskTypeButton!
+    @IBOutlet weak var callTaskButton: TaskTypeButton!
+    @IBOutlet weak var inquiryTaskButton: TaskTypeButton!
+    @IBOutlet weak var otherTaskButton: TaskTypeButton!
 }
