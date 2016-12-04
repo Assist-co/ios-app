@@ -58,7 +58,7 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
     //MARK:- Action
     
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {
-        slidingViewController.showMainContent()
+        slidingViewController.showMainContent(duration: 0.25)
     }
     
     @IBAction func addTask(_ sender: AnyObject) {

@@ -225,11 +225,11 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
 
     @IBAction func onTaskButtonTap(_ sender: AnyObject) {
-        slidingViewController.showLeftContent()
+        slidingViewController.showLeftContent(duration: 0.25)
     }
     
     @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
-        slidingViewController.showRightContent()
+        slidingViewController.showRightContent(duration: 0.25)
     }
     
     /** Internal Methods **/
@@ -294,6 +294,20 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     func didReceiveMessage(message: Message?) {
         if let message = message {
             self.messages?.append(message)
+            if let messagesByDay = self.messagesByDay {
+                if messagesByDay.count > 0 {
+                    let lastDay = messagesByDay[messagesByDay.count - 1].0
+                    if Calendar.current.isDateInToday(lastDay) {
+                        self.messagesByDay?[messagesByDay.count - 1].1.append(message)
+                    } else {
+                        self.messagesByDay?.append((Date(), [message]))
+                    }
+                } else {
+                    self.messagesByDay = [(Date(), [message])]
+                }
+            } else {
+                messagesByDay = [(Date(), [message])]
+            }
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         }
     }

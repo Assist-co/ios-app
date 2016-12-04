@@ -28,7 +28,7 @@ class CalendarViewController: SlidableViewController {
     }
 
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {
-        slidingViewController.showMainContent()
+        slidingViewController.showMainContent(duration: 0.25)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,8 +76,8 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         } else {
             myCustomCell.dayLabel.textColor = UIColor.gray
         }
-        /*
-        let diff = Calendar.current.components([.day], fromDate: date, toDate: Date(), options: [])
+        
+        /*let diff = Calendar.current.components([.Day], fromDate: date, toDate: Date(), options: [])
         if diff.day == 0 {
             myCustomCell.selectedDate.isHidden = false
         }*/

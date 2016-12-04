@@ -58,8 +58,8 @@ class SlidingViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func showLeftContent() {
-        UIView.animate(withDuration: 0.25, animations: {
+    func showLeftContent(duration: Float) {
+        UIView.animate(withDuration: TimeInterval(duration), animations: {
             self.rightContent.frame.origin.x = 2 * self.rightContent.bounds.width
             self.mainContent.frame.origin.x = self.rightContent.bounds.width
             self.leftContent.frame.origin.x = 0
@@ -67,8 +67,8 @@ class SlidingViewController: UIViewController {
         currentPosition = .left
     }
     
-    func showRightContent() {
-        UIView.animate(withDuration: 0.25, animations: {
+    func showRightContent(duration: Float) {
+        UIView.animate(withDuration: TimeInterval(duration), animations: {
             self.rightContent.frame.origin.x = 0
             self.mainContent.frame.origin.x = -self.leftContent.bounds.width
             self.leftContent.frame.origin.x = -2 * self.leftContent.bounds.width
@@ -76,8 +76,8 @@ class SlidingViewController: UIViewController {
         currentPosition = .right
     }
     
-    func showMainContent() {
-        UIView.animate(withDuration: 0.25, animations: {
+    func showMainContent(duration: Float) {
+        UIView.animate(withDuration: TimeInterval(duration), animations: {
             self.rightContent.frame.origin.x = self.rightContent.bounds.width
             self.mainContent.frame.origin.x = 0
             self.leftContent.frame.origin.x = -self.leftContent.bounds.width
@@ -119,23 +119,23 @@ class SlidingViewController: UIViewController {
                 switch self.currentPosition {
                 case .left:
                     if abs(translation.x) > view.frame.width/2 {
-                        showMainContent()
+                        showMainContent(duration: 0.125)
                     } else {
-                        showLeftContent()
+                        showLeftContent(duration: 0.125)
                     }
                 case .middle:
                     if abs(translation.x) > view.frame.width/2 && translation.x < 0 {
-                        showRightContent()
+                        showRightContent(duration: 0.125)
                     } else if abs(translation.x) > view.frame.width/2 && translation.x > 0 {
-                        showLeftContent()
+                        showLeftContent(duration: 0.125)
                     } else {
-                        showMainContent()
+                        showMainContent(duration: 0.125)
                     }
                 case .right:
                     if abs(translation.x) > view.frame.width/2 {
-                        showMainContent()
+                        showMainContent(duration: 0.125)
                     } else {
-                        showRightContent()
+                        showRightContent(duration: 0.125)
                     }
                 }
             }
@@ -147,17 +147,17 @@ class SlidingViewController: UIViewController {
     
     private func slideLeft() {
         if (rightContent.frame.origin.x > rightContent.bounds.width) {
-            showMainContent()
+            showMainContent(duration: 0.25)
         } else {
-            showRightContent()
+            showRightContent(duration: 0.25)
         }
     }
     
     private func slideRight() {
         if (leftContent.frame.origin.x < -leftContent.bounds.width) {
-            showMainContent()
+            showMainContent(duration: 0.25)
         } else {
-            showLeftContent()
+            showLeftContent(duration: 0.25)
         }
     }
 }
