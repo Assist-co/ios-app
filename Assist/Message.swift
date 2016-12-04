@@ -54,7 +54,8 @@ class Message: NSObject {
         
         if hours > 24 {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.dateStyle = DateFormatter.Style.none
+            dateFormatter.timeStyle = .short
             return dateFormatter.string(from: createdAt!)
         } else if hours > 0 {
             return "\(hours)h ago"

@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var textButtonHeight: UIButton!
     
     private var messages: [Message]?
+    private var messagesByDay: [(Date, [Message])]?
     private var messageToolbarBottomConstraintInitialValue: CGFloat?
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
@@ -83,30 +84,120 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     /** UITableViewDelegate Methods **/
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let messagesByDay = messagesByDay {
+            
+            let date = messagesByDay[section].0
+            let calendar = Calendar.current
+            if calendar.isDateInToday(date) {
+                return "Today"
+            } else if calendar.isDateInYesterday(date) {
+                return "Yesterday"
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.long
+                return dateFormatter.string(from: messagesByDay[section].0)
+            }
+        } else {
+            return ""
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30.0
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerView = view as? UITableViewHeaderFooterView {
+            headerView.textLabel?.textAlignment = .center
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let tableViewWidth = self.messagesTableView.bounds
         
-        let message = messages?[indexPath.row]
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableViewWidth.size.width, height: self.messagesTableView.sectionHeaderHeight))
+        headerView.backgroundColor = UIColor(hexString: "#25282Dff")
+        
+        var headerText = ""
+        if let messagesByDay = messagesByDay {
+            
+            let date = messagesByDay[section].0
+            let calendar = Calendar.current
+            if calendar.isDateInToday(date) {
+                headerText = "Today"
+            } else if calendar.isDateInYesterday(date) {
+                headerText = "Yesterday"
+            } else {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.long
+                headerText = dateFormatter.string(from: messagesByDay[section].0)
+            }
+        }
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: label.font.fontName, size: 12)
+        label.text = headerText.uppercased()
+        label.textColor = UIColor(hexString: "#888888ff")
+        label.textAlignment = .center
+        headerView.addSubview(label)
+        label.leftAnchor.constraint(equalTo: headerView.leftAnchor).isActive = true
+        label.rightAnchor.constraint(equalTo: headerView.rightAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
+        label.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        
+        return headerView
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if let messagesByDay = messagesByDay {
+            return messagesByDay.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let messagesByDay = messagesByDay {
+            return messagesByDay[section].1.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        // remove bottom extra 20px space.
+        return CGFloat.leastNormalMagnitude
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        //let message = messages?[indexPath.row]
+        let message = messagesByDay?[indexPath.section].1[indexPath.row]
         let identifier = message?.senderId == Client.currentID ? "MessageTableViewCellYou" : "MessageTableViewCell";
         let cell = messagesTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MessageTableViewCell
         cell.message = message
-        
+
+
         // TODO: move styling code to saner place
         if indexPath.row == 0 {
             cell.topMargin.constant = 24
         } else {
-            let lastMessage = messages?[indexPath.row - 1]
+            //let lastMessage = messages?[indexPath.row - 1]
+            let lastMessage = messagesByDay?[indexPath.section].1[indexPath.row - 1]
             let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (lastMessage?.createdAt?.timeIntervalSince1970)!) < 60)
             if lastMessage?.senderId != message?.senderId || !isMultiMessage {
                 cell.topMargin.constant = 8
             } else {
                 cell.topMargin.constant = 4
-
             }
         }
         
         // TODO: move styling code to saner place
-        if indexPath.row < (messages?.count)! - 1 {
-            let nextMessage = messages?[indexPath.row + 1]
+        if indexPath.row < (messagesByDay?[indexPath.section].1.count)! - 1 {
+            let nextMessage = messagesByDay?[indexPath.section].1[indexPath.row + 1]
             let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (nextMessage?.createdAt?.timeIntervalSince1970)!) < 60)
             if nextMessage?.senderId != message?.senderId || !isMultiMessage {
                 cell.dateLabelHeight.constant = 16
@@ -123,9 +214,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages?.count ?? 0
-    }
     
     /** TextFieldDelegate Methods **/
     
@@ -191,9 +279,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.messagesTableView.reloadData()
             
             
-            let lastRow = (self.messages?.count ?? 0) - 1
+            let lastSection = (self.messagesByDay?.count)! - 1
+            let lastRow = (self.messagesByDay?[lastSection].1.count)! - 1
             if lastRow > 0 {
-                let lastIndexPath = IndexPath(row: lastRow, section: 0)
+                let lastIndexPath = IndexPath(row: lastRow, section: lastSection)
                 self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
             }
         })
@@ -219,6 +308,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 (m: SBDUserMessage) -> Message in
                 return Message(sbdUserMessage: m)
             }).reversed()
+            self.messagesByDay = self.groupMessagesByDate(inputMessages: self.messages!)
             
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         })
@@ -229,6 +319,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.messages?.append(message)
             NotificationCenter.default.post(name: self.populateEndNotification, object: nil)
         }
+    }
+    
+    private func groupMessagesByDate(inputMessages: [Message]) -> [(Date,[Message])] {
+        var messagesByDate: [(Date, [Message])] = []
+        if inputMessages.count > 0 {
+            var currDate: Date = inputMessages[0].createdAt!
+            var messages: [Message] = []
+            for message in inputMessages {
+                if Calendar.current.isDate(message.createdAt!, inSameDayAs: currDate) {
+                    messages.append(message)
+                } else {
+                    let messagesCopy = messages
+                    messages = [message]
+                    messagesByDate.append((currDate, messagesCopy))
+                    currDate = message.createdAt!
+                }
+            }
+            if messages != [] {
+                messagesByDate.append((currDate, messages))
+            }
+        }
+        return messagesByDate
     }
     
     // Add a gesture on the view controller to close keyboard when tapped
