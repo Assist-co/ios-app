@@ -34,6 +34,12 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     private var currDatePickerShowing: DatePickerType = .none
     private var prevDatePickerShowing: DatePickerType = .none
     private var selectedDateIndexPath: IndexPath?
+    private var startsDateCell: UITableViewCell?
+    private var endsDateCell: UITableViewCell?
+    private var selectedStartsDate: Date?
+    private var selectedEndsDate: Date?
+    private var isStartDateEmpty: Bool = true
+    private var isEndDateEmpty: Bool = true
     var taskType: String!
     var taskDataDelegate: TaskDataDelegate?
     
@@ -64,7 +70,13 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     }
 
     @IBAction func datePickerAction(_ sender: UIDatePicker) {
-        
+        let cell = self.tableView.cellForRow(at: self.selectedDateIndexPath!)
+        cell?.detailTextLabel?.text = self.dateFormatForDate(date: sender.date)
+        if cell?.tag == 300 {
+            self.selectedStartsDate = sender.date
+        }else{
+            self.selectedEndsDate = sender.date
+        }
     }
     
     //MARK:- UITableViewDelegate
@@ -153,7 +165,8 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                 cell.contactsPlaceholderLabel.isHidden = false
             }
             return cell
-        }else if indexPath.section == 1 {
+        }
+        else if indexPath.section == 1 {
             // location
             let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! LocationTableViewCell
             if self.taskInfo.location != nil {
@@ -164,31 +177,54 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                 cell.locationTextView.attributedText = nil
             }
             return cell
-        }else {
+        }
+        else {
             // dates
             if self.currDatePickerShowing != .none {
-                if indexPath.row == 0 || indexPath.row == 3 {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
-                    if indexPath.row == 0 {
-                        cell.textLabel?.text = "Start"
-                        cell.tag = 300
-                    }else if indexPath.row == 2 {
-                        cell.textLabel?.text = "End"
-                        cell.tag = 400
+                let cell = tableView.dequeueReusableCell(withIdentifier: "datePickerCell",
+                                                         for: indexPath) as! DateTimeTableViewCell
+                if indexPath.row == 1 && self.isStartDateEmpty{
+                    self.isStartDateEmpty = false
+                    if self.isEndDateEmpty {
+                        self.selectedStartsDate = Date()
+                    }else{
+                        self.selectedStartsDate = self.selectedEndsDate?.addingTimeInterval(-(60 * 60 * 1))
                     }
-                    return cell
-
+                    cell.datePicker.date = self.selectedStartsDate!
+                    let startsDateIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+                    let dateCell = tableView.cellForRow(at: startsDateIndexPath)! as UITableViewCell
+                    dateCell.detailTextLabel?.text = self.dateFormatForDate(date: self.selectedStartsDate!)
+                }else if indexPath.row == 1 && !self.isStartDateEmpty{
+                    cell.datePicker.date = self.selectedStartsDate!
+                }else if indexPath.row == 2 && self.isEndDateEmpty{
+                    self.isEndDateEmpty = false
+                    if self.isStartDateEmpty {
+                        self.selectedEndsDate = Date().addingTimeInterval((60 * 60 * 1))
+                    }else{
+                        self.selectedEndsDate = self.selectedStartsDate?.addingTimeInterval((60 * 60 * 1))
+                    }
+                    cell.datePicker.date = self.selectedEndsDate!
+                    let endsDateIndexPath = IndexPath(row: indexPath.row, section: indexPath.section)
+                    let dateCell = tableView.cellForRow(at: endsDateIndexPath)! as UITableViewCell
+                    dateCell.detailTextLabel?.text = self.dateFormatForDate(date: self.selectedEndsDate!)
                 }else{
-                    return tableView.dequeueReusableCell(withIdentifier: "datePickerCell", for: indexPath) as! DateTimeTableViewCell
+                    cell.datePicker.date = self.selectedEndsDate!
                 }
+                return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
                 if indexPath.row == 0 {
-                    cell.textLabel?.text = "Start"
+                    cell.textLabel?.text = "Starts"
                     cell.tag = 300
+                    if let startsDate = self.selectedStartsDate {
+                        cell.detailTextLabel?.text = self.dateFormatForDate(date: startsDate)
+                    }
                 }else if indexPath.row == 1 {
-                    cell.textLabel?.text = "End"
+                    cell.textLabel?.text = "Ends"
                     cell.tag = 400
+                    if let endsDate = self.selectedEndsDate {
+                        cell.detailTextLabel?.text = self.dateFormatForDate(date: endsDate)
+                    }
                 }
                 return cell
             }
@@ -279,6 +315,13 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                                   range: NSRange(location: locInt, length:lengthInt))
         }
         return attrText
+    }
+    
+    fileprivate func dateFormatForDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        return dateFormatter.string(from: date)
     }
     
     // MARK: - Navigation
