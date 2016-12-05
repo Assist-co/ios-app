@@ -118,7 +118,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     func toolBarPressed(button: UIButton){
         self.createTaskToolBarView.backgroundColor = UIColor.groupTableViewBackground
         if !self.isTagsTrayShowing {
+            UIView.animate(withDuration: 0.4, delay: 0.01, options: .allowAnimatedContent, animations: {
+                self.createTaskToolBarView.alpha = 0
+            }, completion: { (success: Bool) in
+                self.createTaskToolBarView.isHidden = true
+            })
             self.showTagsTrayView()
+            
         }
     }
     
@@ -205,18 +211,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     fileprivate func showTagsTrayView(){
-        // Hide toolbar
-        UIView.animate(withDuration: 0.1, animations: {
-            self.createTaskToolBarView.alpha = 0
-            self.textView.resignFirstResponder()
-            
-            
-            
-            
-        }) { (success: Bool) in
-//            self.textView.resignFirstResponder()
-            self.createTaskToolBarView.isHidden = true
-        }
+        self.textView.resignFirstResponder()
         let panGesture = UIPanGestureRecognizer()
         panGesture.addTarget(self, action: #selector(tagListPanGesture(recognizer:)))
         self.tagsTrayView.addGestureRecognizer(panGesture)
@@ -226,8 +221,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                                          height: self.tagsTrayView.frame.size.height)
         self.view.addSubview(self.tagsTrayView)
         self.view.bringSubview(toFront: self.tagsTrayView)
+        self.textView.resignFirstResponder()
         // Show tray
-        UIView.animate(withDuration: 1.15, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             let y = (self.view.frame.size.height - self.tagsTrayView.frame.size.height)
             self.tagsTrayView.frame = CGRect(x: 0,
                                              y: y,
