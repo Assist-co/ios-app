@@ -349,7 +349,7 @@
                         <outlet property="postBarButton" destination="Xgv-Dt-g3C" id="lqV-ba-d2v"/>
                         <outlet property="scrollView" destination="vAI-nC-7qU" id="wqh-gQ-i5J"/>
                         <outlet property="textView" destination="f7o-jE-bv8" id="0cx-Q9-mWl"/>
-                        <segue destination="9Db-tT-HLD" kind="presentation" identifier="addTaskMetadataSegue" id="WUC-r4-kZc"/>
+                        <segue destination="9Db-tT-HLD" kind="presentation" identifier="addTaskInfoSegue" id="WUC-r4-kZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRm-Fg-ldp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -594,7 +594,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-Z3-8t8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
                                                 <outlet property="delegate" destination="A5Y-G2-jcK" id="9e5-Wr-6fO"/>
@@ -659,16 +659,21 @@
                                             <action selector="cancelWithButton:" destination="A5Y-G2-jcK" eventType="touchUpInside" id="3TO-tu-nri"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zdq-h6-Yxk">
+                                        <rect key="frame" x="341" y="10" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="fFg-5o-AGG" firstAttribute="top" secondItem="Sp6-Of-ukZ" secondAttribute="top" constant="4" id="4WF-kR-0br"/>
                                     <constraint firstAttribute="bottom" secondItem="fFg-5o-AGG" secondAttribute="bottom" constant="4" id="7aU-KP-g2p"/>
                                     <constraint firstItem="dMI-3I-oSo" firstAttribute="centerY" secondItem="Sp6-Of-ukZ" secondAttribute="centerY" id="8hJ-gV-d0U"/>
+                                    <constraint firstItem="zdq-h6-Yxk" firstAttribute="centerY" secondItem="Sp6-Of-ukZ" secondAttribute="centerY" id="GVn-Xb-qDB"/>
                                     <constraint firstItem="dMI-3I-oSo" firstAttribute="leading" secondItem="fFg-5o-AGG" secondAttribute="trailing" constant="-54" id="c7L-1a-H0n"/>
                                     <constraint firstItem="fFg-5o-AGG" firstAttribute="leading" secondItem="Sp6-Of-ukZ" secondAttribute="leading" constant="8" id="ljV-wm-IKs"/>
                                     <constraint firstItem="dMI-3I-oSo" firstAttribute="centerX" secondItem="Sp6-Of-ukZ" secondAttribute="centerX" id="pgL-Uq-D0J"/>
                                     <constraint firstItem="dMI-3I-oSo" firstAttribute="trailing" secondItem="Sp6-Of-ukZ" secondAttribute="trailingMargin" id="uBh-TJ-9Jf"/>
+                                    <constraint firstAttribute="trailing" secondItem="zdq-h6-Yxk" secondAttribute="trailing" constant="14" id="yHv-6c-NEA"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -683,15 +688,18 @@
                             <constraint firstItem="RxX-YY-doi" firstAttribute="bottom" secondItem="iBt-PX-fzi" secondAttribute="top" id="wrp-Yw-zHh"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="fFg-5o-AGG" id="wrY-Mu-5yS"/>
                         <outlet property="searchBar" destination="dRb-Z3-8t8" id="2XG-hJ-r89"/>
+                        <outlet property="spinner" destination="zdq-h6-Yxk" id="d0N-6O-AZr"/>
                         <outlet property="tableView" destination="RxX-YY-doi" id="KJn-YI-8Lp"/>
                         <outlet property="vcTitleLabel" destination="dMI-3I-oSo" id="XlQ-Lo-rb0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Eq-kS-gYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="1805"/>
+            <point key="canvasLocation" x="3342" y="1813"/>
         </scene>
         <!--Add Task Contacts View Controller-->
         <scene sceneID="pa3-ML-AAW">
@@ -806,8 +814,11 @@
                             <constraint firstItem="85h-tM-NHT" firstAttribute="top" secondItem="K1M-xd-282" secondAttribute="bottom" id="ygq-oU-dvH"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="sXc-Z0-BXt" id="P8S-I6-wQw"/>
                         <outlet property="contactsTokenField" destination="85h-tM-NHT" id="qcz-WR-hgD"/>
+                        <outlet property="saveButton" destination="OYb-WE-NHN" id="ZiE-gq-UBr"/>
                         <outlet property="tableView" destination="EsA-yc-Z9H" id="T8c-kf-kMQ"/>
                     </connections>
                 </viewController>

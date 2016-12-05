@@ -34,6 +34,7 @@ class ContactsService: NSObject {
         }
     }
     
+    
     //MARK:- Utils
     
     fileprivate func requestContactsAccess(completion: @escaping (Bool, Error?) -> Void){

@@ -13,6 +13,9 @@ import Contacts
 class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, VENTokenFieldDataSource, VENTokenFieldDelegate {
     @IBOutlet weak var contactsTokenField: VENTokenField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    private var spinner: UIActivityIndicatorView!
     private var filteredContacts: [CNContact] = []
     var selectedContacts: [CNContact] = []
     weak var taskInfoDelegate: TaskInfoDelegate?
@@ -25,6 +28,7 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.isStatusBarHidden = true
+        self.tokenField(self.contactsTokenField, didChangeText: "a")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -76,12 +80,22 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     //MARK:- VENTokenFieldDelegate
     
     func tokenField(_ tokenField: VENTokenField, didChangeText text: String?) {
+        self.cancelButton.isEnabled = false
+        self.saveButton.isEnabled = false
+        self.saveButton.isHidden = true
+        self.saveButton.addSubview(self.spinner)
+        self.spinner.startAnimating()
         ContactsService.sharedInstance.searchContactsWith(text: text!) {
             (contacts: [CNContact]?, error: Error?) in
             if error == nil {
                 self.filteredContacts = contacts!
                 self.tableView.reloadData()
             }
+            self.cancelButton.isEnabled = true
+            self.saveButton.isEnabled = true
+            self.spinner.stopAnimating()
+            self.spinner.removeFromSuperview()
+            self.saveButton.isHidden = false
         }
 
     }
@@ -124,7 +138,9 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         self.contactsTokenField.dataSource = self
         self.contactsTokenField.placeholderText = "First name, last name, email"
         self.contactsTokenField.toLabelText = "To:"
-        _ = ContactsService.sharedInstance
+        self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.spinner.hidesWhenStopped = true
+        self.spinner.center = self.saveButton.center
         self.contactsTokenField.reloadData()
     }
 

@@ -145,7 +145,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                 taskButton.backgroundColor = UIColor.red
             }
         }
-        self.performSegue(withIdentifier: "addTaskMetadataSegue", sender: self)
+        self.performSegue(withIdentifier: "addTaskInfoSegue", sender: self)
     }
     
     @IBAction func dismissCreateTask(barButton: UIBarButtonItem){
@@ -195,13 +195,20 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     fileprivate func buildTaskPostObject() -> [String:Any]{
         var taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
                                             "text": self.textView.text as Any]
-                                           
         if let taskTypeButton = self.selectedTaskTypeButton {
             taskDictionary["task_type"] = taskTypeButton.taskTypePermalink! as Any
         }
         if let taskInfo = self.taskInfo {
             if let loc = taskInfo.location{
                 taskDictionary["location"] = "(\(loc.placemark.coordinate.latitude),\(loc.placemark.coordinate.longitude))" as Any
+            }
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            if let startsDate = self.taskInfo?.startDate {
+                taskDictionary["start_on"] = formatter.string(from: startsDate)
+            }
+            if let endsDate = self.taskInfo?.endDate {
+                taskDictionary["end_on"] = formatter.string(from: endsDate)
             }
         }
         return taskDictionary
@@ -300,7 +307,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addTaskMetadataSegue" {
+        if segue.identifier == "addTaskInfoSegue" {
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! AddTaskInfoTableViewController
             vc.taskDataDelegate = self

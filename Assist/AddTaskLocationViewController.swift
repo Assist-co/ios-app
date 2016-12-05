@@ -13,6 +13,8 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var vcTitleLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var cancelButton: UIButton!
     fileprivate var isFiltering: Bool = false
     fileprivate var filteredItems: [MKMapItem] = []
     weak var taskInfoDelegate: TaskInfoDelegate?
@@ -85,12 +87,24 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     fileprivate func setup(){
         self.searchBar.placeholder = "Search Location"
         LocationService.sharedInstance.requestUserLocation()
+        self.searchingState(isSpinning: true)
         LocationService.sharedInstance.locationsNearMe(completion: { (mapItems: [MKMapItem]) in
             self.filteredItems = mapItems
             self.tableView.reloadData()
+            self.searchingState(isSpinning: false)
         })
     }
-        
+    
+    fileprivate func searchingState(isSpinning: Bool){
+        if isSpinning {
+            self.cancelButton.isEnabled = false
+            self.spinner.startAnimating()
+            self.spinner.isHidden = false
+        }else{
+            self.cancelButton.isEnabled = true
+            self.spinner.stopAnimating()
+        }
+    }
 }
 
 // SearchBar methods
