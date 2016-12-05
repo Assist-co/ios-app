@@ -82,8 +82,9 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     func tokenField(_ tokenField: VENTokenField, didChangeText text: String?) {
         self.cancelButton.isEnabled = false
         self.saveButton.isEnabled = false
-        self.saveButton.isHidden = true
+        self.saveButton.setTitle("", for: .normal)
         self.saveButton.addSubview(self.spinner)
+        self.spinner.isHidden = false
         self.spinner.startAnimating()
         ContactsService.sharedInstance.searchContactsWith(text: text!) {
             (contacts: [CNContact]?, error: Error?) in
@@ -93,9 +94,9 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
             }
             self.cancelButton.isEnabled = true
             self.saveButton.isEnabled = true
+            self.saveButton.setTitle("Save", for: .normal)
             self.spinner.stopAnimating()
             self.spinner.removeFromSuperview()
-            self.saveButton.isHidden = false
         }
 
     }
@@ -140,7 +141,8 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         self.contactsTokenField.toLabelText = "To:"
         self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         self.spinner.hidesWhenStopped = true
-        self.spinner.center = self.saveButton.center
+        self.spinner.frame.origin.x = self.saveButton.frame.width/4
+        self.spinner.frame.origin.y = self.saveButton.frame.height/4
         self.contactsTokenField.reloadData()
     }
 
