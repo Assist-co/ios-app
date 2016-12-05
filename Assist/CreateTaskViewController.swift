@@ -304,6 +304,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! AddTaskInfoTableViewController
             vc.taskDataDelegate = self
+            vc.taskType = self.selectedTaskTypeButton?.taskTypePermalink
         }
     }
 
