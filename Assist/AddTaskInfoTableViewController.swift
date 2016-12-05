@@ -55,6 +55,8 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     }
     
     @IBAction func save(barButton: UIBarButtonItem){
+        self.taskInfo.startDate = self.selectedStartsDate
+        self.taskInfo.endDate = self.selectedEndsDate
         self.taskDataDelegate?.setTaskInfo(taskInfo: self.taskInfo)
         self.dismiss(animated: true, completion: nil)
     }

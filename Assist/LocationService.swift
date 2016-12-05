@@ -30,10 +30,15 @@ class LocationService: NSObject {
     
     func searchLocationsWith(text: String, completion: @escaping ([MKMapItem]) -> ()){
         let request = MKLocalSearchRequest()
-        let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.773972, -122.431297),
-                                                        160934,160934)
+        let region: MKCoordinateRegion?
         request.naturalLanguageQuery = text
-        request.region = region
+        if let userRegion = self.userRegion {
+            region = userRegion
+        }else{
+            region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.773972, -122.431297),
+                                                            160934,160934)
+        }
+        request.region = region!
         let search = MKLocalSearch(request: request)
         search.start { response, _ in
             guard let response = response else {
@@ -46,11 +51,15 @@ class LocationService: NSObject {
     
     func locationsNearMe(completion: @escaping ([MKMapItem]) -> ()){
         let request = MKLocalSearchRequest()
+        let region: MKCoordinateRegion?
         request.naturalLanguageQuery = "Coffee Shop"
-        let region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.773972, -122.431297),
-                                                                        0,0)
-        
-        request.region = region
+        if let userRegion = self.userRegion {
+            region = userRegion
+        }else{
+            region = MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(37.773972, -122.431297),
+                                                            0,0)
+        }
+        request.region = region!
         let search = MKLocalSearch(request: request)
         search.start { response, _ in
             guard let response = response else {
@@ -75,8 +84,7 @@ extension LocationService : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if locations.first != nil {
             let coor = locations.first?.coordinate
-            let span = MKCoordinateSpan(latitudeDelta: 37.7749,longitudeDelta: 122.4194)
-            self.userRegion = MKCoordinateRegion(center: coor!, span: span)
+            self.userRegion = MKCoordinateRegionMakeWithDistance(coor!, 25,25)
         }
     }
     
