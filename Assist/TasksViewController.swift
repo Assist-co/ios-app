@@ -92,6 +92,7 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
                     // check for empty state
                     if self.queuedTaskViewController.tasks.isEmpty {
                         self.emptyStateLabel.isHidden = false
+                        self.emptyStateLabel.text = "No Assigned Tasks"
                     }else{
                         self.emptyStateLabel.isHidden = true
                     }
@@ -101,8 +102,6 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
         }else{
             self.completedButton.backgroundColor = UIColor(hexString: "#256E93ff")
             self.queuedButton.backgroundColor = UIColor(hexString: "#3F4550ff")
-            //self.queuedButton.setTitleColor(UIColor.darkGray, for: .normal)
-            //self.completedButton.setTitleColor(UIColor.white, for: .normal)
             self.emptyStateLabel.isHidden = true
 
             if self.currentTaskListType != .completed {
@@ -120,6 +119,7 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
                     if self.completedTaskViewController.tasks.isEmpty {
                         //self.completedTaskViewController.tableView.isHidden = true
                         self.emptyStateLabel.isHidden = false
+                        self.emptyStateLabel.text = "No Completed Tasks"
                     }else{
                         //self.completedTaskViewController.tableView.isHidden = false
                         self.emptyStateLabel.isHidden = true

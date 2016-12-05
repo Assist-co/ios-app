@@ -26,16 +26,22 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         self.styleView()
         self.populateOutlets()
-        let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-        let region =
+        
+        if task?.type?.permalink == "schedule" {
+            let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+            let region =
             MKCoordinateRegionMakeWithDistance(
             initialLocation.coordinate, 2000, 2000)
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude)
-        mapView.addAnnotation(annotation)
-        mapView.setRegion(region, animated: true)
-        mapView.layer.cornerRadius = 4
-        mapView.clipsToBounds = true
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude)
+            mapView.addAnnotation(annotation)
+            mapView.setRegion(region, animated: true)
+            mapView.layer.cornerRadius = 4
+            mapView.clipsToBounds = true
+            mapView.isHidden = false
+        } else {
+            mapView.isHidden = true
+        }
     }
     
     //MARK:- IB Outlet Methods
@@ -83,23 +89,23 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             createdOnLabel.text = formatter.string(from: createdOn)
         }
         
-        let cellType = task?.type?.display
-        if cellType == "Reminder" {
+        let cellType = task?.type?.permalink
+        if cellType == "reminder" {
             taskIcon.image = #imageLiteral(resourceName: "clock")
             taskIcon.backgroundColor = UIColor(hexString: "#FFCA28ff")
-        } else if cellType == "Call" {
+        } else if cellType == "call" {
             taskIcon.image = #imageLiteral(resourceName: "phone_small")
             taskIcon.backgroundColor = UIColor(hexString: "#ED5E5Eff")
-        } else if cellType == "Schedule" {
+        } else if cellType == "schedule" {
             taskIcon.image = #imageLiteral(resourceName: "calendar_small")
             taskIcon.backgroundColor = UIColor(hexString: "#66BB6Aff")
-        } else if cellType == "Other" {
+        } else if cellType == "other" {
             taskIcon.image = #imageLiteral(resourceName: "other")
             taskIcon.backgroundColor = UIColor(hexString: "#AC7339ff")
-        } else if cellType == "Inquiry" {
+        } else if cellType == "inquiry" {
             taskIcon.image = #imageLiteral(resourceName: "magnifying_glass")
             taskIcon.backgroundColor = UIColor(hexString: "#7E57C2ff")
-        } else if cellType == "Email" {
+        } else if cellType == "email" {
             taskIcon.image = #imageLiteral(resourceName: "mail")
             taskIcon.backgroundColor = UIColor(hexString: "#42A5F5ff")
         }
