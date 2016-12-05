@@ -30,7 +30,18 @@ fileprivate enum DatePickerType {
 }
 
 class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, VENTokenFieldDelegate, VENTokenFieldDataSource, UIPickerViewDelegate {
-    private var taskInfo = TaskInfo()
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    private var taskInfo = TaskInfo(){
+        didSet{
+            if taskInfo.location == nil ||
+                taskInfo.contacts.isEmpty ||
+                taskInfo.startDate == nil {
+                self.saveBarButton.isEnabled = false
+            }else{
+                self.saveBarButton.isEnabled = true
+            }
+        }
+    }
     private var currDatePickerShowing: DatePickerType = .none
     private var prevDatePickerShowing: DatePickerType = .none
     private var selectedDateIndexPath: IndexPath?
@@ -40,7 +51,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     private var selectedEndsDate: Date?
     private var isStartDateEmpty: Bool = true
     private var isEndDateEmpty: Bool = true
-    var taskType: String!
+    var taskTypePermalink: String!
     var taskDataDelegate: TaskDataDelegate?
     
     override func viewDidLoad() {

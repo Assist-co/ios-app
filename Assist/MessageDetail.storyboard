@@ -297,7 +297,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="vAI-nC-7qU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Dummy text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7o-jE-bv8" userLabel="textview">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="f7o-jE-bv8" userLabel="textview" customClass="UIPlaceholderTextView" customModule="Assist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
@@ -559,13 +559,14 @@
                                 <action selector="dismissWithBarButton:" destination="Lfd-Wu-Loy" id="HnC-lu-y4K"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="qU7-es-ALi">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" style="done" id="qU7-es-ALi">
                             <connections>
                                 <action selector="saveWithBarButton:" destination="Lfd-Wu-Loy" id="Qoj-2P-Zeh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="saveBarButton" destination="qU7-es-ALi" id="H4j-ew-OTt"/>
                         <segue destination="A5Y-G2-jcK" kind="presentation" identifier="addLocationSegue" id="LeB-Pn-KZu"/>
                         <segue destination="eVX-0J-kk4" kind="presentation" identifier="addContactsSegue" id="1pW-QQ-cVi"/>
                     </connections>

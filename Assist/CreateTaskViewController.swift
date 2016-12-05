@@ -14,12 +14,11 @@ protocol TaskDataDelegate: class {
 
 class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, TaskDataDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: UIPlaceholderTextView!
     @IBOutlet weak var postBarButton: UIBarButtonItem!
     private var createTaskToolBarView: CreateTaskToolBarView!
     private var tagsTrayView: TagsTrayView!
     private var isFirstAppearance: Bool = true
-    private let placeholderText = "Enter task here!"
     private var isTagsTrayShowing: Bool = false
     private var tagsTrayViewOriginCenter: CGPoint!
     private var selectedTaskTypeButton: TaskTypeButton?
@@ -47,50 +46,41 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.scrollView.contentSize = self.view.frame.size;
+        self.scrollView.contentSize = self.view.frame.size
         self.scrollView.contentSize.height = self.scrollView.contentSize.height
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if self.createTaskToolBarView != nil{
+            if self.isTagsTrayShowing {
+                self.createTaskToolBarView.isHidden = true
+            }else{
+                self.createTaskToolBarView.isHidden = false
+            }
+        }
     }
     
     //MARK:- UITextViewDelegate
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray && !self.isFirstAppearance {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }else{
-            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
-            self.isFirstAppearance = false
-        }
         if self.isTagsTrayShowing{
             self.dismissTagsTrayView()
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = self.placeholderText
-            textView.textColor = UIColor.lightGray
         }
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentText = textView.text as NSString?
         let updatedText = currentText?.replacingCharacters(in: range, with: text)
-        if (updatedText?.isEmpty)! {
-            
-            textView.text = self.placeholderText
-            textView.textColor = UIColor.lightGray
-            
-            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+        if let fullText = updatedText {
+            if fullText.characters.count > 0 {
+                self.postBarButton.isEnabled = true
+            }else{
+                self.postBarButton.isEnabled = false
+            }
+        }else{
             self.postBarButton.isEnabled = false
-            return false
         }
-        else if textView.textColor == UIColor.lightGray && !text.isEmpty {
-            textView.text = nil
-            textView.textColor = UIColor.black
-            self.postBarButton.isEnabled = true
-        }
-        
         return true
     }
     
@@ -140,9 +130,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.selectedTaskTypeButton = taskButton
         for button in self.taskTagButtons{
             if button != taskButton {
-                taskButton.backgroundColor = UIColor.clear
+                button.superview?.backgroundColor = UIColor.clear
             }else{
-                taskButton.backgroundColor = UIColor.red
+                button.superview?.backgroundColor = UIColor.red
             }
         }
         self.performSegue(withIdentifier: "addTaskInfoSegue", sender: self)
@@ -215,12 +205,17 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     fileprivate func showTagsTrayView(){
-        self.textView.resignFirstResponder()
         // Hide toolbar
-        UIView.animate(withDuration: 2.0, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.createTaskToolBarView.alpha = 0
+            self.textView.resignFirstResponder()
+            
+            
+            
+            
         }) { (success: Bool) in
-            self.createTaskToolBarView.isHidden = success
+//            self.textView.resignFirstResponder()
+            self.createTaskToolBarView.isHidden = true
         }
         let panGesture = UIPanGestureRecognizer()
         panGesture.addTarget(self, action: #selector(tagListPanGesture(recognizer:)))
@@ -232,7 +227,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.view.addSubview(self.tagsTrayView)
         self.view.bringSubview(toFront: self.tagsTrayView)
         // Show tray
-        UIView.animate(withDuration: 0, animations: {
+        UIView.animate(withDuration: 1.15, animations: {
             let y = (self.view.frame.size.height - self.tagsTrayView.frame.size.height)
             self.tagsTrayView.frame = CGRect(x: 0,
                                              y: y,
@@ -245,14 +240,14 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     fileprivate func dismissTagsTrayView(){
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             let y = (self.view.frame.size.height + 1)
             self.tagsTrayView.frame = CGRect(x: 0,
                                              y: y,
                                              width: self.tagsTrayView.frame.size.width,
                                              height: self.tagsTrayView.frame.size.height)
             self.tagsTrayViewOriginCenter = self.tagsTrayView.center
-            self.createTaskToolBarView.isHidden = false
+            self.createTaskToolBarView.alpha = 1
         }) { (success: Bool) in
             self.tagsTrayView.removeFromSuperview()
             self.isTagsTrayShowing = false
@@ -264,9 +259,8 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.tagsTrayView = UINib(nibName: "TagsTrayView", bundle: nil)
             .instantiate(withOwner: nil, options: nil)[0] as! TagsTrayView
         self.tagsTrayView.frame.size.width = self.view.frame.size.width
-        self.textView.text = self.placeholderText
-        self.textView.textColor = UIColor.lightGray
         self.textView.frame.size.height = 0
+        self.textView.placeholder = "Enter task"
         if self.textView.text.characters.count == 0 {
             self.postBarButton.isEnabled = false
         }else{
@@ -311,7 +305,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! AddTaskInfoTableViewController
             vc.taskDataDelegate = self
-            vc.taskType = self.selectedTaskTypeButton?.taskTypePermalink
+            vc.taskTypePermalink = self.selectedTaskTypeButton?.taskTypePermalink
         }
     }
 
