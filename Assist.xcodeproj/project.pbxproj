@@ -20,7 +20,6 @@
 		031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300F81DD917DE00381716 /* MessageDetail.storyboard */; };
 		031300FB1DD9181200381716 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031300FA1DD9181200381716 /* Settings.storyboard */; };
 		031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300FC1DD9194200381716 /* SettingsViewController.swift */; };
-		031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031300FE1DD9196100381716 /* MessageDetailViewController.swift */; };
 		031301011DD9289400381716 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301001DD9289400381716 /* SignInViewController.swift */; };
 		031301031DD9289F00381716 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301021DD9289F00381716 /* SignUpViewController.swift */; };
 		031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */; };
@@ -116,7 +115,6 @@
 		031300F81DD917DE00381716 /* MessageDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageDetail.storyboard; sourceTree = "<group>"; };
 		031300FA1DD9181200381716 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		031300FC1DD9194200381716 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		031300FE1DD9196100381716 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		031301001DD9289400381716 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		031301021DD9289F00381716 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpMoreDetailsViewController.swift; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 				D455731E1DD92C350000B938 /* HomeViewController.swift */,
 				85ED5EAA1DDC199D0073B625 /* Task */,
 				031300FC1DD9194200381716 /* SettingsViewController.swift */,
-				031300FE1DD9196100381716 /* MessageDetailViewController.swift */,
 				031301001DD9289400381716 /* SignInViewController.swift */,
 				031301021DD9289F00381716 /* SignUpViewController.swift */,
 				031301041DD9363500381716 /* SignUpMoreDetailsViewController.swift */,
@@ -723,7 +720,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				031300F31DD9126400381716 /* TaskListTableViewController.swift in Sources */,
-				031300FF1DD9196100381716 /* MessageDetailViewController.swift in Sources */,
 				0340513E1DD4295D005F6B82 /* AppDelegate.swift in Sources */,
 				034F54371DDAD9E10080F599 /* AssistantService.swift in Sources */,
 				854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */,

@@ -62,16 +62,8 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
     
     func showMessageView(message: String?) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
-        let messageDetailVC = vc.childViewControllers[0] as! MessageDetailViewController
-        messageDetailVC.delegate = self
-        messageDetailVC.message = message!
-        self.hideKeyboard()
-        
         self.shouldRefresh = true
-        self.show(vc, sender: self)
-        self.hideKeyboard()
+        self.performSegue(withIdentifier: "homeToCreateTaskSegue", sender: self)
     }
     
     /** UIScrollViewDelegate Methods **/
@@ -232,6 +224,15 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
         self.view.endEditing(true)
         slidingViewController.showRightContent(duration: 0.25)
+    }
+    
+    //MARK:- Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeToCreateTaskSegue" {
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as! CreateTaskViewController
+//            vc.message = self.message
+        }
     }
     
     /** Internal Methods **/

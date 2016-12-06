@@ -29,6 +29,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     private let trayFrictionConstant = 4
     private var taskTagButtons: [TaskTypeButton] = []
     private var taskInfo: TaskInfo?
+    var message: String?{
+        didSet{
+            if let text = message {
+                self.textView.text = text
+            }
+        }
+    }
     override var canBecomeFirstResponder: Bool{
         get{
             return true

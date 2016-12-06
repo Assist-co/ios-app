@@ -62,11 +62,7 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
     }
     
     @IBAction func addTask(_ sender: AnyObject) {
-        let storyboard: UIStoryboard = UIStoryboard(name: "MessageDetail", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MessageDetailNavigation") as! UINavigationController
-        let messageDetailViewController = vc.topViewController as! MessageDetailViewController
-        messageDetailViewController.taskListController = self.queuedTaskViewController
-        self.show(vc, sender: self)
+        self.performSegue(withIdentifier: "tasksToCreateTaskSegue", sender: self)
     }
     
     @IBAction func filterSelected(_ sender: UIButton) {
