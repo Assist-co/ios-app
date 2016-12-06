@@ -33,7 +33,11 @@ class SlidingViewController: UIViewController {
         didSet {
             view.layoutIfNeeded()
             rightViewController.view.setNeedsLayout()
-            rightViewController.view.layoutIfNeeded()
+            let nav  = rightViewController as! UINavigationController
+            let vc = nav.viewControllers.first as! SlidableViewController
+            if vc.isUISetup {
+                rightViewController.view.layoutIfNeeded()
+            }
             rightContent.addSubview(rightViewController.view)
         }
     }

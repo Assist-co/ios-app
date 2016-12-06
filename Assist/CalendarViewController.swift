@@ -15,6 +15,17 @@ class CalendarViewController: SlidableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !self.isUISetup {
+            self.isUISetup = true
+            self.setupMainThreadOperations()
+        }
+    }
+
+    override func setupMainThreadOperations() {
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CalendarCellView")
@@ -24,7 +35,6 @@ class CalendarViewController: SlidableViewController {
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
         navigationController!.navigationBar.isTranslucent = false
-
     }
 
     @IBAction func onHomeButtonTap(_ sender: AnyObject) {

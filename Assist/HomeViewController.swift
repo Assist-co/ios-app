@@ -36,17 +36,14 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
-        setupNotifications()
-        initMessagingClient()
-        styleElements()
-        
-        messageTextField.delegate = self
-        messagesTableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.hideKeyboard()
+        if !self.isUISetup {
+            self.isUISetup = true
+            self.setupMainThreadOperations()
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,10 +58,23 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    override func setupMainThreadOperations() {
+        setupTableView()
+        setupNotifications()
+        initMessagingClient()
+        styleElements()
+        
+        messageTextField.delegate = self
+        messagesTableView.delegate = self
+
+    }
+    
     func showMessageView(message: String?) {
         self.shouldRefresh = true
         self.performSegue(withIdentifier: "homeToCreateTaskSegue", sender: self)
     }
+    
+    
     
     /** UIScrollViewDelegate Methods **/
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
