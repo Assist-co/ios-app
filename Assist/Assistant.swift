@@ -45,4 +45,6 @@ class Assistant: NSObject {
             self.gender = Gender(dictionary: genderDict)
         }
     }
+    
+    
 }

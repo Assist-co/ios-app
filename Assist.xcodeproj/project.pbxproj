@@ -49,7 +49,25 @@
 		5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3555853B735386E5EA08CC89 /* Pods_Assist.framework */; };
 		7F4303A04074FD1AE05BAC39 /* Pods_AssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */; };
 		852D20A61DEE8C0E009AFA98 /* TaskTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852D20A51DEE8C0E009AFA98 /* TaskTypeButton.swift */; };
+		853C9E2E1DF2784500AC0CEB /* CreateTaskToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */; };
+		853C9E301DF278A600AC0CEB /* CreateTaskToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E2F1DF278A600AC0CEB /* CreateTaskToolBarView.swift */; };
+		853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */; };
+		853C9E341DF27AA100AC0CEB /* TagsTrayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */; };
+		853C9E361DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853C9E351DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift */; };
+		85414BC21DF3A50F00390A1F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC11DF3A50F00390A1F /* MapKit.framework */; };
+		85414BC41DF3A51700390A1F /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC31DF3A51700390A1F /* Contacts.framework */; };
+		85414BC61DF3AB5E00390A1F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85414BC51DF3AB5E00390A1F /* CoreLocation.framework */; };
+		85414BCA1DF4DE9300390A1F /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BC91DF4DE9300390A1F /* ContactsTableViewCell.swift */; };
+		85414BCC1DF4DEA100390A1F /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCB1DF4DEA100390A1F /* LocationTableViewCell.swift */; };
+		85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */; };
+		85414BD01DF5E91F00390A1F /* UIPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */; };
+		85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD11DF6517E00390A1F /* CNContactExtention.swift */; };
 		854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B30B71DEBFF680059DC61 /* ContactsService.swift */; };
+		857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */; };
+		857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */; };
+		857754FB1DF39E1A00EBAC7C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754FA1DF39E1A00EBAC7C /* LocationService.swift */; };
+		8597AC301DF0AFA600C98D6B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC2F1DF0AFA600C98D6B /* Contact.swift */; };
+		8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */; };
 		859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */; };
 		859B55441DDA149C00CBD957 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55401DDA149C00CBD957 /* Constants.swift */; };
 		859B55451DDA149C00CBD957 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B55411DDA149C00CBD957 /* Gender.swift */; };
@@ -136,8 +154,26 @@
 		7D5311A8DEE0F7D2BF0B152C /* Pods-AssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssistTests/Pods-AssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		818BF3C821630FA4A0AC7980 /* Pods-AssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssistUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		852D20A51DEE8C0E009AFA98 /* TaskTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTypeButton.swift; sourceTree = "<group>"; };
+		853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTaskToolBarView.xib; sourceTree = "<group>"; };
+		853C9E2F1DF278A600AC0CEB /* CreateTaskToolBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskToolBarView.swift; sourceTree = "<group>"; };
+		853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsTrayView.swift; sourceTree = "<group>"; };
+		853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagsTrayView.xib; sourceTree = "<group>"; };
+		853C9E351DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskInfoTableViewController.swift; sourceTree = "<group>"; };
+		85414BC11DF3A50F00390A1F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		85414BC31DF3A51700390A1F /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		85414BC51DF3AB5E00390A1F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		85414BC91DF4DE9300390A1F /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		85414BCB1DF4DEA100390A1F /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeTableViewCell.swift; sourceTree = "<group>"; };
+		85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderTextView.swift; sourceTree = "<group>"; };
+		85414BD11DF6517E00390A1F /* CNContactExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContactExtention.swift; sourceTree = "<group>"; };
 		854B30B71DEBFF680059DC61 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsService.swift; path = API/AssistCo/ContactsService.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
+		857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskLocationViewController.swift; sourceTree = "<group>"; };
+		857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskContactsViewController.swift; sourceTree = "<group>"; };
+		857754FA1DF39E1A00EBAC7C /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		8597AC2F1DF0AFA600C98D6B /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskViewController.swift; sourceTree = "<group>"; };
 		859B553F1DDA149C00CBD957 /* AssistantTaskType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssistantTaskType.swift; sourceTree = "<group>"; };
 		859B55401DDA149C00CBD957 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		859B55411DDA149C00CBD957 /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -162,6 +198,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85414BC61DF3AB5E00390A1F /* CoreLocation.framework in Frameworks */,
+				85414BC41DF3A51700390A1F /* Contacts.framework in Frameworks */,
+				85414BC21DF3A50F00390A1F /* MapKit.framework in Frameworks */,
 				5031C4F513A49AA6F1E82ADF /* Pods_Assist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +308,7 @@
 				0340516E1DD42A18005F6B82 /* VoiceToTextClient.swift */,
 				034051701DD42A27005F6B82 /* MessagingClient.swift */,
 				854B30B71DEBFF680059DC61 /* ContactsService.swift */,
+				857754FA1DF39E1A00EBAC7C /* LocationService.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -288,6 +328,7 @@
 				0307B6AF1DEFF28C00D8A3FF /* CalendarViewController.swift */,
 				D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */,
 				D4F79B601DF3A7E600C6AA8B /* SlidableViewController.swift */,
+				857754F51DF387BC00EBAC7C /* Create Task */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -303,6 +344,8 @@
 				034051741DD4356B005F6B82 /* Client.swift */,
 				034051761DD43583005F6B82 /* Task.swift */,
 				034051781DD435B8005F6B82 /* Assistant.swift */,
+				8597AC2F1DF0AFA600C98D6B /* Contact.swift */,
+				85414BD11DF6517E00390A1F /* CNContactExtention.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -310,6 +353,7 @@
 		0340517C1DD43670005F6B82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				853C9E2F1DF278A600AC0CEB /* CreateTaskToolBarView.swift */,
 				D45573201DD92C500000B938 /* MessageTableViewCell.swift */,
 				0340517A1DD4366A005F6B82 /* TaskTableViewCell.swift */,
 				85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */,
@@ -319,6 +363,13 @@
 				0307B6B31DF3AAED00D8A3FF /* CalendarHeaderView.xib */,
 				0307B6B51DF3ABC300D8A3FF /* CalendarHeaderView.swift */,
 				0307B6B71DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift */,
+				853C9E2D1DF2784500AC0CEB /* CreateTaskToolBarView.xib */,
+				853C9E311DF27A7700AC0CEB /* TagsTrayView.swift */,
+				853C9E331DF27AA100AC0CEB /* TagsTrayView.xib */,
+				85414BC91DF4DE9300390A1F /* ContactsTableViewCell.swift */,
+				85414BCB1DF4DEA100390A1F /* LocationTableViewCell.swift */,
+				85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */,
+				85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -347,11 +398,25 @@
 		71371A0B9BEED2AFEB1EEECD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85414BC51DF3AB5E00390A1F /* CoreLocation.framework */,
+				85414BC31DF3A51700390A1F /* Contacts.framework */,
+				85414BC11DF3A50F00390A1F /* MapKit.framework */,
 				3555853B735386E5EA08CC89 /* Pods_Assist.framework */,
 				F70AACB34EB6282777ABB2E1 /* Pods_AssistTests.framework */,
 				D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		857754F51DF387BC00EBAC7C /* Create Task */ = {
+			isa = PBXGroup;
+			children = (
+				8597AC331DF2492F00C98D6B /* CreateTaskViewController.swift */,
+				853C9E351DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift */,
+				857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */,
+				857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */,
+			);
+			name = "Create Task";
 			sourceTree = "<group>";
 		};
 		85ED5EAA1DDC199D0073B625 /* Task */ = {
@@ -418,6 +483,7 @@
 				034051561DD4295D005F6B82 /* Frameworks */,
 				034051571DD4295D005F6B82 /* Resources */,
 				679B5D64A8C474EE7637F6EE /* [CP] Copy Pods Resources */,
+				98952368B1056D02109EA3A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -485,6 +551,7 @@
 				034051451DD4295D005F6B82 /* Assets.xcassets in Resources */,
 				D46075911DF3B018005D2723 /* TaskDetail.storyboard in Resources */,
 				031300F91DD917DE00381716 /* MessageDetail.storyboard in Resources */,
+				853C9E341DF27AA100AC0CEB /* TagsTrayView.xib in Resources */,
 				03FDD5691DEFD31E0025121A /* Calendar.storyboard in Resources */,
 				D4F79B631DF3ACC600C6AA8B /* Sliding.storyboard in Resources */,
 				034051431DD4295D005F6B82 /* Main.storyboard in Resources */,
@@ -492,6 +559,7 @@
 				034051831DD4432A005F6B82 /* OnboardingFlow.storyboard in Resources */,
 				0307B6B41DF3AAED00D8A3FF /* CalendarHeaderView.xib in Resources */,
 				031300FB1DD9181200381716 /* Settings.storyboard in Resources */,
+				853C9E2E1DF2784500AC0CEB /* CreateTaskToolBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +610,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		98952368B1056D02109EA3A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AssistUITests/Pods-AssistUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9D4E4654CD2417DB1B702A05 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -554,7 +637,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A98FAE58671F76FE4F523C13 /* [CP] Check Pods Manifest.lock */ = {
@@ -569,7 +652,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AFD80DDFAA8912FE675336CF /* [CP] Embed Pods Frameworks */ = {
@@ -614,7 +697,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D7C17B4F6B43A5C334B0E33A /* [CP] Embed Pods Frameworks */ = {
@@ -646,29 +729,40 @@
 				854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */,
 				034F543A1DDAD9E10080F599 /* OptionService.swift in Sources */,
 				D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */,
+				857754FB1DF39E1A00EBAC7C /* LocationService.swift in Sources */,
 				0340517B1DD4366A005F6B82 /* TaskTableViewCell.swift in Sources */,
+				857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */,
+				8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */,
+				853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
 				D44E02A41DF3828A00ABF5EB /* SlidingViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */,
 				031301031DD9289F00381716 /* SignUpViewController.swift in Sources */,
+				85414BCA1DF4DE9300390A1F /* ContactsTableViewCell.swift in Sources */,
 				031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
 				85B318B41DEB805C007E0DBF /* Message.swift in Sources */,
 				859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
+				85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */,
 				859B55441DDA149C00CBD957 /* Constants.swift in Sources */,
 				D4F79B611DF3A7E600C6AA8B /* SlidableViewController.swift in Sources */,
+				853C9E301DF278A600AC0CEB /* CreateTaskToolBarView.swift in Sources */,
 				859B55451DDA149C00CBD957 /* Gender.swift in Sources */,
 				0340516D1DD429E8005F6B82 /* AssistClient.swift in Sources */,
+				8597AC301DF0AFA600C98D6B /* Contact.swift in Sources */,
 				034051791DD435B8005F6B82 /* Assistant.swift in Sources */,
 				0307B6B81DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
 				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
+				857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */,
+				85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */,
 				0307B6B01DEFF28C00D8A3FF /* CalendarViewController.swift in Sources */,
 				031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
 				034F54381DDAD9E10080F599 /* AuthService.swift in Sources */,
+				85414BD01DF5E91F00390A1F /* UIPlaceholderTextView.swift in Sources */,
 				031301011DD9289400381716 /* SignInViewController.swift in Sources */,
 				859B55461DDA149C00CBD957 /* Profession.swift in Sources */,
 				0307B6B61DF3ABC300D8A3FF /* CalendarHeaderView.swift in Sources */,
@@ -679,6 +773,8 @@
 				85B318B21DEB7FEA007E0DBF /* VoiceToTextViewController.swift in Sources */,
 				85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */,
 				034051711DD42A27005F6B82 /* MessagingClient.swift in Sources */,
+				853C9E361DF2C27000AC0CEB /* AddTaskInfoTableViewController.swift in Sources */,
+				85414BCC1DF4DEA100390A1F /* LocationTableViewCell.swift in Sources */,
 				852D20A61DEE8C0E009AFA98 /* TaskTypeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

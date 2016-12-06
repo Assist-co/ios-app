@@ -22,9 +22,9 @@ class ContactsService: NSObject {
     
     //MARK:- Search
     
-    func searchContactsWith(string: String, completion: @escaping ([CNContact]?, Error?) -> Void){
-        let predicate = CNContact.predicateForContacts(matchingName: string)
-        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey, CNContactPhoneNumbersKey] as [Any]
+    func searchContactsWith(text: String, completion: @escaping ([CNContact]?, Error?) -> Void){
+        let predicate = CNContact.predicateForContacts(matchingName: text)
+        let keys = [CNContactFormatter.descriptorForRequiredKeys(for: CNContactFormatterStyle.fullName), CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactImageDataKey] as [Any]
         var contacts = [CNContact]()
         do {
             contacts = try self.contactStore.unifiedContacts(matching: predicate, keysToFetch: keys as! [CNKeyDescriptor])
@@ -33,6 +33,7 @@ class ContactsService: NSObject {
             completion(nil, error)
         }
     }
+    
     
     //MARK:- Utils
     

@@ -10,7 +10,8 @@ target 'Assist' do
   pod 'SendBirdSDK'
   pod 'MBProgressHUD'
   pod 'JTAppleCalendar', '~> 6.0'
-
+  pod 'VENTokenField', '~> 2.0'
+  
   target 'AssistTests' do
     inherit! :search_paths
     # Pods for testing
