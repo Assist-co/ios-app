@@ -65,6 +65,7 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         cell.textLabel?.text = "\(contact.givenName) \(contact.familyName)"
         for email in contact.emailAddresses {
             cell.detailTextLabel?.text = email.value as String
+            break
         }
         if cell.detailTextLabel?.text == nil {
             for number in contact.phoneNumbers {

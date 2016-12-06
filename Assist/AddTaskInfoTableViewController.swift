@@ -47,8 +47,16 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     private var selectedDateIndexPath: IndexPath?
     private var startsDateCell: UITableViewCell?
     private var endsDateCell: UITableViewCell?
-    private var selectedStartsDate: Date?
-    private var selectedEndsDate: Date?
+    private var selectedStartsDate: Date? {
+        didSet{
+            self.taskInfo.startDate = selectedStartsDate
+        }
+    }
+    private var selectedEndsDate: Date? {
+        didSet{
+            self.taskInfo.endDate = selectedEndsDate
+        }
+    }
     private var isStartDateEmpty: Bool = true
     private var isEndDateEmpty: Bool = true
     var taskTypePermalink: String!
@@ -221,7 +229,9 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                     let dateCell = tableView.cellForRow(at: endsDateIndexPath)! as UITableViewCell
                     dateCell.detailTextLabel?.text = self.dateFormatForDate(date: self.selectedEndsDate!)
                 }else{
-                    cell.datePicker.date = self.selectedEndsDate!
+                    if let endsDate = self.selectedEndsDate {
+                        cell.datePicker.date = endsDate
+                    }
                 }
                 return cell
             }else{

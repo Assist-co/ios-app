@@ -77,6 +77,9 @@ class TaskService: NSObject {
                         }
                         completion(Task(dictionary: responseDict as NSDictionary), nil)
                     case .failure(let error):
+                        if let data = response.data{
+                            print("Error: \(String(data: data, encoding: String.Encoding.utf8)!)")
+                        }
                         completion(nil, error)
                     }
             }

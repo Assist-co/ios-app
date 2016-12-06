@@ -15,10 +15,10 @@ protocol TaskDataDelegate: class {
 class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextViewDelegate, UIGestureRecognizerDelegate, TaskDataDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UIPlaceholderTextView!
-    @IBOutlet weak var postBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     private var spinner: UIActivityIndicatorView!
     private var barButtonSpinner: UIBarButtonItem!
+    private var postBarButton: UIBarButtonItem!
     private var createTaskToolBarView: CreateTaskToolBarView!
     private var tagsTrayView: TagsTrayView!
     private var isFirstAppearance: Bool = true
@@ -151,16 +151,23 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func postTask(barButton: UIBarButtonItem){
+    func postTask(barButton: UIBarButtonItem){
         self.postSpinner(isSpinning: true)
         TaskService.createTask(taskDict: self.buildTaskPostObject()
         ) { (task: Task?, error: Error?) in
             self.postSpinner(isSpinning: false)
-            if let error = error {
-                // TODO: show client appropriate error
-                print(error.localizedDescription)
+            if error != nil {
+                let alert = UIAlertController(title: "Error",
+                                              message: "Please try again later.",
+                                              preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
+                    if self.isTagsTrayShowing{
+                        self.createTaskToolBarView.isHidden = true
+                    }
+                })
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
             } else {
-                // TODO: Post message to messaging api
                 self.dismiss(animated: true)
             }
         }
@@ -228,6 +235,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
             if let endsDate = self.taskInfo?.endDate {
                 taskDictionary["end_on"] = formatter.string(from: endsDate)
             }
+            if taskInfo.contacts.count > 0 {
+                var contacts: [[String:Any]] = []
+                for contact in taskInfo.contacts {
+                    contacts.append(contact.serialize(clientID: Client.currentUserID!))
+                }
+                taskDictionary["contacts"] = contacts
+            }
         }
         return taskDictionary
     }
@@ -277,6 +291,11 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         self.spinner.hidesWhenStopped = true
         self.barButtonSpinner = UIBarButtonItem(customView: self.spinner)
+        self.postBarButton = UIBarButtonItem(title: "Post",
+                                             style: .done,
+                                             target: self,
+                                             action: #selector(postTask(barButton:)))
+        self.navigationItem.rightBarButtonItem = self.postBarButton
         self.tagsTrayView = UINib(nibName: "TagsTrayView", bundle: nil)
             .instantiate(withOwner: nil, options: nil)[0] as! TagsTrayView
         self.tagsTrayView.frame.size.width = self.view.frame.size.width

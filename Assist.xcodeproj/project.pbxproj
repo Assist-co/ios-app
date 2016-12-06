@@ -58,6 +58,7 @@
 		85414BCC1DF4DEA100390A1F /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCB1DF4DEA100390A1F /* LocationTableViewCell.swift */; };
 		85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */; };
 		85414BD01DF5E91F00390A1F /* UIPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */; };
+		85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD11DF6517E00390A1F /* CNContactExtention.swift */; };
 		854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B30B71DEBFF680059DC61 /* ContactsService.swift */; };
 		857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */; };
 		857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */; };
@@ -155,6 +156,7 @@
 		85414BCB1DF4DEA100390A1F /* LocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeTableViewCell.swift; sourceTree = "<group>"; };
 		85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderTextView.swift; sourceTree = "<group>"; };
+		85414BD11DF6517E00390A1F /* CNContactExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContactExtention.swift; sourceTree = "<group>"; };
 		854B30B71DEBFF680059DC61 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsService.swift; path = API/AssistCo/ContactsService.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskLocationViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 				034051761DD43583005F6B82 /* Task.swift */,
 				034051781DD435B8005F6B82 /* Assistant.swift */,
 				8597AC2F1DF0AFA600C98D6B /* Contact.swift */,
+				85414BD11DF6517E00390A1F /* CNContactExtention.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
 				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
 				857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */,
+				85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */,
 				0307B6B01DEFF28C00D8A3FF /* CalendarViewController.swift in Sources */,
 				031300FD1DD9194200381716 /* SettingsViewController.swift in Sources */,
 				0340516F1DD42A18005F6B82 /* VoiceToTextClient.swift in Sources */,
