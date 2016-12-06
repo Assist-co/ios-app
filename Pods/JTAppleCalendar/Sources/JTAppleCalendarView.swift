@@ -126,6 +126,7 @@ open class JTAppleCalendarView: UIView {
     
     var lastIndexOffset: (IndexPath, UICollectionElementCategory)?
     
+    /// Informs when change in orientation
     open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if calendarIsAlreadyLoaded {
             setMinVisibleDate()
@@ -240,7 +241,7 @@ open class JTAppleCalendarView: UIView {
         }
     }
 
-    // Configure the scrolling behavior
+    /// Configure the scrolling behavior
     open var scrollingMode: ScrollingMode = .stopAtEachCalendarFrameWidth {
         didSet {
             switch scrollingMode {
@@ -502,8 +503,8 @@ open class JTAppleCalendarView: UIView {
         case .saturday: firstDayCalValue = 8
         default: firstDayCalValue = 7
         }
-        var firstWeekdayOfMonthIndex =
-            calendar.component(.weekday, from: date)
+
+        var firstWeekdayOfMonthIndex = calendar.component(.weekday, from: date)
         firstWeekdayOfMonthIndex -= 1
         // firstWeekdayOfMonthIndex should be 0-Indexed
         // push it modularly so that we take it back one day so that the
@@ -1054,7 +1055,7 @@ extension JTAppleCalendarView {
 //    func currentSection() -> Int? {
 //        return calendarViewLayout.sectionFromRectOffset(calendarView.contentOffset)
 //    }
-
+    /// Retrieves the current section
     public func currentSection() -> Int? {
         return minimumVisibleIndexPaths().cellInfo.indexPath?.section
     }

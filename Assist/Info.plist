@@ -42,5 +42,7 @@
 	</array>
 	<key>NSContactsUsageDescription</key>
 	<string>Your contacts will be used for completing tasks involving someone from your address book.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location will be used to provide a place for your tasks.</string>
 </dict>
 </plist>
