@@ -35,6 +35,7 @@ class TaskListTableViewController: UITableViewController {
     //MARK:- TableView Datasource
     
      public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
         if let tasksByDay = tasksByDay {
             
             let date = tasksByDay[section].0
@@ -54,10 +55,12 @@ class TaskListTableViewController: UITableViewController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
         return 30.0
     }
     
     public override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        
         if let headerView = view as? UITableViewHeaderFooterView {
             headerView.textLabel?.textAlignment = .center
         }

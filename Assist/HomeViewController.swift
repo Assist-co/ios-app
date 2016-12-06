@@ -164,7 +164,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             if lastMessage?.senderId != message?.senderId || !isMultiMessage {
                 cell.topMargin.constant = 8
             } else {
-                cell.topMargin.constant = 4
+                cell.topMargin.constant = 1
             }
         }
         

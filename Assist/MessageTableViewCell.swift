@@ -21,9 +21,9 @@ class MessageTableViewCell: UITableViewCell {
     
     override func draw(_ rect: CGRect) {
                 
-        let bubbleSpace = CGRect(x: bodyLabel.frame.minX - 10.0, y: bodyLabel.frame.minY - 10.0, width: bodyLabel.bounds.width + 20.0, height: bodyLabel.bounds.height + 20.0)
+        let bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0, y: bodyLabel.frame.minY - 8.0, width: bodyLabel.bounds.width + 16.0, height: bodyLabel.bounds.height + 16.0)
         
-        _ = UIBezierPath(roundedRect: bubbleSpace, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadii: CGSize(width: 20.0, height: 20.0))
+        _ = UIBezierPath(roundedRect: bubbleSpace, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadii: CGSize(width: 16.0, height: 16.0))
         
         let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 6.0)
         let color = message?.messageColor

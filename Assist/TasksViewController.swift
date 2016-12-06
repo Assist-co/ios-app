@@ -70,8 +70,6 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
             if self.currentTaskListType != .queued {
                 self.completedButton.backgroundColor = UIColor(hexString: "#3F4550ff")
                 self.queuedButton.backgroundColor = UIColor(hexString: "#256E93ff")
-                //self.completedButton.setTitleColor(UIColor.darkGray, for: .normal)
-                //self.queuedButton.setTitleColor(UIColor.white, for: .normal)
                 self.emptyStateLabel.isHidden = true
 
                 UIView.transition(with: self.taskListContainer, duration: 0.5, options: .transitionFlipFromRight, animations: {
@@ -165,9 +163,10 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
         self.completedTaskViewController.tasksByDay = self.tasksData.completedTasksByDate
         self.completedTaskViewController.tableView.reloadData()
         self.completedTaskViewController.tableView.layoutIfNeeded()
+        
     }
     
-    private func groupTasksByDate(inputTasks: [Task]) -> [(Date,[Task])] {
+    private func groupTasksByDate(inputTasks: [Task]) -> [(Date, [Task])] {
         var tasksByDate: [(Date, [Task])] = []
         if inputTasks.count > 0 {
             var currDate: Date = inputTasks[0].createdOn!
@@ -204,6 +203,7 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
                 self.tasksData.completedTasks = completed
                 self.tasksData.queuedTasksByDate = queuedTasksByDate
                 self.tasksData.completedTasksByDate = completedTasksByDate
+                
                 if queued.count == 0 {
                     self.emptyStateLabel.isHidden = false
                 }
