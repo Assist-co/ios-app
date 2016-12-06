@@ -339,12 +339,17 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
         let text = "\(mapItem.placemark.name!) \n" +
         "\(address)"
         let attrText = NSMutableAttributedString(string: text, attributes: [:])
+        let titlelocInt = 0
+        let titleLengthInt = mapItem.placemark.name!.characters.count
+        attrText.addAttribute(NSForegroundColorAttributeName,
+                               value: UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1),
+                               range: NSRange(location: titlelocInt, length:titleLengthInt))
         if address.characters.count > 0 {
-            let locInt = (mapItem.placemark.name?.characters.count)!
-            let lengthInt = address.characters.count
+            let subLocInt = (mapItem.placemark.name?.characters.count)! + 2
+            let subLengthInt = address.characters.count
             attrText.addAttribute(NSForegroundColorAttributeName,
-                                  value: UIColor.darkGray,
-                                  range: NSRange(location: locInt, length:lengthInt))
+                                  value: UIColor(red: 170/255, green: 170/255, blue: 170/255, alpha: 1),
+                                  range: NSRange(location: subLocInt, length:subLengthInt))
         }
         return attrText
     }
