@@ -11,5 +11,5 @@ import UIKit
 class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var locationTextView: UITextView!
     @IBOutlet weak var locationPlaceholderLabel: UILabel!
-
+    @IBOutlet weak var locationImageView: UIImageView!
 }

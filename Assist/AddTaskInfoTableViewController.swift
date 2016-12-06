@@ -31,6 +31,8 @@ fileprivate enum DatePickerType {
 
 class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, VENTokenFieldDelegate, VENTokenFieldDataSource, UIPickerViewDelegate {
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var locationImageVIew: UIImageView!
+    @IBOutlet weak var contactsImageView: UIImageView!
     private var taskInfo = TaskInfo(){
         didSet{
             if taskInfo.location == nil ||
@@ -185,6 +187,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
             }else{
                 cell.contactsPlaceholderLabel.isHidden = false
             }
+            cell.contactsImageView.tintColor = UIColor(red: 37/255, green: 110/255, blue: 147/255, alpha: 1)
             return cell
         }
         else if indexPath.section == 1 {
@@ -197,6 +200,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                 cell.locationPlaceholderLabel.isHidden = false
                 cell.locationTextView.attributedText = nil
             }
+            cell.locationImageView.tintColor = UIColor(red: 37/255, green: 110/255, blue: 147/255, alpha: 1)
             return cell
         }
         else {
@@ -225,7 +229,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                         self.selectedEndsDate = self.selectedStartsDate?.addingTimeInterval((60 * 60 * 1))
                     }
                     cell.datePicker.date = self.selectedEndsDate!
-                    let endsDateIndexPath = IndexPath(row: indexPath.row, section: indexPath.section)
+                    let endsDateIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
                     let dateCell = tableView.cellForRow(at: endsDateIndexPath)! as UITableViewCell
                     dateCell.detailTextLabel?.text = self.dateFormatForDate(date: self.selectedEndsDate!)
                 }else{
@@ -233,6 +237,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                         cell.datePicker.date = endsDate
                     }
                 }
+                cell.datePicker.tintColor = UIColor(red: 37/255, green: 110/255, blue: 147/255, alpha: 1)
                 return cell
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
@@ -281,6 +286,10 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     
     fileprivate func setup(){
         self.tableView.contentInset = UIEdgeInsetsMake(-36, 0, 0, 0)
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        navigationController!.navigationBar.isTranslucent = false
+
     }
     
     fileprivate func manageDatePickerRow(){

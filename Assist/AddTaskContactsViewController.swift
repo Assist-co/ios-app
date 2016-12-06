@@ -140,7 +140,12 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         self.contactsTokenField.dataSource = self
         self.contactsTokenField.placeholderText = "First name, last name, email"
         self.contactsTokenField.toLabelText = "To:"
-        self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.contactsTokenField.tintColor = UIColor.white
+        self.contactsTokenField.toLabelTextColor = UIColor.white
+        self.contactsTokenField.inputTextFieldTextColor = UIColor.white
+        self.contactsTokenField.backgroundColor = UIColor(red: 24/255, green: 26/255, blue: 29/255, alpha: 1)
+        self.contactsTokenField.setColorScheme(UIColor.white)
+        self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
         self.spinner.hidesWhenStopped = true
         self.spinner.frame.origin.x = self.saveButton.frame.width/4
         self.spinner.frame.origin.y = self.saveButton.frame.height/4
