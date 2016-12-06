@@ -182,6 +182,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             } else {
+                if let task = task{
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "newTaskCreated"), object: task as Any)
+                }
                 self.dismiss(animated: true)
             }
         }

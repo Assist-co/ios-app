@@ -73,6 +73,9 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
         }
         cell.textLabel?.text = mapItem.placemark.name
         cell.detailTextLabel?.text = address
+        cell.textLabel?.textColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        cell.detailTextLabel?.textColor = UIColor(red: 170/255, green: 170/255, blue: 170/255,
+                                                  alpha: 1)
         return cell
     }
     
@@ -85,6 +88,8 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     //MARK:- Utils
     
     fileprivate func setup(){
+        self.searchBar.tintColor = UIColor.white
+        self.searchBar.barTintColor = UIColor(red: 24/255, green: 26/255, blue: 29/255, alpha: 1)
         self.searchBar.placeholder = "Search Location"
         LocationService.sharedInstance.requestUserLocation()
         self.searchingState(isSpinning: true)

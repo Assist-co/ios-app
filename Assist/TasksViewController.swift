@@ -47,9 +47,19 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if !self.isUISetup {
+            self.isUISetup = true
+            self.setupMainThreadOperations()
+        }
+    }
+    
+    override func setupMainThreadOperations() {
         self.setup()
         self.loadData()
-        
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
         navigationController!.navigationBar.isTranslucent = false
@@ -152,6 +162,22 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
         }
     }
     
+    //MARK:- Notification
+    
+    internal func newTaskCreated(notification: Notification) {
+        if notification.name.rawValue == "newTaskCreated" {
+            let task = notification.object as! Task
+            if task.state! == .completed {
+                self.tasksData.completedTasks?.append(task)
+                self.tasksData.completedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.completedTasks!)
+            }else{
+                self.tasksData.queuedTasks?.append(task)
+                self.tasksData.queuedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.queuedTasks!)
+            }
+            self.reloadTaskLists()
+        }
+    }
+    
     //MARK:- Utils
     
     fileprivate func reloadTaskLists(){
@@ -240,6 +266,10 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
     }
     
     fileprivate func setup(){
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(newTaskCreated(notification:)),
+                                               name: Notification.Name(rawValue: "newTaskCreated"),
+                                               object: nil)
         let storyboard = UIStoryboard(name: "TaskManager", bundle: nil)
         self.queuedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController
         self.completedTaskViewController = storyboard.instantiateViewController(withIdentifier: "taskListTableViewController") as! TaskListTableViewController

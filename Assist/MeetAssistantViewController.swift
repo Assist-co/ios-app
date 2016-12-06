@@ -10,9 +10,12 @@ import UIKit
 
 class MeetAssistantViewController: UIViewController {
     @IBOutlet weak var letsGoButton: UIButton!
-
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var assistantImageView: UIImageView!
+    
     @IBAction func buttonPress(_ sender: AnyObject) {
+        self.letsGoButton.setTitle("", for: .normal)
+        self.spinner.startAnimating()
         let slidingViewController = UIStoryboard(name: "Sliding", bundle: nil).instantiateViewController(withIdentifier: "SlidingViewController")
         
         
@@ -30,7 +33,6 @@ class MeetAssistantViewController: UIViewController {
             if let calendarController = calendarNavigationController.childViewControllers.first as? SlidableViewController {
                 calendarController.slidingViewController = svc
             }
-
             svc.mainViewController = homeNavigationController
             svc.leftViewController = taskManagementNavigationController
             svc.rightViewController = calendarNavigationController

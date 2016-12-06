@@ -12,6 +12,6 @@ import VENTokenField
 class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var contactsTextView: VENTokenField!
     @IBOutlet weak var contactsPlaceholderLabel: UILabel!
-
+    @IBOutlet weak var contactsImageView: UIImageView!
 
 }
