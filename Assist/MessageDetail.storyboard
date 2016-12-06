@@ -305,7 +305,6 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
                                             <outlet property="delegate" destination="tHU-Eh-Rl2" id="u2X-tQ-nRk"/>
-                                            <outletCollection property="gestureRecognizers" destination="65o-I8-Mjk" appends="YES" id="cuX-pS-Ip8"/>
                                         </connections>
                                     </textView>
                                 </subviews>
@@ -353,7 +352,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRm-Fg-ldp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.10000000000000001" id="65o-I8-Mjk"/>
             </objects>
             <point key="canvasLocation" x="1200.8" y="1159.9700149925038"/>
         </scene>
