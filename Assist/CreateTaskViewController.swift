@@ -16,6 +16,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textView: UIPlaceholderTextView!
     @IBOutlet weak var postBarButton: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    private var spinner: UIActivityIndicatorView!
+    private var barButtonSpinner: UIBarButtonItem!
     private var createTaskToolBarView: CreateTaskToolBarView!
     private var tagsTrayView: TagsTrayView!
     private var isFirstAppearance: Bool = true
@@ -149,8 +152,10 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     @IBAction func postTask(barButton: UIBarButtonItem){
+        self.postSpinner(isSpinning: true)
         TaskService.createTask(taskDict: self.buildTaskPostObject()
         ) { (task: Task?, error: Error?) in
+            self.postSpinner(isSpinning: false)
             if let error = error {
                 // TODO: show client appropriate error
                 print(error.localizedDescription)
@@ -187,6 +192,23 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     //MARK:- Utils
+    
+    fileprivate func postSpinner(isSpinning: Bool){
+        if isSpinning {
+            self.cancelBarButton.isEnabled = false
+            self.textView.isUserInteractionEnabled = false
+            self.navigationItem.rightBarButtonItem = self.barButtonSpinner
+            self.createTaskToolBarView.isUserInteractionEnabled = false
+            self.spinner.startAnimating()
+        }else{
+            self.cancelBarButton.isEnabled = true
+            self.textView.isUserInteractionEnabled = true
+            self.spinner.stopAnimating()
+            self.navigationItem.rightBarButtonItem = self.postBarButton
+            self.createTaskToolBarView.isUserInteractionEnabled = true
+            self.spinner.stopAnimating()
+        }
+    }
     
     fileprivate func buildTaskPostObject() -> [String:Any]{
         var taskDictionary: [String:Any] = ["client_id": Client.currentUserID! as Any,
@@ -252,6 +274,9 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     fileprivate func setup(){
+        self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.spinner.hidesWhenStopped = true
+        self.barButtonSpinner = UIBarButtonItem(customView: self.spinner)
         self.tagsTrayView = UINib(nibName: "TagsTrayView", bundle: nil)
             .instantiate(withOwner: nil, options: nil)[0] as! TagsTrayView
         self.tagsTrayView.frame.size.width = self.view.frame.size.width

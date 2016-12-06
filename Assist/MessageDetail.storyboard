@@ -345,6 +345,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelBarButton" destination="XeE-Af-nLp" id="w0E-6e-bTS"/>
                         <outlet property="postBarButton" destination="Xgv-Dt-g3C" id="lqV-ba-d2v"/>
                         <outlet property="scrollView" destination="vAI-nC-7qU" id="wqh-gQ-i5J"/>
                         <outlet property="textView" destination="f7o-jE-bv8" id="0cx-Q9-mWl"/>
