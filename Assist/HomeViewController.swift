@@ -62,7 +62,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
     
     func showMessageView(message: String?) {
-        self.shouldRefresh = true
+        //self.shouldRefresh = true
         self.performSegue(withIdentifier: "homeToCreateTaskSegue", sender: self)
     }
     

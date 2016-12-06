@@ -46,9 +46,8 @@ class VoiceToTextViewController: UIViewController {
 
     @IBAction func onVoiceButtonClick(_ sender: UIButton) {
         if (VoiceToTextClient.sharedInstance.recordToggle(outputView: voiceTextLabel)) {
-            dismiss(animated: true, completion: {
-                self.homeViewController?.showMessageView(message: self.voiceTextLabel.text! + "\n")
-            })
+            dismiss(animated: false, completion: nil)
+            self.homeViewController?.showMessageView(message: self.voiceTextLabel.text! + "\n")
             
         }
     }

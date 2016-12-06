@@ -52,6 +52,11 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        
+        
+        navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
+        navigationController!.navigationBar.isTranslucent = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,7 +139,6 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                 self.createTaskToolBarView.isHidden = true
             })
             self.showTagsTrayView()
-            
         }
     }
     
@@ -147,14 +151,17 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         for button in self.taskTagButtons{
             if button != taskButton {
                 button.superview?.backgroundColor = UIColor.clear
-            }else{
-                button.superview?.backgroundColor = UIColor.red
+            } else {
+                button.superview?.backgroundColor = UIColor(hexString: "#666666ff")
             }
         }
         self.performSegue(withIdentifier: "addTaskInfoSegue", sender: self)
     }
     
     @IBAction func dismissCreateTask(barButton: UIBarButtonItem){
+        self.createTaskToolBarView.isHidden = true
+        self.createTaskToolBarView.alpha = 0
+        self.textView.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -302,6 +309,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                                              style: .done,
                                              target: self,
                                              action: #selector(postTask(barButton:)))
+        self.postBarButton.tintColor = UIColor(hexString: "#EBEBF1ff")
         self.navigationItem.rightBarButtonItem = self.postBarButton
         self.tagsTrayView = UINib(nibName: "TagsTrayView", bundle: nil)
             .instantiate(withOwner: nil, options: nil)[0] as! TagsTrayView
@@ -317,7 +325,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         self.textView.becomeFirstResponder()
     }
     
-    fileprivate func toolBarBuilder() -> UIView{
+    fileprivate func toolBarBuilder() -> UIView {
         self.createTaskToolBarView = UINib(nibName: "CreateTaskToolBarView", bundle: nil)
             .instantiate(withOwner: nil, options: nil)[0] as! CreateTaskToolBarView
         self.createTaskToolBarView.frame.size.width = self.view.frame.size.width
@@ -341,7 +349,6 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                              action: #selector(taskTagButtonPressend(taskButton:)),
                              for: .touchUpInside)
         }
-
     }
     
     // MARK: - Navigation
