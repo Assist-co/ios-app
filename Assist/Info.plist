@@ -20,6 +20,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Allow Assitant to add events to your calendar.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Your contacts will be used for completing tasks involving someone from your address book.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location will be used to provide a place for your tasks.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your microphone will be used to record your speech when you want to create tasks quickly.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Speech recognition is used for hands free task creation.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -28,21 +38,11 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Your microphone will be used to record your speech when you want to create tasks quickly.</string>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>Speech recognition is used for hands free task creation.</string>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSContactsUsageDescription</key>
-	<string>Your contacts will be used for completing tasks involving someone from your address book.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location will be used to provide a place for your tasks.</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 </dict>
 </plist>
