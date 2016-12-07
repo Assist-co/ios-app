@@ -138,7 +138,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             // contacts
-            return 97.0
+            return 48.0
         }else if indexPath.section == 2 {
             // date
             if self.currDatePickerShowing != .none {
@@ -149,7 +149,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                 }
             }
         }
-        return 40.0
+        return 48.0
     }
     
     //MARK: UITableViewDatasource
@@ -182,6 +182,7 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
             cell.contactsTextView.toLabelText = nil
             cell.contactsTextView.toLabel.text = ""
             cell.contactsTextView.placeholderText = ""
+            cell.contactsTextView.tintColor = UIColor.white
             if self.taskInfo.contacts.count > 0 {
                 cell.contactsPlaceholderLabel.isHidden = true
             }else{
@@ -208,6 +209,10 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
             if self.currDatePickerShowing != .none {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "datePickerCell",
                                                          for: indexPath) as! DateTimeTableViewCell
+                cell.datePicker.backgroundColor = UIColor(hexString: "#2C2F34ff")
+                cell.datePicker.tintColor = UIColor.white
+                cell.datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+                cell.datePicker.setValue(false, forKey: "highlightsToday")
                 if indexPath.row == 1 && self.isStartDateEmpty{
                     self.isStartDateEmpty = false
                     if self.isEndDateEmpty {
@@ -242,13 +247,13 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
             }else{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dateCell", for: indexPath)
                 if indexPath.row == 0 {
-                    cell.textLabel?.text = "Starts"
+                    cell.textLabel?.text = "Desired Start"
                     cell.tag = 300
                     if let startsDate = self.selectedStartsDate {
                         cell.detailTextLabel?.text = self.dateFormatForDate(date: startsDate)
                     }
                 }else if indexPath.row == 1 {
-                    cell.textLabel?.text = "Ends"
+                    cell.textLabel?.text = "Desired End"
                     cell.tag = 400
                     if let endsDate = self.selectedEndsDate {
                         cell.detailTextLabel?.text = self.dateFormatForDate(date: endsDate)

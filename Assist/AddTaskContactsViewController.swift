@@ -78,6 +78,10 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
+    }
+    
     //MARK:- VENTokenFieldDelegate
     
     func tokenField(_ tokenField: VENTokenField, didChangeText text: String?) {

@@ -14,4 +14,10 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var contactsPlaceholderLabel: UILabel!
     @IBOutlet weak var contactsImageView: UIImageView!
 
+    override func awakeFromNib() {
+        contactsTextView.tintColor = UIColor.white
+        contactsTextView.toLabelTextColor = UIColor.white
+        contactsTextView.inputTextFieldTextColor = UIColor.white
+        contactsTextView.setColorScheme(UIColor.white)
+    }
 }
