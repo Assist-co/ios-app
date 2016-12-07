@@ -74,6 +74,7 @@ class MessagingClient: NSObject, SBDChannelDelegate {
         
         previousMessageQuery?.loadPreviousMessages(withLimit: SendbirdConstants.MESSAGE_LIMIT, reverse: true, completionHandler: {
             (messages: [SBDBaseMessage]?, error: SBDError?) -> Void in
+            let dataMessages = messages as? [SBDUserMessage]
             if let messages = messages {
                 onMessagesReceived(messages as! [SBDUserMessage])
             }
@@ -83,6 +84,12 @@ class MessagingClient: NSObject, SBDChannelDelegate {
     func postMessage(message: String) {
         currentChannel?.sendUserMessage(message, completionHandler: {
             (userMessage: SBDUserMessage?, error: SBDError?) -> Void in
+            self.listener?.didReceiveMessage(message: Message(sbdUserMessage: userMessage!))
+        })
+    }
+    
+    func postTaskMessage(task: Task){
+        currentChannel?.sendUserMessage(task.text!, data: "\(task.id!)", customType: task.type!.permalink!, completionHandler: { (userMessage: SBDUserMessage?, error: SBDError?) in
             self.listener?.didReceiveMessage(message: Message(sbdUserMessage: userMessage!))
         })
     }
