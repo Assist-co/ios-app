@@ -83,7 +83,7 @@ class MessagingClient: NSObject, SBDChannelDelegate {
     func postMessage(message: String) {
         currentChannel?.sendUserMessage(message, completionHandler: {
             (userMessage: SBDUserMessage?, error: SBDError?) -> Void in
-            
+            self.listener?.didReceiveMessage(message: Message(sbdUserMessage: userMessage!))
         })
     }
     
