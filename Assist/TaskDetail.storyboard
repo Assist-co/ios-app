@@ -240,12 +240,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksD-zz-bPK">
-<<<<<<< HEAD
                                 <color key="backgroundColor" red="0.22179678851464449" green="0.23887146573781159" blue="0.26869928638140361" alpha="1" colorSpace="calibratedRGB"/>
-=======
-                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
-                                <color key="backgroundColor" red="0.18634161129331722" green="0.19864304731113699" blue="0.22368726715063436" alpha="1" colorSpace="calibratedRGB"/>
->>>>>>> 091028463e72ca08f55fb9dd851e8f98adc43519
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Vjz-Zs-ymb"/>
                                 </constraints>
