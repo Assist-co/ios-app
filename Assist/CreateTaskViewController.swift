@@ -166,29 +166,34 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     }
     
     func postTask(barButton: UIBarButtonItem){
-        self.postSpinner(isSpinning: true)
-        TaskService.createTask(taskDict: self.buildTaskPostObject()
-        ) { (task: Task?, error: Error?) in
-            self.postSpinner(isSpinning: false)
-            if error != nil {
-                let alert = UIAlertController(title: "Error",
-                                              message: "Please try again later.",
-                                              preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
-                    if self.isTagsTrayShowing{
-                        self.createTaskToolBarView.isHidden = true
+        if self.selectedTaskTypeButton != nil {
+            self.postSpinner(isSpinning: true)
+            TaskService.createTask(taskDict: self.buildTaskPostObject()
+            ) { (task: Task?, error: Error?) in
+                self.postSpinner(isSpinning: false)
+                if error != nil {
+                    let alert = UIAlertController(title: "Error",
+                                                  message: "Please try again later.",
+                                                  preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
+                        if self.isTagsTrayShowing{
+                            self.createTaskToolBarView.isHidden = true
+                        }
+                    })
+                    alert.addAction(okAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    if let task = task{
+                        MessagingClient.sharedInstance.postTaskMessage(task: task)
+                        CalendarService.sharedInstance.createEvent(task: task)
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "newTaskCreated"), object: task as Any)
                     }
-                })
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
-            } else {
-                if let task = task{
-                    MessagingClient.sharedInstance.postTaskMessage(task: task)
-                    CalendarService.sharedInstance.createEvent(task: task)
-                    NotificationCenter.default.post(name: Notification.Name(rawValue: "newTaskCreated"), object: task as Any)
+                    self.dismiss(animated: true)
                 }
-                self.dismiss(animated: true)
             }
+        }else{
+            MessagingClient.sharedInstance.postMessage(message: self.textView.text)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
