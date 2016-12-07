@@ -17,8 +17,8 @@ class AuthService: NSObject {
 
     // Response is Token Object
     class func signUpClient(
-        signUpDict: Dictionary<String, AnyObject>,
-        completion: @escaping (Dictionary<String, AnyObject>?, Error?) -> ()) {
+        signUpDict: Dictionary<String, Any>,
+        completion: @escaping (Dictionary<String, Any>?, Error?) -> ()) {
         
         AssistClient.sharedInstance.session.request(
             "\(self.baseURLString!)/signup",
@@ -27,8 +27,11 @@ class AuthService: NSObject {
             ).validate().responseJSON { (response) in
                 switch response.result {
                 case .success:
-                    completion(response.result.value as? [String : AnyObject], nil)
+                    completion(response.result.value as? [String : Any], nil)
                 case .failure(let error):
+                    if let data = response.data{
+                        print("Error: \(String(data: data, encoding: String.Encoding.utf8)!)")
+                    }
                     completion(nil, error)
                 }
         }

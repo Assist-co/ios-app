@@ -74,7 +74,6 @@ class MessagingClient: NSObject, SBDChannelDelegate {
         
         previousMessageQuery?.loadPreviousMessages(withLimit: SendbirdConstants.MESSAGE_LIMIT, reverse: true, completionHandler: {
             (messages: [SBDBaseMessage]?, error: SBDError?) -> Void in
-            let dataMessages = messages as? [SBDUserMessage]
             if let messages = messages {
                 onMessagesReceived(messages as! [SBDUserMessage])
             }
