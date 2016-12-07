@@ -78,6 +78,7 @@ class TaskService: NSObject {
                         
                         let generatedTask = Task(dictionary: responseDict as NSDictionary)
                         
+                        MessagingClient.sharedInstance.postMessage(message: generatedTask.text)
                         CalendarService.sharedInstance.createEvent(task: generatedTask)
                         completion(generatedTask, nil)
                     case .failure(let error):
@@ -127,7 +128,6 @@ class TaskService: NSObject {
                 completionHandler: { (response) in
                     switch response.result {
                     case .success:
-                        
                         CalendarService.sharedInstance.removeEvent(task: task)
                         completion(true,nil)
                     case .failure(let error):
