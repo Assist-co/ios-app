@@ -371,8 +371,10 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         self.messageToolbar.isHidden = false
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = keyboardFrame.size.height
-            if (self.messages?.count)! > 3 {
-                self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+            if let messages = self.messages {
+                if messages.count > 3 {
+                    self.tableViewTopMargin.constant = -(keyboardFrame.size.height - 40)
+                }
             }
             self.view.layoutIfNeeded()
         }
@@ -384,8 +386,10 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         self.messageToolbar.isHidden = true
         UIView.animate(withDuration: duration) { () -> Void in
             self.messageToolbarConstraint.constant = self.messageToolbarBottomConstraintInitialValue!
-            if (self.messages?.count)! > 3 {
-                self.tableViewTopMargin.constant = 0
+            if let messages = self.messages {
+                if messages.count > 3 {
+                    self.tableViewTopMargin.constant = 0
+                }
             }
             self.view.layoutIfNeeded()
         }

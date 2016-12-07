@@ -78,7 +78,7 @@ class TaskService: NSObject {
                         
                         let generatedTask = Task(dictionary: responseDict as NSDictionary)
                         
-                        MessagingClient.sharedInstance.postMessage(message: generatedTask.text)
+                        MessagingClient.sharedInstance.postMessage(message: generatedTask.text!)
                         CalendarService.sharedInstance.createEvent(task: generatedTask)
                         completion(generatedTask, nil)
                     case .failure(let error):

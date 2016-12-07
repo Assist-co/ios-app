@@ -29,7 +29,7 @@ class Task: NSObject {
     var contacts: [Contact]?
     var isComplete: Bool? = false
     var state: TaskState? = .ready
-    var location: String? // Format: (1.2323423423, -33333.3333)
+    var location: String? // Format: (1.2323423423,-33333.3333)
     
     override var description: String{
         return "Task: \(self.id!)"

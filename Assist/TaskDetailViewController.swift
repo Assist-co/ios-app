@@ -17,7 +17,12 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var createdOnLabel: UILabel!
     @IBOutlet weak var taskDescription: UILabel!
     @IBOutlet weak var taskType: UILabel!
-
+    @IBOutlet weak var contactsView: UIView!
+    @IBOutlet weak var addressView: UIView!
+    @IBOutlet weak var timeView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
     var delegate: TaskListTableViewController?
     
     //MARK:- View LifeCycle
@@ -27,11 +32,13 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
         self.styleView()
         self.populateOutlets()
         
-        if task?.type?.permalink == "schedule" {
-            let initialLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
-            let region =
-            MKCoordinateRegionMakeWithDistance(
-            initialLocation.coordinate, 2000, 2000)
+        if let location = task?.location {
+            var latlon = location.components(separatedBy: ",")
+            latlon[0].remove(at: latlon[0].startIndex)
+            latlon[1] = latlon[1].substring(to: latlon[1].index(before: latlon[1].endIndex))
+            let initialLocation = CLLocation(latitude: CLLocationDegrees(latlon[0])!, longitude: CLLocationDegrees(latlon[1])!)
+            let region = MKCoordinateRegionMakeWithDistance(
+                initialLocation.coordinate, 2000, 2000)
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude)
             mapView.addAnnotation(annotation)
@@ -42,14 +49,41 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
         } else {
             mapView.isHidden = true
         }
+        
+        /* // UNCOMMENT WHEN WE CORRECTLY SAVE TASK STARTON
+        if (task?.startOn) != nil {
+            timeView.isHidden = false
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            formatter.timeStyle = .none
+            dateLabel.text = formatter.string(from: (task?.startOn)!)
+        } else {
+            timeView.isHidden = true
+        }*/
+        
+        /* // UNCOMMENT WHEN WE CORRECTLY SAVE CONTACTS
+        if let contacts = task?.contacts {
+            if contacts.count > 0 {
+                contactsView.isHidden = false
+            } else {
+                contactsView.isHidden = true
+            }
+        } else {
+            contactsView.isHidden = true
+        }*/
+        
+        
+        if task?.location != nil {
+            addressView.isHidden = false
+        } else {
+            addressView.isHidden = true
+        }
     }
     
     //MARK:- IB Outlet Methods
     
     @IBAction func onBackTap(_ sender: AnyObject) {
-        self.dismiss(animated: true) { 
-            
-        }
+        self.dismiss(animated: true) {}
     }
     
     @IBAction func onCancelTaskTap(_ sender: AnyObject) {
