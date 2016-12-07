@@ -9,12 +9,40 @@
 import UIKit
 import JTAppleCalendar
 
-class CalendarViewController: SlidableViewController {
+class CalendarViewController: SlidableViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var tasks: [Task]?
+    var filteredTasks: [Task]?
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     
+    @IBOutlet weak var calendarEventsTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView();
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
+            self.tasks = tasks
+        }
+    }
+    
+    private func setupTableView() {
+        calendarEventsTableView.dataSource = self;
+        calendarEventsTableView.delegate = self;
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredTasks?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = calendarEventsTableView.dequeueReusableCell(withIdentifier: "CalendarTableCellTableViewCell", for: indexPath) as! CalendarTableCellTableViewCell
+        
+        if let task = self.filteredTasks?[indexPath.row] {
+            cell.descriptionLabel.text = task.text
+        }
+        
+        return cell
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,11 +126,15 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if cellState.isSelected {
             myCustomCell.selectedDate.isHidden = false
         }
+        
+        self.filteredTasks = self.tasks?.filter({ ($0.startOn != nil) && Calendar.current.isDate($0.startOn!, equalTo: date, toGranularity: .day) })
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         let myCustomCell = cell as! CalendarCellView
         myCustomCell.selectedDate.isHidden = true
+        
+        self.filteredTasks = nil
     }
     
     // This sets the height of your header

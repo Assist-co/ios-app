@@ -75,7 +75,6 @@ class TaskService: NSObject {
                             completion(nil, nil)
                             return
                         }
-                        
                         let generatedTask = Task(dictionary: responseDict as NSDictionary)
                         
                         MessagingClient.sharedInstance.postMessage(message: generatedTask.text!)

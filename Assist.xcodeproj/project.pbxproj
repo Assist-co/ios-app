@@ -62,6 +62,9 @@
 		85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */; };
 		85414BD01DF5E91F00390A1F /* UIPlaceholderTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */; };
 		85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD11DF6517E00390A1F /* CNContactExtention.swift */; };
+		85414BD61DF7D12800390A1F /* MessageTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD51DF7D12800390A1F /* MessageTaskTableViewCell.swift */; };
+		85414BD81DF7F66D00390A1F /* MessageBubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD71DF7F66D00390A1F /* MessageBubbleTableViewCell.swift */; };
+		85414BDA1DF8138900390A1F /* MessageTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85414BD91DF8138900390A1F /* MessageTaskButton.swift */; };
 		854B30B81DEBFF680059DC61 /* ContactsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854B30B71DEBFF680059DC61 /* ContactsService.swift */; };
 		857754F71DF3884D00EBAC7C /* AddTaskLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */; };
 		857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857754F81DF390F500EBAC7C /* AddTaskContactsViewController.swift */; };
@@ -168,6 +171,9 @@
 		85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeTableViewCell.swift; sourceTree = "<group>"; };
 		85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPlaceholderTextView.swift; sourceTree = "<group>"; };
 		85414BD11DF6517E00390A1F /* CNContactExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContactExtention.swift; sourceTree = "<group>"; };
+		85414BD51DF7D12800390A1F /* MessageTaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTaskTableViewCell.swift; sourceTree = "<group>"; };
+		85414BD71DF7F66D00390A1F /* MessageBubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubbleTableViewCell.swift; sourceTree = "<group>"; };
+		85414BD91DF8138900390A1F /* MessageTaskButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTaskButton.swift; sourceTree = "<group>"; };
 		854B30B71DEBFF680059DC61 /* ContactsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsService.swift; path = API/AssistCo/ContactsService.swift; sourceTree = "<group>"; };
 		8552ED586C4FA516FB793020 /* Pods-Assist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.debug.xcconfig"; sourceTree = "<group>"; };
 		857754F61DF3884D00EBAC7C /* AddTaskLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskLocationViewController.swift; sourceTree = "<group>"; };
@@ -373,6 +379,9 @@
 				85414BCD1DF4E20100390A1F /* DateTimeTableViewCell.swift */,
 				85414BCF1DF5E91F00390A1F /* UIPlaceholderTextView.swift */,
 				0331B6361DF797DC00FD42EE /* SearchResultTableViewCell.swift */,
+				85414BD51DF7D12800390A1F /* MessageTaskTableViewCell.swift */,
+				85414BD71DF7F66D00390A1F /* MessageBubbleTableViewCell.swift */,
+				85414BD91DF8138900390A1F /* MessageTaskButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -510,6 +519,7 @@
 				TargetAttributes = {
 					034051391DD4295D005F6B82 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2N9MSLMEL7;
 						ProvisioningStyle = Automatic;
 					};
 					0340514D1DD4295D005F6B82 = {
@@ -737,6 +747,7 @@
 				8597AC341DF2492F00C98D6B /* CreateTaskViewController.swift in Sources */,
 				853C9E321DF27A7700AC0CEB /* TagsTrayView.swift in Sources */,
 				031301051DD9363500381716 /* SignUpMoreDetailsViewController.swift in Sources */,
+				85414BD61DF7D12800390A1F /* MessageTaskTableViewCell.swift in Sources */,
 				D44E02A41DF3828A00ABF5EB /* SlidingViewController.swift in Sources */,
 				D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */,
 				85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */,
@@ -745,6 +756,7 @@
 				031301071DD9369000381716 /* MeetAssistantViewController.swift in Sources */,
 				034051751DD4356B005F6B82 /* Client.swift in Sources */,
 				85B318B41DEB805C007E0DBF /* Message.swift in Sources */,
+				85414BD81DF7F66D00390A1F /* MessageBubbleTableViewCell.swift in Sources */,
 				859B55431DDA149C00CBD957 /* AssistantTaskType.swift in Sources */,
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
 				85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */,
@@ -759,6 +771,7 @@
 				0307B6B81DF3F7BA00D8A3FF /* CalendarTableCellTableViewCell.swift in Sources */,
 				0340517F1DD43855005F6B82 /* UIColorExtension.swift in Sources */,
 				034F543B1DDAD9E10080F599 /* TaskService.swift in Sources */,
+				85414BDA1DF8138900390A1F /* MessageTaskButton.swift in Sources */,
 				857754F91DF390F500EBAC7C /* AddTaskContactsViewController.swift in Sources */,
 				85414BD21DF6517E00390A1F /* CNContactExtention.swift in Sources */,
 				0307B6B01DEFF28C00D8A3FF /* CalendarViewController.swift in Sources */,
@@ -933,6 +946,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2N9MSLMEL7;
 				INFOPLIST_FILE = Assist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assist;
@@ -947,6 +961,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2N9MSLMEL7;
 				INFOPLIST_FILE = Assist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assist;

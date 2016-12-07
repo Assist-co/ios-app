@@ -87,6 +87,12 @@ class MessagingClient: NSObject, SBDChannelDelegate {
         })
     }
     
+    func postTaskMessage(task: Task){
+        currentChannel?.sendUserMessage(task.text!, data: "\(task.id!)", customType: task.type!.permalink!, completionHandler: { (userMessage: SBDUserMessage?, error: SBDError?) in
+            self.listener?.didReceiveMessage(message: Message(sbdUserMessage: userMessage!))
+        })
+    }
+    
     func channel(_ sender: SBDBaseChannel, didReceive message: SBDBaseMessage) {
         if let message = message as? SBDUserMessage {
             listener?.didReceiveMessage(message: Message(sbdUserMessage: message))

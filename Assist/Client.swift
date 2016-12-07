@@ -9,13 +9,15 @@
 import UIKit
 
 class Client: NSObject {
-    #if DEBUG
-    static var currentUser: Client? = Client(dictionary: ["id": 2, "first_name":"Johnny", "last_name": "Appleseed", "email": "jappleseed@apple.com", "phone":"13477925956", "date_of_birth": "1991-04-25", "profession": "engineer", "gender": "male"] )
+    static var currentUser: Client? = Client(dictionary: ["id": 2,
+                                                          "first_name":"Johnny", "last_name": "Appleseed",
+                                                          "email": "jappleseed@apple.com", "phone":"13477925956",
+                                                          "date_of_birth": "1991-04-25", "profession": "engineer",
+                                                          "gender": "male"] )
     static var currentUserID: Int? = 2
-    #else
-    static var currentUser: Client?
-    static var currentUserID: Int?
-    #endif
+    // for testing messaging api
+    static var currentID:String = "testclient"
+
     var id: Int!
     var firstName: String!
     var lastName: String!
@@ -33,9 +35,6 @@ class Client: NSObject {
     var dateOfBirth: Date!
     var createdOn: Date!
     var profilePicURL: URL?
-    
-    // for testing messaging api
-    static let currentID:String = "testclient"
     
     init(dictionary: NSDictionary) {
         self.id = dictionary["id"] as? Int

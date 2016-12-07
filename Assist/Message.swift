@@ -14,6 +14,8 @@ class Message: NSObject {
     var id: Int64?
     var senderId: String?
     var body: String?
+    var customType: String?
+    var data: String?
     var createdAt: Date?
     var messageColor: UIColor? {
         get {
@@ -42,6 +44,8 @@ class Message: NSObject {
         self.id = sbdUserMessage.messageId
         self.senderId = sbdUserMessage.sender?.userId
         self.body = sbdUserMessage.message
+        self.customType = sbdUserMessage.customType
+        self.data = sbdUserMessage.data
         self.createdAt =  Date(timeIntervalSince1970: TimeInterval(sbdUserMessage.createdAt / 1000))
     }
     

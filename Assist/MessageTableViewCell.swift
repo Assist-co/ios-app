@@ -9,15 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class MessageTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var bodyLabel: UILabel!
-    @IBOutlet weak var timestampLabel: UILabel!
-    @IBOutlet weak var topMargin: NSLayoutConstraint!
-    @IBOutlet weak var dateLabelHeight: NSLayoutConstraint!
-    @IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint!
-
-
+class MessageTableViewCell: MessageBubbleTableViewCell {
     
     override func draw(_ rect: CGRect) {
                 
@@ -33,7 +25,7 @@ class MessageTableViewCell: UITableViewCell {
         bubblePath.fill()
     }
     
-    var message: Message? {
+    override var message: Message? {
         didSet {
             populateMessage()
             self.setNeedsDisplay()

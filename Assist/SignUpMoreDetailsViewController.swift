@@ -70,10 +70,9 @@ class SignUpMoreDetailsViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onSignUpTap(_ sender: AnyObject) {
-        let profession = professionTextField.text
+        let profession = professionTextField.text!
         let password = passwordTextField.text
         let passwordAgain = passwordAgainTextField.text
-        
         guard profession != "" && password != "" && passwordAgain != "" && password == passwordAgain else {
             self.errorView.isHidden = false
             return
@@ -81,48 +80,47 @@ class SignUpMoreDetailsViewController: UIViewController, UITextFieldDelegate {
         
         AuthService.signUpClient(
             signUpDict: [
-                "email": email as AnyObject,
-                "password": password as AnyObject,
-                "first_name": firstName as AnyObject,
-                "last_name": lastName as AnyObject,
-                "phone": phoneNumber as AnyObject,
-                "profession": profession as AnyObject,
+                "email": email as Any,
+                "password": password as Any,
+                "first_name": firstName as Any,
+                "last_name": lastName as Any,
+                "phone": phoneNumber as Any,
+                "profession": profession as Any,
                 
                 // TODO: add support for these or remove them
-                "gender": "male" as AnyObject,
-                "date_of_birth": "1991-04-25" as AnyObject,
+                "gender": "male" as Any,
+                "date_of_birth": "1991-04-25" as Any,
             ]
         ) {
-            (response: Dictionary<String, AnyObject>?, error: Error?) in
-            if let error = error {
-                // TODO: raise appropriate error to user
+            (response: Dictionary<String, Any>?, error: Error?) in
+            if error != nil {
                 self.errorView.isHidden = false
-                print(error.localizedDescription)
-            }
-            if let response = response {
-                let token = response["token"] as! String
-                
-                // TODO: check if this is actually safe...
+            }else{
+                let token = response!["token"] as! String
                 UserDefaults.standard.set(token, forKey: "userToken")
                 UserDefaults.standard.synchronize()
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "HomeNavigationController")
-                self.present(homeNavigationController, animated: true, completion: nil)
+                let clientId = response!["client_id"] as! Int
+                ClientService.fetchClient(clientID: clientId, completion: { (client: Client?, error: Error?) in
+                    if let client = client {
+                        Client.currentUser = client
+                        Client.currentUserID = client.id
+                        Client.currentID = String(client.id)
+                    }
+                })
+                DispatchQueue.main.async {
+                    self.presentAssistantViewController()
+                }
             }
         }
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK:- Utils
+    
+    private func presentAssistantViewController(){
+        let storyboard = UIStoryboard(name: "OnboardingFlow", bundle: nil)
+        let homeNavigationController = storyboard.instantiateViewController(withIdentifier: "MeetAssistantNavigation")
+        self.present(homeNavigationController, animated: true, completion: nil)
     }
-    */
 
 }

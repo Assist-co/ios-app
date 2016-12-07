@@ -30,7 +30,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     private var populateStartNotification = NSNotification.Name(rawValue: "populateMessagesStart")
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
     private var shouldRefresh: Bool = false
-    
+    private var selectedTask: Task?
     
     /** UIViewController Methods **/
     
@@ -157,10 +157,21 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        //let message = messages?[indexPath.row]
+        var cell: MessageBubbleTableViewCell
         let message = messagesByDay?[indexPath.section].1[indexPath.row]
-        let identifier = message?.senderId == Client.currentID ? "MessageTableViewCellYou" : "MessageTableViewCell";
-        let cell = messagesTableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MessageTableViewCell
+        if message?.senderId == Client.currentID {
+            if message?.customType != nil && message?.customType != "" {
+                cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageTaskTableViewCellYou", for: indexPath) as! MessageBubbleTableViewCell
+                if let messageTaskCell = cell as? MessageTaskTableViewCell{
+                    messageTaskCell.taskButton.taskId = Int((message?.data!)!)
+                    messageTaskCell.chooseImageForTaskType(typePermalink: message?.customType)
+                }
+            }else{
+                cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageTableViewCellYou", for: indexPath) as! MessageBubbleTableViewCell
+            }
+        }else{
+            cell = messagesTableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageBubbleTableViewCell
+        }
         cell.message = message
 
 
@@ -216,6 +227,22 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         self.messageTextField.becomeFirstResponder()
     }
     
+    @IBAction func taskButtonClicked(_ button: MessageTaskButton){
+        TaskService.fetchTaskForID(taskID: button.taskId!) { (task: Task?, error: Error?) in
+            if error == nil{
+                self.selectedTask = task
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "messagesToTaskDetailSegue", sender: self)
+                }
+            }else{
+                let alert = UIAlertController(title: "Error", message: "An error occured. Please try again later", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "ok", style: .default, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
     @IBAction func onPhoneTap(_ sender: AnyObject) {
         // TODO: replace number with assistant's number
         let phoneNumber = "1234567890"
@@ -225,7 +252,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             }
         }
     }
-
+    
     @IBAction func onTaskButtonTap(_ sender: AnyObject) {
         self.view.endEditing(true)
         slidingViewController.showLeftContent(duration: 0.25)
@@ -234,15 +261,6 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     @IBAction func onCalendarButtonTap(_ sender: AnyObject) {
         self.view.endEditing(true)
         slidingViewController.showRightContent(duration: 0.25)
-    }
-    
-    //MARK:- Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "homeToCreateTaskSegue" {
-            let nav = segue.destination as! UINavigationController
-            let vc = nav.viewControllers.first as! CreateTaskViewController
-//            vc.message = self.message
-        }
     }
     
     /** Internal Methods **/
@@ -431,5 +449,20 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         
         UIApplication.shared.statusBarStyle = .lightContent
     }
+    
+    //MARK:- Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "messagesToTaskDetailSegue" {
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as! TaskDetailViewController
+            vc.task = self.selectedTask
+        }else if segue.identifier == "homeToCreateTaskSegue" {
+            let nav = segue.destination as! UINavigationController
+            let vc = nav.viewControllers.first as! CreateTaskViewController
+            //            vc.message = self.message
+        }
+    }
+
     
 }
