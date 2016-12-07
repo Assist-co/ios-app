@@ -25,17 +25,20 @@ class CalendarService: NSObject {
             
             if let startOn = task.startOn {
                 if let endOn = task.endOn {
-                    let event = EKEvent(eventStore: self.store)
-                    event.title = "Assistant Event"
-                    event.startDate = startOn
-                    event.endDate = endOn
-                    event.calendar = self.store.defaultCalendarForNewEvents
-
-                    do {
-                        try self.store.save(event, span: EKSpan.thisEvent)
-                        task.calendarId = event.eventIdentifier
-                    } catch {
+                    if let title = task.text {
+                        let event = EKEvent(eventStore: self.store)
+                        event.title = title
+                        event.startDate = startOn
+                        event.endDate = endOn
+                        event.calendar = self.store.defaultCalendarForNewEvents
                         
+                        do {
+                            try self.store.save(event, span: EKSpan.thisEvent)
+                            task.calendarId = event.eventIdentifier
+                        } catch {
+                            
+                        }
+
                     }
                 }
             }

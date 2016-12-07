@@ -245,7 +245,7 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                 taskDictionary["location"] = "(\(loc.placemark.coordinate.latitude),\(loc.placemark.coordinate.longitude))" as Any
             }
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
             if let startsDate = self.taskInfo?.startDate {
                 taskDictionary["start_on"] = formatter.string(from: startsDate)
             }

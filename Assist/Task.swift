@@ -50,12 +50,12 @@ class Task: NSObject {
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
             self.completedOn = formatter.date(from: completedOnString) as Date?
         }
-        if let startOnString = dictionary["completed_on"] as? String{
+        if let startOnString = dictionary["start_on"] as? String{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
             self.startOn = formatter.date(from: startOnString) as Date?
         }
-        if let endOnString = dictionary["completed_on"] as? String{
+        if let endOnString = dictionary["end_on"] as? String{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
             self.endOn = formatter.date(from: endOnString) as Date?

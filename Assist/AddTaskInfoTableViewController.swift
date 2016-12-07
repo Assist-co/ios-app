@@ -35,8 +35,8 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
     @IBOutlet weak var contactsImageView: UIImageView!
     private var taskInfo = TaskInfo(){
         didSet{
-            if taskInfo.location == nil ||
-                taskInfo.contacts.isEmpty ||
+            if taskInfo.location == nil &&
+                taskInfo.contacts.isEmpty &&
                 taskInfo.startDate == nil {
                 self.saveBarButton.isEnabled = false
             }else{
