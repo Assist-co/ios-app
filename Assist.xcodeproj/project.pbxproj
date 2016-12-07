@@ -76,6 +76,7 @@
 		85B318B41DEB805C007E0DBF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B31DEB805C007E0DBF /* Message.swift */; };
 		85B318B61DEBA843007E0DBF /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B51DEBA843007E0DBF /* TaskDetailViewController.swift */; };
 		85B318B81DEBA865007E0DBF /* TaskDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */; };
+		D44C1C091DF4E3850026BDC2 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C1C081DF4E3850026BDC2 /* CalendarService.swift */; };
 		D44E02A41DF3828A00ABF5EB /* SlidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */; };
 		D455731F1DD92C350000B938 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D455731E1DD92C350000B938 /* HomeViewController.swift */; };
 		D45573211DD92C500000B938 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45573201DD92C500000B938 /* MessageTableViewCell.swift */; };
@@ -184,6 +185,7 @@
 		85B318B71DEBA865007E0DBF /* TaskDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailTableViewCell.swift; sourceTree = "<group>"; };
 		958203F3BBE5800D1F090F2C /* Pods-Assist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assist/Pods-Assist.release.xcconfig"; sourceTree = "<group>"; };
 		D4286A68749F2B584A0EB480 /* Pods_AssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44C1C081DF4E3850026BDC2 /* CalendarService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		D44E02A31DF3828A00ABF5EB /* SlidingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingViewController.swift; sourceTree = "<group>"; };
 		D455731E1DD92C350000B938 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D45573201DD92C500000B938 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		0340516B1DD4298D005F6B82 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				D44C1C081DF4E3850026BDC2 /* CalendarService.swift */,
 				034F54321DDAD9E10080F599 /* AssistantService.swift */,
 				034F54331DDAD9E10080F599 /* AuthService.swift */,
 				034F54341DDAD9E10080F599 /* ClientService.swift */,
@@ -746,6 +749,7 @@
 				031300F71DD912A600381716 /* TasksViewController.swift in Sources */,
 				85414BCE1DF4E20100390A1F /* DateTimeTableViewCell.swift in Sources */,
 				859B55441DDA149C00CBD957 /* Constants.swift in Sources */,
+				D44C1C091DF4E3850026BDC2 /* CalendarService.swift in Sources */,
 				D4F79B611DF3A7E600C6AA8B /* SlidableViewController.swift in Sources */,
 				853C9E301DF278A600AC0CEB /* CreateTaskToolBarView.swift in Sources */,
 				859B55451DDA149C00CBD957 /* Gender.swift in Sources */,

@@ -61,7 +61,7 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
         
         refreshAlert.addAction(UIAlertAction(title: "Delete Task", style: .default, handler: { (action: UIAlertAction!) in
             print("Handle Ok logic here")
-            TaskService.deleteTask(taskID: self.task!.id!, completion: { (sucess: Bool, error: Error?) in
+            TaskService.deleteTask(task: self.task!, completion: { (sucess: Bool, error: Error?) in
                 DispatchQueue.main.async {
                     if error == nil{
                         

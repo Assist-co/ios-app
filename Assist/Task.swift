@@ -23,6 +23,7 @@ class Task: NSObject {
     var completedOn: Date?
     var startOn: Date?
     var endOn: Date?
+    var calendarId: String?
     var client: Client?
     var assistant: Assistant?
     var contacts: [Contact]?
@@ -59,6 +60,9 @@ class Task: NSObject {
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
             self.endOn = formatter.date(from: endOnString) as Date?
         }
+        
+        self.calendarId = dictionary["calendar_id"] as? String
+        
         if let clientDict = dictionary["client"] as? NSDictionary{
             self.client = Client(dictionary: clientDict)
         }

@@ -75,7 +75,11 @@ class TaskService: NSObject {
                             completion(nil, nil)
                             return
                         }
-                        completion(Task(dictionary: responseDict as NSDictionary), nil)
+                        
+                        let generatedTask = Task(dictionary: responseDict as NSDictionary)
+                        
+                        CalendarService.sharedInstance.createEvent(task: generatedTask)
+                        completion(generatedTask, nil)
                     case .failure(let error):
                         if let data = response.data{
                             print("Error: \(String(data: data, encoding: String.Encoding.utf8)!)")
@@ -112,9 +116,10 @@ class TaskService: NSObject {
     }
     
     class func deleteTask(
-        taskID: Int,
+        task: Task,
         completion: @escaping (Bool, Error?) -> ()
         ) {
+        let taskID = task.id!
         AssistClient.sharedInstance.session.request(
             "\(baseURLString!)/clients/\(Client.currentUserID!)/tasks/\(taskID)",
             method: .delete
@@ -122,6 +127,8 @@ class TaskService: NSObject {
                 completionHandler: { (response) in
                     switch response.result {
                     case .success:
+                        
+                        CalendarService.sharedInstance.removeEvent(task: task)
                         completion(true,nil)
                     case .failure(let error):
                         completion(false, error)
