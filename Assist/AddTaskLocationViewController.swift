@@ -56,12 +56,13 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     //MARK:- UITableViewDatasource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "locationCell", for: indexPath) as! SearchResultTableViewCell
         let mapItem = self.filteredItems[indexPath.row]
         let placemark = mapItem.placemark
         var address = ""
         if placemark.subThoroughfare != nil{
             address += placemark.subThoroughfare!
+            address += " "
         }
         if placemark.thoroughfare != nil{
             address += placemark.thoroughfare!
@@ -71,17 +72,15 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
             address += " "
             address += placemark.locality!
         }
-        cell.textLabel?.text = mapItem.placemark.name
-        cell.detailTextLabel?.text = address
-        cell.textLabel?.textColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
-        cell.detailTextLabel?.textColor = UIColor(red: 170/255, green: 170/255, blue: 170/255,
-                                                  alpha: 1)
+        cell.title.text = mapItem.placemark.name
+        cell.subTitle.text = address
         return cell
     }
     
     //MARK:- Actions
     
     @IBAction func cancel(button: UIButton) {
+        self.searchBar.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -89,7 +88,7 @@ class AddTaskLocationViewController: UIViewController, UITableViewDelegate, UITa
     
     fileprivate func setup(){
         self.searchBar.tintColor = UIColor.white
-        self.searchBar.barTintColor = UIColor(red: 24/255, green: 26/255, blue: 29/255, alpha: 1)
+        self.searchBar.keyboardAppearance = UIKeyboardAppearance.dark
         self.searchBar.placeholder = "Search Location"
         LocationService.sharedInstance.requestUserLocation()
         self.searchingState(isSpinning: true)

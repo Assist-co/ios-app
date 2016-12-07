@@ -29,6 +29,7 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         super.viewWillAppear(animated)
         UIApplication.shared.isStatusBarHidden = true
         self.tokenField(self.contactsTokenField, didChangeText: "a")
+        self.contactsTokenField.becomeFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,7 +39,6 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.contactsTokenField.becomeFirstResponder()
     }
     
     //MARK:- UITableViewDelegate
@@ -60,11 +60,11 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell",
-                                                 for: indexPath) as UITableViewCell
+                                                 for: indexPath) as! SearchResultTableViewCell
         let contact = self.filteredContacts[indexPath.row]
-        cell.textLabel?.text = "\(contact.givenName) \(contact.familyName)"
+        cell.title.text = "\(contact.givenName) \(contact.familyName)"
         for email in contact.emailAddresses {
-            cell.detailTextLabel?.text = email.value as String
+            cell.subTitle.text = email.value as String
             break
         }
         if cell.detailTextLabel?.text == nil {
@@ -125,6 +125,7 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
     //MARK:- Actions
     
     @IBAction func dismiss(button: UIButton){
+        self.contactsTokenField.resignFirstResponder()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -139,10 +140,11 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
         self.contactsTokenField.delegate = self
         self.contactsTokenField.dataSource = self
         self.contactsTokenField.placeholderText = "First name, last name, email"
-        self.contactsTokenField.toLabelText = "To:"
+        self.contactsTokenField.toLabelText = "    To:"
         self.contactsTokenField.tintColor = UIColor.white
         self.contactsTokenField.toLabelTextColor = UIColor.white
         self.contactsTokenField.inputTextFieldTextColor = UIColor.white
+        self.contactsTokenField.inputTextFieldKeyboardAppearance = UIKeyboardAppearance.dark
         self.contactsTokenField.backgroundColor = UIColor(red: 24/255, green: 26/255, blue: 29/255, alpha: 1)
         self.contactsTokenField.setColorScheme(UIColor.white)
         self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .white)
