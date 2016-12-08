@@ -236,8 +236,11 @@ class AddTaskInfoTableViewController: UITableViewController, TaskInfoDelegate, V
                     }else{
                         self.selectedEndsDate = self.selectedStartsDate?.addingTimeInterval((60 * 60 * 1))
                     }
+                    let endsDateIndexPath = (self.prevDatePickerShowing == .none) ?
+                        IndexPath(row: indexPath.row - 1,
+                                  section: indexPath.section) : IndexPath(row: indexPath.row,
+                                                                          section: indexPath.section)
                     cell.datePicker.date = self.selectedEndsDate!
-                    let endsDateIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
                     let dateCell = tableView.cellForRow(at: endsDateIndexPath)! as UITableViewCell
                     dateCell.detailTextLabel?.text = self.dateFormatForDate(date: self.selectedEndsDate!)
                 }else{
