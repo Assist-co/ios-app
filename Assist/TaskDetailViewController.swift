@@ -23,6 +23,7 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var deleteTaskButton: UIButton!
+    @IBOutlet weak var contactsLabel: UILabel!
     
     var delegate: TaskListTableViewController?
     
@@ -74,16 +75,25 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             timeView.isHidden = true
         }
         
-        /* // UNCOMMENT WHEN WE CORRECTLY SAVE CONTACTS
         if let contacts = task?.contacts {
             if contacts.count > 0 {
+                var contactsString = ""
+                for (idx, contact) in contacts.enumerated() {
+                    if idx == 0 {
+                        contactsString.append("\(contact.firstName!) \(contact.lastName!)")
+                    } else {
+                        contactsString.append(", \(contact.firstName!) \(contact.lastName!)")
+                    }
+                }
+                
+                self.contactsLabel.text = contactsString
                 contactsView.isHidden = false
             } else {
                 contactsView.isHidden = true
             }
         } else {
             contactsView.isHidden = true
-        }*/
+        }
         
         
         if task?.location != nil {
