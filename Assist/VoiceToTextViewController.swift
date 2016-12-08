@@ -34,7 +34,7 @@ class VoiceToTextViewController: UIViewController {
         voiceButton.layer.shadowOffset = CGSize.zero
         voiceButton.layer.shadowRadius = 5
         
-        voiceTextLabel.text = "Test message from voice!"
+        voiceTextLabel.text = "..."
     }
     
     private func setupCallback() {
@@ -45,10 +45,9 @@ class VoiceToTextViewController: UIViewController {
     }
 
     @IBAction func onVoiceButtonClick(_ sender: UIButton) {
-        if (VoiceToTextClient.sharedInstance.recordToggle(outputView: voiceTextLabel)) {
+        if (!VoiceToTextClient.sharedInstance.recordToggle(outputView: voiceTextLabel)) {
             dismiss(animated: false, completion: nil)
-            self.homeViewController?.showMessageView(message: self.voiceTextLabel.text! + "\n")
-            
+            self.homeViewController?.showMessageView(message: self.voiceTextLabel.text!)
         }
     }
 }

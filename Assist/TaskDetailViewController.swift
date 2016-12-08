@@ -57,9 +57,17 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             dateLabel.text = formatter.string(from: (task?.startOn)!)
             formatter.dateStyle = .none
             formatter.timeStyle = .short
-            let startOnTime = formatter.string(from:(task?.startOn)!)
-            let endOnTime = formatter.string(from:(task?.endOn)!)
-            timeLabel.text = "\(startOnTime) - \(endOnTime)"
+            var startOnString = "???"
+            if let startOn = task?.startOn {
+                startOnString = formatter.string(from:startOn)
+                
+            }
+            var endOnString = "???"
+            if let endOn = task?.endOn {
+                endOnString = formatter.string(from: endOn)
+            }
+
+            timeLabel.text = "\(startOnString) - \(endOnString)"
             timeView.isHidden = false
         } else {
             timeView.isHidden = true

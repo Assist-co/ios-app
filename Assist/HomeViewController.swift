@@ -31,6 +31,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
     private var shouldRefresh: Bool = false
     private var selectedTask: Task?
+    private var message: String?
     
     /** UIViewController Methods **/
     
@@ -70,7 +71,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
     
     func showMessageView(message: String?) {
-        //self.shouldRefresh = true
+        self.message = message
         self.performSegue(withIdentifier: "homeToCreateTaskSegue", sender: self)
     }
     
@@ -184,8 +185,14 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (lastMessage?.createdAt?.timeIntervalSince1970)!) < 60)
             if lastMessage?.senderId != message?.senderId || !isMultiMessage {
                 cell.topMargin.constant = 8
+
+                
+                
                 if let taskCell = cell as? MessageTaskTableViewCell {
-                    taskCell.iconTopMargin.constant = 4
+                    let iconHeight = taskCell.taskImageView.frame.size.height
+                    let messageHeight = cell.bodyLabel.frame.size.height
+                    
+                    taskCell.iconTopMargin.constant = (messageHeight/2 - iconHeight/2)
                 }
             } else {
                 cell.topMargin.constant = 1
@@ -457,10 +464,13 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! TaskDetailViewController
             vc.task = self.selectedTask
-        }else if segue.identifier == "homeToCreateTaskSegue" {
+        } else if segue.identifier == "homeToCreateTaskSegue" {
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! CreateTaskViewController
-            //            vc.message = self.message
+            if let message = self.message {
+                vc.message = self.message
+                self.message = nil
+            }
         }
     }
 

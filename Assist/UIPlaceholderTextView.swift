@@ -14,7 +14,6 @@ class UIPlaceholderTextView: UITextView {
     private var placeholderLabel: UILabel!
     override var text: String!{
         didSet(newText){
-            self.text = newText
             self.textChanged(notification: nil)
         }
     }
