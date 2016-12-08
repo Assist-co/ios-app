@@ -212,11 +212,8 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     /** TextFieldDelegate Methods **/
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //textField.resignFirstResponder()
         let message = self.messageTextField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        
         MessagingClient.sharedInstance.postMessage(message: message!)
-        self.didReceiveMessage(message: Message(body: message!))
         textField.text = ""
         return true
     }
