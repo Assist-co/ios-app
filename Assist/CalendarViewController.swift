@@ -15,8 +15,10 @@ class CalendarViewController: SlidableViewController, UITableViewDataSource, UIT
     var filteredTasks: [Task]?
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    
+    @IBOutlet weak var noEventsLabel: UILabel!
     @IBOutlet weak var calendarEventsTableView: UITableView!
+    
+    var selectedCell: CalendarCellView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,23 @@ class CalendarViewController: SlidableViewController, UITableViewDataSource, UIT
         calendarEventsTableView.delegate = self;
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        // Bad code:
+        if let filteredTasks = filteredTasks {
+            if filteredTasks.count > 0 {
+                self.noEventsLabel.isHidden = true
+            } else {
+                self.noEventsLabel.isHidden = false
+            }
+        } else {
+            self.noEventsLabel.isHidden = false
+        }
+        
         return filteredTasks?.count ?? 0
     }
     
@@ -40,6 +58,19 @@ class CalendarViewController: SlidableViewController, UITableViewDataSource, UIT
         
         if let task = self.filteredTasks?[indexPath.row] {
             cell.descriptionLabel.text = task.text
+            let formatter = DateFormatter()
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            var startText = "???"
+            if let startOn = task.startOn {
+                startText = formatter.string(from: startOn)
+            }
+            cell.startAtLabel.text = startText
+            var endText = "???"
+            if let endOn = task.endOn {
+                endText = formatter.string(from: endOn)
+            }
+            cell.endAtLabel.text = endText
         }
         
         return cell
@@ -112,6 +143,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         if Calendar.current.isDate(date, inSameDayAs: Date()) {
             myCustomCell.selectedDate.isHidden = false
             myCustomCell.selectedDate.layer.cornerRadius =  16
+            self.selectedCell = myCustomCell
         }
         
         myCustomCell.hasEventMarker.layer.cornerRadius = 3
@@ -119,6 +151,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        self.selectedCell?.selectedDate.isHidden = true
         let myCustomCell = cell as! CalendarCellView
         
         myCustomCell.selectedDate.layer.cornerRadius =  16

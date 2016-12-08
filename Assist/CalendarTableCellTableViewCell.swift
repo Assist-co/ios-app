@@ -10,7 +10,8 @@ import UIKit
 
 class CalendarTableCellTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var startAtLabel: UIView!
+
+    @IBOutlet weak var startAtLabel: UILabel!
     @IBOutlet weak var endAtLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var calendarEventBubbleView: UIView!
