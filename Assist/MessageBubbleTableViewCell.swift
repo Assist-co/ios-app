@@ -19,6 +19,7 @@ class MessageBubbleTableViewCell: UITableViewCell {
     //@IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint! = nil
     @IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint!
     var message: Message?
+    var isAdjacentMessage = false
 
     @IBOutlet weak var iconTopMargin: NSLayoutConstraint!
 }

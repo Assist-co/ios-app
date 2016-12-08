@@ -14,19 +14,12 @@ class MessageTaskTableViewCell: MessageBubbleTableViewCell {
     
     override func draw(_ rect: CGRect) {
         var bubbleSpace: CGRect!
-        var x: CGFloat!
         
         // start the bubble from the task button or label
-        if taskImageView.frame.minX <= bodyLabel.frame.minX {
-            x = taskImageView.frame.minX
-        }else{
-            x = bodyLabel.frame.minX
-        }
-        
-        bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0, //x - 8.0,
+        bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0,
                              y: bodyLabel.frame.minY - 8,
                              width: bodyLabel.frame.width + 16,
-                             height: (bodyLabel.bounds.height /*+ taskImageView.bounds.height*/) + 16)
+                             height: (bodyLabel.bounds.height + 16))
 
         let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 6.0)
         let color = message?.messageColor
@@ -38,7 +31,12 @@ class MessageTaskTableViewCell: MessageBubbleTableViewCell {
         
         let iconHeight = self.taskImageView.frame.size.height
         let messageHeight = self.bodyLabel.frame.size.height
-        self.iconTopMargin.constant = (messageHeight/2 - iconHeight/2) + 2
+        if self.isAdjacentMessage {
+            self.iconTopMargin.constant = (messageHeight/2 - iconHeight/2) + 2
+        } else {
+            self.iconTopMargin.constant = (messageHeight/2 - iconHeight/2) + 8
+
+        }
     }
     
     override var message: Message? {
