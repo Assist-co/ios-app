@@ -131,6 +131,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" id="c6Z-HR-9rb">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="onCreateButtonTap:" destination="BWo-XI-hQy" id="CGC-4h-C6h"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

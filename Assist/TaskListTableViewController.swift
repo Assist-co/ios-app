@@ -117,6 +117,7 @@ class TaskListTableViewController: UITableViewController {
         }
         
         cell.taskDescriptionLabel.text = task?.text
+        cell.subtitleLabel.text = task?.text
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short

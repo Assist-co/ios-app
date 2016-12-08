@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Byl-nt-BTx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Byl-nt-BTx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqX-0h-CnR">
-                                        <rect key="frame" x="0.0" y="0.0" width="188" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                         <color key="backgroundColor" red="0.1450980392" green="0.43137254899999999" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Queued">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Jm-Od-2OM">
-                                        <rect key="frame" x="188" y="0.0" width="187" height="50"/>
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
                                         <color key="backgroundColor" red="0.14509803921568626" green="0.15686274509803921" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Completed">
                                             <color key="titleColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -201,6 +201,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="createdOnLabel" destination="Mg9-wu-YSe" id="VR9-Po-nzE"/>
+                                    <outlet property="subtitleLabel" destination="kf5-EH-Ne5" id="ZtQ-XN-jmQ"/>
                                     <outlet property="taskDescriptionLabel" destination="Byc-Mj-abR" id="xoe-YX-6yf"/>
                                     <outlet property="taskIcon" destination="Pgr-bp-aLG" id="aFU-xn-tUV"/>
                                     <outlet property="taskTextLabel" destination="lb6-OF-dyk" id="yWp-7G-0Zj"/>

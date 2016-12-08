@@ -22,6 +22,7 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var deleteTaskButton: UIButton!
     
     var delegate: TaskListTableViewController?
     
@@ -89,6 +90,10 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             addressView.isHidden = false
         } else {
             addressView.isHidden = true
+        }
+        
+        if let isComplete = task?.isComplete {
+            deleteTaskButton.isHidden = isComplete
         }
     }
     
