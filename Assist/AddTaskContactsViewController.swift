@@ -72,9 +72,6 @@ class AddTaskContactsViewController: UIViewController, UITableViewDelegate, UITa
                 cell.detailTextLabel?.text = number.value.stringValue as String
             }
         }
-        if let imageData = contact.imageData {
-            cell.imageView?.image = UIImage(data: imageData)
-        }
         return cell
     }
     

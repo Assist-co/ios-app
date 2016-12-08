@@ -184,12 +184,16 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
                     alert.addAction(okAction)
                     self.present(alert, animated: true, completion: nil)
                 } else {
-                    if let task = task{
-                        MessagingClient.sharedInstance.postTaskMessage(task: task)
-                        CalendarService.sharedInstance.createEvent(task: task)
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: "newTaskCreated"), object: task as Any)
+                    if self.taskInfo!.contacts.count > 0 {
+                        TaskService.addContactsToTask(taskID: task!.id!,
+                                                      contactDicts: self.buildContactsPostObject(), completion: { (task: Task?, error: Error?) in
+                                                        self.notifyListeners(task: task!)
+                                                        self.dismiss(animated: true)
+                        })
+                    }else{
+                        self.notifyListeners(task: task!)
+                        self.dismiss(animated: true)
                     }
-                    self.dismiss(animated: true)
                 }
             }
         }else{
@@ -260,15 +264,24 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
             if let endsDate = self.taskInfo?.endDate {
                 taskDictionary["end_on"] = formatter.string(from: endsDate)
             }
-            if taskInfo.contacts.count > 0 {
-                var contacts: [[String:Any]] = []
-                for contact in taskInfo.contacts {
-                    contacts.append(contact.serialize(clientID: Client.currentUserID!))
-                }
-                taskDictionary["contacts"] = contacts
-            }
         }
         return taskDictionary
+    }
+    
+
+    fileprivate func buildContactsPostObject() -> [String:Any]{
+        var contacts = [[String:Any]]()
+        for contact in taskInfo!.contacts {
+            contacts.append(contact.serialize(clientID: Client.currentUserID!) as [String : Any])
+        }
+        return ["contacts":contacts as Any]
+    }
+    
+    fileprivate func notifyListeners(task: Task){
+        MessagingClient.sharedInstance.postTaskMessage(task: task)
+        CalendarService.sharedInstance.createEvent(task: task)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "newTaskCreated"),
+                                        object: task as Any)
     }
     
     fileprivate func showTagsTrayView(){

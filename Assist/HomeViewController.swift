@@ -288,11 +288,16 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             
             
             let lastSection = (self.messagesByDay?.count)! - 1
-            let lastRow = (self.messagesByDay?[lastSection].1.count)! - 1
-            if lastRow > 0 {
-                let lastIndexPath = IndexPath(row: lastRow, section: lastSection)
-                self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+            if lastSection >= 0 {
+                if let messagesByDay = self.messagesByDay {
+                    let lastRow = (messagesByDay[lastSection].1.count) - 1
+                    if lastRow > 0 {
+                        let lastIndexPath = IndexPath(row: lastRow, section: lastSection)
+                        self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+                    }
+                }
             }
+            
         })
     }
     
@@ -311,8 +316,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
         NotificationCenter.default.post(name: populateStartNotification, object: nil)
         MessagingClient.sharedInstance.getMessages(onMessagesReceived: {
             (messages: [SBDUserMessage]) -> Void in
-            let welcomeMessage = [Message(id: 1, senderId: Assistant.currentID, body: "Welcome, I'm your personal assistant! How can I help you?", createdAt: Date())]
-            self.messages = welcomeMessage + messages.map({
+            self.messages = messages.map({
                 (m: SBDUserMessage) -> Message in
                 return Message(sbdUserMessage: m)
             }).reversed()
