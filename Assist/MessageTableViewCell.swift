@@ -13,7 +13,10 @@ class MessageTableViewCell: MessageBubbleTableViewCell {
     
     override func draw(_ rect: CGRect) {
                 
-        let bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0, y: bodyLabel.frame.minY - 8.0, width: bodyLabel.bounds.width + 16.0, height: bodyLabel.bounds.height + 16.0)
+        let bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0,
+                                 y: bodyLabel.frame.minY - 8.0,
+                                 width: bodyLabel.bounds.width + 16.0,
+                                 height: bodyLabel.bounds.height + 16.0)
         
         _ = UIBezierPath(roundedRect: bubbleSpace, byRoundingCorners: [UIRectCorner.topLeft, UIRectCorner.topRight, UIRectCorner.bottomRight], cornerRadii: CGSize(width: 16.0, height: 16.0))
         

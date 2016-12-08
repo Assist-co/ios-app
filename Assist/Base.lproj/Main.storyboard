@@ -43,7 +43,7 @@
                                         <color key="sectionIndexBackgroundColor" red="0.92549019610000005" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MessageTaskTableViewCellYou" rowHeight="187" id="Tg4-bb-21X" customClass="MessageTaskTableViewCell" customModule="Assist" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="120" width="375" height="187"/>
+                                                <rect key="frame" x="0.0" y="119.5" width="375" height="187"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tg4-bb-21X" id="AgN-Ir-FS4">
                                                     <frame key="frameInset" width="375" height="187"/>
@@ -65,7 +65,6 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-AU-Isw"/>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k42-eU-bQA" customClass="MessageTaskButton" customModule="Assist" customModuleProvider="target">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="28" id="H1y-vY-rVx"/>
@@ -75,16 +74,17 @@
                                                                 <action selector="taskButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obn-mv-AyJ"/>
                                                             </connections>
                                                         </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-AU-Isw"/>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="k42-eU-bQA" firstAttribute="leading" secondItem="7yp-AU-Isw" secondAttribute="leading" id="2nD-R0-g5F"/>
-                                                        <constraint firstItem="7yp-AU-Isw" firstAttribute="bottom" secondItem="k42-eU-bQA" secondAttribute="bottom" id="9Nl-G8-fXE"/>
-                                                        <constraint firstItem="k42-eU-bQA" firstAttribute="top" secondItem="Rby-bh-tH3" secondAttribute="bottom" constant="5" id="Gog-3w-aRr"/>
+                                                        <constraint firstItem="yZv-hD-spE" firstAttribute="top" secondItem="Rby-bh-tH3" secondAttribute="bottom" constant="12" id="7nj-bU-vvx"/>
+                                                        <constraint firstItem="Rby-bh-tH3" firstAttribute="leading" secondItem="7yp-AU-Isw" secondAttribute="trailing" constant="8" id="IvF-AM-PUO"/>
                                                         <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="yZv-hD-spE" secondAttribute="bottom" constant="2" id="ONt-ak-yJW"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="Rby-bh-tH3" secondAttribute="trailing" constant="24" id="UZh-Fz-bru"/>
                                                         <constraint firstItem="Rby-bh-tH3" firstAttribute="top" secondItem="AgN-Ir-FS4" secondAttribute="topMargin" constant="-4" id="VN9-kv-9Nb"/>
-                                                        <constraint firstItem="yZv-hD-spE" firstAttribute="top" secondItem="k42-eU-bQA" secondAttribute="bottom" constant="27" id="cWZ-wj-ZhR"/>
-                                                        <constraint firstItem="7yp-AU-Isw" firstAttribute="leading" secondItem="AgN-Ir-FS4" secondAttribute="leadingMargin" constant="91" id="ghd-bz-a12"/>
+                                                        <constraint firstItem="7yp-AU-Isw" firstAttribute="top" secondItem="AgN-Ir-FS4" secondAttribute="topMargin" id="YNx-no-vp6"/>
+                                                        <constraint firstItem="k42-eU-bQA" firstAttribute="centerY" secondItem="AgN-Ir-FS4" secondAttribute="centerY" id="ePP-zT-AAb"/>
+                                                        <constraint firstItem="Rby-bh-tH3" firstAttribute="leading" secondItem="k42-eU-bQA" secondAttribute="trailing" constant="8" id="nq9-dO-sf4"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="yZv-hD-spE" secondAttribute="trailing" constant="16" id="wRc-4h-6e7"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -92,7 +92,8 @@
                                                 <connections>
                                                     <outlet property="bodyLabel" destination="Rby-bh-tH3" id="4nh-us-vMf"/>
                                                     <outlet property="dateLabelHeight" destination="kVb-Zg-i4q" id="Y2T-93-19B"/>
-                                                    <outlet property="dateLabelTopMargin" destination="cWZ-wj-ZhR" id="jpJ-pr-pHt"/>
+                                                    <outlet property="dateLabelTopMargin" destination="7nj-bU-vvx" id="vnZ-Cr-vYs"/>
+                                                    <outlet property="iconTopMargin" destination="YNx-no-vp6" id="P9I-13-LcX"/>
                                                     <outlet property="taskButton" destination="k42-eU-bQA" id="ci4-Zd-B30"/>
                                                     <outlet property="taskImageView" destination="7yp-AU-Isw" id="nSA-LT-qcH"/>
                                                     <outlet property="timestampLabel" destination="yZv-hD-spE" id="TQw-pS-sSk"/>
@@ -100,7 +101,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MessageTableViewCellYou" rowHeight="187" id="ZLs-ct-0oZ" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="307" width="375" height="187"/>
+                                                <rect key="frame" x="0.0" y="306.5" width="375" height="187"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZLs-ct-0oZ" id="Hel-Ow-1bW">
                                                     <frame key="frameInset" width="375" height="187"/>
@@ -141,7 +142,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MessageTableViewCell" rowHeight="187" id="jpO-fT-RW9" customClass="MessageTableViewCell" customModule="Assist" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="494" width="375" height="187"/>
+                                                <rect key="frame" x="0.0" y="493.5" width="375" height="187"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jpO-fT-RW9" id="0E5-DT-ECM">
                                                     <frame key="frameInset" width="375" height="187"/>
