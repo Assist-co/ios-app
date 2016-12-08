@@ -116,8 +116,17 @@ class TaskListTableViewController: UITableViewController {
             cell.taskIcon.backgroundColor = UIColor(hexString: "#42A5F5ff")
         }
         
-        cell.taskDescriptionLabel.text = task?.text
-        cell.subtitleLabel.text = task?.text
+        if let taskText = task?.text {
+            if taskText.characters.count > 35 {
+                let index = taskText.index(taskText.startIndex, offsetBy: 35)
+                cell.taskDescriptionLabel.text = taskText.substring(to: index)
+                cell.subtitleLabel.text = "\(taskText.substring(to: index))..."
+            } else {
+                cell.taskDescriptionLabel.text = taskText
+                cell.subtitleLabel.text = taskText
+            }
+        }
+
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short
