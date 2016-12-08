@@ -16,7 +16,9 @@ class MessageBubbleTableViewCell: UITableViewCell {
     @IBOutlet weak var timestampLabel: UILabel! = nil
     @IBOutlet weak var topMargin: NSLayoutConstraint! = nil
     @IBOutlet weak var dateLabelHeight: NSLayoutConstraint! = nil
-    @IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint! = nil
+    //@IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint! = nil
+    @IBOutlet weak var dateLabelTopMargin: NSLayoutConstraint!
     var message: Message?
 
+    @IBOutlet weak var iconTopMargin: NSLayoutConstraint!
 }
