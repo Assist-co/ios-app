@@ -169,10 +169,10 @@ class TasksViewController: SlidableViewController, UIScrollViewDelegate, TaskLis
             let task = notification.object as! Task
             if task.state! == .completed {
                 self.tasksData.completedTasks?.append(task)
-                self.tasksData.completedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.completedTasks!)
+                self.tasksData.completedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.completedTasks!.reversed())
             }else{
                 self.tasksData.queuedTasks?.append(task)
-                self.tasksData.queuedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.queuedTasks!)
+                self.tasksData.queuedTasksByDate = self.groupTasksByDate(inputTasks: self.tasksData.queuedTasks!.reversed())
             }
             self.reloadTaskLists()
         }
