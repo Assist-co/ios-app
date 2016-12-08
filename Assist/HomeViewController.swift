@@ -288,11 +288,13 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             
             
             let lastSection = (self.messagesByDay?.count)! - 1
-            if let messagesByDay = self.messagesByDay {
-                let lastRow = (messagesByDay[lastSection].1.count) - 1
-                if lastRow > 0 {
-                    let lastIndexPath = IndexPath(row: lastRow, section: lastSection)
-                    self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+            if lastSection >= 0 {
+                if let messagesByDay = self.messagesByDay {
+                    let lastRow = (messagesByDay[lastSection].1.count) - 1
+                    if lastRow > 0 {
+                        let lastIndexPath = IndexPath(row: lastRow, section: lastSection)
+                        self.messagesTableView.scrollToRow(at: lastIndexPath, at: UITableViewScrollPosition.bottom, animated: true)
+                    }
                 }
             }
             
