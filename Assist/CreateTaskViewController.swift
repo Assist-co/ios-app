@@ -32,7 +32,12 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
     var message: String?{
         didSet{
             if let text = message {
-                self.textView.text = text
+                if let textView = self.textView {
+                    if text.characters.count > 0 {
+                        textView.text = text
+                        self.postBarButton.isEnabled = true
+                    }
+                }
             }
         }
     }
@@ -57,6 +62,13 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor(hexString: "#181A1Dff")
         navigationController!.navigationBar.isTranslucent = false
+        
+        if let message = self.message {
+            if message.characters.count > 0 {
+                self.textView.text = message
+                self.postBarButton.isEnabled = true
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,19 +96,8 @@ class CreateTaskViewController: UIViewController, UIScrollViewDelegate, UITextVi
         }
     }
     
-    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        let currentText = textView.text as NSString?
-        let updatedText = currentText?.replacingCharacters(in: range, with: text)
-        if let fullText = updatedText {
-            if fullText.characters.count > 0 {
-                self.postBarButton.isEnabled = true
-            }else{
-                self.postBarButton.isEnabled = false
-            }
-        }else{
-            self.postBarButton.isEnabled = false
-        }
-        return true
+    func textViewDidChange(_ textView: UITextView) {
+        self.postBarButton.isEnabled = textView.text.characters.count > 0
     }
     
     //MARK:- UIScrollView Delegate

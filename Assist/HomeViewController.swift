@@ -31,6 +31,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     private var populateEndNotification = NSNotification.Name(rawValue: "populateMessagesEnd")
     private var shouldRefresh: Bool = false
     private var selectedTask: Task?
+    private var message: String?
     
     /** UIViewController Methods **/
     
@@ -70,7 +71,7 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
     }
     
     func showMessageView(message: String?) {
-        //self.shouldRefresh = true
+        self.message = message
         self.performSegue(withIdentifier: "homeToCreateTaskSegue", sender: self)
     }
     
@@ -457,10 +458,13 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! TaskDetailViewController
             vc.task = self.selectedTask
-        }else if segue.identifier == "homeToCreateTaskSegue" {
+        } else if segue.identifier == "homeToCreateTaskSegue" {
             let nav = segue.destination as! UINavigationController
             let vc = nav.viewControllers.first as! CreateTaskViewController
-            //            vc.message = self.message
+            if let message = self.message {
+                vc.message = self.message
+                self.message = nil
+            }
         }
     }
 
