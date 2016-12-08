@@ -128,6 +128,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         }
         
         self.filteredTasks = self.tasks?.filter({ ($0.startOn != nil) && Calendar.current.isDate($0.startOn!, equalTo: date, toGranularity: .day) })
+        self.calendarEventsTableView.reloadData()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
@@ -135,6 +136,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         myCustomCell.selectedDate.isHidden = true
         
         self.filteredTasks = nil
+        self.calendarEventsTableView.reloadData()
     }
     
     // This sets the height of your header
