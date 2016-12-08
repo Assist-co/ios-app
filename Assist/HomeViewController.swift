@@ -184,8 +184,14 @@ class HomeViewController: SlidableViewController, UITableViewDelegate, UITableVi
             let isMultiMessage = (abs((message?.createdAt?.timeIntervalSince1970)! - (lastMessage?.createdAt?.timeIntervalSince1970)!) < 60)
             if lastMessage?.senderId != message?.senderId || !isMultiMessage {
                 cell.topMargin.constant = 8
+
+                
+                
                 if let taskCell = cell as? MessageTaskTableViewCell {
-                    taskCell.iconTopMargin.constant = 4
+                    let iconHeight = taskCell.taskImageView.frame.size.height
+                    let messageHeight = cell.bodyLabel.frame.size.height
+                    
+                    taskCell.iconTopMargin.constant = (messageHeight/2 - iconHeight/2)
                 }
             } else {
                 cell.topMargin.constant = 1

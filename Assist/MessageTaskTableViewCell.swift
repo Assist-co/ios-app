@@ -23,9 +23,9 @@ class MessageTaskTableViewCell: MessageBubbleTableViewCell {
             x = bodyLabel.frame.minX
         }
         
-        bubbleSpace = CGRect(x: x - 8.0,
+        bubbleSpace = CGRect(x: bodyLabel.frame.minX - 8.0, //x - 8.0,
                              y: bodyLabel.frame.minY - 8,
-                             width: bodyLabel.frame.maxX - x + 16,
+                             width: bodyLabel.frame.width + 16,
                              height: (bodyLabel.bounds.height /*+ taskImageView.bounds.height*/) + 16)
 
         let bubblePath = UIBezierPath(roundedRect: bubbleSpace, cornerRadius: 6.0)
@@ -34,6 +34,11 @@ class MessageTaskTableViewCell: MessageBubbleTableViewCell {
         color?.setFill()
         bubblePath.stroke()
         bubblePath.fill()
+        
+        
+        let iconHeight = self.taskImageView.frame.size.height
+        let messageHeight = self.bodyLabel.frame.size.height
+        self.iconTopMargin.constant = (messageHeight/2 - iconHeight/2) + 2
     }
     
     override var message: Message? {
@@ -55,7 +60,7 @@ class MessageTaskTableViewCell: MessageBubbleTableViewCell {
                 //self.taskImageView.backgroundColor = UIColor(hexString: "#ED5E5Eff")
             case "schedule":
                 self.taskImageView.image = #imageLiteral(resourceName: "calendar")
-                //self.taskImageView.backgroundColor = UIColor(hexString: "#66BB6Aff")
+                self.taskImageView.backgroundColor = UIColor(hexString: "#66BB6Aff")
             case "email":
                 self.taskImageView.image = #imageLiteral(resourceName: "mail")
                 //self.taskImageView.backgroundColor = UIColor(hexString: "#42A5F5ff")

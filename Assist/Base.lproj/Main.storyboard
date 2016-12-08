@@ -74,15 +74,20 @@
                                                                 <action selector="taskButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="obn-mv-AyJ"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-AU-Isw"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="7yp-AU-Isw">
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="28" id="VL6-E2-SsG"/>
+                                                                <constraint firstAttribute="width" constant="28" id="o4G-JJ-0ig"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="yZv-hD-spE" firstAttribute="top" secondItem="Rby-bh-tH3" secondAttribute="bottom" constant="12" id="7nj-bU-vvx"/>
-                                                        <constraint firstItem="Rby-bh-tH3" firstAttribute="leading" secondItem="7yp-AU-Isw" secondAttribute="trailing" constant="8" id="IvF-AM-PUO"/>
+                                                        <constraint firstItem="Rby-bh-tH3" firstAttribute="leading" secondItem="7yp-AU-Isw" secondAttribute="trailing" constant="20" id="IvF-AM-PUO"/>
                                                         <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="yZv-hD-spE" secondAttribute="bottom" constant="2" id="ONt-ak-yJW"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="Rby-bh-tH3" secondAttribute="trailing" constant="24" id="UZh-Fz-bru"/>
                                                         <constraint firstItem="Rby-bh-tH3" firstAttribute="top" secondItem="AgN-Ir-FS4" secondAttribute="topMargin" constant="-4" id="VN9-kv-9Nb"/>
-                                                        <constraint firstItem="7yp-AU-Isw" firstAttribute="top" secondItem="AgN-Ir-FS4" secondAttribute="topMargin" id="YNx-no-vp6"/>
+                                                        <constraint firstItem="7yp-AU-Isw" firstAttribute="top" secondItem="AgN-Ir-FS4" secondAttribute="topMargin" constant="-4" id="YNx-no-vp6"/>
                                                         <constraint firstItem="k42-eU-bQA" firstAttribute="centerY" secondItem="AgN-Ir-FS4" secondAttribute="centerY" id="ePP-zT-AAb"/>
                                                         <constraint firstItem="Rby-bh-tH3" firstAttribute="leading" secondItem="k42-eU-bQA" secondAttribute="trailing" constant="8" id="nq9-dO-sf4"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="yZv-hD-spE" secondAttribute="trailing" constant="16" id="wRc-4h-6e7"/>
