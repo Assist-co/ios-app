@@ -50,16 +50,20 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             mapView.isHidden = true
         }
         
-        /* // UNCOMMENT WHEN WE CORRECTLY SAVE TASK STARTON
         if (task?.startOn) != nil {
-            timeView.isHidden = false
             let formatter = DateFormatter()
             formatter.dateStyle = .long
             formatter.timeStyle = .none
             dateLabel.text = formatter.string(from: (task?.startOn)!)
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            let startOnTime = formatter.string(from:(task?.startOn)!)
+            let endOnTime = formatter.string(from:(task?.endOn)!)
+            timeLabel.text = "\(startOnTime) - \(endOnTime)"
+            timeView.isHidden = false
         } else {
             timeView.isHidden = true
-        }*/
+        }
         
         /* // UNCOMMENT WHEN WE CORRECTLY SAVE CONTACTS
         if let contacts = task?.contacts {
