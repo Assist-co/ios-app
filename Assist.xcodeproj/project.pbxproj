@@ -519,7 +519,7 @@
 				TargetAttributes = {
 					034051391DD4295D005F6B82 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2N9MSLMEL7;
+						DevelopmentTeam = DTRAWCP5X2;
 						ProvisioningStyle = Automatic;
 					};
 					0340514D1DD4295D005F6B82 = {
@@ -946,10 +946,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2N9MSLMEL7;
+				DEVELOPMENT_TEAM = DTRAWCP5X2;
 				INFOPLIST_FILE = Assist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -961,10 +961,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2N9MSLMEL7;
+				DEVELOPMENT_TEAM = DTRAWCP5X2;
 				INFOPLIST_FILE = Assist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assist.Assists;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
