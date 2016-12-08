@@ -52,13 +52,23 @@ class Task: NSObject {
         }
         if let startOnString = dictionary["start_on"] as? String{
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
-            self.startOn = formatter.date(from: startOnString) as Date?
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            var startDate: Date? = formatter.date(from: startOnString) as Date?
+            if startDate == nil {
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+                startDate = formatter.date(from: startOnString) as Date?
+            }
+            self.startOn = startDate
         }
         if let endOnString = dictionary["end_on"] as? String{
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
-            self.endOn = formatter.date(from: endOnString) as Date?
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+            var endDate: Date? = formatter.date(from: endOnString) as Date?
+            if endDate == nil {
+                formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
+                endDate = formatter.date(from: endOnString) as Date?
+            }
+            self.endOn = endDate
         }
         
         self.calendarId = dictionary["calendar_id"] as? String

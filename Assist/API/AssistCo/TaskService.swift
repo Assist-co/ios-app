@@ -75,11 +75,7 @@ class TaskService: NSObject {
                             completion(nil, nil)
                             return
                         }
-                        let generatedTask = Task(dictionary: responseDict as NSDictionary)
-                        
-                        MessagingClient.sharedInstance.postMessage(message: generatedTask.text!)
-                        CalendarService.sharedInstance.createEvent(task: generatedTask)
-                        completion(generatedTask, nil)
+                        completion(Task(dictionary: responseDict as NSDictionary), nil)
                     case .failure(let error):
                         if let data = response.data{
                             print("Error: \(String(data: data, encoding: String.Encoding.utf8)!)")
