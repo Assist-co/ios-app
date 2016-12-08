@@ -13,11 +13,11 @@ extension CNContact {
     
     func serialize(clientID: Int) -> [String:Any]{
         var attrs: [String:Any] = ["client_id": clientID as Any]
-        if self.familyName.characters.count > 0 {
-            attrs["first_name"] = self.familyName as Any
-        }
         if self.givenName.characters.count > 0 {
-            attrs["last_name"] = self.givenName as Any
+            attrs["first_name"] = self.givenName as Any
+        }
+        if self.familyName.characters.count > 0 {
+            attrs["last_name"] = self.familyName as Any
         }
         if let email = self.emailAddresses.first {
             attrs["email"] = email.value as Any

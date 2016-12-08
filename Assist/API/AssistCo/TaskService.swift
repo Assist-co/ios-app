@@ -134,13 +134,14 @@ class TaskService: NSObject {
     
     class func addContactsToTask(
         taskID: Int,
-        contactDicts: Array<Dictionary<String, Any>>,
+        contactDicts: [String:Any],
         completion: @escaping (Task?, Error?) -> ()
         ) {
         AssistClient.sharedInstance.session.request(
             "\(baseURLString!)/tasks/\(taskID)/contacts",
             method: .post,
-            parameters: ["contacts": contactDicts]
+            parameters: contactDicts,
+            encoding: JSONEncoding(options: [])
             ).validate().responseJSON(
                 completionHandler: { (response) in
                     switch response.result {
