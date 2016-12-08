@@ -39,9 +39,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.formContainer.frame.origin.x = -(self.formContainer.frame.size.width + self.formContainer.frame.origin.x)
-        self.titleContainer.frame.origin.x = (self.titleContainer.frame.size.width + self.view.frame.maxX)
-        self.presentForm()
+//        self.formContainer.frame.origin.x = -(self.formContainer.frame.size.width + self.formContainer.frame.origin.x)
+//        self.titleContainer.frame.origin.x = (self.titleContainer.frame.size.width + self.view.frame.maxX)
+//        self.presentForm()
     }
     
     //MARK:- Animations
@@ -87,14 +87,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         if self.validateInput() {
             self.errorView.isHidden = true
-            UIView.animate(withDuration: 0.75, delay: .3, options: .curveEaseOut, animations: {
-                self.formContainer.frame.origin.x = (self.formContainer.frame.size.width + self.view.frame.maxX)
-                self.titleContainer.frame.origin.x = -(self.titleContainer.frame.size.width + self.view.frame.maxX)
-            }) { (success: Bool) in
-                self.formContainer.isHidden = true
-                self.titleContainer.isHidden = true
+//            UIView.animate(withDuration: 0.75, delay: 0.3, options: .curveEaseOut, animations: {
+//                self.formContainer.frame.origin.x = (self.formContainer.frame.size.width + self.view.frame.maxX)
+//                self.titleContainer.frame.origin.x = -(self.titleContainer.frame.size.width + self.view.frame.maxX)
+//            }) { (success: Bool) in
+//                self.formContainer.isHidden = true
+//                self.titleContainer.isHidden = true
                 self.performSegue(withIdentifier: "SignUp", sender: self)
-            }
+//            }
         }else{
             self.errorView.isHidden = false
         }
