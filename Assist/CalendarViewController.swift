@@ -28,6 +28,12 @@ class CalendarViewController: SlidableViewController, UITableViewDataSource, UIT
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        TaskService.fetchTasksForClient { (tasks: [Task]?, error: Error?) in
+            self.tasks = tasks
+        }
+    }
+    
     private func setupTableView() {
         calendarEventsTableView.dataSource = self;
         calendarEventsTableView.delegate = self;
