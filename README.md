@@ -11,4 +11,4 @@ Now more than ever, professionals and millenials are outsourcing many of their d
 
 ## Demo
 
-![alt text](https://github.com/Assist-co/ios-app/blob/master/demo "Demo")
+![alt text](https://github.com/Assist-co/ios-app/blob/master/demo.gif "Demo")
