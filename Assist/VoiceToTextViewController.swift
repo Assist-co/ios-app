@@ -43,6 +43,10 @@ class VoiceToTextViewController: UIViewController {
             self.homeViewController = homeNavController.viewControllers.first as? HomeViewController
         }
     }
+    
+    @IBAction func onCancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 
     @IBAction func onVoiceButtonClick(_ sender: UIButton) {
         if (!VoiceToTextClient.sharedInstance.recordToggle(outputView: voiceTextLabel)) {
