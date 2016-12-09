@@ -9,41 +9,6 @@ Now more than ever, professionals and millenials are outsourcing many of their d
 ## Wireframes
 <a href=https://docs.google.com/presentation/d/1clFVoBxTCguYGYbkFs_5sm1adMRyEUzp00cjYRPt-og/edit?usp=sharing>Wireframes Link</a>
 
-## User Stories
+## Demo
 
-### Sprint 1
-
-#### Backend
-- [ ] Client (Create, Update, Get) and Assistant (Get) API 
-- [ ] Message API (Fetch, Create)
-- [ ] Task API (Fetch, Update, Create)
-- [ ] Lightweight admin interface for viewing, updating, and creating clients, assistants, messages, and tasks
-- [ ] Deploy backend
-
-#### App
-- [ ] Client, Assistant, Message, and Task model stubs
-- [ ] Voice to text functionality
-- [ ] API endpoints for Client, Assistant, Message, Task, and Voice-to-Text
-- [ ] Task manager screen (Consider Yelp's interface for listing and mapping businesses on their search page)
-   - [ ] Displays queued and pending tasks
-   - [ ] Allows deletion/acceptance of tasks
-- [ ] Messages screen
-   - [ ] Button/functionality to call personal secretary
-   - [ ] Button/functionality to pull up keyboard to type message
-   - [ ] Button/functionality to record voice-to-text messages
-- [ ] Message detail popover
-   - [ ] Can view and edit message
-- [ ] Onboarding Flow
-
-
-### Future Sprints
-
-#### App
-- [ ] Settings screen
-- [ ] User authentication (Session, Login, Logout)
-- [ ] Task map view
-- [ ] Can tag tasks on message detail popover screen
-
-#### Backend or Frontend TBD
-- [ ] Email integration
-- [ ] Contacts integration
+![alt text](https://github.com/Assist-co/ios-app/blob/master/demo "Demo")

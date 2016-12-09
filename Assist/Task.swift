@@ -27,7 +27,6 @@ class Task: NSObject {
     var client: Client?
     var assistant: Assistant?
     var contacts: [Contact]?
-    var isComplete: Bool? = false
     var state: TaskState? = .ready
     var location: String? // Format: (1.2323423423,-33333.3333)
     
@@ -39,7 +38,6 @@ class Task: NSObject {
         self.id = dictionary["id"] as? Int
         self.text = dictionary["text"] as? String
         self.location = dictionary["location"] as? String
-        self.isComplete = dictionary["is_complete"] as? Bool
         if let createdOnString = dictionary["created_on"] as? String{
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"

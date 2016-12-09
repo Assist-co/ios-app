@@ -102,9 +102,7 @@ class TaskDetailViewController: UIViewController, MKMapViewDelegate {
             addressView.isHidden = true
         }
         
-        if let isComplete = task?.isComplete {
-            deleteTaskButton.isHidden = isComplete
-        }
+        deleteTaskButton.isHidden = (task?.state == .completed) ? true : false
     }
     
     //MARK:- IB Outlet Methods
